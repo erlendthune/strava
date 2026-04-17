@@ -97,6 +97,30 @@
     </div>
 
     <script>
+        const funnyNames = [
+            "Rapid Rabbit", "Speedy Cheetah", "Turbo Tortoise", "Zippy Zebra",
+            "Swift Swan", "Dashing Deer", "Blazing Bear", "Zooming Zebra",
+            "Mighty Mongoose", "Speeding Snail", "Nitro Newt", "Velocity Vole",
+            "Sonic Sparrow", "Specter Squirrel", "Rocket Rhino", "Cosmic Coyote",
+            "Quantum Quail", "Phantom Porcupine", "Lightning Llama", "Thunder Tapir",
+            "Comet Caterpillar", "Vortex Vixen", "Warp Weasel", "Flux Flamingo"
+        ];
+        
+        function hashString(str) {
+            let hash = 0;
+            for (let i = 0; i < str.length; i++) {
+                const char = str.charCodeAt(i);
+                hash = ((hash << 5) - hash) + char;
+                hash = hash & hash;
+            }
+            return Math.abs(hash);
+        }
+        
+        function getFunnyName(realName) {
+            const hash = hashString(realName);
+            return funnyNames[hash % funnyNames.length];
+        }
+        
         async function loadLeaderboard() {
             try {
                 const response = await fetch('club_activities.json');
@@ -131,6 +155,7 @@
                 
                 // Generate HTML table
                 const tbody = leaderboard.map((athlete, index) => {
+                    const funnyName = getFunnyName(athlete.name);
                     const kmDistance = (athlete.distance / 1000).toFixed(1);
                     const hours = Math.floor(athlete.movingTime / 3600);
                     const minutes = Math.floor((athlete.movingTime % 3600) / 60);
@@ -140,7 +165,7 @@
                     return `
                         <tr>
                             <td class="rank">${index + 1}</td>
-                            <td class="name">${athlete.name}</td>
+                            <td class="name">${funnyName}</td>
                             <td class="metric">${athlete.activities}</td>
                             <td class="metric">${kmDistance} km</td>
                             <td class="metric">${time}</td>

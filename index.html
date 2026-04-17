@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strava Club Leaderboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            padding: 30px;
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        thead {
+            background: #f8f9fa;
+            border-bottom: 2px solid #667eea;
+        }
+        
+        th {
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        tbody tr:hover {
+            background: #f0f4ff;
+        }
+        
+        .rank {
+            font-weight: 600;
+            color: #667eea;
+            font-size: 18px;
+            width: 50px;
+        }
+        
+        .name {
+            font-weight: 500;
+        }
+        
+        .metric {
+            text-align: right;
+            color: #555;
+        }
+        
+        .loading {
+            text-align: center;
+            color: #666;
+            padding: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏆 Strava Club Leaderboard</h1>
+        <div class="subtitle" id="lastUpdate"></div>
+        <div id="leaderboard" class="loading">Loading...</div>
+    </div>
+
+    <script>
+        async function loadLeaderboard() {
+            try {
+                const response = await fetch('club_activities.json');
+                const activities = await response.json();
+                
+                // Aggregate stats by athlete
+                const athleteStats = {};
+                
+                activities.forEach(activity => {
+                    const athlete = activity.athlete;
+                    const name = `${athlete.firstname} ${athlete.lastname}`;
+                    
+                    if (!athleteStats[name]) {
+                        athleteStats[name] = {
+                            name: name,
+                            activities: 0,
+                            distance: 0,
+                            movingTime: 0,
+                            elevation: 0
+                        };
+                    }
+                    
+                    athleteStats[name].activities += 1;
+                    athleteStats[name].distance += activity.distance;
+                    athleteStats[name].movingTime += activity.moving_time;
+                    athleteStats[name].elevation += activity.total_elevation_gain;
+                });
+                
+                // Sort by distance
+                const leaderboard = Object.values(athleteStats)
+                    .sort((a, b) => b.distance - a.distance);
+                
+                // Generate HTML table
+                const tbody = leaderboard.map((athlete, index) => {
+                    const kmDistance = (athlete.distance / 1000).toFixed(1);
+                    const hours = Math.floor(athlete.movingTime / 3600);
+                    const minutes = Math.floor((athlete.movingTime % 3600) / 60);
+                    const time = `${hours}h ${minutes}m`;
+                    const elevation = athlete.elevation.toFixed(0);
+                    
+                    return `
+                        <tr>
+                            <td class="rank">${index + 1}</td>
+                            <td class="name">${athlete.name}</td>
+                            <td class="metric">${athlete.activities}</td>
+                            <td class="metric">${kmDistance} km</td>
+                            <td class="metric">${time}</td>
+                            <td class="metric">${elevation} m</td>
+                        </tr>
+                    `;
+                }).join('');
+                
+                const table = `
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 50px;">#</th>
+                                <th>Athlete</th>
+                                <th style="text-align: right;">Activities</th>
+                                <th style="text-align: right;">Distance</th>
+                                <th style="text-align: right;">Moving Time</th>
+                                <th style="text-align: right;">Elevation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${tbody}
+                        </tbody>
+                    </table>
+                `;
+                
+                document.getElementById('leaderboard').innerHTML = table;
+                
+                // Update timestamp
+                const now = new Date();
+                document.getElementById('lastUpdate').innerHTML = `Last updated: ${now.toLocaleString()}`;
+                
+            } catch (error) {
+                document.getElementById('leaderboard').innerHTML = `<div class="loading">Error loading leaderboard: ${error.message}</div>`;
+            }
+        }
+        
+        loadLeaderboard();
+    </script>
+</body>
+</html>

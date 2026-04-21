@@ -134,4 +134,5 @@ jobs:
           git config --global user.email "action@github.com"
           git add club_activities.json
           git commit -m "Update Strava club activities" || exit 0
+          git fetch origin main
           git push --force-with-lease https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git

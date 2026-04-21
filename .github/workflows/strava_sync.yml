@@ -73,6 +73,7 @@ jobs:
             
             return {
               ...activity,
+              name: activity.sport_type,
               athlete: {
                 ...athlete,
                 firstname: nameMap[realName].split(' ')[0],

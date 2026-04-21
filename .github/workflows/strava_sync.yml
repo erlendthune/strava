@@ -132,11 +132,59 @@ jobs:
           fs.writeFileSync('club_activities.json', JSON.stringify(anonymized, null, 2));
           EOF
 
+      - name: Update Master History
+        run: |
+          node << 'EOF'
+          const fs = require('fs');
+          
+          function fingerprint(a) {
+            // Activities have no IDs, build a stable fingerprint
+            return [
+              a.athlete.firstname,
+              a.athlete.lastname,
+              a.sport_type,
+              a.distance,
+              a.moving_time,
+              a.elapsed_time,
+              a.total_elevation_gain
+            ].join('|');
+          }
+          
+          const current = JSON.parse(fs.readFileSync('club_activities.json', 'utf8'));
+          
+          let history = [];
+          if (fs.existsSync('master_history.json')) {
+            history = JSON.parse(fs.readFileSync('master_history.json', 'utf8'));
+          }
+          
+          const seen = new Set(history.map(fingerprint));
+          const nowIso = new Date().toISOString();
+          let added = 0;
+          
+          for (const activity of current) {
+            const fp = fingerprint(activity);
+            if (!seen.has(fp)) {
+              seen.add(fp);
+              history.push({ ...activity, first_seen: nowIso });
+              added++;
+            }
+          }
+          
+          // Keep only activities first seen within the last 7 days
+          const cutoff = Date.now() - 7 * 24 * 60 * 60 * 1000;
+          const before = history.length;
+          history = history.filter(a => new Date(a.first_seen).getTime() >= cutoff);
+          const removed = before - history.length;
+          
+          fs.writeFileSync('master_history.json', JSON.stringify(history, null, 2));
+          console.log(`Added ${added} new activities, pruned ${removed} older than 7 days. Total: ${history.length}`);
+          EOF
+
       - name: Commit and Push if changed
         run: |
           git config --global user.name "GitHub Action"
           git config --global user.email "action@github.com"
-          git add club_activities.json
+          git add club_activities.json master_history.json
           git diff --cached --quiet && exit 0
           git commit -m "Update Strava club activities"
           git push --force https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main

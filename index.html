@@ -93,6 +93,7 @@
     <div class="container">
         <h1>🏆 Bouvet Kristiansand Strava Leaderboard</h1>
         <div class="subtitle">
+            <p>Aktiviteter fra de siste 7 dagene</p>
             <p>Navnene er anonymisert inntil videre...</p>
             <p>Meld deg inn i klubben for å se din plassering!</p>
         </div>
@@ -103,7 +104,7 @@
     <script>
         async function loadLeaderboard() {
             try {
-                const response = await fetch('club_activities.json');
+                const response = await fetch('master_history.json');
                 const activities = await response.json();
                 
                 // Aggregate stats by athlete

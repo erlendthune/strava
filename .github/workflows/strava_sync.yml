@@ -36,6 +36,54 @@ jobs:
             -H "Authorization: Bearer ${{ env.STRAVA_ACCESS_TOKEN }}" \
             -o club_activities.json
 
+      - name: Anonymize Names
+        run: |
+          node << 'EOF'
+          const fs = require('fs');
+          const crypto = require('crypto');
+          
+          const funnyNames = [
+            "Rapid Rabbit", "Speedy Cheetah", "Turbo Tortoise", "Zippy Zebra",
+            "Swift Swan", "Dashing Deer", "Blazing Bear", "Zooming Zebra",
+            "Mighty Mongoose", "Speeding Snail", "Nitro Newt", "Velocity Vole",
+            "Sonic Sparrow", "Specter Squirrel", "Rocket Rhino", "Cosmic Coyote",
+            "Quantum Quail", "Phantom Porcupine", "Lightning Llama", "Thunder Tapir",
+            "Comet Caterpillar", "Vortex Vixen", "Warp Weasel", "Flux Flamingo"
+          ];
+          
+          function hashString(str) {
+            return Math.abs(crypto.createHash('md5').update(str).digest('hex').charCodeAt(0) * 0x10001);
+          }
+          
+          function getFunnyName(realName) {
+            const hash = hashString(realName);
+            return funnyNames[hash % funnyNames.length];
+          }
+          
+          const data = JSON.parse(fs.readFileSync('club_activities.json', 'utf8'));
+          const nameMap = {};
+          
+          const anonymized = data.map(activity => {
+            const athlete = activity.athlete;
+            const realName = `${athlete.firstname} ${athlete.lastname}`;
+            
+            if (!nameMap[realName]) {
+              nameMap[realName] = getFunnyName(realName);
+            }
+            
+            return {
+              ...activity,
+              athlete: {
+                ...athlete,
+                firstname: nameMap[realName].split(' ')[0],
+                lastname: nameMap[realName].split(' ')[1]
+              }
+            };
+          });
+          
+          fs.writeFileSync('club_activities.json', JSON.stringify(anonymized, null, 2));
+          EOF
+
       - name: Commit and Push if changed
         run: |
           git config --global user.name "GitHub Action"

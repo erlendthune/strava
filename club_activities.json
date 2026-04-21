@@ -3,6 +3,23 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
+      "firstname": "Zippy",
+      "lastname": "Zebra"
+    },
+    "name": "Run",
+    "distance": 4644.5,
+    "moving_time": 1321,
+    "elapsed_time": 1321,
+    "total_elevation_gain": 56.4,
+    "type": "Run",
+    "sport_type": "Run",
+    "workout_type": null,
+    "device_name": "Garmin Forerunner 245 Music"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
       "firstname": "Phantom",
       "lastname": "Porcupine"
     },
@@ -2385,56 +2402,5 @@
     "type": "VirtualRide",
     "sport_type": "VirtualRide",
     "device_name": "Rouvy"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Nitro",
-      "lastname": "Newt"
-    },
-    "name": "Workout",
-    "distance": 0,
-    "moving_time": 4009,
-    "elapsed_time": 4009,
-    "total_elevation_gain": 0,
-    "type": "Workout",
-    "sport_type": "Workout",
-    "workout_type": null,
-    "device_name": "Garmin Forerunner 255"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Phantom",
-      "lastname": "Porcupine"
-    },
-    "name": "WeightTraining",
-    "distance": 0,
-    "moving_time": 4152,
-    "elapsed_time": 4152,
-    "total_elevation_gain": 0,
-    "type": "WeightTraining",
-    "sport_type": "WeightTraining",
-    "workout_type": 30,
-    "device_name": "Apple Watch Ultra 3"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Phantom",
-      "lastname": "Porcupine"
-    },
-    "name": "WeightTraining",
-    "distance": 0,
-    "moving_time": 2947,
-    "elapsed_time": 2947,
-    "total_elevation_gain": 0,
-    "type": "WeightTraining",
-    "sport_type": "WeightTraining",
-    "workout_type": 30,
-    "device_name": "Apple Watch Ultra 3"
   }
 ]

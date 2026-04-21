@@ -32,9 +32,52 @@ jobs:
 
       - name: Fetch Club Activities
         run: |
-          curl -X GET "https://www.strava.com/api/v3/clubs/1475451/activities?per_page=50" \
-            -H "Authorization: Bearer ${{ env.STRAVA_ACCESS_TOKEN }}" \
-            -o club_activities.json
+          node << 'EOF'
+          const https = require('https');
+          const fs = require('fs');
+          
+          async function fetchAllActivities(token, clubId) {
+            let allActivities = [];
+            let page = 1;
+            let hasMore = true;
+            
+            while (hasMore) {
+              const url = `https://www.strava.com/api/v3/clubs/${clubId}/activities?page=${page}&per_page=50`;
+              
+              const response = await fetch(url, {
+                headers: { 'Authorization': `Bearer ${token}` }
+              });
+              
+              if (!response.ok) {
+                throw new Error(`Failed to fetch page ${page}: ${response.statusText}`);
+              }
+              
+              const activities = await response.json();
+              
+              if (activities.length === 0) {
+                hasMore = false;
+              } else {
+                allActivities = allActivities.concat(activities);
+                page++;
+              }
+            }
+            
+            return allActivities;
+          }
+          
+          const token = process.env.STRAVA_ACCESS_TOKEN;
+          const clubId = 1475451;
+          
+          fetchAllActivities(token, clubId)
+            .then(activities => {
+              fs.writeFileSync('club_activities.json', JSON.stringify(activities, null, 2));
+              console.log(`Fetched ${activities.length} activities`);
+            })
+            .catch(err => {
+              console.error('Error:', err.message);
+              process.exit(1);
+            });
+          EOF
 
       - name: Anonymize Names
         run: |

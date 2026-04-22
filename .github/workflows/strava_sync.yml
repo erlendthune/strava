@@ -34,6 +34,54 @@ jobs:
           ACCESS_TOKEN=$(echo $TOKEN_RESPONSE | jq -r '.access_token')
           echo "STRAVA_ACCESS_TOKEN=$ACCESS_TOKEN" >> $GITHUB_ENV
 
+      - name: Fetch Club Members
+        run: |
+          node << 'EOF'
+          const fs = require('fs');
+          
+          async function fetchAllMembers(token, clubId) {
+            let allMembers = [];
+            let page = 1;
+            let hasMore = true;
+            
+            while (hasMore) {
+              const url = `https://www.strava.com/api/v3/clubs/${clubId}/members?page=${page}&per_page=200`;
+              
+              const response = await fetch(url, {
+                headers: { 'Authorization': `Bearer ${token}` }
+              });
+              
+              if (!response.ok) {
+                throw new Error(`Failed to fetch members page ${page}: ${response.statusText}`);
+              }
+              
+              const members = await response.json();
+              
+              if (members.length === 0) {
+                hasMore = false;
+              } else {
+                allMembers = allMembers.concat(members);
+                page++;
+              }
+            }
+            
+            return allMembers;
+          }
+          
+          const token = process.env.STRAVA_ACCESS_TOKEN;
+          const clubId = 1475451;
+          
+          fetchAllMembers(token, clubId)
+            .then(members => {
+              fs.writeFileSync('club_members.json', JSON.stringify(members, null, 2));
+              console.log(`Fetched ${members.length} club members`);
+            })
+            .catch(err => {
+              console.error('Error:', err.message);
+              process.exit(1);
+            });
+          EOF
+
       - name: Fetch Club Activities
         run: |
           node << 'EOF'
@@ -107,6 +155,7 @@ jobs:
             return funnyNames[hash % funnyNames.length];
           }
           
+          // Anonymize activities
           const data = JSON.parse(fs.readFileSync('club_activities.json', 'utf8'));
           const nameMap = {};
           
@@ -132,6 +181,24 @@ jobs:
           });
           
           fs.writeFileSync('club_activities.json', JSON.stringify(anonymized, null, 2));
+          
+          // Anonymize members
+          const members = JSON.parse(fs.readFileSync('club_members.json', 'utf8'));
+          const anonymizedMembers = members.map(member => {
+            const realName = `${member.firstname} ${member.lastname}`;
+            
+            if (!nameMap[realName]) {
+              nameMap[realName] = getFunnyName(realName);
+            }
+            
+            return {
+              ...member,
+              firstname: nameMap[realName].split(' ')[0],
+              lastname: nameMap[realName].split(' ')[1]
+            };
+          });
+          
+          fs.writeFileSync('club_members.json', JSON.stringify(anonymizedMembers, null, 2));
           EOF
 
       - name: Update Master History
@@ -172,10 +239,13 @@ jobs:
             }
           }
           
-          // Keep only activities that occurred within the last 7 days (based on start_date)
+          // Keep only activities from the last 7 days (use start_date if available, otherwise first_seen)
           const cutoff = Date.now() - 7 * 24 * 60 * 60 * 1000;
           const before = history.length;
-          history = history.filter(a => new Date(a.start_date).getTime() >= cutoff);
+          history = history.filter(a => {
+            const dateToCheck = a.start_date || a.first_seen;
+            return new Date(dateToCheck).getTime() >= cutoff;
+          });
           const removed = before - history.length;
           
           fs.writeFileSync('master_history.json', JSON.stringify(history, null, 2));
@@ -186,7 +256,7 @@ jobs:
         run: |
           git config --global user.name "GitHub Action"
           git config --global user.email "action@github.com"
-          git add club_activities.json master_history.json
+          git add club_activities.json club_members.json master_history.json
           git diff --cached --quiet && exit 0
           git commit -m "Update Strava club activities"
           git push --force https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main

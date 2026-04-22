@@ -33,16 +33,48 @@
             text-align: center;
         }
         
+        h2 {
+            color: #667eea;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 20px;
+            border-bottom: 2px solid #f0f4ff;
+            padding-bottom: 10px;
+        }
+        
         .subtitle {
             text-align: center;
             color: #666;
-            margin-bottom: 30px;
+            margin-bottom: 10px;
             font-size: 14px;
+        }
+        
+        .notice {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .notice strong {
+            color: #856404;
+            font-size: 16px;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .notice p {
+            color: #856404;
+            font-size: 14px;
+            margin: 5px 0;
         }
         
         table {
             width: 100%;
             border-collapse: collapse;
+            margin-bottom: 20px;
         }
         
         thead {
@@ -82,10 +114,30 @@
             color: #555;
         }
         
+        .inactive-row {
+            opacity: 0.5;
+        }
+        
+        .inactive-row td {
+            color: #999;
+        }
+        
+        .inactive-message {
+            font-style: italic;
+            color: #999;
+        }
+        
         .loading {
             text-align: center;
             color: #666;
             padding: 40px;
+        }
+        
+        .member-count {
+            text-align: center;
+            color: #667eea;
+            font-weight: 600;
+            margin: 10px 0;
         }
     </style>
 </head>
@@ -95,8 +147,16 @@
         <div class="subtitle">
             <p>Aktiviteter fra de siste 7 dagene</p>
             <p>Navnene er anonymisert inntil videre...</p>
-            <p>Meld deg inn i klubben for å se din plassering!</p>
         </div>
+        
+        <div class="notice">
+            <strong>🎯 Wall of Fame - How to Join</strong>
+            <p>If your name isn't showing up with stats, your Strava privacy settings are too high!</p>
+            <p><strong>Set your activities to "Everyone"</strong> to see your name on the leaderboard.</p>
+            <p>Go to Strava → Settings → Privacy Controls → Activities → "Who can see your activities" → Select "Everyone"</p>
+        </div>
+        
+        <div class="member-count" id="memberCount"></div>
         <div class="subtitle" id="lastUpdate"></div>
         <div id="leaderboard" class="loading">Loading...</div>
     </div>
@@ -104,8 +164,14 @@
     <script>
         async function loadLeaderboard() {
             try {
-                const response = await fetch('master_history.json');
-                const activities = await response.json();
+                // Load activities and members
+                const [activitiesResponse, membersResponse] = await Promise.all([
+                    fetch('master_history.json'),
+                    fetch('club_members.json')
+                ]);
+                
+                const activities = await activitiesResponse.json();
+                const members = await membersResponse.json();
                 
                 // Aggregate stats by athlete
                 const athleteStats = {};
@@ -120,7 +186,8 @@
                             activities: 0,
                             distance: 0,
                             movingTime: 0,
-                            elevation: 0
+                            elevation: 0,
+                            hasActivities: false
                         };
                     }
                     
@@ -128,33 +195,36 @@
                     athleteStats[name].distance += activity.distance;
                     athleteStats[name].movingTime += activity.moving_time;
                     athleteStats[name].elevation += activity.total_elevation_gain;
+                    athleteStats[name].hasActivities = true;
                 });
                 
-                // Sort by distance
-                const leaderboard = Object.values(athleteStats)
+                // Add all members to the list
+                members.forEach(member => {
+                    const name = `${member.firstname} ${member.lastname}`;
+                    if (!athleteStats[name]) {
+                        athleteStats[name] = {
+                            name: name,
+                            activities: 0,
+                            distance: 0,
+                            movingTime: 0,
+                            elevation: 0,
+                            hasActivities: false
+                        };
+                    }
+                });
+                
+                // Separate active and inactive members
+                const activeMembers = Object.values(athleteStats)
+                    .filter(a => a.hasActivities)
                     .sort((a, b) => b.distance - a.distance);
                 
-                // Generate HTML table
-                const tbody = leaderboard.map((athlete, index) => {
-                    const kmDistance = (athlete.distance / 1000).toFixed(1);
-                    const hours = Math.floor(athlete.movingTime / 3600);
-                    const minutes = Math.floor((athlete.movingTime % 3600) / 60);
-                    const time = `${hours}h ${minutes}m`;
-                    const elevation = athlete.elevation.toFixed(0);
-                    
-                    return `
-                        <tr>
-                            <td class="rank">${index + 1}</td>
-                            <td class="name">${athlete.name}</td>
-                            <td class="metric">${athlete.activities}</td>
-                            <td class="metric">${kmDistance} km</td>
-                            <td class="metric">${time}</td>
-                            <td class="metric">${elevation} m</td>
-                        </tr>
-                    `;
-                }).join('');
+                const inactiveMembers = Object.values(athleteStats)
+                    .filter(a => !a.hasActivities)
+                    .sort((a, b) => a.name.localeCompare(b.name));
                 
-                const table = `
+                // Generate active members table
+                let html = '<h2>🔥 Active This Week</h2>';
+                html += `
                     <table>
                         <thead>
                             <tr>
@@ -167,19 +237,69 @@
                             </tr>
                         </thead>
                         <tbody>
-                            ${tbody}
-                        </tbody>
-                    </table>
                 `;
                 
-                document.getElementById('leaderboard').innerHTML = table;
+                activeMembers.forEach((athlete, index) => {
+                    const kmDistance = (athlete.distance / 1000).toFixed(1);
+                    const hours = Math.floor(athlete.movingTime / 3600);
+                    const minutes = Math.floor((athlete.movingTime % 3600) / 60);
+                    const time = `${hours}h ${minutes}m`;
+                    const elevation = athlete.elevation.toFixed(0);
+                    
+                    html += `
+                        <tr>
+                            <td class="rank">${index + 1}</td>
+                            <td class="name">${athlete.name}</td>
+                            <td class="metric">${athlete.activities}</td>
+                            <td class="metric">${kmDistance} km</td>
+                            <td class="metric">${time}</td>
+                            <td class="metric">${elevation} m</td>
+                        </tr>
+                    `;
+                });
+                
+                html += '</tbody></table>';
+                
+                // Generate inactive members section if any
+                if (inactiveMembers.length > 0) {
+                    html += '<h2>💤 Missing from the Board This Week</h2>';
+                    html += '<p class="subtitle inactive-message">These members haven\'t logged activities or their privacy settings prevent visibility.</p>';
+                    html += `
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Athlete</th>
+                                    <th style="text-align: right;">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                    `;
+                    
+                    inactiveMembers.forEach(athlete => {
+                        html += `
+                            <tr class="inactive-row">
+                                <td class="name">${athlete.name}</td>
+                                <td class="metric inactive-message">No activities this week</td>
+                            </tr>
+                        `;
+                    });
+                    
+                    html += '</tbody></table>';
+                }
+                
+                document.getElementById('leaderboard').innerHTML = html;
+                
+                // Update member count
+                document.getElementById('memberCount').innerHTML = 
+                    `${activeMembers.length} of ${members.length} members active this week`;
                 
                 // Update timestamp
                 const now = new Date();
                 document.getElementById('lastUpdate').innerHTML = `Last updated: ${now.toLocaleString()}`;
                 
             } catch (error) {
-                document.getElementById('leaderboard').innerHTML = `<div class="loading">Error loading leaderboard: ${error.message}</div>`;
+                document.getElementById('leaderboard').innerHTML = 
+                    `<div class="loading">Error loading leaderboard: ${error.message}</div>`;
             }
         }
         

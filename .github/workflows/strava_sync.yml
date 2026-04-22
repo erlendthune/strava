@@ -147,35 +147,51 @@ jobs:
           ];
           
           function hashString(str) {
-            return Math.abs(crypto.createHash('md5').update(str).digest('hex').charCodeAt(0) * 0x10001);
+            // Use 8 hex chars for a well-distributed 32-bit integer
+            const hex = crypto.createHash('md5').update(str).digest('hex');
+            return parseInt(hex.substring(0, 8), 16);
           }
           
-          function getFunnyName(realName) {
-            const hash = hashString(realName);
-            return funnyNames[hash % funnyNames.length];
+          // Build a collision-free name map for all real names up front.
+          // Names are sorted before assignment so the result is stable across runs.
+          function buildNameMap(realNames) {
+            const unique = [...new Set(realNames)].sort();
+            const assigned = {};
+            const used = new Set();
+            for (const realName of unique) {
+              let index = hashString(realName) % funnyNames.length;
+              // Linear probe until we find an unused slot
+              while (used.has(funnyNames[index])) {
+                index = (index + 1) % funnyNames.length;
+              }
+              assigned[realName] = funnyNames[index];
+              used.add(funnyNames[index]);
+            }
+            return assigned;
           }
+          
+          const data = JSON.parse(fs.readFileSync('club_activities.json', 'utf8'));
+          const members = JSON.parse(fs.readFileSync('club_members.json', 'utf8'));
+          
+          // Collect every real name from both datasets before building the map
+          const allRealNames = [
+            ...data.map(a => `${a.athlete.firstname} ${a.athlete.lastname}`),
+            ...members.map(m => `${m.firstname} ${m.lastname}`)
+          ];
+          const nameMap = buildNameMap(allRealNames);
           
           // Anonymize activities
-          const data = JSON.parse(fs.readFileSync('club_activities.json', 'utf8'));
-          const nameMap = {};
-          
           const anonymized = data.map(activity => {
             const athlete = activity.athlete;
             const realName = `${athlete.firstname} ${athlete.lastname}`;
-            
-            if (!nameMap[realName]) {
-              nameMap[realName] = getFunnyName(realName);
-            }
-            
+            const funnyName = nameMap[realName];
             return {
               ...activity,
               name: activity.sport_type,
-              start_date: activity.start_date,
-              start_date_local: activity.start_date_local,
               athlete: {
                 ...athlete,
-                firstname: nameMap[realName].split(' ')[0],
-                lastname: nameMap[realName].split(' ')[1]
+                firstname: funnyName.split(' ')[0],
+                lastname: funnyName.split(' ')[1]
               }
             };
           });
@@ -183,18 +199,13 @@ jobs:
           fs.writeFileSync('club_activities.json', JSON.stringify(anonymized, null, 2));
           
           // Anonymize members
-          const members = JSON.parse(fs.readFileSync('club_members.json', 'utf8'));
           const anonymizedMembers = members.map(member => {
             const realName = `${member.firstname} ${member.lastname}`;
-            
-            if (!nameMap[realName]) {
-              nameMap[realName] = getFunnyName(realName);
-            }
-            
+            const funnyName = nameMap[realName];
             return {
               ...member,
-              firstname: nameMap[realName].split(' ')[0],
-              lastname: nameMap[realName].split(' ')[1]
+              firstname: funnyName.split(' ')[0],
+              lastname: funnyName.split(' ')[1]
             };
           });
           

@@ -184,6 +184,8 @@
         }
         
         loadLeaderboard();
+        // Auto-refresh every 5 minutes
+        setInterval(loadLeaderboard, 5 * 60 * 1000);
     </script>
 </body>
 </html>

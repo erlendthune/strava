@@ -2475,23 +2475,6 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Comet",
-      "lastname": "Caterpillar"
-    },
-    "name": "Run",
-    "distance": 6116.4,
-    "moving_time": 1928,
-    "elapsed_time": 1928,
-    "total_elevation_gain": 86,
-    "type": "Run",
-    "sport_type": "Run",
-    "workout_type": null,
-    "device_name": "Garmin vívoactive 5"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
       "firstname": "Sonic",
       "lastname": "Sparrow"
     },

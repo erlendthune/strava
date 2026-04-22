@@ -3,6 +3,57 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
+      "firstname": "Nitro",
+      "lastname": "Newt"
+    },
+    "name": "TrailRun",
+    "distance": 8528,
+    "moving_time": 4068,
+    "elapsed_time": 4069,
+    "total_elevation_gain": 249,
+    "type": "Run",
+    "sport_type": "TrailRun",
+    "workout_type": null,
+    "device_name": "Garmin Forerunner 255"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Zippy",
+      "lastname": "Zebra"
+    },
+    "name": "Run",
+    "distance": 4644.5,
+    "moving_time": 1321,
+    "elapsed_time": 1321,
+    "total_elevation_gain": 56.4,
+    "type": "Run",
+    "sport_type": "Run",
+    "workout_type": null,
+    "device_name": "Garmin Forerunner 245 Music"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Phantom",
+      "lastname": "Porcupine"
+    },
+    "name": "Ride",
+    "distance": 46679.1,
+    "moving_time": 6659,
+    "elapsed_time": 7675,
+    "total_elevation_gain": 546,
+    "type": "Ride",
+    "sport_type": "Ride",
+    "workout_type": null,
+    "device_name": "Garmin Edge 1030 Plus"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
       "firstname": "Phantom",
       "lastname": "Porcupine"
     },
@@ -201,6 +252,23 @@
     "sport_type": "Ride",
     "workout_type": null,
     "device_name": "Garmin Forerunner 255"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Blazing",
+      "lastname": "Bear"
+    },
+    "name": "Run",
+    "distance": 6186,
+    "moving_time": 1721,
+    "elapsed_time": 1721,
+    "total_elevation_gain": 88,
+    "type": "Run",
+    "sport_type": "Run",
+    "workout_type": null,
+    "device_name": "Garmin Forerunner 265"
   },
   {
     "resource_state": 2,
@@ -932,6 +1000,22 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
+      "firstname": "Blazing",
+      "lastname": "Bear"
+    },
+    "name": "NordicSki",
+    "distance": 18258.7,
+    "moving_time": 5309,
+    "elapsed_time": 5507,
+    "total_elevation_gain": 385,
+    "type": "NordicSki",
+    "sport_type": "NordicSki",
+    "device_name": "Garmin Forerunner 265"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
       "firstname": "Nitro",
       "lastname": "Newt"
     },
@@ -944,6 +1028,22 @@
     "sport_type": "Ride",
     "workout_type": 10,
     "device_name": "Garmin Forerunner 255"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Blazing",
+      "lastname": "Bear"
+    },
+    "name": "NordicSki",
+    "distance": 20887.8,
+    "moving_time": 9780,
+    "elapsed_time": 10609,
+    "total_elevation_gain": 424,
+    "type": "NordicSki",
+    "sport_type": "NordicSki",
+    "device_name": "Garmin Forerunner 265"
   },
   {
     "resource_state": 2,
@@ -1219,6 +1319,23 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
+      "firstname": "Blazing",
+      "lastname": "Bear"
+    },
+    "name": "Run",
+    "distance": 7280.7,
+    "moving_time": 2182,
+    "elapsed_time": 2182,
+    "total_elevation_gain": 80,
+    "type": "Run",
+    "sport_type": "Run",
+    "workout_type": null,
+    "device_name": "Garmin Forerunner 265"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
       "firstname": "Phantom",
       "lastname": "Porcupine"
     },
@@ -1265,6 +1382,23 @@
     "sport_type": "Ride",
     "workout_type": null,
     "device_name": "Garmin Edge 1030 Plus"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Blazing",
+      "lastname": "Bear"
+    },
+    "name": "Run",
+    "distance": 11388.7,
+    "moving_time": 3838,
+    "elapsed_time": 3870,
+    "total_elevation_gain": 218,
+    "type": "Run",
+    "sport_type": "Run",
+    "workout_type": null,
+    "device_name": "Garmin Forerunner 265"
   },
   {
     "resource_state": 2,
@@ -1465,6 +1599,22 @@
     "type": "Swim",
     "sport_type": "Swim",
     "device_name": "Garmin Forerunner 255"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Blazing",
+      "lastname": "Bear"
+    },
+    "name": "NordicSki",
+    "distance": 9987.1,
+    "moving_time": 3364,
+    "elapsed_time": 3634,
+    "total_elevation_gain": 203,
+    "type": "NordicSki",
+    "sport_type": "NordicSki",
+    "device_name": "Garmin Forerunner 265"
   },
   {
     "resource_state": 2,
@@ -2385,56 +2535,5 @@
     "type": "VirtualRide",
     "sport_type": "VirtualRide",
     "device_name": "Rouvy"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Nitro",
-      "lastname": "Newt"
-    },
-    "name": "Workout",
-    "distance": 0,
-    "moving_time": 4009,
-    "elapsed_time": 4009,
-    "total_elevation_gain": 0,
-    "type": "Workout",
-    "sport_type": "Workout",
-    "workout_type": null,
-    "device_name": "Garmin Forerunner 255"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Phantom",
-      "lastname": "Porcupine"
-    },
-    "name": "WeightTraining",
-    "distance": 0,
-    "moving_time": 4152,
-    "elapsed_time": 4152,
-    "total_elevation_gain": 0,
-    "type": "WeightTraining",
-    "sport_type": "WeightTraining",
-    "workout_type": 30,
-    "device_name": "Apple Watch Ultra 3"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Phantom",
-      "lastname": "Porcupine"
-    },
-    "name": "WeightTraining",
-    "distance": 0,
-    "moving_time": 2947,
-    "elapsed_time": 2947,
-    "total_elevation_gain": 0,
-    "type": "WeightTraining",
-    "sport_type": "WeightTraining",
-    "workout_type": 30,
-    "device_name": "Apple Watch Ultra 3"
   }
 ]

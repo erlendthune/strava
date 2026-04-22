@@ -1,0 +1,58 @@
+[
+  {
+    "resource_state": 2,
+    "firstname": "Comet",
+    "lastname": "Caterpillar",
+    "membership": "member",
+    "admin": false,
+    "owner": false
+  },
+  {
+    "resource_state": 2,
+    "firstname": "Phantom",
+    "lastname": "Porcupine",
+    "membership": "member",
+    "admin": false,
+    "owner": false
+  },
+  {
+    "resource_state": 2,
+    "firstname": "Blazing",
+    "lastname": "Bear",
+    "membership": "member",
+    "admin": false,
+    "owner": false
+  },
+  {
+    "resource_state": 2,
+    "firstname": "Phantom",
+    "lastname": "Porcupine",
+    "membership": "member",
+    "admin": false,
+    "owner": false
+  },
+  {
+    "resource_state": 2,
+    "firstname": "Phantom",
+    "lastname": "Porcupine",
+    "membership": "member",
+    "admin": false,
+    "owner": false
+  },
+  {
+    "resource_state": 2,
+    "firstname": "Zippy",
+    "lastname": "Zebra",
+    "membership": "member",
+    "admin": false,
+    "owner": false
+  },
+  {
+    "resource_state": 2,
+    "firstname": "Nitro",
+    "lastname": "Newt",
+    "membership": "member",
+    "admin": true,
+    "owner": true
+  }
+]

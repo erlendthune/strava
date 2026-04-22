@@ -121,6 +121,8 @@ jobs:
             return {
               ...activity,
               name: activity.sport_type,
+              start_date: activity.start_date,
+              start_date_local: activity.start_date_local,
               athlete: {
                 ...athlete,
                 firstname: nameMap[realName].split(' ')[0],
@@ -170,10 +172,10 @@ jobs:
             }
           }
           
-          // Keep only activities first seen within the last 7 days
+          // Keep only activities that occurred within the last 7 days (based on start_date)
           const cutoff = Date.now() - 7 * 24 * 60 * 60 * 1000;
           const before = history.length;
-          history = history.filter(a => new Date(a.first_seen).getTime() >= cutoff);
+          history = history.filter(a => new Date(a.start_date).getTime() >= cutoff);
           const removed = before - history.length;
           
           fs.writeFileSync('master_history.json', JSON.stringify(history, null, 2));

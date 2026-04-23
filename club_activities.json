@@ -47,7 +47,7 @@
     "total_elevation_gain": 129.2,
     "type": "Run",
     "sport_type": "Run",
-    "workout_type": null,
+    "workout_type": 0,
     "device_name": "Garmin Forerunner 245 Music"
   },
   {

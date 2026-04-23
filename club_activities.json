@@ -7,6 +7,40 @@
       "lastname": "Snail"
     },
     "name": "Ride",
+    "distance": 10828.7,
+    "moving_time": 1788,
+    "elapsed_time": 1863,
+    "total_elevation_gain": 186,
+    "type": "Ride",
+    "sport_type": "Ride",
+    "workout_type": null,
+    "device_name": "Garmin Forerunner 255"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Dashing",
+      "lastname": "Deer"
+    },
+    "name": "Run",
+    "distance": 5372.4,
+    "moving_time": 1577,
+    "elapsed_time": 1577,
+    "total_elevation_gain": 129.2,
+    "type": "Run",
+    "sport_type": "Run",
+    "workout_type": null,
+    "device_name": "Garmin Forerunner 245 Music"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Speeding",
+      "lastname": "Snail"
+    },
+    "name": "Ride",
     "distance": 10835.3,
     "moving_time": 1785,
     "elapsed_time": 1918,
@@ -1637,6 +1671,23 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
+      "firstname": "Sonic",
+      "lastname": "Sparrow"
+    },
+    "name": "Ride",
+    "distance": 57833.5,
+    "moving_time": 9136,
+    "elapsed_time": 9313,
+    "total_elevation_gain": 634,
+    "type": "Ride",
+    "sport_type": "Ride",
+    "workout_type": null,
+    "device_name": "Garmin Edge 1030 Plus"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
       "firstname": "Vortex",
       "lastname": "Vixen"
     },
@@ -1666,23 +1717,6 @@
     "sport_type": "Run",
     "workout_type": null,
     "device_name": "Garmin Forerunner 165 Music"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Sonic",
-      "lastname": "Sparrow"
-    },
-    "name": "Ride",
-    "distance": 57833.5,
-    "moving_time": 9136,
-    "elapsed_time": 9313,
-    "total_elevation_gain": 634,
-    "type": "Ride",
-    "sport_type": "Ride",
-    "workout_type": null,
-    "device_name": "Garmin Edge 1030 Plus"
   },
   {
     "resource_state": 2,

@@ -5357,5 +5357,23 @@
     "sport_type": "VirtualRide",
     "device_name": "Rouvy",
     "first_seen": "2026-04-22T14:05:45.264Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Speeding",
+      "lastname": "Snail"
+    },
+    "name": "Ride",
+    "distance": 10835.3,
+    "moving_time": 1785,
+    "elapsed_time": 1918,
+    "total_elevation_gain": 160,
+    "type": "Ride",
+    "sport_type": "Ride",
+    "workout_type": null,
+    "device_name": "Garmin Forerunner 255",
+    "first_seen": "2026-04-23T07:48:28.743Z"
   }
 ]

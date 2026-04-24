@@ -2459,23 +2459,6 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Dashing",
-      "lastname": "Deer"
-    },
-    "name": "Run",
-    "distance": 9508,
-    "moving_time": 2743,
-    "elapsed_time": 2743,
-    "total_elevation_gain": 0,
-    "type": "Run",
-    "sport_type": "Run",
-    "workout_type": 0,
-    "device_name": "Garmin Forerunner 245 Music"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
       "firstname": "Sonic",
       "lastname": "Sparrow"
     },

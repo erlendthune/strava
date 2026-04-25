@@ -3,6 +3,23 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
+      "firstname": "Sonic",
+      "lastname": "Sparrow"
+    },
+    "name": "Ride",
+    "distance": 15405.9,
+    "moving_time": 3559,
+    "elapsed_time": 3591,
+    "total_elevation_gain": 311,
+    "type": "Ride",
+    "sport_type": "Ride",
+    "workout_type": null,
+    "device_name": "Garmin Edge 1030 Plus"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
       "firstname": "Speeding",
       "lastname": "Snail"
     },
@@ -831,23 +848,6 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Sonic",
-      "lastname": "Sparrow"
-    },
-    "name": "Ride",
-    "distance": 47913.6,
-    "moving_time": 8701,
-    "elapsed_time": 10269,
-    "total_elevation_gain": 571,
-    "type": "Ride",
-    "sport_type": "Ride",
-    "workout_type": null,
-    "device_name": "Garmin Edge 1030 Plus"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
       "firstname": "Dashing",
       "lastname": "Deer"
     },
@@ -860,6 +860,23 @@
     "sport_type": "Run",
     "workout_type": null,
     "device_name": "Garmin Forerunner 245 Music"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Sonic",
+      "lastname": "Sparrow"
+    },
+    "name": "Ride",
+    "distance": 47913.6,
+    "moving_time": 8701,
+    "elapsed_time": 10269,
+    "total_elevation_gain": 571,
+    "type": "Ride",
+    "sport_type": "Ride",
+    "workout_type": null,
+    "device_name": "Garmin Edge 1030 Plus"
   },
   {
     "resource_state": 2,
@@ -2416,23 +2433,6 @@
     "moving_time": 733,
     "elapsed_time": 733,
     "total_elevation_gain": 80.2,
-    "type": "Ride",
-    "sport_type": "Ride",
-    "workout_type": null,
-    "device_name": "Garmin Forerunner 245 Music"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Dashing",
-      "lastname": "Deer"
-    },
-    "name": "Ride",
-    "distance": 2824.3,
-    "moving_time": 736,
-    "elapsed_time": 736,
-    "total_elevation_gain": 81.2,
     "type": "Ride",
     "sport_type": "Ride",
     "workout_type": null,

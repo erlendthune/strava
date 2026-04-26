@@ -135,38 +135,95 @@ jobs:
         run: |
           node << 'EOF'
           const fs = require('fs');
-          const crypto = require('crypto');
           
-          const funnyNames = [
-            "Rapid Rabbit", "Speedy Cheetah", "Turbo Tortoise", "Zippy Zebra",
-            "Swift Swan", "Dashing Deer", "Blazing Bear", "Zooming Zebra",
-            "Mighty Mongoose", "Speeding Snail", "Nitro Newt", "Velocity Vole",
-            "Sonic Sparrow", "Specter Squirrel", "Rocket Rhino", "Cosmic Coyote",
-            "Quantum Quail", "Phantom Porcupine", "Lightning Llama", "Thunder Tapir",
-            "Comet Caterpillar", "Vortex Vixen", "Warp Weasel", "Flux Flamingo"
-          ];
+          // Organize funny names by first letter for anonymization
+          const firstNames = {
+            'A': ['Agile', 'Alert', 'Acrobatic', 'Athletic'],
+            'B': ['Blazing', 'Bold', 'Bouncy', 'Brilliant'],
+            'C': ['Cosmic', 'Clever', 'Crazy', 'Courageous'],
+            'D': ['Dashing', 'Dynamic', 'Daring', 'Determined'],
+            'E': ['Energetic', 'Eager', 'Elite', 'Epic'],
+            'F': ['Flux', 'Fast', 'Ferocious', 'Fearless'],
+            'G': ['Golden', 'Glorious', 'Graceful', 'Gallant'],
+            'H': ['Heroic', 'Hornet', 'Happy', 'Mighty'],
+            'J': ['Jolly', 'Jumping', 'Jetpack', 'Jazz'],
+            'K': ['King', 'Keen', 'Knight', 'Kinetic'],
+            'L': ['Lightning', 'Loyal', 'Lively', 'Luminous'],
+            'M': ['Mighty', 'Marvellous', 'Mystic', 'Monumental'],
+            'N': ['Nitro', 'Nimble', 'Noble', 'Nautical'],
+            'P': ['Phantom', 'Power', 'Phoenix', 'Pristine'],
+            'Q': ['Quantum', 'Quick', 'Quirky', 'Quest'],
+            'R': ['Rapid', 'Rocket', 'Royal', 'Radiant'],
+            'S': ['Speedy', 'Sonic', 'Stellar', 'Supreme'],
+            'T': ['Turbo', 'Thunder', 'Titanic', 'Tornado'],
+            'V': ['Velocity', 'Vortex', 'Vibrant', 'Victory'],
+            'W': ['Warp', 'Wild', 'Warrior', 'Wise'],
+            'Z': ['Zippy', 'Zealous', 'Zenith', 'Zero']
+          };
           
-          function hashString(str) {
-            // Use 8 hex chars for a well-distributed 32-bit integer
-            const hex = crypto.createHash('md5').update(str).digest('hex');
-            return parseInt(hex.substring(0, 8), 16);
-          }
+          const lastNames = {
+            'A': ['Antelope', 'Albatross', 'Anaconda', 'Armadillo'],
+            'B': ['Bear', 'Badger', 'Butterfly', 'Buffalo'],
+            'C': ['Cheetah', 'Caterpillar', 'Coyote', 'Crocodile'],
+            'D': ['Deer', 'Dolphin', 'Duck', 'Dingo'],
+            'E': ['Eagle', 'Eel', 'Elephant', 'Elk'],
+            'F': ['Falcon', 'Flamingo', 'Fox', 'Frog'],
+            'G': ['Gazelle', 'Giraffe', 'Goose', 'Grasshopper'],
+            'H': ['Horse', 'Hawk', 'Hamster', 'Hedgehog'],
+            'J': ['Jaguar', 'Jellyfish', 'Jay', 'Jackal'],
+            'K': ['Koala', 'Kingfisher', 'Kangaroo', 'Kestrel'],
+            'L': ['Llama', 'Lion', 'Lynx', 'Lemur'],
+            'M': ['Mongoose', 'Moose', 'Mantis', 'Macaw'],
+            'N': ['Newt', 'Narwhal', 'Nightingale', 'Numbat'],
+            'P': ['Porcupine', 'Penguin', 'Panther', 'Parrot'],
+            'Q': ['Quail', 'Quelea', 'Quokka', 'Quintail'],
+            'R': ['Rabbit', 'Rhino', 'Raven', 'Raccoon'],
+            'S': ['Swan', 'Sparrow', 'Squirrel', 'Snail'],
+            'T': ['Tortoise', 'Tapir', 'Tiger', 'Toucan'],
+            'V': ['Vole', 'Viper', 'Vulture', 'Vicuña'],
+            'W': ['Weasel', 'Wolf', 'Wasp', 'Walrus'],
+            'Z': ['Zebra', 'Zorilla', 'Zander', 'Zonkey']
+          };
           
-          // Build a collision-free name map for all real names up front.
-          // Names are sorted before assignment so the result is stable across runs.
           function buildNameMap(realNames) {
             const unique = [...new Set(realNames)].sort();
             const assigned = {};
-            const used = new Set();
+            const usedCombos = new Set();
+            
             for (const realName of unique) {
-              let index = hashString(realName) % funnyNames.length;
-              // Linear probe until we find an unused slot
-              while (used.has(funnyNames[index])) {
-                index = (index + 1) % funnyNames.length;
+              const parts = realName.split(' ');
+              if (parts.length < 2) continue;
+              
+              const firstLetter = parts[0].toUpperCase()[0];
+              const lastLetter = parts[1].toUpperCase()[0];
+              
+              // Get available names for this person's initials
+              const availableFirst = firstNames[firstLetter] || firstNames['A'];
+              const availableLast = lastNames[lastLetter] || lastNames['A'];
+              
+              // Find an unused combination
+              let selected = null;
+              for (const fname of availableFirst) {
+                for (const lname of availableLast) {
+                  const combo = `${fname} ${lname}`;
+                  if (!usedCombos.has(combo)) {
+                    selected = combo;
+                    usedCombos.add(combo);
+                    break;
+                  }
+                }
+                if (selected) break;
               }
-              assigned[realName] = funnyNames[index];
-              used.add(funnyNames[index]);
+              
+              // Fallback if we somehow run out (shouldn't happen with 7 members)
+              if (!selected) {
+                selected = `${availableFirst[0]} ${availableLast[0]}`;
+                usedCombos.add(selected);
+              }
+              
+              assigned[realName] = selected;
             }
+            
             return assigned;
           }
           

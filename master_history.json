@@ -5533,5 +5533,22 @@
     "sport_type": "Snowboard",
     "device_name": "Garmin Forerunner 255",
     "first_seen": "2026-04-26T07:25:56.290Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Speeding",
+      "lastname": "Snail"
+    },
+    "name": "Walk",
+    "distance": 4231.6,
+    "moving_time": 3361,
+    "elapsed_time": 3699,
+    "total_elevation_gain": 62,
+    "type": "Walk",
+    "sport_type": "Walk",
+    "device_name": "Garmin Forerunner 255",
+    "first_seen": "2026-04-26T08:58:28.868Z"
   }
 ]

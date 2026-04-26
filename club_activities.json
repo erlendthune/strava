@@ -6,6 +6,22 @@
       "firstname": "Speeding",
       "lastname": "Snail"
     },
+    "name": "Walk",
+    "distance": 4231.6,
+    "moving_time": 3361,
+    "elapsed_time": 3699,
+    "total_elevation_gain": 62,
+    "type": "Walk",
+    "sport_type": "Walk",
+    "device_name": "Garmin Forerunner 255"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Speeding",
+      "lastname": "Snail"
+    },
     "name": "Snowboard",
     "distance": 4394.3,
     "moving_time": 4278,
@@ -813,23 +829,6 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Blazing",
-      "lastname": "Bear"
-    },
-    "name": "Run",
-    "distance": 2445.6,
-    "moving_time": 848,
-    "elapsed_time": 890,
-    "total_elevation_gain": 62,
-    "type": "Run",
-    "sport_type": "Run",
-    "workout_type": null,
-    "device_name": "Garmin fēnix 5S Plus"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
       "firstname": "Sonic",
       "lastname": "Sparrow"
     },
@@ -842,6 +841,23 @@
     "sport_type": "Ride",
     "workout_type": null,
     "device_name": "Garmin Edge 1030 Plus"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Blazing",
+      "lastname": "Bear"
+    },
+    "name": "Run",
+    "distance": 2445.6,
+    "moving_time": 848,
+    "elapsed_time": 890,
+    "total_elevation_gain": 62,
+    "type": "Run",
+    "sport_type": "Run",
+    "workout_type": null,
+    "device_name": "Garmin fēnix 5S Plus"
   },
   {
     "resource_state": 2,

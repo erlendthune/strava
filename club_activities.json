@@ -6,13 +6,13 @@
       "firstname": "Speeding",
       "lastname": "Snail"
     },
-    "name": "NordicSki",
+    "name": "Snowboard",
     "distance": 4394.3,
     "moving_time": 4278,
     "elapsed_time": 7683,
     "total_elevation_gain": 398,
-    "type": "NordicSki",
-    "sport_type": "NordicSki",
+    "type": "Snowboard",
+    "sport_type": "Snowboard",
     "device_name": "Garmin Forerunner 255"
   },
   {

@@ -5516,5 +5516,22 @@
     "sport_type": "NordicSki",
     "device_name": "Garmin Forerunner 255",
     "first_seen": "2026-04-26T05:37:32.722Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Speeding",
+      "lastname": "Snail"
+    },
+    "name": "Snowboard",
+    "distance": 4394.3,
+    "moving_time": 4278,
+    "elapsed_time": 7683,
+    "total_elevation_gain": 398,
+    "type": "Snowboard",
+    "sport_type": "Snowboard",
+    "device_name": "Garmin Forerunner 255",
+    "first_seen": "2026-04-26T07:25:56.290Z"
   }
 ]

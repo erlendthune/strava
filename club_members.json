@@ -1,0 +1,58 @@
+[
+  {
+    "resource_state": 2,
+    "firstname": "Agile",
+    "lastname": "Zebra",
+    "membership": "member",
+    "admin": false,
+    "owner": false
+  },
+  {
+    "resource_state": 2,
+    "firstname": "Heroic",
+    "lastname": "Rabbit",
+    "membership": "member",
+    "admin": false,
+    "owner": false
+  },
+  {
+    "resource_state": 2,
+    "firstname": "Jolly",
+    "lastname": "Mongoose",
+    "membership": "member",
+    "admin": false,
+    "owner": false
+  },
+  {
+    "resource_state": 2,
+    "firstname": "King",
+    "lastname": "Horse",
+    "membership": "member",
+    "admin": false,
+    "owner": false
+  },
+  {
+    "resource_state": 2,
+    "firstname": "Mighty",
+    "lastname": "Horse",
+    "membership": "member",
+    "admin": false,
+    "owner": false
+  },
+  {
+    "resource_state": 2,
+    "firstname": "Turbo",
+    "lastname": "Bear",
+    "membership": "member",
+    "admin": false,
+    "owner": false
+  },
+  {
+    "resource_state": 2,
+    "firstname": "Energetic",
+    "lastname": "Tortoise",
+    "membership": "member",
+    "admin": true,
+    "owner": true
+  }
+]

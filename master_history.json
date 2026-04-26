@@ -5499,5 +5499,22 @@
     "workout_type": null,
     "device_name": "Garmin Forerunner 245 Music",
     "first_seen": "2026-04-25T16:39:02.176Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Speeding",
+      "lastname": "Snail"
+    },
+    "name": "NordicSki",
+    "distance": 4394.3,
+    "moving_time": 4278,
+    "elapsed_time": 7683,
+    "total_elevation_gain": 398,
+    "type": "NordicSki",
+    "sport_type": "NordicSki",
+    "device_name": "Garmin Forerunner 255",
+    "first_seen": "2026-04-26T05:37:32.722Z"
   }
 ]

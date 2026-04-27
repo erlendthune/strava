@@ -2673,24 +2673,6 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
-    },
-    "name": "Workout",
-    "distance": 0,
-    "moving_time": 4530,
-    "elapsed_time": 4530,
-    "total_elevation_gain": 0,
-    "type": "Workout",
-    "sport_type": "Workout",
-    "workout_type": null,
-    "device_name": "Garmin Forerunner 255",
-    "activity_date": null
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
       "firstname": "Agile",
       "lastname": "Zebra"
     },

@@ -21,6 +21,31 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Initialize Config
+        run: |
+          node << 'EOF'
+          const fs = require('fs');
+          
+          // If master_history.json doesn't exist, reset config.json with today's date
+          if (!fs.existsSync('master_history.json')) {
+            const today = new Date().toISOString();
+            const config = {
+              startDate: today
+            };
+            fs.writeFileSync('config.json', JSON.stringify(config, null, 2));
+            console.log(`Reset config.json with start date: ${today}`);
+          } else if (!fs.existsSync('config.json')) {
+            // If master_history exists but config doesn't, use current date as fallback
+            const config = {
+              startDate: new Date().toISOString()
+            };
+            fs.writeFileSync('config.json', JSON.stringify(config, null, 2));
+            console.log(`Created missing config.json with current date`);
+          } else {
+            console.log('Both files exist, no config change needed');
+          }
+          EOF
+
       - name: Get Fresh Access Token
         id: strava_auth
         run: |
@@ -122,13 +147,65 @@ jobs:
           
           fetchAllActivities(token, clubId)
             .then(activities => {
-              fs.writeFileSync('club_activities.json', JSON.stringify(activities, null, 2));
+              fs.writeFileSync('club_activities_raw.json', JSON.stringify(activities, null, 2));
               console.log(`Fetched ${activities.length} activities`);
             })
             .catch(err => {
               console.error('Error:', err.message);
               process.exit(1);
             });
+          EOF
+
+      - name: Mark Activity Dates
+        run: |
+          node << 'EOF'
+          const fs = require('fs');
+          
+          function fingerprint(a) {
+            // Create a stable fingerprint for each activity
+            return [
+              a.athlete.firstname,
+              a.athlete.lastname,
+              a.type,
+              a.distance,
+              a.moving_time,
+              a.elapsed_time,
+              a.total_elevation_gain
+            ].join('|');
+          }
+          
+          const currentActivities = JSON.parse(fs.readFileSync('club_activities_raw.json', 'utf8'));
+          const now = new Date().toISOString();
+          
+          // Load previous activities if they exist
+          let previousActivities = [];
+          if (fs.existsSync('club_activities.json')) {
+            previousActivities = JSON.parse(fs.readFileSync('club_activities.json', 'utf8'));
+          }
+          
+          // Build a map of previous activities by fingerprint
+          const previousMap = new Map();
+          previousActivities.forEach(activity => {
+            const fp = fingerprint(activity);
+            previousMap.set(fp, activity.activity_date || null);
+          });
+          
+          // Mark each current activity with a date
+          const markedActivities = currentActivities.map(activity => {
+            const fp = fingerprint(activity);
+            const existingDate = previousMap.get(fp);
+            
+            return {
+              ...activity,
+              activity_date: existingDate !== undefined ? existingDate : now
+            };
+          });
+          
+          fs.writeFileSync('club_activities.json', JSON.stringify(markedActivities, null, 2));
+          
+          const newCount = markedActivities.filter(a => a.activity_date === now).length;
+          console.log(`Marked ${newCount} new activities with date ${now}`);
+          console.log(`${markedActivities.length - newCount} activities were already tracked`);
           EOF
 
       - name: Anonymize Names
@@ -295,36 +372,27 @@ jobs:
           }
           
           const seen = new Set(history.map(fingerprint));
-          const nowIso = new Date().toISOString();
           let added = 0;
           
           for (const activity of current) {
             const fp = fingerprint(activity);
             if (!seen.has(fp)) {
               seen.add(fp);
-              history.push({ ...activity, first_seen: nowIso });
+              // Preserve the activity_date from the marked activities
+              history.push(activity);
               added++;
             }
           }
           
-          // Keep only activities from the last 7 days (use start_date if available, otherwise first_seen)
-          const cutoff = Date.now() - 7 * 24 * 60 * 60 * 1000;
-          const before = history.length;
-          history = history.filter(a => {
-            const dateToCheck = a.start_date || a.first_seen;
-            return new Date(dateToCheck).getTime() >= cutoff;
-          });
-          const removed = before - history.length;
-          
           fs.writeFileSync('master_history.json', JSON.stringify(history, null, 2));
-          console.log(`Added ${added} new activities, pruned ${removed} older than 7 days. Total: ${history.length}`);
+          console.log(`Added ${added} new activities. Total: ${history.length}`);
           EOF
 
       - name: Commit and Push if changed
         run: |
           git config --global user.name "GitHub Action"
           git config --global user.email "action@github.com"
-          git add club_activities.json club_members.json master_history.json
+          git add club_activities.json club_members.json master_history.json config.json
           git diff --cached --quiet && exit 0
           git commit -m "Update Strava club activities"
           git push --force https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main

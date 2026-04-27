@@ -144,9 +144,8 @@
 <body>
     <div class="container">
         <h1>🏆 Bouvet Kristiansand Strava Leaderboard</h1>
-        <div class="subtitle">
-            <p>Aktiviteter fra de siste 7 dagene</p>
-            <p>Navnene er anonymisert inntil videre...</p>
+        <div class="subtitle" id="subtitle">
+            <p>Loading...</p>
         </div>
         
         <div class="notice">
@@ -164,27 +163,48 @@
     <script>
         async function loadLeaderboard() {
             try {
-                // Load activities and members
-                const [activitiesResponse, membersResponse] = await Promise.all([
+                // Load config, activities and members
+                const [configResponse, activitiesResponse, membersResponse] = await Promise.all([
+                    fetch('config.json'),
                     fetch('master_history.json'),
                     fetch('club_members.json')
                 ]);
                 
+                const config = await configResponse.json();
                 const activities = await activitiesResponse.json();
                 const members = await membersResponse.json();
                 
-                // Calculate 7 days ago
-                const now = new Date();
-                const sevenDaysAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
+                // Parse and format start date
+                const startDate = new Date(config.startDate);
+                const displayDate = startDate.toLocaleDateString('en-US', { 
+                    year: 'numeric', 
+                    month: 'long', 
+                    day: 'numeric' 
+                });
                 
-                // Aggregate stats by athlete (filtered to last 7 days)
+                // Update subtitle with start date
+                document.getElementById('subtitle').innerHTML = `
+                    <p>Activities since ${displayDate}</p>
+                    <p>Names are anonymized - your initials reveal your identity 😉</p>
+                `;
+                
+                // Parse start date
+                const now = new Date();
+                
+                // Aggregate stats by athlete (filtered by start date)
                 const athleteStats = {};
                 
                 activities.forEach(activity => {
-                    // Check if activity is within the last 7 days
-                    const activityDate = new Date(activity.first_seen);
-                    if (activityDate < sevenDaysAgo) {
-                        return; // Skip activities older than 7 days
+                    // Skip activities with no date (historical activities from before tracking started)
+                    if (!activity.activity_date) {
+                        return;
+                    }
+                    
+                    // Check if activity is after the start date
+                    const activityDate = new Date(activity.activity_date);
+                    
+                    if (activityDate < startDate) {
+                        return; // Skip activities before start date
                     }
                     
                     const athlete = activity.athlete;
@@ -234,7 +254,7 @@
                     .sort((a, b) => a.name.localeCompare(b.name));
                 
                 // Generate active members table
-                let html = '<h2>🔥 Active This Week</h2>';
+                let html = '<h2>🔥 Active Since Start</h2>';
                 html += `
                     <table>
                         <thead>
@@ -273,8 +293,8 @@
                 
                 // Generate inactive members section if any
                 if (inactiveMembers.length > 0) {
-                    html += '<h2>💤 Missing from the Board This Week</h2>';
-                    html += '<p class="subtitle inactive-message">These members haven\'t logged activities or their privacy settings prevent visibility.</p>';
+                    html += '<h2>💤 Not Yet Active</h2>';
+                    html += '<p class="subtitle inactive-message">These members haven\'t logged activities yet or their privacy settings prevent visibility.</p>';
                     html += `
                         <table>
                             <thead>
@@ -290,7 +310,7 @@
                         html += `
                             <tr class="inactive-row">
                                 <td class="name">${athlete.name}</td>
-                                <td class="metric inactive-message">No activities this week</td>
+                                <td class="metric inactive-message">No activities yet</td>
                             </tr>
                         `;
                     });
@@ -302,7 +322,7 @@
                 
                 // Update member count
                 document.getElementById('memberCount').innerHTML = 
-                    `${activeMembers.length} of ${uniqueMembers.length} members active this week`;
+                    `${activeMembers.length} of ${uniqueMembers.length} members active since ${displayDate}`;
                 
                 // Update timestamp
                 document.getElementById('lastUpdate').innerHTML = `Last updated: ${now.toLocaleString()}`;

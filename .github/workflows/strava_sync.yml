@@ -147,65 +147,13 @@ jobs:
           
           fetchAllActivities(token, clubId)
             .then(activities => {
-              fs.writeFileSync('club_activities_raw.json', JSON.stringify(activities, null, 2));
+              fs.writeFileSync('club_activities.json', JSON.stringify(activities, null, 2));
               console.log(`Fetched ${activities.length} activities`);
             })
             .catch(err => {
               console.error('Error:', err.message);
               process.exit(1);
             });
-          EOF
-
-      - name: Mark Activity Dates
-        run: |
-          node << 'EOF'
-          const fs = require('fs');
-          
-          function fingerprint(a) {
-            // Create a stable fingerprint for each activity
-            return [
-              a.athlete.firstname,
-              a.athlete.lastname,
-              a.type,
-              a.distance,
-              a.moving_time,
-              a.elapsed_time,
-              a.total_elevation_gain
-            ].join('|');
-          }
-          
-          const currentActivities = JSON.parse(fs.readFileSync('club_activities_raw.json', 'utf8'));
-          const now = new Date().toISOString();
-          
-          // Load previous activities if they exist
-          let previousActivities = [];
-          if (fs.existsSync('club_activities.json')) {
-            previousActivities = JSON.parse(fs.readFileSync('club_activities.json', 'utf8'));
-          }
-          
-          // Build a map of previous activities by fingerprint
-          const previousMap = new Map();
-          previousActivities.forEach(activity => {
-            const fp = fingerprint(activity);
-            previousMap.set(fp, activity.activity_date || null);
-          });
-          
-          // Mark each current activity with a date
-          const markedActivities = currentActivities.map(activity => {
-            const fp = fingerprint(activity);
-            const existingDate = previousMap.get(fp);
-            
-            return {
-              ...activity,
-              activity_date: existingDate !== undefined ? existingDate : now
-            };
-          });
-          
-          fs.writeFileSync('club_activities.json', JSON.stringify(markedActivities, null, 2));
-          
-          const newCount = markedActivities.filter(a => a.activity_date === now).length;
-          console.log(`Marked ${newCount} new activities with date ${now}`);
-          console.log(`${markedActivities.length - newCount} activities were already tracked`);
           EOF
 
       - name: Anonymize Names
@@ -365,27 +313,61 @@ jobs:
           }
           
           const current = JSON.parse(fs.readFileSync('club_activities.json', 'utf8'));
+          const now = new Date().toISOString();
           
           let history = [];
-          if (fs.existsSync('master_history.json')) {
+          const isFirstRun = !fs.existsSync('master_history.json');
+          
+          if (!isFirstRun) {
             history = JSON.parse(fs.readFileSync('master_history.json', 'utf8'));
           }
           
-          const seen = new Set(history.map(fingerprint));
+          // Build a map of existing activities by fingerprint
+          const historyMap = new Map();
+          history.forEach(activity => {
+            const fp = fingerprint(activity);
+            historyMap.set(fp, activity);
+          });
+          
+          // Process current activities
           let added = 0;
+          let updated = 0;
+          const newHistory = [];
           
           for (const activity of current) {
             const fp = fingerprint(activity);
-            if (!seen.has(fp)) {
-              seen.add(fp);
-              // Preserve the activity_date from the marked activities
-              history.push(activity);
-              added++;
+            const existing = historyMap.get(fp);
+            
+            if (existing) {
+              // Activity already exists, preserve its activity_date
+              newHistory.push(existing);
+              updated++;
+            } else {
+              // New activity
+              if (isFirstRun) {
+                // First run: all activities are historical, mark as null
+                newHistory.push({
+                  ...activity,
+                  activity_date: null
+                });
+              } else {
+                // Subsequent run: new activity, mark with today's date
+                newHistory.push({
+                  ...activity,
+                  activity_date: now
+                });
+                added++;
+              }
             }
           }
           
-          fs.writeFileSync('master_history.json', JSON.stringify(history, null, 2));
-          console.log(`Added ${added} new activities. Total: ${history.length}`);
+          fs.writeFileSync('master_history.json', JSON.stringify(newHistory, null, 2));
+          
+          if (isFirstRun) {
+            console.log(`First run: Marked ${newHistory.length} historical activities (activity_date: null)`);
+          } else {
+            console.log(`Added ${added} new activities, kept ${updated} existing. Total: ${newHistory.length}`);
+          }
           EOF
 
       - name: Commit and Push if changed

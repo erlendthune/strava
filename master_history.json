@@ -2754,5 +2754,23 @@
     "sport_type": "VirtualRide",
     "device_name": "Rouvy",
     "activity_date": "2026-04-27T17:19:38.292Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Turbo",
+      "lastname": "Bear"
+    },
+    "name": "Run",
+    "distance": 6306.9,
+    "moving_time": 1665,
+    "elapsed_time": 1665,
+    "total_elevation_gain": 55.6,
+    "type": "Run",
+    "sport_type": "Run",
+    "workout_type": null,
+    "device_name": "Garmin Forerunner 245 Music",
+    "activity_date": "2026-04-27T17:23:15.340Z"
   }
 ]

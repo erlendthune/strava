@@ -3,6 +3,23 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
+      "firstname": "Energetic",
+      "lastname": "Tortoise"
+    },
+    "name": "Walk",
+    "distance": 1768.7,
+    "moving_time": 1301,
+    "elapsed_time": 2352,
+    "total_elevation_gain": 10,
+    "type": "Walk",
+    "sport_type": "Walk",
+    "device_name": "Garmin Forerunner 255",
+    "activity_date": "2026-04-29T12:16:14.144Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
       "firstname": "Heroic",
       "lastname": "Rabbit"
     },
@@ -858,24 +875,6 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
-    },
-    "name": "Ride",
-    "distance": 2998.7,
-    "moving_time": 744,
-    "elapsed_time": 744,
-    "total_elevation_gain": 99.1,
-    "type": "Ride",
-    "sport_type": "Ride",
-    "workout_type": null,
-    "device_name": "Garmin Forerunner 245 Music",
-    "activity_date": null
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
       "firstname": "Energetic",
       "lastname": "Tortoise"
     },
@@ -888,6 +887,24 @@
     "sport_type": "Workout",
     "workout_type": null,
     "device_name": "Garmin Forerunner 255",
+    "activity_date": null
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Turbo",
+      "lastname": "Bear"
+    },
+    "name": "Ride",
+    "distance": 2998.7,
+    "moving_time": 744,
+    "elapsed_time": 744,
+    "total_elevation_gain": 99.1,
+    "type": "Ride",
+    "sport_type": "Ride",
+    "workout_type": null,
+    "device_name": "Garmin Forerunner 245 Music",
     "activity_date": null
   },
   {

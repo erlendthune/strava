@@ -3,6 +3,40 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
+      "firstname": "Mighty",
+      "lastname": "Horse"
+    },
+    "name": "Run",
+    "distance": 6642.1,
+    "moving_time": 2058,
+    "elapsed_time": 2058,
+    "total_elevation_gain": 92.5,
+    "type": "Run",
+    "sport_type": "Run",
+    "workout_type": null,
+    "device_name": "Garmin vívoactive 5"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Heroic",
+      "lastname": "Rabbit"
+    },
+    "name": "Ride",
+    "distance": 18487,
+    "moving_time": 4865,
+    "elapsed_time": 6255,
+    "total_elevation_gain": 383,
+    "type": "Ride",
+    "sport_type": "Ride",
+    "workout_type": null,
+    "device_name": "Garmin Edge 1030 Plus"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
       "firstname": "Energetic",
       "lastname": "Tortoise"
     },
@@ -263,7 +297,7 @@
     "total_elevation_gain": 51.7,
     "type": "Run",
     "sport_type": "Run",
-    "workout_type": null,
+    "workout_type": 0,
     "device_name": "Garmin vívoactive 5"
   },
   {
@@ -827,6 +861,22 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
+      "firstname": "Mighty",
+      "lastname": "Horse"
+    },
+    "name": "Walk",
+    "distance": 984.7,
+    "moving_time": 806,
+    "elapsed_time": 996,
+    "total_elevation_gain": 0,
+    "type": "Walk",
+    "sport_type": "Walk",
+    "device_name": "Garmin vívoactive 5"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
       "firstname": "King",
       "lastname": "Horse"
     },
@@ -839,22 +889,6 @@
     "sport_type": "WeightTraining",
     "workout_type": 30,
     "device_name": "Apple Watch Ultra 3"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Mighty",
-      "lastname": "Horse"
-    },
-    "name": "Walk",
-    "distance": 984.7,
-    "moving_time": 806,
-    "elapsed_time": 996,
-    "total_elevation_gain": 0,
-    "type": "Walk",
-    "sport_type": "Walk",
-    "device_name": "Garmin vívoactive 5"
   },
   {
     "resource_state": 2,

@@ -3,6 +3,24 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
+      "firstname": "Energetic",
+      "lastname": "Tortoise"
+    },
+    "name": "Run",
+    "distance": 10014.1,
+    "moving_time": 3579,
+    "elapsed_time": 3743,
+    "total_elevation_gain": 159,
+    "type": "Run",
+    "sport_type": "Run",
+    "workout_type": null,
+    "device_name": "Garmin Forerunner 255",
+    "activity_date": "2026-04-30T17:18:43.314Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
       "firstname": "Turbo",
       "lastname": "Bear"
     },
@@ -858,23 +876,6 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Mighty",
-      "lastname": "Horse"
-    },
-    "name": "Walk",
-    "distance": 984.7,
-    "moving_time": 806,
-    "elapsed_time": 996,
-    "total_elevation_gain": 0,
-    "type": "Walk",
-    "sport_type": "Walk",
-    "device_name": "Garmin vívoactive 5",
-    "activity_date": "2026-04-30T15:08:00.462Z"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
       "firstname": "King",
       "lastname": "Horse"
     },
@@ -888,6 +889,23 @@
     "workout_type": 30,
     "device_name": "Apple Watch Ultra 3",
     "activity_date": null
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Mighty",
+      "lastname": "Horse"
+    },
+    "name": "Walk",
+    "distance": 984.7,
+    "moving_time": 806,
+    "elapsed_time": 996,
+    "total_elevation_gain": 0,
+    "type": "Walk",
+    "sport_type": "Walk",
+    "device_name": "Garmin vívoactive 5",
+    "activity_date": "2026-04-30T15:08:00.462Z"
   },
   {
     "resource_state": 2,
@@ -2720,24 +2738,6 @@
     "sport_type": "Workout",
     "workout_type": null,
     "device_name": "Garmin Forerunner 255",
-    "activity_date": null
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
-    },
-    "name": "Run",
-    "distance": 8184.6,
-    "moving_time": 2604,
-    "elapsed_time": 2651,
-    "total_elevation_gain": 125,
-    "type": "Run",
-    "sport_type": "Run",
-    "workout_type": null,
-    "device_name": "Garmin Forerunner 245 Music",
     "activity_date": null
   },
   {

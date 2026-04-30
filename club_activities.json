@@ -2507,22 +2507,6 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
-    },
-    "name": "Walk",
-    "distance": 9382.8,
-    "moving_time": 6476,
-    "elapsed_time": 6692,
-    "total_elevation_gain": 163,
-    "type": "Walk",
-    "sport_type": "Walk",
-    "device_name": "Garmin Forerunner 255"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
       "firstname": "Agile",
       "lastname": "Zebra"
     },

@@ -3,6 +3,24 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
+      "firstname": "Heroic",
+      "lastname": "Rabbit"
+    },
+    "name": "Ride",
+    "distance": 27873.4,
+    "moving_time": 6979,
+    "elapsed_time": 7187,
+    "total_elevation_gain": 592,
+    "type": "Ride",
+    "sport_type": "Ride",
+    "workout_type": null,
+    "device_name": "Garmin Edge 1030 Plus",
+    "activity_date": "2026-05-01T14:53:58.431Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
       "firstname": "Mighty",
       "lastname": "Horse"
     },

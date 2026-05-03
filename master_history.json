@@ -3,6 +3,24 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
+      "firstname": "Mighty",
+      "lastname": "Horse"
+    },
+    "name": "Run",
+    "distance": 12023.8,
+    "moving_time": 3919,
+    "elapsed_time": 3919,
+    "total_elevation_gain": 147.3,
+    "type": "Run",
+    "sport_type": "Run",
+    "workout_type": null,
+    "device_name": "Garmin vívoactive 5",
+    "activity_date": "2026-05-03T13:05:07.585Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
       "firstname": "Turbo",
       "lastname": "Bear"
     },
@@ -857,23 +875,6 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
-    },
-    "name": "Walk",
-    "distance": 9810.9,
-    "moving_time": 7117,
-    "elapsed_time": 7193,
-    "total_elevation_gain": 211,
-    "type": "Walk",
-    "sport_type": "Walk",
-    "device_name": "Garmin Forerunner 255",
-    "activity_date": null
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
       "firstname": "Heroic",
       "lastname": "Rabbit"
     },
@@ -886,6 +887,23 @@
     "sport_type": "Ride",
     "workout_type": null,
     "device_name": "Garmin Edge 1030 Plus",
+    "activity_date": null
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Energetic",
+      "lastname": "Tortoise"
+    },
+    "name": "Walk",
+    "distance": 9810.9,
+    "moving_time": 7117,
+    "elapsed_time": 7193,
+    "total_elevation_gain": 211,
+    "type": "Walk",
+    "sport_type": "Walk",
+    "device_name": "Garmin Forerunner 255",
     "activity_date": null
   },
   {

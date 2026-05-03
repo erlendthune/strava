@@ -2641,23 +2641,6 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
-    },
-    "name": "Run",
-    "distance": 11460.5,
-    "moving_time": 5557,
-    "elapsed_time": 5565,
-    "total_elevation_gain": 187,
-    "type": "Run",
-    "sport_type": "Run",
-    "workout_type": null,
-    "device_name": "Garmin Forerunner 255"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
       "firstname": "Heroic",
       "lastname": "Rabbit"
     },

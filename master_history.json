@@ -7,6 +7,23 @@
       "lastname": "Bear"
     },
     "name": "Walk",
+    "distance": 3038,
+    "moving_time": 2520,
+    "elapsed_time": 2581,
+    "total_elevation_gain": 58,
+    "type": "Walk",
+    "sport_type": "Walk",
+    "device_name": "Garmin Forerunner 245 Music",
+    "activity_date": "2026-05-03T11:40:17.064Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Turbo",
+      "lastname": "Bear"
+    },
+    "name": "Walk",
     "distance": 3098.8,
     "moving_time": 2666,
     "elapsed_time": 3118,

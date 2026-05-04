@@ -6,6 +6,57 @@
       "firstname": "Turbo",
       "lastname": "Bear"
     },
+    "name": "Run",
+    "distance": 5266.4,
+    "moving_time": 1726,
+    "elapsed_time": 1726,
+    "total_elevation_gain": 91.7,
+    "type": "Run",
+    "sport_type": "Run",
+    "workout_type": null,
+    "device_name": "Garmin Forerunner 245 Music"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Energetic",
+      "lastname": "Tortoise"
+    },
+    "name": "Ride",
+    "distance": 10937.1,
+    "moving_time": 2011,
+    "elapsed_time": 2049,
+    "total_elevation_gain": 205,
+    "type": "Ride",
+    "sport_type": "Ride",
+    "workout_type": 10,
+    "device_name": "Garmin Forerunner 255"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Turbo",
+      "lastname": "Bear"
+    },
+    "name": "Ride",
+    "distance": 3042,
+    "moving_time": 699,
+    "elapsed_time": 803,
+    "total_elevation_gain": 101,
+    "type": "Ride",
+    "sport_type": "Ride",
+    "workout_type": null,
+    "device_name": "Garmin Forerunner 245 Music"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Turbo",
+      "lastname": "Bear"
+    },
     "name": "Ride",
     "distance": 3072.7,
     "moving_time": 497,

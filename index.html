@@ -29,13 +29,14 @@
         
         h1 {
             color: #333;
-            margin-bottom: 10px;
+            margin-bottom: 6px;
             text-align: center;
+            font-size: 22px;
         }
         
         h2 {
             color: #667eea;
-            margin-top: 30px;
+            margin-top: 0;
             margin-bottom: 15px;
             font-size: 20px;
             border-bottom: 2px solid #f0f4ff;
@@ -133,174 +134,439 @@
             padding: 40px;
         }
         
-        .member-count {
+        .header-meta {
             text-align: center;
-            color: #667eea;
-            font-weight: 600;
-            margin: 10px 0;
+            color: #888;
+            font-size: 13px;
+            margin: 0 0 6px;
+            line-height: 1.6;
         }
+
+        .header-meta .sep {
+            color: #ccc;
+            margin: 0 6px;
+        }
+
+        .carousel-wrapper {
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            flex-shrink: 0;
+        }
+
+        .board-header {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 8px;
+        }
+
+        .board-title {
+            font-size: 17px;
+            font-weight: 700;
+            color: #333;
+            white-space: nowrap;
+        }
+
+        .board-leader {
+            font-size: 13px;
+            color: #667eea;
+            font-weight: 500;
+        }
+
+        .carousel-controls {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin: 10px 0 24px;
+        }
+
+        .carousel-btn {
+            background: none;
+            border: 2px solid #667eea;
+            color: #667eea;
+            border-radius: 50%;
+            width: 34px;
+            height: 34px;
+            cursor: pointer;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+            transition: all 0.2s;
+            flex-shrink: 0;
+        }
+
+        .carousel-btn:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        .carousel-dots {
+            display: flex;
+            gap: 8px;
+        }
+
+        .carousel-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #ddd;
+            cursor: pointer;
+            border: none;
+            padding: 0;
+            transition: background 0.3s;
+        }
+
+        .carousel-dot.active {
+            background: #667eea;
+        }
+
+        .progress-bar-wrapper {
+            height: 3px;
+            background: #eee;
+            border-radius: 3px;
+            margin-bottom: 8px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 3px;
+            width: 0%;
+        }
+
+        th.primary-col { color: #667eea; }
+        td.primary-col { font-weight: 700; color: #333; }
+
+        /* ── Animation Track ──────────────────────────────────── */
+        .animation-track {
+            position: relative;
+            height: 72px;
+            overflow: hidden;
+            background: linear-gradient(to bottom, #f3eeff 60%, #e4d8ff 100%);
+            border-radius: 36px;
+            margin: 8px 0 0;
+            border: 1px solid #d4c6f0;
+        }
+
+        /* Dashed road */
+        .animation-track::before {
+            content: '';
+            position: absolute;
+            bottom: 14px;
+            left: 0; right: 0;
+            height: 2px;
+            background: repeating-linear-gradient(
+                90deg,
+                #c0aee8 0, #c0aee8 16px,
+                transparent 16px, transparent 32px
+            );
+        }
+
+        @keyframes runAcross {
+            from { transform: translateX(-100px); }
+            to   { transform: translateX(1150px); }
+        }
+
+        @keyframes charBob {
+            0%, 100% { transform: translateY(0); }
+            50%       { transform: translateY(-8px); }
+        }
+
+        .anim-wrap {
+            position: absolute;
+            bottom: 14px;
+            left: 0;
+            line-height: 1;
+            user-select: none;
+            pointer-events: none;
+        }
+
+        .anim-bob {
+            display: block;
+            animation: charBob ease-in-out infinite;
+        }
+
+        /* Rabbit — fast runner */
+        .anim-rabbit {
+            animation: runAcross 5s linear infinite 0s;
+        }
+        .anim-rabbit .anim-bob { font-size: 30px; animation-duration: 0.26s; }
+
+        /* Horse — strong gallop */
+        .anim-horse {
+            animation: runAcross 7s linear infinite -1.8s;
+        }
+        .anim-horse .anim-bob { font-size: 32px; animation-duration: 0.22s; }
+
+        /* Fox on a bicycle — no bob, it glides */
+        .anim-fox {
+            bottom: 8px;
+            animation: runAcross 9s linear infinite -4s;
+        }
+        .fox-stack { display: flex; flex-direction: column; align-items: center; }
+        .fox-stack .fox-em  { font-size: 18px; line-height: 1.15; display: block; }
+        .fox-stack .bike-em { font-size: 22px; line-height: 1;    display: block; }
+
+        /* Bear — steady pace */
+        .anim-bear {
+            animation: runAcross 12s linear infinite -5.5s;
+        }
+        .anim-bear .anim-bob { font-size: 28px; animation-duration: 0.46s; }
+
+        /* Tortoise — slow but determined */
+        .anim-tortoise {
+            animation: runAcross 26s linear infinite -12s;
+        }
+        .anim-tortoise .anim-bob { font-size: 26px; animation-duration: 0.9s; }
+
+        /* Wolf/Dog extra character for variety */
+        .anim-wolf {
+            animation: runAcross 8.5s linear infinite -3.2s;
+        }
+        .anim-wolf .anim-bob { font-size: 28px; animation-duration: 0.3s; }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>🏆 Bouvet Kristiansand Strava Leaderboard</h1>
-        <div class="subtitle" id="subtitle">
-            <p>Loading...</p>
+        <div class="header-meta" id="headerMeta">Loading…</div>
+
+        <!-- Animated character strip -->
+        <div class="animation-track" aria-hidden="true">
+            <!-- Rabbit: fast runner -->
+            <div class="anim-wrap anim-rabbit">
+                <span class="anim-bob">🐇</span>
+            </div>
+            <!-- Horse: strong gallop -->
+            <div class="anim-wrap anim-horse">
+                <span class="anim-bob">🐴</span>
+            </div>
+            <!-- Fox on a bicycle -->
+            <div class="anim-wrap anim-fox">
+                <div class="fox-stack">
+                    <span class="fox-em">🦊</span>
+                    <span class="bike-em">🚲</span>
+                </div>
+            </div>
+            <!-- Bear: steady pace -->
+            <div class="anim-wrap anim-bear">
+                <span class="anim-bob">🐻</span>
+            </div>
+            <!-- Wolf: mid-distance -->
+            <div class="anim-wrap anim-wolf">
+                <span class="anim-bob">🐺</span>
+            </div>
+            <!-- Tortoise: slow but determined -->
+            <div class="anim-wrap anim-tortoise">
+                <span class="anim-bob">🐢</span>
+            </div>
         </div>
-        
-        <div class="notice">
-            <strong>🎯 Wall of Fame - How to Join</strong>
-            <p>If your name isn't showing up with stats, your Strava privacy settings are too high!</p>
-            <p><strong>Set your activities to "Everyone"</strong> to see your name on the leaderboard.</p>
-            <p>Go to Strava → Settings → Privacy Controls → Activities → "Who can see your activities" → Select "Everyone"</p>
-        </div>
-        
-        <div class="member-count" id="memberCount"></div>
-        <div class="subtitle" id="lastUpdate"></div>
+
         <div id="leaderboard" class="loading">Loading...</div>
     </div>
 
     <script>
+        let carouselAutoInterval = null;
+
+        function formatTime(seconds) {
+            const h = Math.floor(seconds / 3600);
+            const m = Math.floor((seconds % 3600) / 60);
+            return `${h}h ${m}m`;
+        }
+
         async function loadLeaderboard() {
             try {
-                // Load config, activities and members
                 const [configResponse, activitiesResponse, membersResponse] = await Promise.all([
                     fetch('config.json'),
                     fetch('master_history.json'),
                     fetch('club_members.json')
                 ]);
-                
+
                 const config = await configResponse.json();
                 const activities = await activitiesResponse.json();
                 const members = await membersResponse.json();
-                
-                // Parse and format start date
+
                 const startDate = new Date(config.startDate);
-                const displayDate = startDate.toLocaleDateString('en-US', { 
-                    year: 'numeric', 
-                    month: 'long', 
-                    day: 'numeric' 
+                const displayDate = startDate.toLocaleDateString('en-US', {
+                    year: 'numeric', month: 'long', day: 'numeric'
                 });
-                
-                // Update subtitle with start date
-                document.getElementById('subtitle').innerHTML = `
-                    <p>Activities since ${displayDate}</p>
-                    <p>Names are anonymized - your initials reveal your identity 😉</p>
-                `;
-                
-                // Parse start date
                 const now = new Date();
-                
-                // Aggregate stats by athlete (filtered by start date)
+
+                // Aggregate stats by athlete
                 const athleteStats = {};
-                
+
                 activities.forEach(activity => {
-                    // Skip activities with no date (historical activities from before tracking started)
-                    if (!activity.activity_date) {
-                        return;
-                    }
-                    
-                    // Check if activity is after the start date
+                    if (!activity.activity_date) return;
                     const activityDate = new Date(activity.activity_date);
-                    
-                    if (activityDate < startDate) {
-                        return; // Skip activities before start date
-                    }
-                    
+                    if (activityDate < startDate) return;
+
                     const athlete = activity.athlete;
                     const name = `${athlete.firstname} ${athlete.lastname}`;
-                    
+
                     if (!athleteStats[name]) {
                         athleteStats[name] = {
-                            name: name,
-                            activities: 0,
-                            distance: 0,
-                            movingTime: 0,
-                            elevation: 0,
-                            hasActivities: false
+                            name, activities: 0, distance: 0,
+                            movingTime: 0, elevation: 0, hasActivities: false
                         };
                     }
-                    
+
                     athleteStats[name].activities += 1;
                     athleteStats[name].distance += activity.distance;
                     athleteStats[name].movingTime += activity.moving_time;
                     athleteStats[name].elevation += activity.total_elevation_gain;
                     athleteStats[name].hasActivities = true;
                 });
-                
-                // Add all members to the list (deduplicated by name)
-                const uniqueMembers = [...new Map(members.map(m => [`${m.firstname} ${m.lastname}`, m])).values()];
+
+                const uniqueMembers = [...new Map(
+                    members.map(m => [`${m.firstname} ${m.lastname}`, m])
+                ).values()];
+
                 uniqueMembers.forEach(member => {
                     const name = `${member.firstname} ${member.lastname}`;
                     if (!athleteStats[name]) {
                         athleteStats[name] = {
-                            name: name,
-                            activities: 0,
-                            distance: 0,
-                            movingTime: 0,
-                            elevation: 0,
-                            hasActivities: false
+                            name, activities: 0, distance: 0,
+                            movingTime: 0, elevation: 0, hasActivities: false
                         };
                     }
                 });
-                
-                // Separate active and inactive members
-                const activeMembers = Object.values(athleteStats)
-                    .filter(a => a.hasActivities)
-                    .sort((a, b) => b.distance - a.distance);
-                
+
+                const activeMembers = Object.values(athleteStats).filter(a => a.hasActivities);
                 const inactiveMembers = Object.values(athleteStats)
                     .filter(a => !a.hasActivities)
                     .sort((a, b) => a.name.localeCompare(b.name));
-                
-                // Generate active members table
-                let html = '<h2>🔥 Active Since Start</h2>';
-                html += `
-                    <table>
-                        <thead>
-                            <tr>
-                                <th style="width: 50px;">#</th>
-                                <th>Athlete</th>
-                                <th style="text-align: right;">Activities</th>
-                                <th style="text-align: right;">Distance</th>
-                                <th style="text-align: right;">Moving Time</th>
-                                <th style="text-align: right;">Elevation</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                `;
-                
-                activeMembers.forEach((athlete, index) => {
-                    const kmDistance = (athlete.distance / 1000).toFixed(1);
-                    const hours = Math.floor(athlete.movingTime / 3600);
-                    const minutes = Math.floor((athlete.movingTime % 3600) / 60);
-                    const time = `${hours}h ${minutes}m`;
-                    const elevation = athlete.elevation.toFixed(0);
-                    
-                    html += `
-                        <tr>
-                            <td class="rank">${index + 1}</td>
-                            <td class="name">${athlete.name}</td>
-                            <td class="metric">${athlete.activities}</td>
-                            <td class="metric">${kmDistance} km</td>
-                            <td class="metric">${time}</td>
-                            <td class="metric">${elevation} m</td>
-                        </tr>
+
+                // Column definitions (id matches athleteStats keys)
+                const allCols = [
+                    { id: 'activities', label: '# Activities', value: a => a.activities },
+                    { id: 'distance',   label: 'Distance',     value: a => `${(a.distance / 1000).toFixed(1)} km` },
+                    { id: 'movingTime', label: 'Moving Time',  value: a => formatTime(a.movingTime) },
+                    { id: 'elevation',  label: 'Elevation',    value: a => `${a.elevation.toFixed(0)} m` }
+                ];
+
+                // Board definitions — each sorts by a different metric
+                const boards = [
+                    {
+                        icon: '📏', title: 'Most Distance',
+                        explanation: 'Who has covered the most ground across all activity types?',
+                        sortKey: 'distance',
+                        leaderText: a => `${a.name} leads with ${(a.distance / 1000).toFixed(1)} km covered`
+                    },
+                    {
+                        icon: '⏱️', title: 'Most Active Time',
+                        explanation: 'Who has spent the most time moving and being active?',
+                        sortKey: 'movingTime',
+                        leaderText: a => `${a.name} leads with ${formatTime(a.movingTime)} of active time`
+                    },
+                    {
+                        icon: '⛰️', title: 'Most Elevation',
+                        explanation: 'Who has climbed the most meters in total?',
+                        sortKey: 'elevation',
+                        leaderText: a => `${a.name} leads with ${a.elevation.toFixed(0)} m climbed`
+                    },
+                    {
+                        icon: '🔥', title: 'Most Activities',
+                        explanation: 'Who has logged the most sessions — consistency is key!',
+                        sortKey: 'activities',
+                        leaderText: a => `${a.name} leads with ${a.activities} ${a.activities === 1 ? 'activity' : 'activities'} logged`
+                    }
+                ];
+
+                // Generate carousel slides
+                let slidesHtml = '';
+                boards.forEach(board => {
+                    const sorted = [...activeMembers].sort((a, b) => b[board.sortKey] - a[board.sortKey]);
+                    const leader = sorted[0];
+
+                    // Primary metric column first, then the rest
+                    const orderedCols = [
+                        allCols.find(c => c.id === board.sortKey),
+                        ...allCols.filter(c => c.id !== board.sortKey)
+                    ];
+
+                    let slide = `
+                        <div class="board-header">
+                            <span class="board-title">${board.icon} ${board.title}</span>
+                            ${leader ? `<span class="board-leader">🥇 ${board.leaderText(leader)}</span>` : ''}
+                        </div>
                     `;
+
+                    slide += `
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th style="width:50px">#</th>
+                                    <th>Athlete</th>
+                                    ${orderedCols.map((c, i) =>
+                                        `<th class="${i === 0 ? 'primary-col' : ''}" style="text-align:right">${c.label}</th>`
+                                    ).join('')}
+                                </tr>
+                            </thead>
+                            <tbody>
+                    `;
+
+                    sorted.forEach((athlete, index) => {
+                        const medal = index === 0 ? '🥇' : index === 1 ? '🥈' : index === 2 ? '🥉' : index + 1;
+                        slide += `
+                            <tr>
+                                <td class="rank">${medal}</td>
+                                <td class="name">${athlete.name}</td>
+                                ${orderedCols.map((c, i) =>
+                                    `<td class="metric${i === 0 ? ' primary-col' : ''}">${c.value(athlete)}</td>`
+                                ).join('')}
+                            </tr>
+                        `;
+                    });
+
+                    slide += `</tbody></table>`;
+                    slidesHtml += `<div class="carousel-slide">${slide}</div>`;
                 });
-                
-                html += '</tbody></table>';
-                
+
+                // Build full leaderboard HTML
+                let html = `
+                    <div class="carousel-wrapper" id="carouselWrapper">
+                        <div class="progress-bar-wrapper">
+                            <div class="progress-bar" id="progressBar"></div>
+                        </div>
+                        <div class="carousel-track" id="carouselTrack">
+                            ${slidesHtml}
+                        </div>
+                        <div class="carousel-controls">
+                            <button class="carousel-btn" id="prevBtn" aria-label="Previous">&#8249;</button>
+                            <div class="carousel-dots" id="carouselDots">
+                                ${boards.map((_, i) =>
+                                    `<button class="carousel-dot${i === 0 ? ' active' : ''}" data-index="${i}" aria-label="Board ${i + 1}"></button>`
+                                ).join('')}
+                            </div>
+                            <button class="carousel-btn" id="nextBtn" aria-label="Next">&#8250;</button>
+                        </div>
+                    </div>
+                `;
+
                 // Generate inactive members section if any
                 if (inactiveMembers.length > 0) {
                     html += '<h2>💤 Not Yet Active</h2>';
-                    html += '<p class="subtitle inactive-message">These members haven\'t logged activities yet or their privacy settings prevent visibility.</p>';
+                    html += `<p class="subtitle inactive-message">These members haven't logged activities yet or their privacy settings prevent visibility.</p>`;
                     html += `
                         <table>
                             <thead>
                                 <tr>
                                     <th>Athlete</th>
-                                    <th style="text-align: right;">Status</th>
+                                    <th style="text-align:right">Status</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -314,27 +580,82 @@
                             </tr>
                         `;
                     });
-                    
-                    html += '</tbody></table>';
+                    html += `</tbody></table>`;
                 }
-                
+
                 document.getElementById('leaderboard').innerHTML = html;
-                
-                // Update member count
-                document.getElementById('memberCount').innerHTML = 
-                    `${activeMembers.length} of ${uniqueMembers.length} members active since ${displayDate}`;
-                
-                // Update timestamp
-                document.getElementById('lastUpdate').innerHTML = `Last updated: ${now.toLocaleString()}`;
-                
+                document.getElementById('headerMeta').innerHTML =
+                    `Since ${displayDate}`
+                    + `<span class="sep">|</span>${activeMembers.length}&thinsp;/&thinsp;${uniqueMembers.length} members active`
+                    + `<span class="sep">|</span>Names anonymized 😉`
+                    + `<span class="sep">|</span>Updated ${now.toLocaleTimeString()}`;
+
+                initCarousel(boards.length);
+
             } catch (error) {
-                document.getElementById('leaderboard').innerHTML = 
+                document.getElementById('leaderboard').innerHTML =
                     `<div class="loading">Error loading leaderboard: ${error.message}</div>`;
             }
         }
-        
+
+        function initCarousel(totalSlides) {
+            if (carouselAutoInterval) clearInterval(carouselAutoInterval);
+
+            let current = 0;
+            let paused = false;
+            const INTERVAL = 8000;
+
+            const track = document.getElementById('carouselTrack');
+            const dots = document.querySelectorAll('.carousel-dot');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const progressBar = document.getElementById('progressBar');
+            const wrapper = document.getElementById('carouselWrapper');
+
+            function goTo(index) {
+                current = ((index % totalSlides) + totalSlides) % totalSlides;
+                track.style.transform = `translateX(-${current * 100}%)`;
+                dots.forEach((d, i) => d.classList.toggle('active', i === current));
+                if (!paused) animateProgress();
+            }
+
+            function animateProgress() {
+                progressBar.style.transition = 'none';
+                progressBar.style.width = '0%';
+                progressBar.offsetWidth; // force reflow
+                progressBar.style.transition = `width ${INTERVAL}ms linear`;
+                progressBar.style.width = '100%';
+            }
+
+            function resetAutoAdvance() {
+                clearInterval(carouselAutoInterval);
+                carouselAutoInterval = setInterval(() => goTo(current + 1), INTERVAL);
+            }
+
+            prevBtn.addEventListener('click', () => { goTo(current - 1); if (!paused) resetAutoAdvance(); });
+            nextBtn.addEventListener('click', () => { goTo(current + 1); if (!paused) resetAutoAdvance(); });
+            dots.forEach(dot => {
+                dot.addEventListener('click', () => { goTo(parseInt(dot.dataset.index)); if (!paused) resetAutoAdvance(); });
+            });
+
+            wrapper.addEventListener('mouseenter', () => {
+                paused = true;
+                clearInterval(carouselAutoInterval);
+                carouselAutoInterval = null;
+                progressBar.style.transition = 'none';
+                progressBar.style.width = '0%';
+            });
+            wrapper.addEventListener('mouseleave', () => {
+                paused = false;
+                animateProgress();
+                resetAutoAdvance();
+            });
+
+            animateProgress();
+            resetAutoAdvance();
+        }
+
         loadLeaderboard();
-        // Auto-refresh every 5 minutes
         setInterval(loadLeaderboard, 5 * 60 * 1000);
     </script>
 </body>

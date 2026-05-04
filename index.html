@@ -142,6 +142,29 @@
             line-height: 1.6;
         }
 
+        .competition-state {
+            display: inline-block;
+            margin-left: 8px;
+            padding: 2px 8px;
+            border-radius: 999px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.2px;
+            vertical-align: middle;
+        }
+
+        .competition-state.ended {
+            color: #8a2c2c;
+            background: #ffe3e3;
+            border: 1px solid #ffc9c9;
+        }
+
+        .competition-state.active {
+            color: #1f6f43;
+            background: #ddfbe8;
+            border: 1px solid #b7f0ce;
+        }
+
         .header-meta .sep {
             color: #ccc;
             margin: 0 6px;
@@ -703,11 +726,23 @@
                 const members = await membersResponse.json();
 
                 const startDate = new Date(config.startDate);
-                const displayDateTime = startDate.toLocaleString('en-US', {
-                    year: 'numeric', month: 'long', day: 'numeric',
-                    hour: '2-digit', minute: '2-digit'
+                const configuredEndDate = config.endDate ? new Date(config.endDate) : null;
+                const endDate = configuredEndDate && !Number.isNaN(configuredEndDate.getTime())
+                    ? configuredEndDate
+                    : null;
+
+                const displayStartDate = startDate.toLocaleDateString('en-US', {
+                    year: 'numeric', month: 'long', day: 'numeric'
                 });
+                const displayEndDate = endDate
+                    ? endDate.toLocaleDateString('en-US', {
+                        year: 'numeric', month: 'long', day: 'numeric'
+                    })
+                    : 'Ongoing';
                 const now = new Date();
+                const competitionState = endDate && now > endDate
+                    ? '<span class="competition-state ended">Competition ended</span>'
+                    : '<span class="competition-state active">Competition active</span>';
 
                 // Aggregate stats by athlete
                 const athleteStats = {};
@@ -724,6 +759,7 @@
                     if (!activity.activity_date) return;
                     const activityDate = new Date(activity.activity_date);
                     if (activityDate < startDate) return;
+                    if (endDate && activityDate > endDate) return;
 
                     const athlete = activity.athlete;
                     const name = `${athlete.firstname} ${athlete.lastname}`;
@@ -1025,7 +1061,7 @@
 
                 document.getElementById('leaderboard').innerHTML = html;
                 document.getElementById('headerMeta').innerHTML =
-                    `Since ${displayDateTime}`
+                    `Competition: ${displayStartDate} to ${displayEndDate}${competitionState}`
                     + `<span class="sep">|</span>${activeMembers.length}&thinsp;/&thinsp;${uniqueMembers.length} members active`
                     + `<span class="sep">|</span>Names anonymized 😉`
                     + `<span class="sep">|</span>Updated ${now.toLocaleTimeString()}`;
@@ -1085,9 +1121,12 @@
                         ? 6.2 + Math.random() * 0.8
                         : 8.2 + Math.random() * 4.4;
                     const bottom = 36 + Math.random() * 18;
+                    // Reset first so the race reliably restarts even on the same slide.
+                    racer.style.animation = 'none';
+                    racer.style.left = '-14%';
+                    racer.offsetWidth; // force reflow to commit reset before re-applying animation
                     racer.style.animation = `funRace ${duration.toFixed(2)}s linear 1 forwards`;
                     racer.style.bottom = `${bottom.toFixed(0)}px`;
-                    racer.style.left = '-14%';
                     racer.dataset.duration = duration.toString();
                 });
 

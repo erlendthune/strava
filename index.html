@@ -282,8 +282,8 @@
         }
 
         @keyframes charBob {
-            0%, 100% { transform: translateY(0); }
-            50%       { transform: translateY(-8px); }
+            0%, 100% { transform: scaleX(-1) translateY(0); }
+            50%       { transform: scaleX(-1) translateY(-8px); }
         }
 
         .anim-wrap {
@@ -317,7 +317,7 @@
             bottom: 8px;
             animation: runAcross 9s linear infinite -4s;
         }
-        .fox-stack { display: flex; flex-direction: column; align-items: center; }
+        .fox-stack { display: flex; flex-direction: column; align-items: center; transform: scaleX(-1); }
         .fox-stack .fox-em  { font-size: 18px; line-height: 1.15; display: block; }
         .fox-stack .bike-em { font-size: 22px; line-height: 1;    display: block; }
 
@@ -338,6 +338,306 @@
             animation: runAcross 8.5s linear infinite -3.2s;
         }
         .anim-wolf .anim-bob { font-size: 28px; animation-duration: 0.3s; }
+
+        /* ── Fun Carousel Slide ─────────────────────────────── */
+        .fun-board {
+            position: relative;
+            height: 270px;
+            border-radius: 14px;
+            overflow: hidden;
+            border: 2px solid #cae3ff;
+            background:
+                radial-gradient(circle at 84% 20%, #ffe681 0, #ffd86a 12%, transparent 13%),
+                linear-gradient(to bottom, #91d6ff 0%, #bce9ff 56%, #85d276 56%, #64b85a 100%);
+        }
+
+        .fun-cloud {
+            position: absolute;
+            color: rgba(255, 255, 255, 0.95);
+            filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.08));
+            user-select: none;
+            pointer-events: none;
+            animation: cloudDrift linear infinite;
+            z-index: 1;
+        }
+
+        .fun-cloud.c1 { top: 20px; left: -80px; font-size: 28px; animation-duration: 22s; }
+        .fun-cloud.c2 { top: 58px; left: -140px; font-size: 32px; animation-duration: 27s; animation-delay: -8s; }
+        .fun-cloud.c3 { top: 36px; left: -210px; font-size: 22px; animation-duration: 30s; animation-delay: -16s; }
+
+        .fun-hill {
+            position: absolute;
+            border-radius: 50% 50% 0 0;
+            bottom: 64px;
+            z-index: 2;
+        }
+
+        .fun-hill.h1 {
+            left: -80px;
+            width: 250px;
+            height: 92px;
+            background: #74c96a;
+        }
+
+        .fun-hill.h2 {
+            left: 240px;
+            width: 300px;
+            height: 106px;
+            background: #60b956;
+        }
+
+        .fun-hill.h3 {
+            right: -90px;
+            width: 260px;
+            height: 96px;
+            background: #4cae48;
+        }
+
+        .fun-road {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 76px;
+            background: linear-gradient(to bottom, #6e7785, #4e5563);
+            z-index: 3;
+        }
+
+        .fun-road::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 36px;
+            height: 4px;
+            background: repeating-linear-gradient(
+                90deg,
+                #f8f1c7 0, #f8f1c7 22px,
+                transparent 22px, transparent 40px
+            );
+        }
+
+        .fun-racer {
+            position: absolute;
+            bottom: 48px;
+            left: -14%;
+            line-height: 1;
+            user-select: none;
+            pointer-events: none;
+            transform: scaleX(-1);
+            z-index: 5;
+        }
+
+        .fun-racer span { display: block; }
+
+        .fun-racer.r1 { font-size: 34px; animation: funRace 7s linear infinite; }
+        .fun-racer.r2 { font-size: 30px; bottom: 42px; animation: funRace 10s linear infinite -3s; }
+        .fun-racer.r3 { font-size: 36px; bottom: 40px; animation: funRace 8.5s linear infinite -5s; }
+        .fun-racer.r4 { font-size: 32px; bottom: 51px; animation: funRace 12.5s linear infinite -4s; }
+        .fun-racer.r5 { font-size: 28px; bottom: 40px; animation: funRace 18s linear infinite -7s; }
+
+        .fun-bike {
+            font-size: 24px;
+            transform: translateY(-4px);
+        }
+
+        .fun-tribune {
+            position: absolute;
+            right: 170px;
+            bottom: 72px;
+            width: 200px;
+            height: 56px;
+            border-radius: 12px 12px 6px 6px;
+            background: linear-gradient(to bottom, #3a4a64, #2a3447);
+            box-shadow: 0 3px 0 rgba(0, 0, 0, 0.2);
+            z-index: 4;
+        }
+
+        .fun-tribune::before {
+            content: '';
+            position: absolute;
+            left: 12px;
+            right: 12px;
+            top: 16px;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        .fun-tribune::after {
+            content: '';
+            position: absolute;
+            left: 12px;
+            right: 12px;
+            top: 32px;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .fun-crowd {
+            position: absolute;
+            left: 14px;
+            right: 14px;
+            top: -8px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 6px 5px;
+            pointer-events: none;
+        }
+
+        .fun-spectator {
+            font-size: 14px;
+            line-height: 1;
+            animation: crowdCheer 1.3s ease-in-out infinite;
+            transform-origin: bottom center;
+        }
+
+        .fun-spectator.s2 { animation-delay: -0.2s; }
+        .fun-spectator.s3 { animation-delay: -0.6s; }
+        .fun-spectator.s4 { animation-delay: -0.9s; }
+
+        .fun-goal {
+            position: absolute;
+            right: 70px;
+            bottom: 74px;
+            width: 88px;
+            height: 94px;
+            z-index: 6;
+            pointer-events: none;
+        }
+
+        .fun-goal-pole {
+            position: absolute;
+            bottom: 0;
+            width: 6px;
+            height: 92px;
+            background: linear-gradient(to bottom, #f1f3f5, #b8bec8);
+            border: 1px solid #99a1ac;
+            border-radius: 3px;
+        }
+
+        .fun-goal-pole.left { left: 0; }
+        .fun-goal-pole.right { right: 0; }
+
+        .fun-goal-banner {
+            position: absolute;
+            left: 8px;
+            right: 8px;
+            top: 10px;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            color: #5f6978;
+            text-align: center;
+            padding: 5px 0;
+            border-radius: 6px;
+            border: 1px solid #d9dee6;
+            background: #ffffff;
+            box-shadow: 0 2px 0 rgba(0, 0, 0, 0.15);
+        }
+
+        .fun-finish-line {
+            position: absolute;
+            right: 108px;
+            bottom: 0;
+            width: 10px;
+            height: 76px;
+            z-index: 4;
+            background: repeating-linear-gradient(
+                to bottom,
+                #ffffff 0,
+                #ffffff 8px,
+                #e8edf5 8px,
+                #e8edf5 16px
+            );
+            box-shadow: 0 0 0 1px rgba(130, 144, 163, 0.45);
+        }
+
+        .fun-confetti {
+            position: absolute;
+            right: 46px;
+            bottom: 118px;
+            width: 150px;
+            height: 110px;
+            z-index: 7;
+            pointer-events: none;
+        }
+
+        .fun-confetti-piece {
+            position: absolute;
+            top: 18px;
+            left: 50px;
+            width: 6px;
+            height: 10px;
+            border-radius: 2px;
+            opacity: 0;
+            transform: translate(0, 0) rotate(0deg);
+        }
+
+        .fun-confetti.burst .fun-confetti-piece {
+            animation: confettiPiece 2200ms ease-out forwards;
+        }
+
+        .fun-confetti-piece:nth-child(1) { background: #ff4d6d; --dx: -40px; --dy: 54px; animation-delay: 0ms; }
+        .fun-confetti-piece:nth-child(2) { background: #ffd166; --dx: -24px; --dy: 62px; animation-delay: 60ms; }
+        .fun-confetti-piece:nth-child(3) { background: #06d6a0; --dx: 2px; --dy: 58px; animation-delay: 80ms; }
+        .fun-confetti-piece:nth-child(4) { background: #118ab2; --dx: 24px; --dy: 66px; animation-delay: 120ms; }
+        .fun-confetti-piece:nth-child(5) { background: #ef476f; --dx: 42px; --dy: 56px; animation-delay: 140ms; }
+        .fun-confetti-piece:nth-child(6) { background: #ff9f1c; --dx: -12px; --dy: 48px; animation-delay: 170ms; }
+        .fun-confetti-piece:nth-child(7) { background: #8338ec; --dx: 16px; --dy: 50px; animation-delay: 190ms; }
+        .fun-confetti-piece:nth-child(8) { background: #3a86ff; --dx: -34px; --dy: 60px; animation-delay: 220ms; }
+        .fun-confetti-piece:nth-child(9) { background: #12b886; --dx: 48px; --dy: 70px; animation-delay: 30ms; }
+        .fun-confetti-piece:nth-child(10) { background: #ff6b6b; --dx: -52px; --dy: 66px; animation-delay: 90ms; }
+        .fun-confetti-piece:nth-child(11) { background: #f59f00; --dx: 30px; --dy: 74px; animation-delay: 110ms; }
+        .fun-confetti-piece:nth-child(12) { background: #2f9e44; --dx: -18px; --dy: 68px; animation-delay: 150ms; }
+        .fun-confetti-piece:nth-child(13) { background: #e64980; --dx: 56px; --dy: 62px; animation-delay: 180ms; }
+        .fun-confetti-piece:nth-child(14) { background: #4c6ef5; --dx: -62px; --dy: 78px; animation-delay: 210ms; }
+        .fun-confetti-piece:nth-child(15) { background: #0ca678; --dx: 8px; --dy: 72px; animation-delay: 240ms; }
+        .fun-confetti-piece:nth-child(16) { background: #f03e3e; --dx: -8px; --dy: 70px; animation-delay: 260ms; }
+
+        .fun-racer.r6 { font-size: 30px; }
+
+        .fun-race-caption {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            right: 14px;
+            font-size: 14px;
+            font-weight: 700;
+            color: #1b4b7c;
+            text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+            z-index: 5;
+        }
+
+        @keyframes cloudDrift {
+            from { transform: translateX(0); }
+            to { transform: translateX(1250px); }
+        }
+
+        @keyframes funRace {
+            from { left: -14%; }
+            to { left: 102%; }
+        }
+
+        @keyframes crowdCheer {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-3px) rotate(5deg); }
+        }
+
+        @keyframes confettiPiece {
+            0% {
+                opacity: 0;
+                transform: translate(0, 0) rotate(0deg);
+            }
+            8% {
+                opacity: 1;
+                transform: translate(0, -6px) rotate(40deg);
+            }
+            100% {
+                opacity: 0;
+                transform: translate(var(--dx), var(--dy)) rotate(320deg);
+            }
+        }
     </style>
 </head>
 <body>
@@ -381,6 +681,8 @@
 
     <script>
         let carouselAutoInterval = null;
+        let hasSuccessfulRender = false;
+        let funRaceConfettiTimer = null;
 
         function formatTime(seconds) {
             const h = Math.floor(seconds / 3600);
@@ -401,13 +703,22 @@
                 const members = await membersResponse.json();
 
                 const startDate = new Date(config.startDate);
-                const displayDate = startDate.toLocaleDateString('en-US', {
-                    year: 'numeric', month: 'long', day: 'numeric'
+                const displayDateTime = startDate.toLocaleString('en-US', {
+                    year: 'numeric', month: 'long', day: 'numeric',
+                    hour: '2-digit', minute: '2-digit'
                 });
                 const now = new Date();
 
                 // Aggregate stats by athlete
                 const athleteStats = {};
+                const sportStats = {};
+
+                function formatSportName(sport) {
+                    return sport
+                        .replace(/([a-z])([A-Z])/g, '$1 $2')
+                        .replace(/_/g, ' ')
+                        .trim();
+                }
 
                 activities.forEach(activity => {
                     if (!activity.activity_date) return;
@@ -429,6 +740,20 @@
                     athleteStats[name].movingTime += activity.moving_time;
                     athleteStats[name].elevation += activity.total_elevation_gain;
                     athleteStats[name].hasActivities = true;
+
+                    const sport = activity.sport_type || activity.type || 'Other';
+                    if (!sportStats[sport]) sportStats[sport] = {};
+                    if (!sportStats[sport][name]) {
+                        sportStats[sport][name] = {
+                            name, activities: 0, distance: 0,
+                            movingTime: 0, elevation: 0
+                        };
+                    }
+
+                    sportStats[sport][name].activities += 1;
+                    sportStats[sport][name].distance += activity.distance;
+                    sportStats[sport][name].movingTime += activity.moving_time;
+                    sportStats[sport][name].elevation += activity.total_elevation_gain;
                 });
 
                 const uniqueMembers = [...new Map(
@@ -450,112 +775,227 @@
                     .filter(a => !a.hasActivities)
                     .sort((a, b) => a.name.localeCompare(b.name));
 
-                // Column definitions (id matches athleteStats keys)
-                const allCols = [
-                    { id: 'activities', label: '# Activities', value: a => a.activities },
-                    { id: 'distance',   label: 'Distance',     value: a => `${(a.distance / 1000).toFixed(1)} km` },
-                    { id: 'movingTime', label: 'Moving Time',  value: a => formatTime(a.movingTime) },
-                    { id: 'elevation',  label: 'Elevation',    value: a => `${a.elevation.toFixed(0)} m` }
-                ];
-
-                // Board definitions — each sorts by a different metric
-                const boards = [
+                // Metric definitions used to build sport-specific boards
+                const metricDefs = [
                     {
-                        icon: '📏', title: 'Most Distance',
-                        explanation: 'Who has covered the most ground across all activity types?',
-                        sortKey: 'distance',
-                        leaderText: a => `${a.name} leads with ${(a.distance / 1000).toFixed(1)} km covered`
+                        id: 'movingTime',
+                        icon: '⏱️',
+                        title: 'Most Active Time',
+                        label: 'Moving Time',
+                        hasData: a => a.movingTime > 0,
+                        value: a => formatTime(a.movingTime),
+                        leaderText: (a, sportLabel) => `${a.name} leads ${sportLabel} with ${formatTime(a.movingTime)} of moving time`
                     },
                     {
-                        icon: '⏱️', title: 'Most Active Time',
-                        explanation: 'Who has spent the most time moving and being active?',
-                        sortKey: 'movingTime',
-                        leaderText: a => `${a.name} leads with ${formatTime(a.movingTime)} of active time`
+                        id: 'distance',
+                        icon: '📏',
+                        title: 'Most Distance',
+                        label: 'Distance',
+                        hasData: a => a.distance > 0,
+                        value: a => `${(a.distance / 1000).toFixed(1)} km`,
+                        leaderText: (a, sportLabel) => `${a.name} leads ${sportLabel} with ${(a.distance / 1000).toFixed(1)} km`
                     },
                     {
-                        icon: '⛰️', title: 'Most Elevation',
-                        explanation: 'Who has climbed the most meters in total?',
-                        sortKey: 'elevation',
-                        leaderText: a => `${a.name} leads with ${a.elevation.toFixed(0)} m climbed`
-                    },
-                    {
-                        icon: '🔥', title: 'Most Activities',
-                        explanation: 'Who has logged the most sessions — consistency is key!',
-                        sortKey: 'activities',
-                        leaderText: a => `${a.name} leads with ${a.activities} ${a.activities === 1 ? 'activity' : 'activities'} logged`
+                        id: 'elevation',
+                        icon: '⛰️',
+                        title: 'Most Elevation',
+                        label: 'Elevation',
+                        hasData: a => a.elevation > 0,
+                        value: a => `${a.elevation.toFixed(0)} m`,
+                        leaderText: (a, sportLabel) => `${a.name} leads ${sportLabel} with ${a.elevation.toFixed(0)} m climbed`
                     }
                 ];
+
+                // Build sport-specific boards dynamically from detected sports in the data
+                const sportsByActivityVolume = Object.entries(sportStats)
+                    .map(([sport, athleteMap]) => ({
+                        sport,
+                        athletes: Object.values(athleteMap).filter(a => a.activities > 0),
+                        totalActivities: Object.values(athleteMap).reduce((sum, a) => sum + a.activities, 0)
+                    }))
+                    .filter(s => s.athletes.length > 0)
+                    .sort((a, b) => b.totalActivities - a.totalActivities || a.sport.localeCompare(b.sport));
+
+                const boards = [];
+
+                // Add one overall board based only on total moving time
+                const overallMovingTimeMetric = {
+                    id: 'movingTime',
+                    label: 'Moving Time',
+                    value: a => formatTime(a.movingTime)
+                };
+                const overallSortedByMovingTime = [...activeMembers]
+                    .sort((a, b) => b.movingTime - a.movingTime);
+                if (overallSortedByMovingTime.length > 0) {
+                    const overallLeader = overallSortedByMovingTime[0];
+                    boards.push({
+                        icon: '⏱️',
+                        title: 'Most Active Time • Overall',
+                        sortKey: 'movingTime',
+                        metric: overallMovingTimeMetric,
+                        sorted: overallSortedByMovingTime,
+                        leaderText: `${overallLeader.name} leads overall with ${formatTime(overallLeader.movingTime)} of moving time`
+                    });
+                }
+
+                boards.unshift({
+                    icon: '🎬',
+                    title: 'Animal Grand Prix',
+                    leaderText: 'The leaderboard mascots are warming up for race day',
+                    customHtml: `
+                        <div class="fun-board" aria-hidden="true">
+                            <div class="fun-race-caption">Cartoon race warm-up: no rankings, just vibes.</div>
+                            <div class="fun-cloud c1">☁️</div>
+                            <div class="fun-cloud c2">☁️</div>
+                            <div class="fun-cloud c3">☁️</div>
+                            <div class="fun-hill h1"></div>
+                            <div class="fun-hill h2"></div>
+                            <div class="fun-hill h3"></div>
+                            <div class="fun-tribune">
+                                <div class="fun-crowd">
+                                    <span class="fun-spectator s1">🧑</span>
+                                    <span class="fun-spectator s2">👩</span>
+                                    <span class="fun-spectator s3">👨</span>
+                                    <span class="fun-spectator s4">👩‍🦱</span>
+                                    <span class="fun-spectator s1">👨‍🦰</span>
+                                    <span class="fun-spectator s2">👩‍🦳</span>
+                                    <span class="fun-spectator s3">🧔</span>
+                                    <span class="fun-spectator s4">👱</span>
+                                    <span class="fun-spectator s2">👩‍🦲</span>
+                                    <span class="fun-spectator s3">🧑‍🦱</span>
+                                    <span class="fun-spectator s4">👨‍🦳</span>
+                                    <span class="fun-spectator s1">👩‍🦰</span>
+                                </div>
+                            </div>
+                            <div class="fun-goal">
+                                <div class="fun-goal-pole left"></div>
+                                <div class="fun-goal-banner">FINISH</div>
+                                <div class="fun-goal-pole right"></div>
+                            </div>
+                            <div class="fun-finish-line"></div>
+                            <div class="fun-confetti">
+                                <span class="fun-confetti-piece"></span>
+                                <span class="fun-confetti-piece"></span>
+                                <span class="fun-confetti-piece"></span>
+                                <span class="fun-confetti-piece"></span>
+                                <span class="fun-confetti-piece"></span>
+                                <span class="fun-confetti-piece"></span>
+                                <span class="fun-confetti-piece"></span>
+                                <span class="fun-confetti-piece"></span>
+                                <span class="fun-confetti-piece"></span>
+                                <span class="fun-confetti-piece"></span>
+                                <span class="fun-confetti-piece"></span>
+                                <span class="fun-confetti-piece"></span>
+                                <span class="fun-confetti-piece"></span>
+                                <span class="fun-confetti-piece"></span>
+                                <span class="fun-confetti-piece"></span>
+                                <span class="fun-confetti-piece"></span>
+                            </div>
+                            <div class="fun-racer r1"><span>🐇</span></div>
+                            <div class="fun-racer r2"><span>🐺</span></div>
+                            <div class="fun-racer r3"><span>🐴</span></div>
+                            <div class="fun-racer r4"><span>🐻</span></div>
+                            <div class="fun-racer r5"><span>🐢</span></div>
+                            <div class="fun-racer r6">
+                                <span>🦊</span><span class="fun-bike">🚲</span>
+                            </div>
+                            <div class="fun-road"></div>
+                        </div>
+                    `
+                });
+
+                sportsByActivityVolume.forEach(sportEntry => {
+                    const sportLabel = formatSportName(sportEntry.sport);
+
+                    metricDefs.forEach(metric => {
+                        const hasMetricData = sportEntry.athletes.some(metric.hasData);
+                        if (!hasMetricData) return;
+
+                        const sorted = [...sportEntry.athletes].sort((a, b) => b[metric.id] - a[metric.id]);
+                        const leader = sorted[0];
+
+                        boards.push({
+                            icon: metric.icon,
+                            title: `${metric.title} • ${sportLabel}`,
+                            sortKey: metric.id,
+                            metric,
+                            sorted,
+                            leaderText: leader ? metric.leaderText(leader, sportLabel) : ''
+                        });
+                    });
+                });
 
                 // Generate carousel slides
                 let slidesHtml = '';
                 boards.forEach(board => {
-                    const sorted = [...activeMembers].sort((a, b) => b[board.sortKey] - a[board.sortKey]);
+                    const sorted = board.sorted || [];
                     const leader = sorted[0];
-
-                    // Primary metric column first, then the rest
-                    const orderedCols = [
-                        allCols.find(c => c.id === board.sortKey),
-                        ...allCols.filter(c => c.id !== board.sortKey)
-                    ];
+                    const activeCol = board.metric;
 
                     let slide = `
                         <div class="board-header">
                             <span class="board-title">${board.icon} ${board.title}</span>
-                            ${leader ? `<span class="board-leader">🥇 ${board.leaderText(leader)}</span>` : ''}
+                            ${board.leaderText ? `<span class="board-leader">🥇 ${board.leaderText}</span>` : ''}
                         </div>
                     `;
 
-                    slide += `
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th style="width:50px">#</th>
-                                    <th>Athlete</th>
-                                    ${orderedCols.map((c, i) =>
-                                        `<th class="${i === 0 ? 'primary-col' : ''}" style="text-align:right">${c.label}</th>`
-                                    ).join('')}
-                                </tr>
-                            </thead>
-                            <tbody>
-                    `;
-
-                    sorted.forEach((athlete, index) => {
-                        const medal = index === 0 ? '🥇' : index === 1 ? '🥈' : index === 2 ? '🥉' : index + 1;
+                    if (board.customHtml) {
+                        slide += board.customHtml;
+                    } else {
                         slide += `
-                            <tr>
-                                <td class="rank">${medal}</td>
-                                <td class="name">${athlete.name}</td>
-                                ${orderedCols.map((c, i) =>
-                                    `<td class="metric${i === 0 ? ' primary-col' : ''}">${c.value(athlete)}</td>`
-                                ).join('')}
-                            </tr>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th style="width:50px">#</th>
+                                        <th>Athlete</th>
+                                        ${activeCol ? `<th class="primary-col" style="text-align:right">${activeCol.label}</th>` : ''}
+                                    </tr>
+                                </thead>
+                                <tbody>
                         `;
-                    });
 
-                    slide += `</tbody></table>`;
+                        sorted.forEach((athlete, index) => {
+                            const medal = index === 0 ? '🥇' : index === 1 ? '🥈' : index === 2 ? '🥉' : index + 1;
+                            slide += `
+                                <tr>
+                                    <td class="rank">${medal}</td>
+                                    <td class="name">${athlete.name}</td>
+                                    ${activeCol ? `<td class="metric primary-col">${activeCol.value(athlete)}</td>` : ''}
+                                </tr>
+                            `;
+                        });
+
+                        slide += `</tbody></table>`;
+                    }
                     slidesHtml += `<div class="carousel-slide">${slide}</div>`;
                 });
 
                 // Build full leaderboard HTML
-                let html = `
-                    <div class="carousel-wrapper" id="carouselWrapper">
-                        <div class="progress-bar-wrapper">
-                            <div class="progress-bar" id="progressBar"></div>
-                        </div>
-                        <div class="carousel-track" id="carouselTrack">
-                            ${slidesHtml}
-                        </div>
-                        <div class="carousel-controls">
-                            <button class="carousel-btn" id="prevBtn" aria-label="Previous">&#8249;</button>
-                            <div class="carousel-dots" id="carouselDots">
-                                ${boards.map((_, i) =>
-                                    `<button class="carousel-dot${i === 0 ? ' active' : ''}" data-index="${i}" aria-label="Board ${i + 1}"></button>`
-                                ).join('')}
+                let html = '';
+
+                if (boards.length > 0) {
+                    html += `
+                        <div class="carousel-wrapper" id="carouselWrapper">
+                            <div class="progress-bar-wrapper">
+                                <div class="progress-bar" id="progressBar"></div>
                             </div>
-                            <button class="carousel-btn" id="nextBtn" aria-label="Next">&#8250;</button>
+                            <div class="carousel-track" id="carouselTrack">
+                                ${slidesHtml}
+                            </div>
+                            <div class="carousel-controls">
+                                <button class="carousel-btn" id="prevBtn" aria-label="Previous">&#8249;</button>
+                                <div class="carousel-dots" id="carouselDots">
+                                    ${boards.map((b, i) =>
+                                        `<button class="carousel-dot${i === 0 ? ' active' : ''}" data-index="${i}" aria-label="${b.title}"></button>`
+                                    ).join('')}
+                                </div>
+                                <button class="carousel-btn" id="nextBtn" aria-label="Next">&#8250;</button>
+                            </div>
                         </div>
-                    </div>
-                `;
+                    `;
+                } else {
+                    html += `<div class="loading">No sport-specific distance/elevation activities found in the selected period.</div>`;
+                }
 
                 // Generate inactive members section if any
                 if (inactiveMembers.length > 0) {
@@ -585,24 +1025,35 @@
 
                 document.getElementById('leaderboard').innerHTML = html;
                 document.getElementById('headerMeta').innerHTML =
-                    `Since ${displayDate}`
+                    `Since ${displayDateTime}`
                     + `<span class="sep">|</span>${activeMembers.length}&thinsp;/&thinsp;${uniqueMembers.length} members active`
                     + `<span class="sep">|</span>Names anonymized 😉`
                     + `<span class="sep">|</span>Updated ${now.toLocaleTimeString()}`;
 
-                initCarousel(boards.length);
+                if (boards.length > 0) {
+                    initCarousel(boards.length);
+                }
+
+                hasSuccessfulRender = true;
 
             } catch (error) {
-                document.getElementById('leaderboard').innerHTML =
-                    `<div class="loading">Error loading leaderboard: ${error.message}</div>`;
+                // Keep the last successful view when data files are temporarily unavailable.
+                if (!hasSuccessfulRender) {
+                    document.getElementById('leaderboard').innerHTML =
+                        `<div class="loading">Loading...</div>`;
+                }
+                console.warn('Skipping refresh due to temporary data load error:', error);
             }
         }
 
         function initCarousel(totalSlides) {
             if (carouselAutoInterval) clearInterval(carouselAutoInterval);
+            if (funRaceConfettiTimer) {
+                clearTimeout(funRaceConfettiTimer);
+                funRaceConfettiTimer = null;
+            }
 
             let current = 0;
-            let paused = false;
             const INTERVAL = 8000;
 
             const track = document.getElementById('carouselTrack');
@@ -610,13 +1061,57 @@
             const prevBtn = document.getElementById('prevBtn');
             const nextBtn = document.getElementById('nextBtn');
             const progressBar = document.getElementById('progressBar');
-            const wrapper = document.getElementById('carouselWrapper');
+
+            function setupFunRace(slideIndex) {
+                if (funRaceConfettiTimer) {
+                    clearTimeout(funRaceConfettiTimer);
+                    funRaceConfettiTimer = null;
+                }
+
+                const slides = track.querySelectorAll('.carousel-slide');
+                const activeSlide = slides[slideIndex];
+                if (!activeSlide) return;
+
+                const funBoard = activeSlide.querySelector('.fun-board');
+                if (!funBoard) return;
+
+                const racers = [...funBoard.querySelectorAll('.fun-racer')];
+                if (racers.length === 0) return;
+
+                const winnerIndex = Math.floor(Math.random() * racers.length);
+
+                racers.forEach((racer, idx) => {
+                    const duration = idx === winnerIndex
+                        ? 6.2 + Math.random() * 0.8
+                        : 8.2 + Math.random() * 4.4;
+                    const bottom = 36 + Math.random() * 18;
+                    racer.style.animation = `funRace ${duration.toFixed(2)}s linear 1 forwards`;
+                    racer.style.bottom = `${bottom.toFixed(0)}px`;
+                    racer.style.left = '-14%';
+                    racer.dataset.duration = duration.toString();
+                });
+
+                const confetti = funBoard.querySelector('.fun-confetti');
+                if (!confetti) return;
+
+                confetti.classList.remove('burst');
+                confetti.offsetWidth; // force reflow
+
+                const winnerDuration = parseFloat(racers[winnerIndex].dataset.duration || '6.8');
+                const finishProgress = 96 / 116; // from -14% to ~82% where finish line is
+                const triggerMs = Math.max(0, Math.round(winnerDuration * finishProgress * 1000));
+
+                funRaceConfettiTimer = setTimeout(() => {
+                    confetti.classList.add('burst');
+                }, triggerMs);
+            }
 
             function goTo(index) {
                 current = ((index % totalSlides) + totalSlides) % totalSlides;
                 track.style.transform = `translateX(-${current * 100}%)`;
                 dots.forEach((d, i) => d.classList.toggle('active', i === current));
-                if (!paused) animateProgress();
+                setupFunRace(current);
+                animateProgress();
             }
 
             function animateProgress() {
@@ -632,25 +1127,13 @@
                 carouselAutoInterval = setInterval(() => goTo(current + 1), INTERVAL);
             }
 
-            prevBtn.addEventListener('click', () => { goTo(current - 1); if (!paused) resetAutoAdvance(); });
-            nextBtn.addEventListener('click', () => { goTo(current + 1); if (!paused) resetAutoAdvance(); });
+            prevBtn.addEventListener('click', () => { goTo(current - 1); resetAutoAdvance(); });
+            nextBtn.addEventListener('click', () => { goTo(current + 1); resetAutoAdvance(); });
             dots.forEach(dot => {
-                dot.addEventListener('click', () => { goTo(parseInt(dot.dataset.index)); if (!paused) resetAutoAdvance(); });
+                dot.addEventListener('click', () => { goTo(parseInt(dot.dataset.index)); resetAutoAdvance(); });
             });
 
-            wrapper.addEventListener('mouseenter', () => {
-                paused = true;
-                clearInterval(carouselAutoInterval);
-                carouselAutoInterval = null;
-                progressBar.style.transition = 'none';
-                progressBar.style.width = '0%';
-            });
-            wrapper.addEventListener('mouseleave', () => {
-                paused = false;
-                animateProgress();
-                resetAutoAdvance();
-            });
-
+            setupFunRace(current);
             animateProgress();
             resetAutoAdvance();
         }

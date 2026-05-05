@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sykle til jobben 2026 - Bouvet Norge As Agder</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            padding: 30px;
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 6px;
+            text-align: center;
+            font-size: 22px;
+        }
+        
+        h2 {
+            color: #667eea;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 20px;
+            border-bottom: 2px solid #f0f4ff;
+            padding-bottom: 10px;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .header-meta {
+            text-align: center;
+            font-size: 12px;
+            color: #888;
+            margin-bottom: 20px;
+        }
+
+        .competition-state {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+
+        .competition-state.active {
+            background: #e6f4ea;
+            color: #1e7e34;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .notice {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .notice strong {
+            color: #856404;
+            font-size: 16px;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 20px 0 30px;
+        }
+        
+        .stat-card {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            border-bottom: 3px solid #667eea;
+        }
+        
+        .stat-card .value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .stat-card .label {
+            font-size: 12px;
+            color: #666;
+            text-transform: uppercase;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        
+        thead {
+            background: #f8f9fa;
+            border-bottom: 2px solid #667eea;
+        }
+        
+        th {
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        tbody tr:hover {
+            background: #f0f4ff;
+        }
+        
+        .rank {
+            font-weight: 600;
+            color: #667eea;
+            font-size: 18px;
+            width: 50px;
+        }
+
+        .primary-col {
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .metric {
+            text-align: right;
+            font-family: monospace;
+            font-size: 15px;
+        }
+
+        th.metric {
+            font-family: inherit;
+        }
+
+        .name {
+            font-weight: 500;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="main-title">🏆 Sykle til jobben - Bouvet Norge As Agder</h1>
+        <div class="subtitle">Oppdatert oversikt for bedriften</div>
+        <div class="header-meta">
+            Sist oppdatert: <span id="last-updated">Laster...</span>
+            <span class="competition-state active">Aktiv</span>
+        </div>
+
+        <div class="stats-grid" id="company-stats">
+            <!-- Populated via JS -->
+            <div class="stat-card"><div class="value">...</div><div class="label">Laster Data</div></div>
+        </div>
+
+        <h2>Lag oversikt</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Plass</th>
+                    <th>Lag</th>
+                    <th class="metric primary-col">Poeng (Snitt)</th>
+                    <th class="metric">Totalt Poeng</th>
+                    <th class="metric">Medlemmer</th>
+                    <th class="metric">Økter</th>
+                    <th class="metric">Km</th>
+                    <th class="metric">Tid</th>
+                </tr>
+            </thead>
+            <tbody id="team-leaderboard">
+                <!-- Populated by JS -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        // Format seconds to hours and minutes
+        function formatTime(totalSeconds) {
+            if (!totalSeconds) return "0t 0m";
+            const hours = Math.floor(totalSeconds / 3600);
+            const minutes = Math.floor((totalSeconds % 3600) / 60);
+            return `${hours}t ${minutes}m`;
+        }
+
+        function formatKm(centimeters) {
+            if (!centimeters) return "0.0";
+            return (centimeters / 100000).toFixed(1);
+        }
+
+        async function loadSykleData() {
+            try {
+                const response = await fetch('sykletiljobben.json');
+                const data = await response.json();
+
+                // 1. Update Title and Date
+                document.getElementById('main-title').textContent = `🏆 Sykle til jobben - ${data.title}`;
+                const updateDate = new Date(data.lastUpdateTime).toLocaleString('no-NO');
+                document.getElementById('last-updated').textContent = updateDate;
+
+                // 2. Render Company Stats
+                const statsGrid = document.getElementById('company-stats');
+                statsGrid.innerHTML = `
+                    <div class="stat-card">
+                        <div class="value">#${data.rank} <span style="font-size: 14px; color:#666;">/ ${data.totalCompanies}</span></div>
+                        <div class="label">Total Plassering</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="value">${data.countCompanyMembers}</div>
+                        <div class="label">Medlemmer</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="value">${data.pointsTotal.toFixed(2)}</div>
+                        <div class="label">Totalt Poeng</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="value">${data.totalWorkouts}</div>
+                        <div class="label">Totalt Økter</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="value">${formatKm(data.totalCentimeters)} km</div>
+                        <div class="label">Totalt Km</div>
+                    </div>
+                `;
+
+                // 3. Render Teams Leaderboard
+                const tbody = document.getElementById('team-leaderboard');
+                tbody.innerHTML = '';
+                
+                // Sort teams detailed by average points descending, then total points descending
+                const teams = data.teamsDetailed.sort((a,b) => {
+                    if (b.averagePoints !== a.averagePoints) {
+                        return b.averagePoints - a.averagePoints;
+                    }
+                    return b.totalPoints - a.totalPoints;
+                });
+
+                teams.forEach((team, index) => {
+                    const tr = document.createElement('tr');
+                    
+                    tr.innerHTML = `
+                        <td class="rank">${index + 1}</td>
+                        <td class="name">${team.title}</td>
+                        <td class="metric primary-col">${team.averagePoints.toFixed(2)}</td>
+                        <td class="metric">${team.totalPoints.toFixed(2)}</td>
+                        <td class="metric">${team.memberCount}</td>
+                        <td class="metric">${team.totalWorkouts}</td>
+                        <td class="metric">${team.totalkilometers.toFixed(1)}</td>
+                        <td class="metric">${formatTime(team.totalSeconds)}</td>
+                    `;
+                    tbody.appendChild(tr);
+                });
+
+            } catch (error) {
+                console.error("Error loading data:", error);
+                document.getElementById('company-stats').innerHTML = `
+                    <div class="notice" style="grid-column: 1 / -1;">
+                        <strong>Data Error</strong>
+                        <p>Kunne ikke laste sykletiljobben.json. Kontakt administrator.</p>
+                    </div>`;
+            }
+        }
+
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', loadSykleData);
+    </script>
+</body>
+</html>

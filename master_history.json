@@ -7,6 +7,24 @@
       "lastname": "Tortoise"
     },
     "name": "Ride",
+    "distance": 836.8,
+    "moving_time": 209,
+    "elapsed_time": 209,
+    "total_elevation_gain": 6,
+    "type": "Ride",
+    "sport_type": "Ride",
+    "workout_type": null,
+    "device_name": "Garmin Forerunner 255",
+    "activity_date": "2026-05-05T10:00:28.114Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Energetic",
+      "lastname": "Tortoise"
+    },
+    "name": "Ride",
     "distance": 807.8,
     "moving_time": 261,
     "elapsed_time": 261,
@@ -52,6 +70,23 @@
     "workout_type": 10,
     "device_name": "Garmin fēnix 5S Plus",
     "activity_date": "2026-05-05T07:14:56.017Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "King",
+      "lastname": "Horse"
+    },
+    "name": "Walk",
+    "distance": 1409.5,
+    "moving_time": 718,
+    "elapsed_time": 1002,
+    "total_elevation_gain": 10,
+    "type": "Walk",
+    "sport_type": "Walk",
+    "device_name": "Apple Watch Ultra 3",
+    "activity_date": "2026-05-05T10:00:28.114Z"
   },
   {
     "resource_state": 2,

@@ -3,6 +3,60 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
+      "firstname": "Turbo",
+      "lastname": "Bear"
+    },
+    "name": "Ride",
+    "distance": 3004.4,
+    "moving_time": 604,
+    "elapsed_time": 604,
+    "total_elevation_gain": 99.6,
+    "type": "Ride",
+    "sport_type": "Ride",
+    "workout_type": null,
+    "device_name": "Garmin Forerunner 245 Music",
+    "activity_date": "2026-05-05T16:22:50.698Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Energetic",
+      "lastname": "Tortoise"
+    },
+    "name": "Ride",
+    "distance": 10809.5,
+    "moving_time": 1780,
+    "elapsed_time": 1879,
+    "total_elevation_gain": 195,
+    "type": "Ride",
+    "sport_type": "Ride",
+    "workout_type": null,
+    "device_name": "Garmin Forerunner 255",
+    "activity_date": "2026-05-05T16:22:50.698Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Mighty",
+      "lastname": "Horse"
+    },
+    "name": "Run",
+    "distance": 11665.8,
+    "moving_time": 3745,
+    "elapsed_time": 3745,
+    "total_elevation_gain": 176.9,
+    "type": "Run",
+    "sport_type": "Run",
+    "workout_type": null,
+    "device_name": "Garmin vívoactive 5",
+    "activity_date": "2026-05-05T16:22:50.698Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
       "firstname": "Energetic",
       "lastname": "Tortoise"
     },
@@ -70,23 +124,6 @@
     "workout_type": 10,
     "device_name": "Garmin fēnix 5S Plus",
     "activity_date": "2026-05-05T07:14:56.017Z"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Horse"
-    },
-    "name": "Walk",
-    "distance": 1409.5,
-    "moving_time": 718,
-    "elapsed_time": 1002,
-    "total_elevation_gain": 10,
-    "type": "Walk",
-    "sport_type": "Walk",
-    "device_name": "Apple Watch Ultra 3",
-    "activity_date": "2026-05-05T10:00:28.114Z"
   },
   {
     "resource_state": 2,

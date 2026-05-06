@@ -1251,20 +1251,35 @@
 
         async function loadSykleData() {
             try {
-                const response = await fetch('sykletiljobben.json');
-                const data = await response.json();
+                const [natRes, countyRes, communityRes] = await Promise.allSettled([
+                    fetch('sykletiljobben.json').then(r => r.ok ? r.json() : null),
+                    fetch('sykletiljobben_county.json').then(r => r.ok ? r.json() : null),
+                    fetch('sykletiljobben_community.json').then(r => r.ok ? r.json() : null)
+                ]);
+
+                const data     = natRes.status      === 'fulfilled' ? natRes.value      : null;
+                const county   = countyRes.status   === 'fulfilled' ? countyRes.value   : null;
+                const community = communityRes.status === 'fulfilled' ? communityRes.value : null;
+
+                if (!data) throw new Error('Nasjonale data mangler');
 
                 const updateDate = new Date(data.lastUpdateTime).toLocaleString('no-NO');
                 document.getElementById('sykleHeaderMeta').textContent =
                     `Sist oppdatert: ${updateDate}`;
 
+                const rankCard = (label, d) => d
+                    ? `<div class="stat-card">
+                        <div class="value">#${d.rank}<span style="font-size:12px;color:#666"> / ${d.totalCompanies}</span></div>
+                        <div class="label">${label}</div>
+                       </div>`
+                    : '';
+
                 const statsGrid = document.getElementById('company-stats');
-                statsGrid.innerHTML = `
-                    <div class="stat-card">
-                        <div class="value">#${data.rank}<span style="font-size:12px;color:#666"> / ${data.totalCompanies}</span></div>
-                        <div class="label">Plassering</div>
-                    </div>
-                    <div class="stat-card">
+                statsGrid.innerHTML =
+                    rankCard('Nasjonalt', data) +
+                    rankCard('Fylke', county) +
+                    rankCard('Kommune', community) +
+                    `<div class="stat-card">
                         <div class="value">${data.countCompanyMembers}</div>
                         <div class="label">Medlemmer</div>
                     </div>
@@ -1279,8 +1294,7 @@
                     <div class="stat-card">
                         <div class="value">${formatKm(data.totalCentimeters)} km</div>
                         <div class="label">Totalt Km</div>
-                    </div>
-                `;
+                    </div>`;
 
                 const tbody = document.getElementById('team-leaderboard');
                 tbody.innerHTML = '';

@@ -370,11 +370,18 @@ jobs:
           }
           EOF
 
+      - name: Fetch Sykletiljobben Data
+        run: |
+          curl -s -H "Authorization: Bearer ${{ secrets.SYKLETILJOBBEN_TOKEN }}" \
+            "https://webapi.webfarm3.bloc.no/api/Competition/GetCompanyPage?companyId=17359&measureBy=averagePoints&locality=national" \
+            | jq '.' > sykletiljobben.json
+          echo "Fetched sykletiljobben.json"
+
       - name: Commit and Push if changed
         run: |
           git config --global user.name "GitHub Action"
           git config --global user.email "action@github.com"
-          git add club_activities.json club_members.json master_history.json config.json
+          git add club_activities.json club_members.json master_history.json config.json sykletiljobben.json
           git diff --cached --quiet && exit 0
           git commit -m "Update Strava club activities"
           git push --force https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main

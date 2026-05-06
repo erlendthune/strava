@@ -33,6 +33,14 @@
   },
   {
     "resource_state": 2,
+    "firstname": "King",
+    "lastname": "Swan",
+    "membership": "member",
+    "admin": false,
+    "owner": false
+  },
+  {
+    "resource_state": 2,
     "firstname": "Mighty",
     "lastname": "Horse",
     "membership": "member",

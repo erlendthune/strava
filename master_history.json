@@ -6,6 +6,111 @@
       "firstname": "Turbo",
       "lastname": "Bear"
     },
+    "name": "EBikeRide",
+    "distance": 2928.8,
+    "moving_time": 412,
+    "elapsed_time": 412,
+    "total_elevation_gain": 2.1,
+    "type": "EBikeRide",
+    "sport_type": "EBikeRide",
+    "device_name": "Garmin Forerunner 245 Music",
+    "activity_date": "2026-05-06T08:11:38.712Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Heroic",
+      "lastname": "Rabbit"
+    },
+    "name": "Ride",
+    "distance": 19836,
+    "moving_time": 2592,
+    "elapsed_time": 2659,
+    "total_elevation_gain": 125,
+    "type": "Ride",
+    "sport_type": "Ride",
+    "workout_type": null,
+    "device_name": "Garmin Edge 1030 Plus",
+    "activity_date": "2026-05-06T08:11:38.712Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "King",
+      "lastname": "Horse"
+    },
+    "name": "Walk",
+    "distance": 1482.5,
+    "moving_time": 898,
+    "elapsed_time": 915,
+    "total_elevation_gain": 14.6,
+    "type": "Walk",
+    "sport_type": "Walk",
+    "device_name": "Apple Watch Ultra 3",
+    "activity_date": "2026-05-06T08:11:38.712Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Jolly",
+      "lastname": "Mongoose"
+    },
+    "name": "Ride",
+    "distance": 6986,
+    "moving_time": 1191,
+    "elapsed_time": 1228,
+    "total_elevation_gain": 70,
+    "type": "Ride",
+    "sport_type": "Ride",
+    "workout_type": 10,
+    "device_name": "Garmin Forerunner 265",
+    "activity_date": "2026-05-06T08:11:38.712Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "King",
+      "lastname": "Swan"
+    },
+    "name": "Walk",
+    "distance": 5619,
+    "moving_time": 3768,
+    "elapsed_time": 3995,
+    "total_elevation_gain": 14.4,
+    "type": "Walk",
+    "sport_type": "Walk",
+    "device_name": "Strava App",
+    "activity_date": "2026-05-06T08:11:38.712Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Heroic",
+      "lastname": "Rabbit"
+    },
+    "name": "Ride",
+    "distance": 45592.6,
+    "moving_time": 7288,
+    "elapsed_time": 7435,
+    "total_elevation_gain": 589,
+    "type": "Ride",
+    "sport_type": "Ride",
+    "workout_type": null,
+    "device_name": "Garmin Edge 1030 Plus",
+    "activity_date": "2026-05-06T08:11:38.712Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Turbo",
+      "lastname": "Bear"
+    },
     "name": "Ride",
     "distance": 3004.4,
     "moving_time": 604,
@@ -178,6 +283,40 @@
     "workout_type": 10,
     "device_name": "Garmin Forerunner 255",
     "activity_date": "2026-05-05T05:47:35.154Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "King",
+      "lastname": "Swan"
+    },
+    "name": "Walk",
+    "distance": 3198.3,
+    "moving_time": 2662,
+    "elapsed_time": 2976,
+    "total_elevation_gain": 37,
+    "type": "Walk",
+    "sport_type": "Walk",
+    "device_name": "Apple Watch Series 9",
+    "activity_date": "2026-05-06T08:11:38.712Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "King",
+      "lastname": "Swan"
+    },
+    "name": "Walk",
+    "distance": 3333.9,
+    "moving_time": 2808,
+    "elapsed_time": 2881,
+    "total_elevation_gain": 103.6,
+    "type": "Walk",
+    "sport_type": "Walk",
+    "device_name": "Strava App",
+    "activity_date": "2026-05-06T08:11:38.712Z"
   },
   {
     "resource_state": 2,
@@ -415,6 +554,23 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
+      "firstname": "King",
+      "lastname": "Swan"
+    },
+    "name": "Walk",
+    "distance": 2491.2,
+    "moving_time": 1538,
+    "elapsed_time": 1658,
+    "total_elevation_gain": 39,
+    "type": "Walk",
+    "sport_type": "Walk",
+    "device_name": "Apple Watch Series 9",
+    "activity_date": "2026-05-06T08:11:38.712Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
       "firstname": "Heroic",
       "lastname": "Rabbit"
     },
@@ -428,6 +584,40 @@
     "workout_type": null,
     "device_name": "Garmin Edge 1030 Plus",
     "activity_date": "2026-05-01T14:53:58.431Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "King",
+      "lastname": "Swan"
+    },
+    "name": "Walk",
+    "distance": 2405.7,
+    "moving_time": 1405,
+    "elapsed_time": 1796,
+    "total_elevation_gain": 29,
+    "type": "Walk",
+    "sport_type": "Walk",
+    "device_name": "Apple Watch Series 9",
+    "activity_date": "2026-05-06T08:11:38.712Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "King",
+      "lastname": "Swan"
+    },
+    "name": "Walk",
+    "distance": 3761,
+    "moving_time": 2904,
+    "elapsed_time": 3314,
+    "total_elevation_gain": 28,
+    "type": "Walk",
+    "sport_type": "Walk",
+    "device_name": "Apple Watch Series 9",
+    "activity_date": "2026-05-06T08:11:38.712Z"
   },
   {
     "resource_state": 2,
@@ -536,6 +726,23 @@
     "workout_type": null,
     "device_name": "Garmin Forerunner 245 Music",
     "activity_date": "2026-04-30T15:08:00.462Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "King",
+      "lastname": "Swan"
+    },
+    "name": "Walk",
+    "distance": 5570.1,
+    "moving_time": 3875,
+    "elapsed_time": 4226,
+    "total_elevation_gain": 67.6,
+    "type": "Walk",
+    "sport_type": "Walk",
+    "device_name": "Apple Watch Series 9",
+    "activity_date": "2026-05-06T08:11:38.712Z"
   },
   {
     "resource_state": 2,
@@ -1306,6 +1513,23 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
+      "firstname": "King",
+      "lastname": "Swan"
+    },
+    "name": "Walk",
+    "distance": 3132.6,
+    "moving_time": 2550,
+    "elapsed_time": 2827,
+    "total_elevation_gain": 106.6,
+    "type": "Walk",
+    "sport_type": "Walk",
+    "device_name": "Apple Watch Series 9",
+    "activity_date": "2026-05-06T08:11:38.712Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
       "firstname": "Heroic",
       "lastname": "Rabbit"
     },
@@ -1823,6 +2047,23 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
+      "firstname": "King",
+      "lastname": "Swan"
+    },
+    "name": "Walk",
+    "distance": 3006.2,
+    "moving_time": 2598,
+    "elapsed_time": 3209,
+    "total_elevation_gain": 46.6,
+    "type": "Walk",
+    "sport_type": "Walk",
+    "device_name": "Apple Watch Series 9",
+    "activity_date": "2026-05-06T08:11:38.712Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
       "firstname": "Heroic",
       "lastname": "Rabbit"
     },
@@ -1836,6 +2077,40 @@
     "workout_type": null,
     "device_name": "Garmin Edge 1030 Plus",
     "activity_date": null
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "King",
+      "lastname": "Swan"
+    },
+    "name": "Walk",
+    "distance": 1238.6,
+    "moving_time": 493,
+    "elapsed_time": 1322,
+    "total_elevation_gain": 18.6,
+    "type": "Walk",
+    "sport_type": "Walk",
+    "device_name": "Apple Watch Series 9",
+    "activity_date": "2026-05-06T08:11:38.712Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "King",
+      "lastname": "Swan"
+    },
+    "name": "Walk",
+    "distance": 1030.9,
+    "moving_time": 383,
+    "elapsed_time": 1292,
+    "total_elevation_gain": 0,
+    "type": "Walk",
+    "sport_type": "Walk",
+    "device_name": "Apple Watch Series 9",
+    "activity_date": "2026-05-06T08:11:38.712Z"
   },
   {
     "resource_state": 2,
@@ -2084,6 +2359,23 @@
     "workout_type": null,
     "device_name": "Garmin Edge 1030 Plus",
     "activity_date": null
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "King",
+      "lastname": "Swan"
+    },
+    "name": "Walk",
+    "distance": 2210,
+    "moving_time": 1368,
+    "elapsed_time": 1953,
+    "total_elevation_gain": 22.4,
+    "type": "Walk",
+    "sport_type": "Walk",
+    "device_name": "Apple Watch Series 9",
+    "activity_date": "2026-05-06T08:11:38.712Z"
   },
   {
     "resource_state": 2,
@@ -2358,6 +2650,23 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
+      "firstname": "King",
+      "lastname": "Swan"
+    },
+    "name": "Walk",
+    "distance": 3319.4,
+    "moving_time": 2801,
+    "elapsed_time": 3961,
+    "total_elevation_gain": 38,
+    "type": "Walk",
+    "sport_type": "Walk",
+    "device_name": "Apple Watch Series 9",
+    "activity_date": "2026-05-06T08:11:38.712Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
       "firstname": "Turbo",
       "lastname": "Bear"
     },
@@ -2537,6 +2846,23 @@
     "athlete": {
       "resource_state": 2,
       "firstname": "King",
+      "lastname": "Swan"
+    },
+    "name": "Walk",
+    "distance": 0,
+    "moving_time": 264,
+    "elapsed_time": 264,
+    "total_elevation_gain": 0,
+    "type": "Walk",
+    "sport_type": "Walk",
+    "device_name": "Apple Watch Series 9",
+    "activity_date": "2026-05-06T08:11:38.712Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "King",
       "lastname": "Horse"
     },
     "name": "Run",
@@ -2659,24 +2985,6 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
-    },
-    "name": "Ride",
-    "distance": 57833.5,
-    "moving_time": 9136,
-    "elapsed_time": 9313,
-    "total_elevation_gain": 634,
-    "type": "Ride",
-    "sport_type": "Ride",
-    "workout_type": null,
-    "device_name": "Garmin Edge 1030 Plus",
-    "activity_date": null
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
       "firstname": "King",
       "lastname": "Horse"
     },
@@ -2689,6 +2997,24 @@
     "sport_type": "Run",
     "workout_type": null,
     "device_name": "Garmin Forerunner 165 Music",
+    "activity_date": null
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Heroic",
+      "lastname": "Rabbit"
+    },
+    "name": "Ride",
+    "distance": 57833.5,
+    "moving_time": 9136,
+    "elapsed_time": 9313,
+    "total_elevation_gain": 634,
+    "type": "Ride",
+    "sport_type": "Ride",
+    "workout_type": null,
+    "device_name": "Garmin Edge 1030 Plus",
     "activity_date": null
   },
   {

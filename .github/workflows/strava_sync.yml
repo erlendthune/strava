@@ -322,40 +322,21 @@ jobs:
             history = JSON.parse(fs.readFileSync('master_history.json', 'utf8'));
           }
           
-          // Build a map of existing activities by fingerprint
-          const historyMap = new Map();
-          history.forEach(activity => {
-            const fp = fingerprint(activity);
-            historyMap.set(fp, activity);
-          });
+          // Build a set of fingerprints already in history
+          const historyFps = new Set(history.map(fingerprint));
           
-          // Process current activities
+          // Start from full existing history so nothing ages off
+          const newHistory = [...history];
           let added = 0;
-          let updated = 0;
-          const newHistory = [];
           
           for (const activity of current) {
             const fp = fingerprint(activity);
-            const existing = historyMap.get(fp);
-            
-            if (existing) {
-              // Activity already exists, preserve its activity_date
-              newHistory.push(existing);
-              updated++;
-            } else {
-              // New activity
+            if (!historyFps.has(fp)) {
+              // New activity not yet in history
               if (isFirstRun) {
-                // First run: all activities are historical, mark as null
-                newHistory.push({
-                  ...activity,
-                  activity_date: null
-                });
+                newHistory.push({ ...activity, activity_date: null });
               } else {
-                // Subsequent run: new activity, mark with today's date
-                newHistory.push({
-                  ...activity,
-                  activity_date: now
-                });
+                newHistory.push({ ...activity, activity_date: now });
                 added++;
               }
             }
@@ -366,7 +347,7 @@ jobs:
           if (isFirstRun) {
             console.log(`First run: Marked ${newHistory.length} historical activities (activity_date: null)`);
           } else {
-            console.log(`Added ${added} new activities, kept ${updated} existing. Total: ${newHistory.length}`);
+            console.log(`Added ${added} new activities. Total: ${newHistory.length}`);
           }
           EOF
 

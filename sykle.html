@@ -57,6 +57,43 @@
             margin-bottom: 20px;
         }
 
+        .slide-controls {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 12px 0 18px;
+        }
+
+        .slide-btn {
+            border: 1px solid #d3dcff;
+            border-radius: 999px;
+            background: #f6f8ff;
+            color: #3c4f9f;
+            padding: 8px 14px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .slide-btn:hover {
+            background: #e8edff;
+        }
+
+        .slide-btn.active {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+
+        .slide-status {
+            text-align: center;
+            color: #666;
+            font-size: 13px;
+            margin-bottom: 16px;
+        }
+
         .competition-state {
             display: inline-block;
             padding: 2px 8px;
@@ -182,6 +219,9 @@
             <span class="competition-state active">Aktiv</span>
         </div>
 
+        <div class="slide-controls" id="slide-controls"></div>
+        <div class="slide-status" id="slide-status">Laster visninger...</div>
+
         <div class="stats-grid" id="company-stats">
             <!-- Populated via JS -->
             <div class="stat-card"><div class="value">...</div><div class="label">Laster Data</div></div>
@@ -221,75 +261,150 @@
             return (centimeters / 100000).toFixed(1);
         }
 
+        const views = [
+            { key: 'national', label: 'Nasjonalt', file: 'sykletiljobben.json' },
+            { key: 'county', label: 'Fylke', file: 'sykletiljobben_county.json' },
+            { key: 'community', label: 'Kommune', file: 'sykletiljobben_community.json' }
+        ];
+
+        const AUTO_CYCLE_MS = 12000;
+        const loadedData = {};
+        let activeView = views[0].key;
+        let cycleTimer = null;
+
+        function nextView() {
+            const currentIndex = views.findIndex(v => v.key === activeView);
+            const nextIndex = (currentIndex + 1) % views.length;
+            activeView = views[nextIndex].key;
+            renderViewButtons();
+            renderDataForView();
+        }
+
+        function startAutoCycle() {
+            if (cycleTimer) {
+                clearInterval(cycleTimer);
+            }
+            cycleTimer = setInterval(nextView, AUTO_CYCLE_MS);
+        }
+
+        function renderViewButtons() {
+            const controls = document.getElementById('slide-controls');
+            controls.innerHTML = '';
+
+            views.forEach((view) => {
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = `slide-btn${activeView === view.key ? ' active' : ''}`;
+                btn.textContent = view.label;
+                btn.addEventListener('click', () => {
+                    activeView = view.key;
+                    renderViewButtons();
+                    renderDataForView();
+                    startAutoCycle();
+                });
+                controls.appendChild(btn);
+            });
+        }
+
+        function renderDataForView() {
+            const currentView = views.find(v => v.key === activeView);
+            const data = loadedData[activeView];
+
+            if (!data) {
+                document.getElementById('slide-status').textContent = `Ingen data for ${currentView.label.toLowerCase()} visning enda.`;
+                document.getElementById('company-stats').innerHTML = `
+                    <div class="notice" style="grid-column: 1 / -1;">
+                        <strong>Data mangler</strong>
+                        <p>Fant ikke ${currentView.file}. Kjør synk-jobben for å hente denne visningen.</p>
+                    </div>`;
+                document.getElementById('team-leaderboard').innerHTML = '';
+                return;
+            }
+
+            document.getElementById('main-title').textContent = `🏆 Sykle til jobben - ${data.title}`;
+            const updateDate = new Date(data.lastUpdateTime).toLocaleString('no-NO');
+            document.getElementById('last-updated').textContent = updateDate;
+            document.getElementById('slide-status').textContent = `Visning: ${currentView.label}`;
+
+            const statsGrid = document.getElementById('company-stats');
+            statsGrid.innerHTML = `
+                <div class="stat-card">
+                    <div class="value">#${data.rank} <span style="font-size: 14px; color:#666;">/ ${data.totalCompanies}</span></div>
+                    <div class="label">Total Plassering</div>
+                </div>
+                <div class="stat-card">
+                    <div class="value">${data.countCompanyMembers}</div>
+                    <div class="label">Medlemmer</div>
+                </div>
+                <div class="stat-card">
+                    <div class="value">${data.pointsTotal.toFixed(2)}</div>
+                    <div class="label">Totalt Poeng</div>
+                </div>
+                <div class="stat-card">
+                    <div class="value">${data.totalWorkouts}</div>
+                    <div class="label">Totalt Økter</div>
+                </div>
+                <div class="stat-card">
+                    <div class="value">${formatKm(data.totalCentimeters)} km</div>
+                    <div class="label">Totalt Km</div>
+                </div>
+            `;
+
+            const tbody = document.getElementById('team-leaderboard');
+            tbody.innerHTML = '';
+
+            const teams = (data.teamsDetailed || []).sort((a, b) => {
+                if (b.averagePoints !== a.averagePoints) {
+                    return b.averagePoints - a.averagePoints;
+                }
+                return b.totalPoints - a.totalPoints;
+            });
+
+            teams.forEach((team, index) => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td class="rank">${index + 1}</td>
+                    <td class="name">${team.title}</td>
+                    <td class="metric primary-col">${team.averagePoints.toFixed(2)}</td>
+                    <td class="metric">${team.totalPoints.toFixed(2)}</td>
+                    <td class="metric">${team.memberCount}</td>
+                    <td class="metric">${team.totalWorkouts}</td>
+                    <td class="metric">${team.totalkilometers.toFixed(1)}</td>
+                    <td class="metric">${formatTime(team.totalSeconds)}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
         async function loadSykleData() {
             try {
-                const response = await fetch('sykletiljobben.json');
-                const data = await response.json();
+                const responses = await Promise.allSettled(
+                    views.map(async (view) => {
+                        const response = await fetch(view.file);
+                        if (!response.ok) {
+                            throw new Error(`Kunne ikke hente ${view.file} (${response.status})`);
+                        }
+                        const json = await response.json();
+                        return { key: view.key, data: json };
+                    })
+                );
 
-                // 1. Update Title and Date
-                document.getElementById('main-title').textContent = `🏆 Sykle til jobben - ${data.title}`;
-                const updateDate = new Date(data.lastUpdateTime).toLocaleString('no-NO');
-                document.getElementById('last-updated').textContent = updateDate;
-
-                // 2. Render Company Stats
-                const statsGrid = document.getElementById('company-stats');
-                statsGrid.innerHTML = `
-                    <div class="stat-card">
-                        <div class="value">#${data.rank} <span style="font-size: 14px; color:#666;">/ ${data.totalCompanies}</span></div>
-                        <div class="label">Total Plassering</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="value">${data.countCompanyMembers}</div>
-                        <div class="label">Medlemmer</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="value">${data.pointsTotal.toFixed(2)}</div>
-                        <div class="label">Totalt Poeng</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="value">${data.totalWorkouts}</div>
-                        <div class="label">Totalt Økter</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="value">${formatKm(data.totalCentimeters)} km</div>
-                        <div class="label">Totalt Km</div>
-                    </div>
-                `;
-
-                // 3. Render Teams Leaderboard
-                const tbody = document.getElementById('team-leaderboard');
-                tbody.innerHTML = '';
-                
-                // Sort teams detailed by average points descending, then total points descending
-                const teams = data.teamsDetailed.sort((a,b) => {
-                    if (b.averagePoints !== a.averagePoints) {
-                        return b.averagePoints - a.averagePoints;
+                responses.forEach((result) => {
+                    if (result.status === 'fulfilled') {
+                        loadedData[result.value.key] = result.value.data;
                     }
-                    return b.totalPoints - a.totalPoints;
                 });
 
-                teams.forEach((team, index) => {
-                    const tr = document.createElement('tr');
-                    
-                    tr.innerHTML = `
-                        <td class="rank">${index + 1}</td>
-                        <td class="name">${team.title}</td>
-                        <td class="metric primary-col">${team.averagePoints.toFixed(2)}</td>
-                        <td class="metric">${team.totalPoints.toFixed(2)}</td>
-                        <td class="metric">${team.memberCount}</td>
-                        <td class="metric">${team.totalWorkouts}</td>
-                        <td class="metric">${team.totalkilometers.toFixed(1)}</td>
-                        <td class="metric">${formatTime(team.totalSeconds)}</td>
-                    `;
-                    tbody.appendChild(tr);
-                });
+                renderViewButtons();
+                renderDataForView();
+                startAutoCycle();
 
             } catch (error) {
                 console.error("Error loading data:", error);
                 document.getElementById('company-stats').innerHTML = `
                     <div class="notice" style="grid-column: 1 / -1;">
                         <strong>Data Error</strong>
-                        <p>Kunne ikke laste sykletiljobben.json. Kontakt administrator.</p>
+                        <p>Kunne ikke laste visningene. Kontakt administrator.</p>
                     </div>`;
             }
         }

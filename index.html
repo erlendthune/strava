@@ -15,16 +15,16 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
-            padding: 20px;
+            padding: 12px;
         }
         
         .container {
-            max-width: 1000px;
+            width: 100%;
             margin: 0 auto;
             background: white;
             border-radius: 12px;
             box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-            padding: 30px;
+            padding: 20px 24px;
         }
         
         h1 {
@@ -177,6 +177,7 @@
 
         .carousel-track {
             display: flex;
+            width: 100%;
             transition: transform 0.5s ease;
         }
 
@@ -661,6 +662,68 @@
                 transform: translate(var(--dx), var(--dy)) rotate(320deg);
             }
         }
+
+        /* ── Split layout ────────────────────────────────────── */
+        .split-layout {
+            display: flex;
+            gap: 28px;
+            align-items: flex-start;
+        }
+
+        .split-left {
+            flex: 1 1 0;
+            min-width: 0;
+        }
+
+        .split-right {
+            flex: 1 1 0;
+            min-width: 0;
+            border-left: 2px solid #f0f4ff;
+            padding-left: 24px;
+        }
+
+        /* ── Sykle stats grid ────────────────────────────────── */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+            gap: 10px;
+            margin: 10px 0 18px;
+        }
+
+        .stat-card {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 12px 10px;
+            text-align: center;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .stat-card .value {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 4px;
+        }
+
+        .stat-card .label {
+            font-size: 11px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .sykle-table-wrap {
+            overflow-x: auto;
+        }
+
+        .sykle-table-wrap table {
+            font-size: 13px;
+        }
+
+        .sykle-table-wrap th,
+        .sykle-table-wrap td {
+            padding: 8px 10px;
+        }
     </style>
 </head>
 <body>
@@ -699,7 +762,36 @@
             </div>
         </div>
 
-        <div id="leaderboard" class="loading">Loading...</div>
+        <div class="split-layout">
+            <div class="split-left">
+                <div id="leaderboard" class="loading">Loading...</div>
+            </div>
+            <div class="split-right">
+                <h2>🚲 Sykle til jobben</h2>
+                <div class="header-meta" id="sykleHeaderMeta">Laster…</div>
+                <div class="stats-grid" id="company-stats">
+                    <div class="stat-card"><div class="value">…</div><div class="label">Laster data</div></div>
+                </div>
+                <h2>Lag oversikt</h2>
+                <div class="sykle-table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width:44px">#</th>
+                                <th>Lag</th>
+                                <th class="metric primary-col" style="text-align:right">Snitt</th>
+                                <th class="metric" style="text-align:right">Poeng</th>
+                                <th class="metric" style="text-align:right">Medl.</th>
+                                <th class="metric" style="text-align:right">Økter</th>
+                                <th class="metric" style="text-align:right">Km</th>
+                                <th class="metric" style="text-align:right">Tid</th>
+                            </tr>
+                        </thead>
+                        <tbody id="team-leaderboard"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script>
@@ -876,11 +968,9 @@
 
                 boards.unshift({
                     icon: '🎬',
-                    title: 'Animal Grand Prix',
-                    leaderText: 'The leaderboard mascots are warming up for race day',
+                    title: 'Bouvet strava race',
                     customHtml: `
                         <div class="fun-board" aria-hidden="true">
-                            <div class="fun-race-caption">Cartoon race warm-up: no rankings, just vibes.</div>
                             <div class="fun-cloud c1">☁️</div>
                             <div class="fun-cloud c2">☁️</div>
                             <div class="fun-cloud c3">☁️</div>
@@ -1033,32 +1123,6 @@
                     html += `<div class="loading">No sport-specific distance/elevation activities found in the selected period.</div>`;
                 }
 
-                // Generate inactive members section if any
-                if (inactiveMembers.length > 0) {
-                    html += '<h2>💤 Not Yet Active</h2>';
-                    html += `<p class="subtitle inactive-message">These members haven't logged activities yet or their privacy settings prevent visibility.</p>`;
-                    html += `
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Athlete</th>
-                                    <th style="text-align:right">Status</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                    `;
-                    
-                    inactiveMembers.forEach(athlete => {
-                        html += `
-                            <tr class="inactive-row">
-                                <td class="name">${athlete.name}</td>
-                                <td class="metric inactive-message">No activities yet</td>
-                            </tr>
-                        `;
-                    });
-                    html += `</tbody></table>`;
-                }
-
                 document.getElementById('leaderboard').innerHTML = html;
                 document.getElementById('headerMeta').innerHTML =
                     `Competition: ${displayStartDate} to ${displayEndDate}${competitionState}`
@@ -1179,6 +1243,78 @@
 
         loadLeaderboard();
         setInterval(loadLeaderboard, 5 * 60 * 1000);
+
+        function formatKm(centimeters) {
+            if (!centimeters) return '0.0';
+            return (centimeters / 100000).toFixed(1);
+        }
+
+        async function loadSykleData() {
+            try {
+                const response = await fetch('sykletiljobben.json');
+                const data = await response.json();
+
+                const updateDate = new Date(data.lastUpdateTime).toLocaleString('no-NO');
+                document.getElementById('sykleHeaderMeta').textContent =
+                    `Sist oppdatert: ${updateDate}`;
+
+                const statsGrid = document.getElementById('company-stats');
+                statsGrid.innerHTML = `
+                    <div class="stat-card">
+                        <div class="value">#${data.rank}<span style="font-size:12px;color:#666"> / ${data.totalCompanies}</span></div>
+                        <div class="label">Plassering</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="value">${data.countCompanyMembers}</div>
+                        <div class="label">Medlemmer</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="value">${data.pointsTotal.toFixed(2)}</div>
+                        <div class="label">Totalt Poeng</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="value">${data.totalWorkouts}</div>
+                        <div class="label">Totalt Økter</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="value">${formatKm(data.totalCentimeters)} km</div>
+                        <div class="label">Totalt Km</div>
+                    </div>
+                `;
+
+                const tbody = document.getElementById('team-leaderboard');
+                tbody.innerHTML = '';
+                const teams = [...data.teamsDetailed].sort((a, b) => {
+                    if (b.averagePoints !== a.averagePoints) return b.averagePoints - a.averagePoints;
+                    return b.totalPoints - a.totalPoints;
+                });
+
+                teams.forEach((team, index) => {
+                    const medal = index === 0 ? '🥇' : index === 1 ? '🥈' : index === 2 ? '🥉' : index + 1;
+                    const tr = document.createElement('tr');
+                    tr.innerHTML = `
+                        <td class="rank">${medal}</td>
+                        <td class="name">${team.title}</td>
+                        <td class="metric primary-col">${team.averagePoints.toFixed(2)}</td>
+                        <td class="metric">${team.totalPoints.toFixed(2)}</td>
+                        <td class="metric">${team.memberCount}</td>
+                        <td class="metric">${team.totalWorkouts}</td>
+                        <td class="metric">${team.totalkilometers.toFixed(1)}</td>
+                        <td class="metric">${formatTime(team.totalSeconds)}</td>
+                    `;
+                    tbody.appendChild(tr);
+                });
+            } catch (error) {
+                console.error('Error loading sykle data:', error);
+                document.getElementById('company-stats').innerHTML = `
+                    <div style="grid-column:1/-1;color:#856404;background:#fff3cd;padding:12px;border-radius:8px;border:2px solid #ffc107">
+                        Kunne ikke laste sykletiljobben.json
+                    </div>`;
+            }
+        }
+
+        loadSykleData();
+        setInterval(loadSykleData, 5 * 60 * 1000);
     </script>
 </body>
 </html>

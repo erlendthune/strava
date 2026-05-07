@@ -28,9 +28,23 @@
     "totalCentimeters": 0
   },
   {
+    "userGuid": "2bd3e601-68fe-41be-a5d3-18a2345cb595",
+    "userId": 1103463900,
+    "rank": 3,
+    "firstname": "Kristin Sørli",
+    "lastname": "Ommundsen",
+    "teamId": 37917,
+    "teamTitle": "Kristiansand",
+    "companyId": 17359,
+    "companyTitle": "Bouvet Norge As Agder",
+    "points": 7.00,
+    "totalSeconds": 11221,
+    "totalCentimeters": 4533870
+  },
+  {
     "userGuid": "be4cbe2a-976c-414c-97c5-504c509f63a0",
     "userId": 1103995940,
-    "rank": 3,
+    "rank": 4,
     "firstname": "Michael",
     "lastname": "Tangeraas",
     "teamId": 37963,
@@ -40,20 +54,6 @@
     "points": 6.00,
     "totalSeconds": 13272,
     "totalCentimeters": 7897300
-  },
-  {
-    "userGuid": "2bd3e601-68fe-41be-a5d3-18a2345cb595",
-    "userId": 1103463900,
-    "rank": 4,
-    "firstname": "Kristin Sørli",
-    "lastname": "Ommundsen",
-    "teamId": 37917,
-    "teamTitle": "Kristiansand",
-    "companyId": 17359,
-    "companyTitle": "Bouvet Norge As Agder",
-    "points": 6.00,
-    "totalSeconds": 11221,
-    "totalCentimeters": 4533870
   },
   {
     "userGuid": "0f1c5348-84b2-4207-a222-c61f08c16801",

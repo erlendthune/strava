@@ -3688,5 +3688,21 @@
     "workout_type": null,
     "device_name": "Apple Watch Ultra 3",
     "activity_date": "2026-05-07T20:16:41.881Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Energetic",
+      "lastname": "Tortoise"
+    },
+    "name": "Walk",
+    "distance": 962.1,
+    "moving_time": 660,
+    "elapsed_time": 660,
+    "total_elevation_gain": 0,
+    "type": "Walk",
+    "sport_type": "Walk",
+    "activity_date": "2026-05-07T21:02:30.604Z"
   }
 ]

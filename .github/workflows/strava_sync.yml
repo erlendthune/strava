@@ -351,11 +351,45 @@ jobs:
           }
           EOF
 
+      - name: Fetch Sykletiljobben Data
+        run: |
+          curl 'https://webapi.webfarm3.bloc.no/api/Competition/GetCompanyPage?companyId=17359&measureBy=averagePoints&locality=national' \
+            -H "Authorization: Bearer ${{ secrets.SYKLETILJOBBEN_TOKEN }}" \
+            -H 'aid: 1802569' \
+            -H 'isocode: nb-no' \
+            -H 'Accept: text/plain,application/json,text/json' \
+            -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.5 Safari/605.1.15' \
+            -H 'Origin: https://www.sykletiljobben.no' \
+            -H 'Referer: https://www.sykletiljobben.no/' \
+            --compressed \
+            | jq '.' > sykletiljobben.json
+          curl 'https://webapi.webfarm3.bloc.no/api/Competition/GetCompanyPage?companyId=17359&measureBy=averagePoints&locality=1' \
+            -H "Authorization: Bearer ${{ secrets.SYKLETILJOBBEN_TOKEN }}" \
+            -H 'aid: 1802569' \
+            -H 'isocode: nb-no' \
+            -H 'Accept: text/plain,application/json,text/json' \
+            -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.5 Safari/605.1.15' \
+            -H 'Origin: https://www.sykletiljobben.no' \
+            -H 'Referer: https://www.sykletiljobben.no/' \
+            --compressed \
+            | jq '.' > sykletiljobben_county.json
+          curl 'https://webapi.webfarm3.bloc.no/api/Competition/GetCompanyPage?companyId=17359&measureBy=averagePoints&locality=2' \
+            -H "Authorization: Bearer ${{ secrets.SYKLETILJOBBEN_TOKEN }}" \
+            -H 'aid: 1802569' \
+            -H 'isocode: nb-no' \
+            -H 'Accept: text/plain,application/json,text/json' \
+            -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.5 Safari/605.1.15' \
+            -H 'Origin: https://www.sykletiljobben.no' \
+            -H 'Referer: https://www.sykletiljobben.no/' \
+            --compressed \
+            | jq '.' > sykletiljobben_community.json
+          echo "Fetched sykletiljobben.json, sykletiljobben_county.json, and sykletiljobben_community.json"
+
       - name: Commit and Push if changed
         run: |
           git config --global user.name "GitHub Action"
           git config --global user.email "action@github.com"
-          git add club_activities.json club_members.json master_history.json config.json
+          git add club_activities.json club_members.json master_history.json config.json sykletiljobben.json sykletiljobben_county.json sykletiljobben_community.json
           git diff --cached --quiet && exit 0
           git commit -m "Update Strava club activities"
           git push --force https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main

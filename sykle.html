@@ -208,7 +208,6 @@
     </div>
 
     <script>
-        // Format seconds to hours and minutes
         function formatTime(totalSeconds) {
             if (!totalSeconds) return "0t 0m";
             const hours = Math.floor(totalSeconds / 3600);
@@ -223,54 +222,60 @@
 
         async function loadSykleData() {
             try {
-                const response = await fetch('sykletiljobben.json');
-                const data = await response.json();
+                const [natRes, countyRes, communityRes] = await Promise.allSettled([
+                    fetch('sykletiljobben.json').then(r => r.ok ? r.json() : null),
+                    fetch('sykletiljobben_county.json').then(r => r.ok ? r.json() : null),
+                    fetch('sykletiljobben_community.json').then(r => r.ok ? r.json() : null)
+                ]);
 
-                // 1. Update Title and Date
+                const national  = natRes.status       === 'fulfilled' ? natRes.value       : null;
+                const county    = countyRes.status     === 'fulfilled' ? countyRes.value     : null;
+                const community = communityRes.status  === 'fulfilled' ? communityRes.value  : null;
+
+                const data = national;
+                if (!data) throw new Error('Nasjonale data mangler');
+
                 document.getElementById('main-title').textContent = `🏆 Sykle til jobben - ${data.title}`;
-                const updateDate = new Date(data.lastUpdateTime).toLocaleString('no-NO');
-                document.getElementById('last-updated').textContent = updateDate;
+                document.getElementById('last-updated').textContent =
+                    new Date(data.lastUpdateTime).toLocaleString('no-NO');
 
-                // 2. Render Company Stats
-                const statsGrid = document.getElementById('company-stats');
-                statsGrid.innerHTML = `
-                    <div class="stat-card">
-                        <div class="value">#${data.rank} <span style="font-size: 14px; color:#666;">/ ${data.totalCompanies}</span></div>
-                        <div class="label">Total Plassering</div>
-                    </div>
-                    <div class="stat-card">
+                const rankCard = (label, d) => d
+                    ? `<div class="stat-card">
+                        <div class="value">#${d.rank} <span style="font-size:14px;color:#666">/ ${d.totalCompanies}</span></div>
+                        <div class="label">${label}</div>
+                       </div>`
+                    : '';
+
+                document.getElementById('company-stats').innerHTML =
+                    rankCard('Nasjonalt', national) +
+                    rankCard('Fylke', county) +
+                    rankCard('Kommune', community) +
+                    `<div class="stat-card">
                         <div class="value">${data.countCompanyMembers}</div>
                         <div class="label">Medlemmer</div>
-                    </div>
-                    <div class="stat-card">
+                     </div>
+                     <div class="stat-card">
                         <div class="value">${data.pointsTotal.toFixed(2)}</div>
                         <div class="label">Totalt Poeng</div>
-                    </div>
-                    <div class="stat-card">
+                     </div>
+                     <div class="stat-card">
                         <div class="value">${data.totalWorkouts}</div>
                         <div class="label">Totalt Økter</div>
-                    </div>
-                    <div class="stat-card">
+                     </div>
+                     <div class="stat-card">
                         <div class="value">${formatKm(data.totalCentimeters)} km</div>
                         <div class="label">Totalt Km</div>
-                    </div>
-                `;
+                     </div>`;
 
-                // 3. Render Teams Leaderboard
                 const tbody = document.getElementById('team-leaderboard');
                 tbody.innerHTML = '';
-                
-                // Sort teams detailed by average points descending, then total points descending
-                const teams = data.teamsDetailed.sort((a,b) => {
-                    if (b.averagePoints !== a.averagePoints) {
-                        return b.averagePoints - a.averagePoints;
-                    }
-                    return b.totalPoints - a.totalPoints;
-                });
-
+                const teams = (data.teamsDetailed || []).sort((a, b) =>
+                    b.averagePoints !== a.averagePoints
+                        ? b.averagePoints - a.averagePoints
+                        : b.totalPoints - a.totalPoints
+                );
                 teams.forEach((team, index) => {
                     const tr = document.createElement('tr');
-                    
                     tr.innerHTML = `
                         <td class="rank">${index + 1}</td>
                         <td class="name">${team.title}</td>
@@ -285,16 +290,15 @@
                 });
 
             } catch (error) {
-                console.error("Error loading data:", error);
+                console.error('Error loading data:', error);
                 document.getElementById('company-stats').innerHTML = `
-                    <div class="notice" style="grid-column: 1 / -1;">
+                    <div class="notice" style="grid-column:1/-1">
                         <strong>Data Error</strong>
                         <p>Kunne ikke laste sykletiljobben.json. Kontakt administrator.</p>
                     </div>`;
             }
         }
 
-        // Initialize when page loads
         document.addEventListener('DOMContentLoaded', loadSykleData);
     </script>
 </body>

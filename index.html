@@ -1341,12 +1341,13 @@
                                 <tbody>
                     `;
                     members.forEach((member) => {
+                        const fullName = `${member.firstname} ${member.lastname}`;
                         const medal = member.rank === 1 ? '🥇' : member.rank === 2 ? '🥈' : member.rank === 3 ? '🥉' : member.rank;
                         memberTable += `
                             <tr>
                                 <td class="rank">${medal}</td>
-                                <td class="name">${member.name}</td>
-                                <td class="metric">${member.team}</td>
+                                <td class="name">${fullName}</td>
+                                <td class="metric">${member.teamTitle}</td>
                                 <td class="metric primary-col">${member.points.toFixed(2)}</td>
                             </tr>
                         `;

@@ -1,144 +1,144 @@
 [
   {
     "resource_state": 2,
-    "firstname": "Agile",
-    "lastname": "Llama",
+    "firstname": "Aleksander",
+    "lastname": "L.",
     "membership": "member",
     "admin": false,
     "owner": false
   },
   {
     "resource_state": 2,
-    "firstname": "Agile",
-    "lastname": "Zebra",
+    "firstname": "Andreas",
+    "lastname": "Z.",
     "membership": "member",
     "admin": false,
     "owner": false
   },
   {
     "resource_state": 2,
-    "firstname": "Heroic",
-    "lastname": "Rabbit",
+    "firstname": "Håkon",
+    "lastname": "R.",
     "membership": "member",
     "admin": false,
     "owner": false
   },
   {
     "resource_state": 2,
-    "firstname": "Jolly",
-    "lastname": "Mongoose",
+    "firstname": "Jørgen",
+    "lastname": "M.",
     "membership": "member",
     "admin": false,
     "owner": false
   },
   {
     "resource_state": 2,
-    "firstname": "King",
-    "lastname": "Horse",
+    "firstname": "Kjetil",
+    "lastname": "H.",
     "membership": "member",
     "admin": false,
     "owner": false
   },
   {
     "resource_state": 2,
-    "firstname": "King",
-    "lastname": "Swan",
+    "firstname": "Kristin Sørli",
+    "lastname": "O.",
     "membership": "member",
     "admin": false,
     "owner": false
   },
   {
     "resource_state": 2,
-    "firstname": "Mighty",
-    "lastname": "Horse",
+    "firstname": "Marius",
+    "lastname": "H.",
     "membership": "member",
     "admin": false,
     "owner": false
   },
   {
     "resource_state": 2,
-    "firstname": "Speedy",
-    "lastname": "Antelope",
+    "firstname": "Svein Arild",
+    "lastname": "M.",
     "membership": "member",
     "admin": false,
     "owner": false
   },
   {
     "resource_state": 2,
-    "firstname": "Turbo",
-    "lastname": "Bear",
+    "firstname": "Terje",
+    "lastname": "B.",
     "membership": "member",
     "admin": true,
     "owner": false
   },
   {
     "resource_state": 2,
-    "firstname": "Agile",
-    "lastname": "Horse",
+    "firstname": "Andreas",
+    "lastname": "H.",
     "membership": "member",
     "admin": false,
     "owner": false
   },
   {
     "resource_state": 2,
-    "firstname": "Agile",
-    "lastname": "Antelope",
+    "firstname": "Arild",
+    "lastname": "A.",
     "membership": "member",
     "admin": false,
     "owner": false
   },
   {
     "resource_state": 2,
-    "firstname": "Agile",
-    "lastname": "Bear",
+    "firstname": "Atle",
+    "lastname": "B.",
     "membership": "member",
     "admin": false,
     "owner": false
   },
   {
     "resource_state": 2,
-    "firstname": "Dashing",
-    "lastname": "Gazelle",
+    "firstname": "Daniel",
+    "lastname": "G.",
     "membership": "member",
     "admin": false,
     "owner": false
   },
   {
     "resource_state": 2,
-    "firstname": "Dashing",
-    "lastname": "Bear",
+    "firstname": "David",
+    "lastname": "B.",
     "membership": "member",
     "admin": false,
     "owner": false
   },
   {
     "resource_state": 2,
-    "firstname": "Energetic",
-    "lastname": "Tortoise",
+    "firstname": "Erlend",
+    "lastname": "T.",
     "membership": "member",
     "admin": true,
     "owner": false
   },
   {
     "resource_state": 2,
-    "firstname": "Jolly",
-    "lastname": "Weasel",
+    "firstname": "Jan",
+    "lastname": "W.",
     "membership": "member",
     "admin": false,
     "owner": false
   },
   {
     "resource_state": 2,
-    "firstname": "Mighty",
-    "lastname": "Tortoise",
+    "firstname": "Michael",
+    "lastname": "T.",
     "membership": "member",
     "admin": false,
     "owner": false
   },
   {
     "resource_state": 2,
-    "firstname": "Mighty",
-    "lastname": "Bear",
+    "firstname": "Morten",
+    "lastname": "B.",
     "membership": "member",
     "admin": true,
     "owner": true

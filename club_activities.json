@@ -3,10 +3,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
-    "name": "Walk",
+    "name": "Night Walk",
     "distance": 822.7,
     "moving_time": 565,
     "elapsed_time": 708,
@@ -19,10 +19,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Swan"
+      "firstname": "Kristin Sørli",
+      "lastname": "O."
     },
-    "name": "EBikeRide",
+    "name": "Kveldstur på el-sykkel",
     "distance": 7063.3,
     "moving_time": 1037,
     "elapsed_time": 1095,
@@ -35,10 +35,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Horse"
+      "firstname": "Kjetil",
+      "lastname": "H."
     },
-    "name": "WeightTraining",
+    "name": "Gymmen",
     "distance": 0,
     "moving_time": 6514,
     "elapsed_time": 6514,
@@ -52,8 +52,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
     "name": "Walk",
     "distance": 962.1,
@@ -67,10 +67,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
-    "name": "Run",
+    "name": "Afternoon Run",
     "distance": 4549.5,
     "moving_time": 1322,
     "elapsed_time": 1322,
@@ -84,10 +84,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Jolly",
-      "lastname": "Mongoose"
+      "firstname": "Jørgen",
+      "lastname": "M."
     },
-    "name": "Ride",
+    "name": "Afternoon Ride",
     "distance": 6946.4,
     "moving_time": 1191,
     "elapsed_time": 1277,
@@ -101,10 +101,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Swan"
+      "firstname": "Kristin Sørli",
+      "lastname": "O."
     },
-    "name": "Walk",
+    "name": "Gåtur på ettermiddagen",
     "distance": 2834,
     "moving_time": 1921,
     "elapsed_time": 1999,
@@ -117,10 +117,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
-    "name": "Ride",
+    "name": "Afternoon Ride",
     "distance": 3008.8,
     "moving_time": 648,
     "elapsed_time": 648,
@@ -134,10 +134,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
-    "name": "Ride",
+    "name": "Lunch Ride",
     "distance": 1600.3,
     "moving_time": 291,
     "elapsed_time": 291,
@@ -151,10 +151,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
-    "name": "Ride",
+    "name": "Morning Ride",
     "distance": 3038.3,
     "moving_time": 448,
     "elapsed_time": 492,
@@ -168,10 +168,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Swan"
+      "firstname": "Kristin Sørli",
+      "lastname": "O."
     },
-    "name": "EBikeRide",
+    "name": "Morgentur på elsykkel",
     "distance": 7151.2,
     "moving_time": 1054,
     "elapsed_time": 1094,
@@ -184,10 +184,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
-    "name": "Ride",
+    "name": "Morning Ride",
     "distance": 10872.9,
     "moving_time": 1789,
     "elapsed_time": 1903,
@@ -201,10 +201,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Jolly",
-      "lastname": "Mongoose"
+      "firstname": "Jørgen",
+      "lastname": "M."
     },
-    "name": "Ride",
+    "name": "Morning Ride",
     "distance": 6983.6,
     "moving_time": 1221,
     "elapsed_time": 1251,
@@ -218,10 +218,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Swan"
+      "firstname": "Kristin Sørli",
+      "lastname": "O."
     },
-    "name": "EBikeRide",
+    "name": "Kveldstur på el-sykkel",
     "distance": 3920.6,
     "moving_time": 603,
     "elapsed_time": 639,
@@ -234,10 +234,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
-    "name": "Run",
+    "name": "Evening Run",
     "distance": 6698.7,
     "moving_time": 2041,
     "elapsed_time": 2049,
@@ -251,10 +251,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Swan"
+      "firstname": "Kristin Sørli",
+      "lastname": "O."
     },
-    "name": "EBikeRide",
+    "name": "Kveldstur på el-sykkel",
     "distance": 4699.1,
     "moving_time": 766,
     "elapsed_time": 794,
@@ -267,10 +267,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
+      "firstname": "Håkon",
+      "lastname": "R."
     },
-    "name": "Ride",
+    "name": "Evening Ride",
     "distance": 16824,
     "moving_time": 2634,
     "elapsed_time": 2727,
@@ -284,10 +284,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Jolly",
-      "lastname": "Mongoose"
+      "firstname": "Jørgen",
+      "lastname": "M."
     },
-    "name": "Ride",
+    "name": "Evening Ride",
     "distance": 8695.4,
     "moving_time": 1871,
     "elapsed_time": 2647,
@@ -301,10 +301,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Swan"
+      "firstname": "Kristin Sørli",
+      "lastname": "O."
     },
-    "name": "EBikeRide",
+    "name": "Ettermiddagstur på el-sykkel",
     "distance": 7050.5,
     "moving_time": 1040,
     "elapsed_time": 1083,
@@ -317,10 +317,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Horse"
+      "firstname": "Kjetil",
+      "lastname": "H."
     },
-    "name": "Run",
+    "name": "Terrengkarusellen",
     "distance": 9556.4,
     "moving_time": 3703,
     "elapsed_time": 3737,
@@ -334,10 +334,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
-    "name": "Walk",
+    "name": "Afternoon Walk",
     "distance": 878.3,
     "moving_time": 840,
     "elapsed_time": 912,
@@ -350,10 +350,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
-    "name": "EBikeRide",
+    "name": "Morning Ride",
     "distance": 2928.8,
     "moving_time": 412,
     "elapsed_time": 412,
@@ -366,10 +366,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
+      "firstname": "Håkon",
+      "lastname": "R."
     },
-    "name": "Ride",
+    "name": "Morning Ride",
     "distance": 19836,
     "moving_time": 2592,
     "elapsed_time": 2659,
@@ -383,10 +383,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Horse"
+      "firstname": "Kjetil",
+      "lastname": "H."
     },
-    "name": "Walk",
+    "name": "Morning Walk",
     "distance": 1482.5,
     "moving_time": 898,
     "elapsed_time": 915,
@@ -399,10 +399,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Jolly",
-      "lastname": "Mongoose"
+      "firstname": "Jørgen",
+      "lastname": "M."
     },
-    "name": "Ride",
+    "name": "Morning Ride",
     "distance": 6986,
     "moving_time": 1191,
     "elapsed_time": 1228,
@@ -416,10 +416,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Swan"
+      "firstname": "Kristin Sørli",
+      "lastname": "O."
     },
-    "name": "Walk",
+    "name": "Gåtur på kvelden",
     "distance": 5619,
     "moving_time": 3768,
     "elapsed_time": 3995,
@@ -432,10 +432,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
+      "firstname": "Håkon",
+      "lastname": "R."
     },
-    "name": "Ride",
+    "name": "Afternoon Ride",
     "distance": 45592.6,
     "moving_time": 7288,
     "elapsed_time": 7435,
@@ -449,10 +449,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
-    "name": "Ride",
+    "name": "Afternoon Ride",
     "distance": 3004.4,
     "moving_time": 604,
     "elapsed_time": 604,
@@ -466,10 +466,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
-    "name": "Ride",
+    "name": "Afternoon Ride",
     "distance": 10809.5,
     "moving_time": 1780,
     "elapsed_time": 1879,
@@ -483,10 +483,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Jolly",
-      "lastname": "Mongoose"
+      "firstname": "Jørgen",
+      "lastname": "M."
     },
-    "name": "Ride",
+    "name": "Afternoon Ride",
     "distance": 6990,
     "moving_time": 1418,
     "elapsed_time": 1558,
@@ -500,10 +500,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Mighty",
-      "lastname": "Horse"
+      "firstname": "Marius",
+      "lastname": "H."
     },
-    "name": "Run",
+    "name": "Afternoon Run",
     "distance": 11665.8,
     "moving_time": 3745,
     "elapsed_time": 3745,
@@ -517,10 +517,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
-    "name": "Ride",
+    "name": "Morning Ride",
     "distance": 836.8,
     "moving_time": 209,
     "elapsed_time": 209,
@@ -534,10 +534,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
-    "name": "Ride",
+    "name": "Morning Ride",
     "distance": 807.8,
     "moving_time": 261,
     "elapsed_time": 261,
@@ -551,10 +551,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
-    "name": "Ride",
+    "name": "Morning Ride",
     "distance": 2782.8,
     "moving_time": 420,
     "elapsed_time": 558,
@@ -568,10 +568,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Agile",
-      "lastname": "Zebra"
+      "firstname": "Andreas",
+      "lastname": "Z."
     },
-    "name": "Ride",
+    "name": "Sykle til jobben 2026 med Bouvet",
     "distance": 6274.6,
     "moving_time": 903,
     "elapsed_time": 903,
@@ -585,10 +585,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Jolly",
-      "lastname": "Mongoose"
+      "firstname": "Jørgen",
+      "lastname": "M."
     },
-    "name": "Ride",
+    "name": "Morning Ride",
     "distance": 7069.8,
     "moving_time": 1165,
     "elapsed_time": 1213,
@@ -602,10 +602,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
-    "name": "Ride",
+    "name": "Morning Ride",
     "distance": 10918.3,
     "moving_time": 1815,
     "elapsed_time": 1948,
@@ -619,10 +619,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Swan"
+      "firstname": "Kristin Sørli",
+      "lastname": "O."
     },
-    "name": "Walk",
+    "name": "Gåtur på kvelden",
     "distance": 3333.9,
     "moving_time": 2808,
     "elapsed_time": 2881,
@@ -635,10 +635,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Horse"
+      "firstname": "Kjetil",
+      "lastname": "H."
     },
-    "name": "WeightTraining",
+    "name": "Afternoon Weight Training",
     "distance": 0,
     "moving_time": 4425,
     "elapsed_time": 4425,
@@ -652,10 +652,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
-    "name": "Run",
+    "name": "GK",
     "distance": 5266.4,
     "moving_time": 1726,
     "elapsed_time": 1726,
@@ -669,10 +669,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
-    "name": "Ride",
+    "name": "Afternoon Ride",
     "distance": 10937.1,
     "moving_time": 2011,
     "elapsed_time": 2049,
@@ -686,10 +686,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
-    "name": "Ride",
+    "name": "Afternoon Ride",
     "distance": 3042,
     "moving_time": 699,
     "elapsed_time": 803,
@@ -703,10 +703,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
-    "name": "Ride",
+    "name": "Morning Ride",
     "distance": 3072.7,
     "moving_time": 497,
     "elapsed_time": 561,
@@ -720,10 +720,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
-    "name": "Ride",
+    "name": "Morning Ride",
     "distance": 10825.9,
     "moving_time": 1702,
     "elapsed_time": 1949,
@@ -737,10 +737,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Horse"
+      "firstname": "Kjetil",
+      "lastname": "H."
     },
-    "name": "WeightTraining",
+    "name": "Afternoon Weight Training",
     "distance": 0,
     "moving_time": 4231,
     "elapsed_time": 4231,
@@ -754,10 +754,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Mighty",
-      "lastname": "Horse"
+      "firstname": "Marius",
+      "lastname": "H."
     },
-    "name": "Run",
+    "name": "Afternoon Run",
     "distance": 12023.8,
     "moving_time": 3919,
     "elapsed_time": 3919,
@@ -771,10 +771,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
-    "name": "Walk",
+    "name": "Tur hjem fra Vaffelbua",
     "distance": 3038,
     "moving_time": 2520,
     "elapsed_time": 2581,
@@ -787,10 +787,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
-    "name": "Walk",
+    "name": "Tur til Vaffelbua",
     "distance": 3098.8,
     "moving_time": 2666,
     "elapsed_time": 3118,
@@ -803,10 +803,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
-    "name": "Run",
+    "name": "Morning Run",
     "distance": 5505,
     "moving_time": 2747,
     "elapsed_time": 2765,
@@ -820,10 +820,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
+      "firstname": "Håkon",
+      "lastname": "R."
     },
-    "name": "Ride",
+    "name": "Lunch Ride",
     "distance": 88098,
     "moving_time": 12752,
     "elapsed_time": 12865,
@@ -837,10 +837,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
-    "name": "TrailRun",
+    "name": "Skråstadheia rundt",
     "distance": 18948,
     "moving_time": 8557,
     "elapsed_time": 8576,
@@ -854,10 +854,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Swan"
+      "firstname": "Kristin Sørli",
+      "lastname": "O."
     },
-    "name": "Walk",
+    "name": "Ettermiddag med gåtur",
     "distance": 2491.2,
     "moving_time": 1538,
     "elapsed_time": 1658,
@@ -870,10 +870,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
+      "firstname": "Håkon",
+      "lastname": "R."
     },
-    "name": "Ride",
+    "name": "Afternoon Ride",
     "distance": 27873.4,
     "moving_time": 6979,
     "elapsed_time": 7187,
@@ -887,10 +887,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Swan"
+      "firstname": "Kristin Sørli",
+      "lastname": "O."
     },
-    "name": "Walk",
+    "name": "Gåtur ved lunsjtider",
     "distance": 2405.7,
     "moving_time": 1405,
     "elapsed_time": 1796,
@@ -903,10 +903,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Swan"
+      "firstname": "Kristin Sørli",
+      "lastname": "O."
     },
-    "name": "Walk",
+    "name": "Gåtur om morgenen",
     "distance": 3761,
     "moving_time": 2904,
     "elapsed_time": 3314,
@@ -919,10 +919,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Mighty",
-      "lastname": "Horse"
+      "firstname": "Marius",
+      "lastname": "H."
     },
-    "name": "Run",
+    "name": "Evening Run",
     "distance": 6642.1,
     "moving_time": 2058,
     "elapsed_time": 2058,
@@ -936,10 +936,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
+      "firstname": "Håkon",
+      "lastname": "R."
     },
-    "name": "Ride",
+    "name": "Evening Ride",
     "distance": 18487,
     "moving_time": 4865,
     "elapsed_time": 6255,
@@ -953,10 +953,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
-    "name": "Run",
+    "name": "Afternoon Run",
     "distance": 10014.1,
     "moving_time": 3579,
     "elapsed_time": 3743,
@@ -970,10 +970,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
-    "name": "Run",
+    "name": "Løpetur under spilletimen til C",
     "distance": 5082.6,
     "moving_time": 1485,
     "elapsed_time": 1495,
@@ -987,10 +987,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
-    "name": "Ride",
+    "name": "Afternoon Ride",
     "distance": 10800.3,
     "moving_time": 1832,
     "elapsed_time": 1916,
@@ -1004,10 +1004,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
-    "name": "Ride",
+    "name": "Afternoon Ride",
     "distance": 3019.4,
     "moving_time": 655,
     "elapsed_time": 655,
@@ -1021,10 +1021,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Swan"
+      "firstname": "Kristin Sørli",
+      "lastname": "O."
     },
-    "name": "Walk",
+    "name": "Ettermiddag med gåtur",
     "distance": 5570.1,
     "moving_time": 3875,
     "elapsed_time": 4226,
@@ -1037,10 +1037,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
-    "name": "Ride",
+    "name": "Morning Ride",
     "distance": 10855.8,
     "moving_time": 1719,
     "elapsed_time": 1884,
@@ -1054,10 +1054,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
-    "name": "Walk",
+    "name": "Morning Walk",
     "distance": 1768.7,
     "moving_time": 1301,
     "elapsed_time": 2352,
@@ -1070,10 +1070,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
+      "firstname": "Håkon",
+      "lastname": "R."
     },
-    "name": "Ride",
+    "name": "Afternoon Ride",
     "distance": 58780.1,
     "moving_time": 7396,
     "elapsed_time": 7396,
@@ -1087,10 +1087,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
-    "name": "Ride",
+    "name": "Afternoon Ride",
     "distance": 2455.6,
     "moving_time": 557,
     "elapsed_time": 557,
@@ -1104,10 +1104,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
-    "name": "Run",
+    "name": "5 x 1000 meter",
     "distance": 6306.9,
     "moving_time": 1665,
     "elapsed_time": 1665,
@@ -1121,10 +1121,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
-    "name": "Ride",
+    "name": "Sykkeltur på ettermiddagen",
     "distance": 3000.4,
     "moving_time": 685,
     "elapsed_time": 685,
@@ -1138,10 +1138,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
-    "name": "Snowboard",
+    "name": "Afternoon Snowboard",
     "distance": 5970.3,
     "moving_time": 5527,
     "elapsed_time": 7210,
@@ -1154,10 +1154,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
+      "firstname": "Håkon",
+      "lastname": "R."
     },
-    "name": "Ride",
+    "name": "Afternoon Ride",
     "distance": 33307.7,
     "moving_time": 4369,
     "elapsed_time": 4369,
@@ -1171,10 +1171,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
-    "name": "Walk",
+    "name": "Tur til Søgneskiltet",
     "distance": 282.1,
     "moving_time": 368,
     "elapsed_time": 1014,
@@ -1187,10 +1187,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
-    "name": "Walk",
+    "name": "Morning Walk",
     "distance": 4231.6,
     "moving_time": 3361,
     "elapsed_time": 3699,
@@ -1203,10 +1203,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
-    "name": "Snowboard",
+    "name": "Morning Nordic Ski and snowboard",
     "distance": 4394.3,
     "moving_time": 4278,
     "elapsed_time": 7683,
@@ -1219,10 +1219,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Mighty",
-      "lastname": "Horse"
+      "firstname": "Marius",
+      "lastname": "H."
     },
-    "name": "Run",
+    "name": "Afternoon Run",
     "distance": 5083.8,
     "moving_time": 1673,
     "elapsed_time": 1688,
@@ -1236,10 +1236,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
-    "name": "Run",
+    "name": "Tur i sola 😎",
     "distance": 10140.4,
     "moving_time": 3251,
     "elapsed_time": 3251,
@@ -1253,10 +1253,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
+      "firstname": "Håkon",
+      "lastname": "R."
     },
-    "name": "Ride",
+    "name": "Afternoon Ride",
     "distance": 15405.9,
     "moving_time": 3559,
     "elapsed_time": 3591,
@@ -1270,10 +1270,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
-    "name": "Snowboard",
+    "name": "Morning Snowboard",
     "distance": 6280.1,
     "moving_time": 8389,
     "elapsed_time": 16379,
@@ -1286,10 +1286,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
-    "name": "Snowboard",
+    "name": "Afternoon Snowboard",
     "distance": 3252.4,
     "moving_time": 2013,
     "elapsed_time": 10342,
@@ -1302,10 +1302,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Jolly",
-      "lastname": "Mongoose"
+      "firstname": "Jørgen",
+      "lastname": "M."
     },
-    "name": "Run",
+    "name": "Terrengkarusellen 3/21: FVN-Løpet, Odderøya",
     "distance": 5334.6,
     "moving_time": 1636,
     "elapsed_time": 1636,
@@ -1319,10 +1319,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
-    "name": "Ride",
+    "name": "Afternoon Ride",
     "distance": 10828.7,
     "moving_time": 1788,
     "elapsed_time": 1863,
@@ -1336,10 +1336,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
-    "name": "Run",
+    "name": "3. karuselløp FVN-løpet, Kristiansand 2026.",
     "distance": 5372.4,
     "moving_time": 1577,
     "elapsed_time": 1577,
@@ -1353,10 +1353,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
-    "name": "Ride",
+    "name": "Morning Ride",
     "distance": 10835.3,
     "moving_time": 1785,
     "elapsed_time": 1918,
@@ -1370,10 +1370,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
-    "name": "TrailRun",
+    "name": "Evening Trail Run",
     "distance": 8528,
     "moving_time": 4068,
     "elapsed_time": 4069,
@@ -1387,10 +1387,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
-    "name": "Run",
+    "name": "Eidet-Justvik",
     "distance": 4644.5,
     "moving_time": 1321,
     "elapsed_time": 1321,
@@ -1404,10 +1404,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
+      "firstname": "Håkon",
+      "lastname": "R."
     },
-    "name": "Ride",
+    "name": "Afternoon Ride",
     "distance": 46679.1,
     "moving_time": 6659,
     "elapsed_time": 7675,
@@ -1421,10 +1421,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Horse"
+      "firstname": "Kjetil",
+      "lastname": "H."
     },
-    "name": "WeightTraining",
+    "name": "Gymmen",
     "distance": 0,
     "moving_time": 4188,
     "elapsed_time": 4188,
@@ -1438,10 +1438,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
-    "name": "Workout",
+    "name": "Afternoon Workout",
     "distance": 0,
     "moving_time": 1666,
     "elapsed_time": 1666,
@@ -1455,10 +1455,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Agile",
-      "lastname": "Zebra"
+      "firstname": "Andreas",
+      "lastname": "Z."
     },
-    "name": "Run",
+    "name": "Afternoon Run",
     "distance": 7552,
     "moving_time": 2802,
     "elapsed_time": 4880,
@@ -1472,10 +1472,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
-    "name": "Run",
+    "name": "Jegers-Grostøl-Justvik-Gimlekollen",
     "distance": 15193.5,
     "moving_time": 4936,
     "elapsed_time": 4936,
@@ -1489,10 +1489,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
-    "name": "Walk",
+    "name": "Morning Walk",
     "distance": 9882.3,
     "moving_time": 6788,
     "elapsed_time": 7256,
@@ -1505,10 +1505,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
+      "firstname": "Håkon",
+      "lastname": "R."
     },
-    "name": "Ride",
+    "name": "Morning Ride",
     "distance": 162651,
     "moving_time": 18364,
     "elapsed_time": 21577,
@@ -1522,10 +1522,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
+      "firstname": "Håkon",
+      "lastname": "R."
     },
-    "name": "Ride",
+    "name": "Morning Ride",
     "distance": 159052,
     "moving_time": 19207,
     "elapsed_time": 22995,
@@ -1539,10 +1539,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
-    "name": "Ride",
+    "name": "Afternoon Ride",
     "distance": 11014.1,
     "moving_time": 2109,
     "elapsed_time": 2290,
@@ -1556,10 +1556,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
-    "name": "Workout",
+    "name": "Afternoon Workout",
     "distance": 0,
     "moving_time": 4422,
     "elapsed_time": 4422,
@@ -1573,10 +1573,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
-    "name": "Ride",
+    "name": "Afternoon Ride",
     "distance": 1607.6,
     "moving_time": 356,
     "elapsed_time": 528,
@@ -1590,10 +1590,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
-    "name": "Run",
+    "name": "Kalkheia",
     "distance": 5560.5,
     "moving_time": 2247,
     "elapsed_time": 2297,
@@ -1607,10 +1607,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
-    "name": "Ride",
+    "name": "Morning Ride",
     "distance": 11080.9,
     "moving_time": 1952,
     "elapsed_time": 2242,
@@ -1624,10 +1624,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Jolly",
-      "lastname": "Mongoose"
+      "firstname": "Jørgen",
+      "lastname": "M."
     },
-    "name": "Run",
+    "name": "Terrengkarusellen 2/21: Kongsgård/Vige Museumsløypa",
     "distance": 6186,
     "moving_time": 1721,
     "elapsed_time": 1721,
@@ -1641,10 +1641,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
-    "name": "Walk",
+    "name": "Afternoon Walk",
     "distance": 9810.9,
     "moving_time": 7117,
     "elapsed_time": 7193,
@@ -1657,10 +1657,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
+      "firstname": "Håkon",
+      "lastname": "R."
     },
-    "name": "Ride",
+    "name": "Afternoon Ride",
     "distance": 86263.1,
     "moving_time": 9753,
     "elapsed_time": 11339,
@@ -1674,10 +1674,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
-    "name": "Run",
+    "name": "2. løp: Origo Solutionsløpet",
     "distance": 6256.8,
     "moving_time": 1618,
     "elapsed_time": 1618,
@@ -1691,10 +1691,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Horse"
+      "firstname": "Kjetil",
+      "lastname": "H."
     },
-    "name": "Run",
+    "name": "Terrengkarusellen #2",
     "distance": 6174.2,
     "moving_time": 1695,
     "elapsed_time": 1700,
@@ -1708,10 +1708,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Horse"
+      "firstname": "Kjetil",
+      "lastname": "H."
     },
-    "name": "WeightTraining",
+    "name": "Afternoon Weight Training",
     "distance": 0,
     "moving_time": 5078,
     "elapsed_time": 5078,
@@ -1725,10 +1725,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
-    "name": "Run",
+    "name": "Kveldstur",
     "distance": 11520.8,
     "moving_time": 3595,
     "elapsed_time": 3595,
@@ -1742,10 +1742,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
-    "name": "Workout",
+    "name": "Afternoon Workout",
     "distance": 0,
     "moving_time": 3684,
     "elapsed_time": 3684,
@@ -1759,10 +1759,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Swan"
+      "firstname": "Kristin Sørli",
+      "lastname": "O."
     },
-    "name": "Walk",
+    "name": "Gåtur på kvelden",
     "distance": 3132.6,
     "moving_time": 2550,
     "elapsed_time": 2827,
@@ -1775,10 +1775,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
+      "firstname": "Håkon",
+      "lastname": "R."
     },
-    "name": "Ride",
+    "name": "Afternoon Ride",
     "distance": 58204.5,
     "moving_time": 9077,
     "elapsed_time": 10360,
@@ -1792,10 +1792,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
-    "name": "Ride",
+    "name": "Afternoon Ride",
     "distance": 11480.1,
     "moving_time": 2846,
     "elapsed_time": 3046,
@@ -1809,10 +1809,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Mighty",
-      "lastname": "Horse"
+      "firstname": "Marius",
+      "lastname": "H."
     },
-    "name": "Walk",
+    "name": "Lunch Walk",
     "distance": 984.7,
     "moving_time": 806,
     "elapsed_time": 996,
@@ -1825,10 +1825,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Horse"
+      "firstname": "Kjetil",
+      "lastname": "H."
     },
-    "name": "WeightTraining",
+    "name": "Lunch Weight Training",
     "distance": 0,
     "moving_time": 2821,
     "elapsed_time": 2821,
@@ -1842,10 +1842,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Horse"
+      "firstname": "Kjetil",
+      "lastname": "H."
     },
-    "name": "Run",
+    "name": "Lunch Run",
     "distance": 10937.3,
     "moving_time": 3888,
     "elapsed_time": 4873,
@@ -1859,10 +1859,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Mighty",
-      "lastname": "Horse"
+      "firstname": "Marius",
+      "lastname": "H."
     },
-    "name": "Walk",
+    "name": "Evening Walk",
     "distance": 2724.7,
     "moving_time": 1749,
     "elapsed_time": 1996,
@@ -1875,10 +1875,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
-    "name": "Run",
+    "name": "GK",
     "distance": 5401.6,
     "moving_time": 1693,
     "elapsed_time": 1693,
@@ -1892,10 +1892,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
+      "firstname": "Håkon",
+      "lastname": "R."
     },
-    "name": "Ride",
+    "name": "Afternoon Ride",
     "distance": 58921.3,
     "moving_time": 9567,
     "elapsed_time": 9599,
@@ -1909,10 +1909,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
-    "name": "Swim",
+    "name": "Lunch Swim",
     "distance": 1975,
     "moving_time": 2918,
     "elapsed_time": 3019,
@@ -1925,10 +1925,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Agile",
-      "lastname": "Zebra"
+      "firstname": "Andreas",
+      "lastname": "Z."
     },
-    "name": "Run",
+    "name": "Lunch Run",
     "distance": 6892,
     "moving_time": 2294,
     "elapsed_time": 2433,
@@ -1942,10 +1942,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
-    "name": "Ride",
+    "name": "Afternoon Ride",
     "distance": 2998.7,
     "moving_time": 744,
     "elapsed_time": 744,
@@ -1959,10 +1959,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
-    "name": "Workout",
+    "name": "Afternoon Workout",
     "distance": 0,
     "moving_time": 4296,
     "elapsed_time": 4296,
@@ -1976,10 +1976,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
-    "name": "Ride",
+    "name": "Evening Ride",
     "distance": 17786.2,
     "moving_time": 2920,
     "elapsed_time": 3080,
@@ -1993,10 +1993,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
+      "firstname": "Håkon",
+      "lastname": "R."
     },
-    "name": "Ride",
+    "name": "Evening Ride",
     "distance": 37056.5,
     "moving_time": 6356,
     "elapsed_time": 6356,
@@ -2010,10 +2010,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Horse"
+      "firstname": "Kjetil",
+      "lastname": "H."
     },
-    "name": "WeightTraining",
+    "name": "Afternoon Weight Training",
     "distance": 0,
     "moving_time": 4154,
     "elapsed_time": 4154,
@@ -2027,10 +2027,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Horse"
+      "firstname": "Kjetil",
+      "lastname": "H."
     },
-    "name": "Run",
+    "name": "Terrengkarusellen #1",
     "distance": 6716.4,
     "moving_time": 1930,
     "elapsed_time": 1934,
@@ -2044,10 +2044,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
-    "name": "Ride",
+    "name": "Afternoon Ride",
     "distance": 973.5,
     "moving_time": 291,
     "elapsed_time": 291,
@@ -2061,10 +2061,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
-    "name": "Run",
+    "name": "1. løp Terrengkarusellen 2026- Brannvaktaløpe",
     "distance": 6760.8,
     "moving_time": 1833,
     "elapsed_time": 1833,
@@ -2078,10 +2078,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Agile",
-      "lastname": "Zebra"
+      "firstname": "Andreas",
+      "lastname": "Z."
     },
-    "name": "Run",
+    "name": "Evening Run",
     "distance": 2445.6,
     "moving_time": 848,
     "elapsed_time": 890,
@@ -2095,10 +2095,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
+      "firstname": "Håkon",
+      "lastname": "R."
     },
-    "name": "Ride",
+    "name": "Afternoon Ride",
     "distance": 60346.6,
     "moving_time": 7482,
     "elapsed_time": 8460,
@@ -2112,10 +2112,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
-    "name": "Workout",
+    "name": "Afternoon Workout",
     "distance": 0,
     "moving_time": 3116,
     "elapsed_time": 3116,
@@ -2129,10 +2129,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
-    "name": "Ride",
+    "name": "Afternoon Ride",
     "distance": 3012.9,
     "moving_time": 616,
     "elapsed_time": 616,
@@ -2146,10 +2146,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
-    "name": "Run",
+    "name": "Quadruplen",
     "distance": 9756.6,
     "moving_time": 4326,
     "elapsed_time": 4433,
@@ -2163,10 +2163,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
+      "firstname": "Håkon",
+      "lastname": "R."
     },
-    "name": "Ride",
+    "name": "Afternoon Ride",
     "distance": 47913.6,
     "moving_time": 8701,
     "elapsed_time": 10269,
@@ -2180,10 +2180,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
-    "name": "Walk",
+    "name": "Lunch Walk",
     "distance": 8680.8,
     "moving_time": 7739,
     "elapsed_time": 8880,
@@ -2196,10 +2196,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
-    "name": "Run",
+    "name": "Luftetur i Daves vrede",
     "distance": 5335.8,
     "moving_time": 1594,
     "elapsed_time": 1594,
@@ -2213,10 +2213,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
+      "firstname": "Håkon",
+      "lastname": "R."
     },
-    "name": "Ride",
+    "name": "Evening Ride",
     "distance": 12756.7,
     "moving_time": 2633,
     "elapsed_time": 2739,
@@ -2230,10 +2230,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
-    "name": "Walk",
+    "name": "Afternoon Walk",
     "distance": 3027.4,
     "moving_time": 2756,
     "elapsed_time": 3394,
@@ -2246,10 +2246,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
-    "name": "Workout",
+    "name": "Afternoon Workout",
     "distance": 0,
     "moving_time": 4419,
     "elapsed_time": 4419,
@@ -2263,10 +2263,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Swan"
+      "firstname": "Kristin Sørli",
+      "lastname": "O."
     },
-    "name": "Walk",
+    "name": "Ettermiddag med gåtur",
     "distance": 3006.2,
     "moving_time": 2598,
     "elapsed_time": 3209,
@@ -2279,10 +2279,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
+      "firstname": "Håkon",
+      "lastname": "R."
     },
-    "name": "Ride",
+    "name": "Lunch Ride",
     "distance": 81273.3,
     "moving_time": 10424,
     "elapsed_time": 12492,
@@ -2296,10 +2296,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Swan"
+      "firstname": "Kristin Sørli",
+      "lastname": "O."
     },
-    "name": "Walk",
+    "name": "Gåtur om morgenen",
     "distance": 1238.6,
     "moving_time": 493,
     "elapsed_time": 1322,
@@ -2312,10 +2312,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Swan"
+      "firstname": "Kristin Sørli",
+      "lastname": "O."
     },
-    "name": "Walk",
+    "name": "Gåtur om morgenen",
     "distance": 1030.9,
     "moving_time": 383,
     "elapsed_time": 1292,
@@ -2328,10 +2328,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
-    "name": "Run",
+    "name": "Evening Run",
     "distance": 7999.2,
     "moving_time": 2474,
     "elapsed_time": 2474,
@@ -2345,10 +2345,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
-    "name": "Walk",
+    "name": "Evening Walk",
     "distance": 3112.8,
     "moving_time": 2589,
     "elapsed_time": 2687,
@@ -2361,10 +2361,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
+      "firstname": "Håkon",
+      "lastname": "R."
     },
-    "name": "Ride",
+    "name": "Afternoon Ride",
     "distance": 15137.3,
     "moving_time": 3737,
     "elapsed_time": 3978,
@@ -2378,10 +2378,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Mighty",
-      "lastname": "Horse"
+      "firstname": "Marius",
+      "lastname": "H."
     },
-    "name": "Run",
+    "name": "Afternoon Run",
     "distance": 6523.9,
     "moving_time": 2030,
     "elapsed_time": 2054,
@@ -2395,10 +2395,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
-    "name": "Ride",
+    "name": "Lunch Ride",
     "distance": 3035.5,
     "moving_time": 688,
     "elapsed_time": 688,
@@ -2412,10 +2412,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
-    "name": "Ride",
+    "name": "Afternoon Ride",
     "distance": 10457.5,
     "moving_time": 1970,
     "elapsed_time": 2056,
@@ -2429,10 +2429,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
-    "name": "Workout",
+    "name": "Afternoon Workout",
     "distance": 0,
     "moving_time": 4134,
     "elapsed_time": 4134,
@@ -2446,10 +2446,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
-    "name": "Ride",
+    "name": "Afternoon Ride",
     "distance": 1595.9,
     "moving_time": 345,
     "elapsed_time": 382,
@@ -2463,10 +2463,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Jolly",
-      "lastname": "Mongoose"
+      "firstname": "Jørgen",
+      "lastname": "M."
     },
-    "name": "NordicSki",
+    "name": "Lunch Nordic Ski",
     "distance": 18258.7,
     "moving_time": 5309,
     "elapsed_time": 5507,
@@ -2479,10 +2479,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
-    "name": "Ride",
+    "name": "Morning Ride",
     "distance": 11060.5,
     "moving_time": 2202,
     "elapsed_time": 2689,
@@ -2496,10 +2496,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Jolly",
-      "lastname": "Mongoose"
+      "firstname": "Jørgen",
+      "lastname": "M."
     },
-    "name": "NordicSki",
+    "name": "Lunch Nordic Ski",
     "distance": 20887.8,
     "moving_time": 9780,
     "elapsed_time": 10609,
@@ -2512,10 +2512,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
+      "firstname": "Håkon",
+      "lastname": "R."
     },
-    "name": "Ride",
+    "name": "Morning Ride",
     "distance": 104737,
     "moving_time": 14155,
     "elapsed_time": 15029,
@@ -2529,10 +2529,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
-    "name": "Walk",
+    "name": "Morning Walk",
     "distance": 6327.4,
     "moving_time": 4484,
     "elapsed_time": 4484,
@@ -2545,10 +2545,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
+      "firstname": "Håkon",
+      "lastname": "R."
     },
-    "name": "Ride",
+    "name": "Afternoon Ride",
     "distance": 34409.3,
     "moving_time": 5918,
     "elapsed_time": 5918,
@@ -2562,10 +2562,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Swan"
+      "firstname": "Kristin Sørli",
+      "lastname": "O."
     },
-    "name": "Walk",
+    "name": "Ettermiddag med gåtur",
     "distance": 2210,
     "moving_time": 1368,
     "elapsed_time": 1953,
@@ -2578,10 +2578,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
-    "name": "Run",
+    "name": "Morning Run",
     "distance": 6319.4,
     "moving_time": 2704,
     "elapsed_time": 2705,
@@ -2595,10 +2595,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
-    "name": "Workout",
+    "name": "Afternoon Workout",
     "distance": 0,
     "moving_time": 3639,
     "elapsed_time": 3639,
@@ -2612,10 +2612,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
-    "name": "Run",
+    "name": "Jegers",
     "distance": 5751.7,
     "moving_time": 2277,
     "elapsed_time": 2286,
@@ -2629,10 +2629,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
+      "firstname": "Håkon",
+      "lastname": "R."
     },
-    "name": "VirtualRide",
+    "name": "ROUVY - Power control workout: Santa Maria del Calmi to Sa Pobla | Mallorca",
     "distance": 22246.2,
     "moving_time": 3322,
     "elapsed_time": 3443,
@@ -2645,10 +2645,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
-    "name": "Ride",
+    "name": "Afternoon Ride",
     "distance": 3010.3,
     "moving_time": 709,
     "elapsed_time": 709,
@@ -2662,10 +2662,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Horse"
+      "firstname": "Kjetil",
+      "lastname": "H."
     },
-    "name": "WeightTraining",
+    "name": "Afternoon Weight Training",
     "distance": 0,
     "moving_time": 5475,
     "elapsed_time": 5475,
@@ -2679,10 +2679,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
-    "name": "Ride",
+    "name": "Afternoon Ride",
     "distance": 3027.8,
     "moving_time": 710,
     "elapsed_time": 779,
@@ -2696,10 +2696,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
-    "name": "Ride",
+    "name": "Afternoon Ride",
     "distance": 17839,
     "moving_time": 3010,
     "elapsed_time": 3142,
@@ -2713,10 +2713,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
+      "firstname": "Håkon",
+      "lastname": "R."
     },
-    "name": "Ride",
+    "name": "Afternoon Ride",
     "distance": 22498.7,
     "moving_time": 3884,
     "elapsed_time": 3963,
@@ -2730,10 +2730,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
-    "name": "Run",
+    "name": "Evening Run",
     "distance": 9618.7,
     "moving_time": 4304,
     "elapsed_time": 4717,
@@ -2747,10 +2747,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Horse"
+      "firstname": "Kjetil",
+      "lastname": "H."
     },
-    "name": "WeightTraining",
+    "name": "Gymmen",
     "distance": 0,
     "moving_time": 4410,
     "elapsed_time": 4410,
@@ -2764,10 +2764,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
-    "name": "Run",
+    "name": "Maridalsvannet",
     "distance": 17726.2,
     "moving_time": 5752,
     "elapsed_time": 5896,
@@ -2781,10 +2781,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Agile",
-      "lastname": "Zebra"
+      "firstname": "Andreas",
+      "lastname": "Z."
     },
-    "name": "Run",
+    "name": "Afternoon Run",
     "distance": 7063.5,
     "moving_time": 2582,
     "elapsed_time": 3087,
@@ -2798,10 +2798,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Jolly",
-      "lastname": "Mongoose"
+      "firstname": "Jørgen",
+      "lastname": "M."
     },
-    "name": "Run",
+    "name": "Afternoon Run",
     "distance": 7280.7,
     "moving_time": 2182,
     "elapsed_time": 2182,
@@ -2815,10 +2815,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
+      "firstname": "Håkon",
+      "lastname": "R."
     },
-    "name": "Ride",
+    "name": "Afternoon Ride",
     "distance": 58887.4,
     "moving_time": 8102,
     "elapsed_time": 8102,
@@ -2832,10 +2832,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Swan"
+      "firstname": "Kristin Sørli",
+      "lastname": "O."
     },
-    "name": "Walk",
+    "name": "Gåtur om morgenen",
     "distance": 3319.4,
     "moving_time": 2801,
     "elapsed_time": 3961,
@@ -2848,10 +2848,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
-    "name": "Run",
+    "name": "Furulunden 😎",
     "distance": 6829.1,
     "moving_time": 1907,
     "elapsed_time": 1915,
@@ -2865,10 +2865,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
+      "firstname": "Håkon",
+      "lastname": "R."
     },
-    "name": "Ride",
+    "name": "Afternoon Ride",
     "distance": 45552.5,
     "moving_time": 6296,
     "elapsed_time": 6450,
@@ -2882,10 +2882,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Jolly",
-      "lastname": "Mongoose"
+      "firstname": "Jørgen",
+      "lastname": "M."
     },
-    "name": "Run",
+    "name": "Afternoon Run",
     "distance": 11388.7,
     "moving_time": 3838,
     "elapsed_time": 3870,
@@ -2899,10 +2899,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Horse"
+      "firstname": "Kjetil",
+      "lastname": "H."
     },
-    "name": "Run",
+    "name": "Lunch Run",
     "distance": 6761.3,
     "moving_time": 2207,
     "elapsed_time": 2235,
@@ -2916,10 +2916,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
+      "firstname": "Håkon",
+      "lastname": "R."
     },
-    "name": "VirtualRide",
+    "name": "ROUVY - Power control workout: Ville di Corsano to Murlo | Strade Bianche | Italy",
     "distance": 26102.1,
     "moving_time": 3841,
     "elapsed_time": 3841,
@@ -2932,10 +2932,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
-    "name": "Run",
+    "name": "Her og der",
     "distance": 10042.2,
     "moving_time": 3150,
     "elapsed_time": 3153,
@@ -2949,10 +2949,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
-    "name": "Run",
+    "name": "Afternoon Run",
     "distance": 11353.3,
     "moving_time": 4131,
     "elapsed_time": 4335,
@@ -2966,10 +2966,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
-    "name": "Ride",
+    "name": "Afternoon Ride",
     "distance": 3012.6,
     "moving_time": 668,
     "elapsed_time": 668,
@@ -2983,10 +2983,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
+      "firstname": "Håkon",
+      "lastname": "R."
     },
-    "name": "VirtualRide",
+    "name": "ROUVY - Power control workout: Eichstetten to Breisach am Rhein | Germany",
     "distance": 28314.8,
     "moving_time": 4205,
     "elapsed_time": 4205,
@@ -2999,10 +2999,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Agile",
-      "lastname": "Zebra"
+      "firstname": "Andreas",
+      "lastname": "Z."
     },
-    "name": "Run",
+    "name": "Afternoon Run",
     "distance": 5592.3,
     "moving_time": 2812,
     "elapsed_time": 2812,
@@ -3016,10 +3016,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Swan"
+      "firstname": "Kristin Sørli",
+      "lastname": "O."
     },
-    "name": "Walk",
+    "name": "Ettermiddag med gåtur",
     "distance": 0,
     "moving_time": 264,
     "elapsed_time": 264,
@@ -3032,10 +3032,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Horse"
+      "firstname": "Kjetil",
+      "lastname": "H."
     },
-    "name": "Run",
+    "name": "Afternoon Run",
     "distance": 8313.4,
     "moving_time": 3135,
     "elapsed_time": 3170,
@@ -3049,10 +3049,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
-    "name": "Workout",
+    "name": "Afternoon Workout",
     "distance": 0,
     "moving_time": 4387,
     "elapsed_time": 4387,
@@ -3066,10 +3066,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
+      "firstname": "Håkon",
+      "lastname": "R."
     },
-    "name": "VirtualRide",
+    "name": "ROUVY - Power control workout: Bedoin - Vaison la Romaine | France",
     "distance": 24320.2,
     "moving_time": 3012,
     "elapsed_time": 3012,
@@ -3082,10 +3082,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Mighty",
-      "lastname": "Horse"
+      "firstname": "Marius",
+      "lastname": "H."
     },
-    "name": "Run",
+    "name": "Lunch Run",
     "distance": 8101.8,
     "moving_time": 2382,
     "elapsed_time": 2382,
@@ -3099,10 +3099,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
-    "name": "Swim",
+    "name": "Morning Swim",
     "distance": 1025,
     "moving_time": 1461,
     "elapsed_time": 1617,
@@ -3115,10 +3115,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Jolly",
-      "lastname": "Mongoose"
+      "firstname": "Jørgen",
+      "lastname": "M."
     },
-    "name": "NordicSki",
+    "name": "Morning Nordic Ski",
     "distance": 9987.1,
     "moving_time": 3364,
     "elapsed_time": 3634,
@@ -3131,10 +3131,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Horse"
+      "firstname": "Kjetil",
+      "lastname": "H."
     },
-    "name": "Run",
+    "name": "Lunch Run",
     "distance": 6240.8,
     "moving_time": 2443,
     "elapsed_time": 2544,
@@ -3148,10 +3148,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Horse"
+      "firstname": "Kjetil",
+      "lastname": "H."
     },
-    "name": "Run",
+    "name": "Lunch Run",
     "distance": 6057,
     "moving_time": 2465,
     "elapsed_time": 2562,
@@ -3165,10 +3165,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
+      "firstname": "Håkon",
+      "lastname": "R."
     },
-    "name": "Ride",
+    "name": "Lunch Ride",
     "distance": 57833.5,
     "moving_time": 9136,
     "elapsed_time": 9313,
@@ -3182,10 +3182,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
-    "name": "Workout",
+    "name": "Afternoon Workout",
     "distance": 0,
     "moving_time": 3733,
     "elapsed_time": 3733,
@@ -3199,10 +3199,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
-    "name": "Ride",
+    "name": "Afternoon Ride",
     "distance": 2999.6,
     "moving_time": 688,
     "elapsed_time": 688,
@@ -3216,10 +3216,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Agile",
-      "lastname": "Zebra"
+      "firstname": "Andreas",
+      "lastname": "Z."
     },
-    "name": "Run",
+    "name": "Morning Run",
     "distance": 4804.9,
     "moving_time": 2634,
     "elapsed_time": 2634,
@@ -3233,10 +3233,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
+      "firstname": "Håkon",
+      "lastname": "R."
     },
-    "name": "VirtualRide",
+    "name": "ROUVY - Power control workout: Poggi to Poggio San Remo via Cipressa | Italy",
     "distance": 29675.8,
     "moving_time": 4281,
     "elapsed_time": 4281,
@@ -3249,10 +3249,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
-    "name": "Run",
+    "name": "Afternoon Run",
     "distance": 4053.3,
     "moving_time": 1335,
     "elapsed_time": 1358,
@@ -3266,10 +3266,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
-    "name": "Ride",
+    "name": "Afternoon Ride",
     "distance": 2828.9,
     "moving_time": 639,
     "elapsed_time": 639,
@@ -3283,10 +3283,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
-    "name": "Run",
+    "name": "6 x 1000 meter",
     "distance": 7594.8,
     "moving_time": 2169,
     "elapsed_time": 2181,
@@ -3300,10 +3300,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
-    "name": "Run",
+    "name": "Afternoon Run",
     "distance": 17852.1,
     "moving_time": 7726,
     "elapsed_time": 8003,
@@ -3317,10 +3317,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
-    "name": "Ride",
+    "name": "Afternoon Ride",
     "distance": 3002.4,
     "moving_time": 734,
     "elapsed_time": 734,
@@ -3334,10 +3334,10 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
+      "firstname": "Håkon",
+      "lastname": "R."
     },
-    "name": "VirtualRide",
+    "name": "ROUVY - Power control workout: Sao Mateus | Azores",
     "distance": 18641.4,
     "moving_time": 2586,
     "elapsed_time": 2586,

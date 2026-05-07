@@ -387,6 +387,8 @@ jobs:
           STJ_EMAIL: ${{ secrets.STJ_EMAIL }}
           STJ_PASSWORD: ${{ secrets.STJ_PASSWORD }}
         run: |
+          set -euo pipefail
+
           node << 'EOF'
           const fs = require('fs');
           const { chromium } = require('playwright');
@@ -404,14 +406,6 @@ jobs:
               userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.5 Safari/605.1.15'
             });
             const page = await context.newPage();
-
-            let tokenFromRequests = null;
-            page.on('request', (req) => {
-              const auth = req.headers()['authorization'];
-              if (auth && auth.startsWith('Bearer ')) {
-                tokenFromRequests = auth.replace(/^Bearer\s+/i, '').trim();
-              }
-            });
 
             // If the company path/id changes, update path=%2Fnext%2Fp%2F68704%2Fhjem below.
             const payload = new URLSearchParams({
@@ -435,39 +429,53 @@ jobs:
               throw new Error(`Authentication failed (${authResponse.status()}): ${body.slice(0, 500)}`);
             }
 
-            await page.goto('https://www.sykletiljobben.no/next/p/68704/hjem', { waitUntil: 'networkidle' });
-
-            const tokenFromStorage = await page.evaluate(() => {
-              const direct = localStorage.getItem('token');
-              if (direct) return direct;
-
-              for (const key of Object.keys(localStorage)) {
-                const value = localStorage.getItem(key);
-                if (!value) continue;
-                if (key.toLowerCase().includes('token')) return value;
-                if (/^[A-Za-z0-9-_]+\.[A-Za-z0-9-_]+\.[A-Za-z0-9-_]+$/.test(value)) return value;
+            // Token endpoint discovered in browser traffic after login.
+            const jwtResponse = await page.request.get('https://www.sykletiljobben.no/next/jwt/token', {
+              headers: {
+                'Accept': 'application/json, text/plain, */*',
+                'Origin': 'https://www.sykletiljobben.no',
+                'Referer': 'https://www.sykletiljobben.no/next/p/68704/hjem'
               }
-
-              return null;
             });
 
-            const token = tokenFromStorage || tokenFromRequests;
+            const jwtBody = await jwtResponse.text();
+            console.log(`JWT endpoint status: ${jwtResponse.status()}`);
+            console.log(`JWT endpoint body length: ${jwtBody.length}`);
+
+            let token = null;
+            try {
+              const parsed = JSON.parse(jwtBody);
+              token = parsed?.token || parsed?.jwt || parsed?.access_token || null;
+            } catch (_) {
+              // Body can also be a raw token string.
+              token = jwtBody.trim();
+            }
+
+            if (token && token.startsWith('Bearer ')) {
+              token = token.replace(/^Bearer\s+/i, '').trim();
+            }
+
             await browser.close();
 
             if (!token) {
-              throw new Error('Could not find Sykletiljobben bearer token in localStorage or request headers');
+              throw new Error(`Could not parse token from /next/jwt/token response. First 300 chars: ${jwtBody.slice(0, 300)}`);
             }
 
             fs.appendFileSync(process.env.GITHUB_ENV, `SYKLETILJOBBEN_TOKEN=${token}\n`);
-            console.log('Sykletiljobben token retrieved and exported to GITHUB_ENV');
+            fs.writeFileSync('.stj_token', token);
+            console.log(`Sykletiljobben token retrieved (length=${token.length}) and exported`);
           })().catch((error) => {
             console.error(error);
             process.exit(1);
           });
           EOF
 
+          # GITHUB_ENV is only available in subsequent steps; load token for this step too.
+          SYKLETILJOBBEN_TOKEN="$(cat .stj_token)"
+          echo "Using runtime token in this step (length=${#SYKLETILJOBBEN_TOKEN})"
+
           # If IDs change, update companyId and aid values in curl calls below.
-          curl 'https://webapi.webfarm3.bloc.no/api/Competition/GetCompanyPage?companyId=17359&measureBy=averagePoints&locality=national' \
+          curl --fail-with-body -sS 'https://webapi.webfarm3.bloc.no/api/Competition/GetCompanyPage?companyId=17359&measureBy=averagePoints&locality=national' \
             -H "Authorization: Bearer $SYKLETILJOBBEN_TOKEN" \
             -H 'aid: 1802569' \
             -H 'isocode: nb-no' \
@@ -477,7 +485,7 @@ jobs:
             -H 'Referer: https://www.sykletiljobben.no/' \
             --compressed \
             | jq '.' > sykletiljobben.json
-          curl 'https://webapi.webfarm3.bloc.no/api/Competition/GetCompanyPage?companyId=17359&measureBy=averagePoints&locality=1' \
+          curl --fail-with-body -sS 'https://webapi.webfarm3.bloc.no/api/Competition/GetCompanyPage?companyId=17359&measureBy=averagePoints&locality=1' \
             -H "Authorization: Bearer $SYKLETILJOBBEN_TOKEN" \
             -H 'aid: 1802569' \
             -H 'isocode: nb-no' \
@@ -487,7 +495,7 @@ jobs:
             -H 'Referer: https://www.sykletiljobben.no/' \
             --compressed \
             | jq '.' > sykletiljobben_county.json
-          curl 'https://webapi.webfarm3.bloc.no/api/Competition/GetCompanyPage?companyId=17359&measureBy=averagePoints&locality=2' \
+          curl --fail-with-body -sS 'https://webapi.webfarm3.bloc.no/api/Competition/GetCompanyPage?companyId=17359&measureBy=averagePoints&locality=2' \
             -H "Authorization: Bearer $SYKLETILJOBBEN_TOKEN" \
             -H 'aid: 1802569' \
             -H 'isocode: nb-no' \
@@ -497,7 +505,7 @@ jobs:
             -H 'Referer: https://www.sykletiljobben.no/' \
             --compressed \
             | jq '.' > sykletiljobben_community.json
-          curl 'https://webapi.webfarm3.bloc.no/api/Competition/GetCompanyInternalToplist?companyId=17359' \
+          curl --fail-with-body -sS 'https://webapi.webfarm3.bloc.no/api/Competition/GetCompanyInternalToplist?companyId=17359' \
             -H "Authorization: Bearer $SYKLETILJOBBEN_TOKEN" \
             -H 'aid: 1802569' \
             -H 'isocode: nb-no' \

@@ -1323,12 +1323,7 @@
                 slides.push(teamTable);
 
                 // Slide 3: Member Rankings (if data available)
-                if (members && members.memberLeaderboard && members.memberLeaderboard.length > 0) {
-                    const memberRankings = members.memberLeaderboard.sort((a, b) =>
-                        b.averagePoints !== a.averagePoints
-                            ? b.averagePoints - a.averagePoints
-                            : b.totalPoints - a.totalPoints
-                    );
+                if (members && members.length > 0) {
                     let memberTable = `
                         <div class="board-header">
                             <span class="board-title">👥 Medlemmer Oversikt</span>
@@ -1339,26 +1334,20 @@
                                     <tr>
                                         <th style="width:44px">#</th>
                                         <th>Medlem</th>
-                                        <th class="metric primary-col" style="text-align:right">Snitt</th>
-                                        <th class="metric" style="text-align:right">Poeng</th>
-                                        <th class="metric" style="text-align:right">Økter</th>
-                                        <th class="metric" style="text-align:right">Km</th>
-                                        <th class="metric" style="text-align:right">Tid</th>
+                                        <th class="metric" style="text-align:right">Lag</th>
+                                        <th class="metric primary-col" style="text-align:right">Poeng</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                     `;
-                    memberRankings.slice(0, 30).forEach((member, index) => {
-                        const medal = index === 0 ? '🥇' : index === 1 ? '🥈' : index === 2 ? '🥉' : index + 1;
+                    members.forEach((member) => {
+                        const medal = member.rank === 1 ? '🥇' : member.rank === 2 ? '🥈' : member.rank === 3 ? '🥉' : member.rank;
                         memberTable += `
                             <tr>
                                 <td class="rank">${medal}</td>
-                                <td class="name">${member.memberName}</td>
-                                <td class="metric primary-col">${member.averagePoints.toFixed(2)}</td>
-                                <td class="metric">${member.totalPoints.toFixed(2)}</td>
-                                <td class="metric">${member.totalWorkouts}</td>
-                                <td class="metric">${formatKm(member.totalCentimeters)}</td>
-                                <td class="metric">${formatTime(member.totalSeconds)}</td>
+                                <td class="name">${member.name}</td>
+                                <td class="metric">${member.team}</td>
+                                <td class="metric primary-col">${member.points.toFixed(2)}</td>
                             </tr>
                         `;
                     });

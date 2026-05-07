@@ -275,94 +275,6 @@
         th.primary-col { color: #667eea; }
         td.primary-col { font-weight: 700; color: #333; }
 
-        /* ── Animation Track ──────────────────────────────────── */
-        .animation-track {
-            position: relative;
-            height: 72px;
-            overflow: hidden;
-            background: linear-gradient(to bottom, #f3eeff 60%, #e4d8ff 100%);
-            border-radius: 36px;
-            margin: 8px 0 0;
-            border: 1px solid #d4c6f0;
-        }
-
-        /* Dashed road */
-        .animation-track::before {
-            content: '';
-            position: absolute;
-            bottom: 14px;
-            left: 0; right: 0;
-            height: 2px;
-            background: repeating-linear-gradient(
-                90deg,
-                #c0aee8 0, #c0aee8 16px,
-                transparent 16px, transparent 32px
-            );
-        }
-
-        @keyframes runAcross {
-            from { transform: translateX(-100px); }
-            to   { transform: translateX(1150px); }
-        }
-
-        @keyframes charBob {
-            0%, 100% { transform: scaleX(-1) translateY(0); }
-            50%       { transform: scaleX(-1) translateY(-8px); }
-        }
-
-        .anim-wrap {
-            position: absolute;
-            bottom: 14px;
-            left: 0;
-            line-height: 1;
-            user-select: none;
-            pointer-events: none;
-        }
-
-        .anim-bob {
-            display: block;
-            animation: charBob ease-in-out infinite;
-        }
-
-        /* Rabbit — fast runner */
-        .anim-rabbit {
-            animation: runAcross 5s linear infinite 0s;
-        }
-        .anim-rabbit .anim-bob { font-size: 30px; animation-duration: 0.26s; }
-
-        /* Horse — strong gallop */
-        .anim-horse {
-            animation: runAcross 7s linear infinite -1.8s;
-        }
-        .anim-horse .anim-bob { font-size: 32px; animation-duration: 0.22s; }
-
-        /* Fox on a bicycle — no bob, it glides */
-        .anim-fox {
-            bottom: 8px;
-            animation: runAcross 9s linear infinite -4s;
-        }
-        .fox-stack { display: flex; flex-direction: column; align-items: center; transform: scaleX(-1); }
-        .fox-stack .fox-em  { font-size: 18px; line-height: 1.15; display: block; }
-        .fox-stack .bike-em { font-size: 22px; line-height: 1;    display: block; }
-
-        /* Bear — steady pace */
-        .anim-bear {
-            animation: runAcross 12s linear infinite -5.5s;
-        }
-        .anim-bear .anim-bob { font-size: 28px; animation-duration: 0.46s; }
-
-        /* Tortoise — slow but determined */
-        .anim-tortoise {
-            animation: runAcross 26s linear infinite -12s;
-        }
-        .anim-tortoise .anim-bob { font-size: 26px; animation-duration: 0.9s; }
-
-        /* Wolf/Dog extra character for variety */
-        .anim-wolf {
-            animation: runAcross 8.5s linear infinite -3.2s;
-        }
-        .anim-wolf .anim-bob { font-size: 28px; animation-duration: 0.3s; }
-
         /* ── Fun Carousel Slide ─────────────────────────────── */
         .fun-board {
             position: relative;
@@ -730,37 +642,6 @@
     <div class="container">
         <h1>🏆 Bouvet Agder Strava Leaderboard</h1>
         <div class="header-meta" id="headerMeta">Loading…</div>
-
-        <!-- Animated character strip -->
-        <div class="animation-track" aria-hidden="true">
-            <!-- Rabbit: fast runner -->
-            <div class="anim-wrap anim-rabbit">
-                <span class="anim-bob">🐇</span>
-            </div>
-            <!-- Horse: strong gallop -->
-            <div class="anim-wrap anim-horse">
-                <span class="anim-bob">🐴</span>
-            </div>
-            <!-- Fox on a bicycle -->
-            <div class="anim-wrap anim-fox">
-                <div class="fox-stack">
-                    <span class="fox-em">🦊</span>
-                    <span class="bike-em">🚲</span>
-                </div>
-            </div>
-            <!-- Bear: steady pace -->
-            <div class="anim-wrap anim-bear">
-                <span class="anim-bob">🐻</span>
-            </div>
-            <!-- Wolf: mid-distance -->
-            <div class="anim-wrap anim-wolf">
-                <span class="anim-bob">🐺</span>
-            </div>
-            <!-- Tortoise: slow but determined -->
-            <div class="anim-wrap anim-tortoise">
-                <span class="anim-bob">🐢</span>
-            </div>
-        </div>
 
         <div class="split-layout">
             <div class="split-left">

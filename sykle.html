@@ -257,6 +257,37 @@
             color: #667eea;
             font-weight: 500;
         }
+
+        .two-col-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+            gap: 24px;
+            align-items: start;
+        }
+
+        .column {
+            min-width: 0;
+        }
+
+        .right-column {
+            border-left: 2px solid #f0f4ff;
+            padding-left: 20px;
+        }
+
+        .section-header {
+            margin-top: 6px;
+        }
+
+        @media (max-width: 1100px) {
+            .two-col-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .right-column {
+                border-left: none;
+                padding-left: 0;
+            }
+        }
     </style>
 </head>
 <body>
@@ -268,8 +299,6 @@
     </div>
 
     <script>
-        let carouselAutoInterval = null;
-
         function formatTime(totalSeconds) {
             if (!totalSeconds) return "0t 0m";
             const hours = Math.floor(totalSeconds / 3600);
@@ -305,12 +334,9 @@
                 document.getElementById('headerMeta').innerHTML =
                     `Sist oppdatert: ${new Date(data.lastUpdateTime).toLocaleString('no-NO')} <span class="competition-state active">Aktiv</span>`;
 
-                // Build slides
-                const slides = [];
-
-                // Slide 1: Company Stats
+                // Section 1: Company Stats
                 const statsSlide = `
-                    <div class="board-header">
+                    <div class="board-header section-header">
                         <span class="board-title">📊 Bedriftsstatistikk</span>
                     </div>
                     <div class="stats-grid">
@@ -323,16 +349,15 @@
                         <div class="stat-card"><div class="value">${formatKm(data.totalCentimeters)} km</div><div class="label">Totalt Km</div></div>
                     </div>
                 `;
-                slides.push(statsSlide);
 
-                // Slide 2: Team Rankings
+                // Section 2: Team Rankings
                 const teams = (data.teamsDetailed || []).sort((a, b) =>
                     b.averagePoints !== a.averagePoints
                         ? b.averagePoints - a.averagePoints
                         : b.totalPoints - a.totalPoints
                 );
                 let teamTable = `
-                    <div class="board-header">
+                    <div class="board-header section-header">
                         <span class="board-title">🎯 Lag oversikt</span>
                     </div>
                     <table>
@@ -366,12 +391,12 @@
                     `;
                 });
                 teamTable += `</tbody></table>`;
-                slides.push(teamTable);
 
-                // Slide 3: Member Rankings (if data available)
+                // Section 3: Member Rankings (if data available)
+                let memberTable = '';
                 if (members && members.length > 0) {
-                    let memberTable = `
-                        <div class="board-header">
+                    memberTable = `
+                        <div class="board-header section-header">
                             <span class="board-title">👥 Medlemmer Oversikt</span>
                         </div>
                         <table>
@@ -398,37 +423,28 @@
                         `;
                     });
                     memberTable += `</tbody></table>`;
-                    slides.push(memberTable);
                 }
 
-                // Build carousel HTML
-                let slidesHtml = slides.map(slide => `<div class="carousel-slide">${slide}</div>`).join('');
+                const memberColumn = memberTable || `
+                    <div class="board-header section-header">
+                        <span class="board-title">👥 Medlemmer Oversikt</span>
+                    </div>
+                    <div class="loading">Ingen medlemsdata tilgjengelig.</div>
+                `;
 
                 let html = `
-                    <div class="carousel-wrapper" id="carouselWrapper">
-                        <div class="progress-bar-wrapper">
-                            <div class="progress-bar" id="progressBar"></div>
+                    <div class="two-col-layout">
+                        <div class="column left-column">
+                            ${statsSlide}
+                            ${teamTable}
                         </div>
-                        <div class="carousel-track" id="carouselTrack">
-                            ${slidesHtml}
-                        </div>
-                        <div class="carousel-controls">
-                            <button class="carousel-btn" id="prevBtn" aria-label="Forrige">&#8249;</button>
-                            <div class="carousel-dots" id="carouselDots">
-                                ${slides.map((_, i) =>
-                                    `<button class="carousel-dot${i === 0 ? ' active' : ''}" data-index="${i}" aria-label="Slide ${i + 1}"></button>`
-                                ).join('')}
-                            </div>
-                            <button class="carousel-btn" id="nextBtn" aria-label="Neste">&#8250;</button>
+                        <div class="column right-column">
+                            ${memberColumn}
                         </div>
                     </div>
                 `;
 
                 document.getElementById('leaderboard').innerHTML = html;
-
-                if (slides.length > 0) {
-                    initCarousel(slides.length);
-                }
 
             } catch (error) {
                 console.error('Error loading data:', error);
@@ -438,60 +454,6 @@
                         <p>Kunne ikke laste sykletiljobben.json. Kontakt administrator.</p>
                     </div>`;
             }
-        }
-
-        function initCarousel(totalSlides) {
-            if (carouselAutoInterval) clearInterval(carouselAutoInterval);
-
-            let current = 0;
-            const INTERVAL = 8000;
-
-            const track = document.getElementById('carouselTrack');
-            const dots = document.querySelectorAll('.carousel-dot');
-            const prevBtn = document.getElementById('prevBtn');
-            const nextBtn = document.getElementById('nextBtn');
-            const progressBar = document.getElementById('progressBar');
-
-            function updateSlide(index) {
-                current = (index + totalSlides) % totalSlides;
-                track.style.transform = `translateX(-${current * 100}%)`;
-                
-                dots.forEach((dot, i) => {
-                    dot.classList.toggle('active', i === current);
-                });
-
-                let progress = ((current + 1) / totalSlides) * 100;
-                progressBar.style.width = progress + '%';
-            }
-
-            prevBtn.addEventListener('click', () => {
-                clearInterval(carouselAutoInterval);
-                updateSlide(current - 1);
-                startAutoCarousel();
-            });
-
-            nextBtn.addEventListener('click', () => {
-                clearInterval(carouselAutoInterval);
-                updateSlide(current + 1);
-                startAutoCarousel();
-            });
-
-            dots.forEach((dot, index) => {
-                dot.addEventListener('click', () => {
-                    clearInterval(carouselAutoInterval);
-                    updateSlide(index);
-                    startAutoCarousel();
-                });
-            });
-
-            function startAutoCarousel() {
-                carouselAutoInterval = setInterval(() => {
-                    updateSlide(current + 1);
-                }, INTERVAL);
-            }
-
-            updateSlide(0);
-            startAutoCarousel();
         }
 
         document.addEventListener('DOMContentLoaded', loadSykleData);

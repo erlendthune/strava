@@ -17,6 +17,17 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Playwright (Chromium)
+        run: |
+          npm --yes init -y
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+
       - name: Initialize Config
         run: |
           node << 'EOF'
@@ -372,9 +383,92 @@ jobs:
           EOF
 
       - name: Fetch Sykletiljobben Data
+        env:
+          STJ_EMAIL: ${{ secrets.STJ_EMAIL }}
+          STJ_PASSWORD: ${{ secrets.STJ_PASSWORD }}
         run: |
+          node << 'EOF'
+          const fs = require('fs');
+          const { chromium } = require('playwright');
+
+          const email = process.env.STJ_EMAIL;
+          const password = process.env.STJ_PASSWORD;
+
+          if (!email || !password) {
+            throw new Error('Missing STJ_EMAIL or STJ_PASSWORD secret');
+          }
+
+          (async () => {
+            const browser = await chromium.launch({ headless: true });
+            const context = await browser.newContext({
+              userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.5 Safari/605.1.15'
+            });
+            const page = await context.newPage();
+
+            let tokenFromRequests = null;
+            page.on('request', (req) => {
+              const auth = req.headers()['authorization'];
+              if (auth && auth.startsWith('Bearer ')) {
+                tokenFromRequests = auth.replace(/^Bearer\s+/i, '').trim();
+              }
+            });
+
+            // If the company path/id changes, update path=%2Fnext%2Fp%2F68704%2Fhjem below.
+            const payload = new URLSearchParams({
+              email,
+              password,
+              path: '/next/p/68704/hjem',
+              Query: ''
+            }).toString();
+
+            const authResponse = await page.request.post('https://www.sykletiljobben.no/next/signin/doAuth', {
+              data: payload,
+              headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'Origin': 'https://www.sykletiljobben.no',
+                'Referer': 'https://www.sykletiljobben.no/'
+              }
+            });
+
+            if (!authResponse.ok()) {
+              const body = await authResponse.text();
+              throw new Error(`Authentication failed (${authResponse.status()}): ${body.slice(0, 500)}`);
+            }
+
+            await page.goto('https://www.sykletiljobben.no/next/p/68704/hjem', { waitUntil: 'networkidle' });
+
+            const tokenFromStorage = await page.evaluate(() => {
+              const direct = localStorage.getItem('token');
+              if (direct) return direct;
+
+              for (const key of Object.keys(localStorage)) {
+                const value = localStorage.getItem(key);
+                if (!value) continue;
+                if (key.toLowerCase().includes('token')) return value;
+                if (/^[A-Za-z0-9-_]+\.[A-Za-z0-9-_]+\.[A-Za-z0-9-_]+$/.test(value)) return value;
+              }
+
+              return null;
+            });
+
+            const token = tokenFromStorage || tokenFromRequests;
+            await browser.close();
+
+            if (!token) {
+              throw new Error('Could not find Sykletiljobben bearer token in localStorage or request headers');
+            }
+
+            fs.appendFileSync(process.env.GITHUB_ENV, `SYKLETILJOBBEN_TOKEN=${token}\n`);
+            console.log('Sykletiljobben token retrieved and exported to GITHUB_ENV');
+          })().catch((error) => {
+            console.error(error);
+            process.exit(1);
+          });
+          EOF
+
+          # If IDs change, update companyId and aid values in curl calls below.
           curl 'https://webapi.webfarm3.bloc.no/api/Competition/GetCompanyPage?companyId=17359&measureBy=averagePoints&locality=national' \
-            -H "Authorization: Bearer ${{ secrets.SYKLETILJOBBEN_TOKEN }}" \
+            -H "Authorization: Bearer $SYKLETILJOBBEN_TOKEN" \
             -H 'aid: 1802569' \
             -H 'isocode: nb-no' \
             -H 'Accept: text/plain,application/json,text/json' \
@@ -384,7 +478,7 @@ jobs:
             --compressed \
             | jq '.' > sykletiljobben.json
           curl 'https://webapi.webfarm3.bloc.no/api/Competition/GetCompanyPage?companyId=17359&measureBy=averagePoints&locality=1' \
-            -H "Authorization: Bearer ${{ secrets.SYKLETILJOBBEN_TOKEN }}" \
+            -H "Authorization: Bearer $SYKLETILJOBBEN_TOKEN" \
             -H 'aid: 1802569' \
             -H 'isocode: nb-no' \
             -H 'Accept: text/plain,application/json,text/json' \
@@ -394,7 +488,7 @@ jobs:
             --compressed \
             | jq '.' > sykletiljobben_county.json
           curl 'https://webapi.webfarm3.bloc.no/api/Competition/GetCompanyPage?companyId=17359&measureBy=averagePoints&locality=2' \
-            -H "Authorization: Bearer ${{ secrets.SYKLETILJOBBEN_TOKEN }}" \
+            -H "Authorization: Bearer $SYKLETILJOBBEN_TOKEN" \
             -H 'aid: 1802569' \
             -H 'isocode: nb-no' \
             -H 'Accept: text/plain,application/json,text/json' \
@@ -404,7 +498,7 @@ jobs:
             --compressed \
             | jq '.' > sykletiljobben_community.json
           curl 'https://webapi.webfarm3.bloc.no/api/Competition/GetCompanyInternalToplist?companyId=17359' \
-            -H "Authorization: Bearer ${{ secrets.SYKLETILJOBBEN_TOKEN }}" \
+            -H "Authorization: Bearer $SYKLETILJOBBEN_TOKEN" \
             -H 'aid: 1802569' \
             -H 'isocode: nb-no' \
             -H 'Accept: text/plain,application/json,text/json' \

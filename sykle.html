@@ -15,16 +15,16 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
-            padding: 20px;
+            padding: 12px;
         }
         
         .container {
-            max-width: 1000px;
+            width: 100%;
             margin: 0 auto;
             background: white;
             border-radius: 12px;
             box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-            padding: 30px;
+            padding: 20px 24px;
         }
         
         h1 {
@@ -43,79 +43,58 @@
             padding-bottom: 10px;
         }
         
-        .subtitle {
-            text-align: center;
-            color: #666;
-            margin-bottom: 10px;
-            font-size: 14px;
-        }
-
         .header-meta {
             text-align: center;
-            font-size: 12px;
             color: #888;
-            margin-bottom: 20px;
+            font-size: 13px;
+            margin: 0 0 6px;
+            line-height: 1.6;
         }
 
         .competition-state {
             display: inline-block;
-            padding: 2px 8px;
-            border-radius: 12px;
-            font-size: 10px;
-            font-weight: 600;
-            text-transform: uppercase;
             margin-left: 8px;
+            padding: 2px 8px;
+            border-radius: 999px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.2px;
             vertical-align: middle;
         }
 
         .competition-state.active {
-            background: #e6f4ea;
-            color: #1e7e34;
-            border: 1px solid #c3e6cb;
-        }
-        
-        .notice {
-            background: #fff3cd;
-            border: 2px solid #ffc107;
-            border-radius: 8px;
-            padding: 15px;
-            margin: 20px 0;
-            text-align: center;
-        }
-        
-        .notice strong {
-            color: #856404;
-            font-size: 16px;
-            display: block;
-            margin-bottom: 5px;
+            color: #1f6f43;
+            background: #ddfbe8;
+            border: 1px solid #b7f0ce;
         }
 
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 15px;
-            margin: 20px 0 30px;
+            grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+            gap: 10px;
+            margin: 10px 0 18px;
         }
         
         .stat-card {
             background: #f8f9fa;
             border-radius: 8px;
-            padding: 15px;
+            padding: 12px 10px;
             text-align: center;
             border-bottom: 3px solid #667eea;
         }
         
         .stat-card .value {
-            font-size: 24px;
+            font-size: 20px;
             font-weight: bold;
             color: #333;
-            margin-bottom: 5px;
+            margin-bottom: 4px;
         }
         
         .stat-card .label {
-            font-size: 12px;
+            font-size: 11px;
             color: #666;
             text-transform: uppercase;
+            letter-spacing: 0.3px;
         }
         
         table {
@@ -170,44 +149,127 @@
         .name {
             font-weight: 500;
         }
-        
+
+        .loading {
+            text-align: center;
+            color: #666;
+            padding: 40px;
+        }
+
+        .carousel-wrapper {
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+
+        .carousel-track {
+            display: flex;
+            width: 100%;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            flex-shrink: 0;
+        }
+
+        .carousel-controls {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin: 10px 0 24px;
+        }
+
+        .carousel-btn {
+            background: none;
+            border: 2px solid #667eea;
+            color: #667eea;
+            border-radius: 50%;
+            width: 34px;
+            height: 34px;
+            cursor: pointer;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+            transition: all 0.2s;
+            flex-shrink: 0;
+        }
+
+        .carousel-btn:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        .carousel-dots {
+            display: flex;
+            gap: 8px;
+        }
+
+        .carousel-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #ddd;
+            cursor: pointer;
+            border: none;
+            padding: 0;
+            transition: background 0.3s;
+        }
+
+        .carousel-dot.active {
+            background: #667eea;
+        }
+
+        .progress-bar-wrapper {
+            height: 3px;
+            background: #eee;
+            border-radius: 3px;
+            margin-bottom: 8px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 3px;
+            width: 0%;
+        }
+
+        .board-header {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 8px;
+        }
+
+        .board-title {
+            font-size: 17px;
+            font-weight: 700;
+            color: #333;
+            white-space: nowrap;
+        }
+
+        .board-leader {
+            font-size: 13px;
+            color: #667eea;
+            font-weight: 500;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1 id="main-title">🏆 Sykle til jobben - Bouvet Norge As Agder</h1>
-        <div class="subtitle">Oppdatert oversikt for bedriften</div>
-        <div class="header-meta">
-            Sist oppdatert: <span id="last-updated">Laster...</span>
-            <span class="competition-state active">Aktiv</span>
-        </div>
+        <div class="header-meta" id="headerMeta">Laster…</div>
 
-        <div class="stats-grid" id="company-stats">
-            <!-- Populated via JS -->
-            <div class="stat-card"><div class="value">...</div><div class="label">Laster Data</div></div>
-        </div>
-
-        <h2>Lag oversikt</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Plass</th>
-                    <th>Lag</th>
-                    <th class="metric primary-col">Poeng (Snitt)</th>
-                    <th class="metric">Totalt Poeng</th>
-                    <th class="metric">Medlemmer</th>
-                    <th class="metric">Økter</th>
-                    <th class="metric">Km</th>
-                    <th class="metric">Tid</th>
-                </tr>
-            </thead>
-            <tbody id="team-leaderboard">
-                <!-- Populated by JS -->
-            </tbody>
-        </table>
+        <div id="leaderboard" class="loading">Loading...</div>
     </div>
 
     <script>
+        let carouselAutoInterval = null;
+
         function formatTime(totalSeconds) {
             if (!totalSeconds) return "0t 0m";
             const hours = Math.floor(totalSeconds / 3600);
@@ -222,84 +284,232 @@
 
         async function loadSykleData() {
             try {
-                const [natRes, countyRes, communityRes] = await Promise.allSettled([
+                const [natRes, countyRes, communityRes, membersRes] = await Promise.allSettled([
                     fetch('sykletiljobben.json').then(r => r.ok ? r.json() : null),
                     fetch('sykletiljobben_county.json').then(r => r.ok ? r.json() : null),
-                    fetch('sykletiljobben_community.json').then(r => r.ok ? r.json() : null)
+                    fetch('sykletiljobben_community.json').then(r => r.ok ? r.json() : null),
+                    fetch('sykletiljobbenmembers.json').then(r => r.ok ? r.json() : null)
                 ]);
 
                 const national  = natRes.status       === 'fulfilled' ? natRes.value       : null;
-                const county    = countyRes.status     === 'fulfilled' ? countyRes.value     : null;
-                const community = communityRes.status  === 'fulfilled' ? communityRes.value  : null;
+                const county    = countyRes.status    === 'fulfilled' ? countyRes.value    : null;
+                const community = communityRes.status === 'fulfilled' ? communityRes.value : null;
+                const members   = membersRes.status   === 'fulfilled' ? membersRes.value   : null;
 
                 const data = national;
                 if (!data) throw new Error('Nasjonale data mangler');
 
                 document.getElementById('main-title').textContent = `🏆 Sykle til jobben - ${data.title}`;
-                document.getElementById('last-updated').textContent =
-                    new Date(data.lastUpdateTime).toLocaleString('no-NO');
 
-                const rankCard = (label, d) => d
-                    ? `<div class="stat-card">
-                        <div class="value">#${d.rank} <span style="font-size:14px;color:#666">/ ${d.totalCompanies}</span></div>
-                        <div class="label">${label}</div>
-                       </div>`
-                    : '';
+                const now = new Date();
+                document.getElementById('headerMeta').innerHTML =
+                    `Sist oppdatert: ${new Date(data.lastUpdateTime).toLocaleString('no-NO')} <span class="competition-state active">Aktiv</span>`;
 
-                document.getElementById('company-stats').innerHTML =
-                    rankCard('Nasjonalt', national) +
-                    rankCard('Fylke', county) +
-                    rankCard('Kommune', community) +
-                    `<div class="stat-card">
-                        <div class="value">${data.countCompanyMembers}</div>
-                        <div class="label">Medlemmer</div>
-                     </div>
-                     <div class="stat-card">
-                        <div class="value">${data.pointsTotal.toFixed(2)}</div>
-                        <div class="label">Totalt Poeng</div>
-                     </div>
-                     <div class="stat-card">
-                        <div class="value">${data.totalWorkouts}</div>
-                        <div class="label">Totalt Økter</div>
-                     </div>
-                     <div class="stat-card">
-                        <div class="value">${formatKm(data.totalCentimeters)} km</div>
-                        <div class="label">Totalt Km</div>
-                     </div>`;
+                // Build slides
+                const slides = [];
 
-                const tbody = document.getElementById('team-leaderboard');
-                tbody.innerHTML = '';
+                // Slide 1: Company Stats
+                const statsSlide = `
+                    <div class="board-header">
+                        <span class="board-title">📊 Bedriftsstatistikk</span>
+                    </div>
+                    <div class="stats-grid">
+                        ${national ? `<div class="stat-card"><div class="value">#${national.rank} <span style="font-size:14px;color:#666">/ ${national.totalCompanies}</span></div><div class="label">Nasjonalt</div></div>` : ''}
+                        ${county ? `<div class="stat-card"><div class="value">#${county.rank} <span style="font-size:14px;color:#666">/ ${county.totalCompanies}</span></div><div class="label">Fylke</div></div>` : ''}
+                        ${community ? `<div class="stat-card"><div class="value">#${community.rank} <span style="font-size:14px;color:#666">/ ${community.totalCompanies}</span></div><div class="label">Kommune</div></div>` : ''}
+                        <div class="stat-card"><div class="value">${data.countCompanyMembers}</div><div class="label">Medlemmer</div></div>
+                        <div class="stat-card"><div class="value">${data.pointsTotal.toFixed(2)}</div><div class="label">Totalt Poeng</div></div>
+                        <div class="stat-card"><div class="value">${data.totalWorkouts}</div><div class="label">Totalt Økter</div></div>
+                        <div class="stat-card"><div class="value">${formatKm(data.totalCentimeters)} km</div><div class="label">Totalt Km</div></div>
+                    </div>
+                `;
+                slides.push(statsSlide);
+
+                // Slide 2: Team Rankings
                 const teams = (data.teamsDetailed || []).sort((a, b) =>
                     b.averagePoints !== a.averagePoints
                         ? b.averagePoints - a.averagePoints
                         : b.totalPoints - a.totalPoints
                 );
+                let teamTable = `
+                    <div class="board-header">
+                        <span class="board-title">🎯 Lag oversikt</span>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width:50px">#</th>
+                                <th>Lag</th>
+                                <th class="metric primary-col">Snitt Poeng</th>
+                                <th class="metric">Totalt Poeng</th>
+                                <th class="metric">Medlemmer</th>
+                                <th class="metric">Økter</th>
+                                <th class="metric">Km</th>
+                                <th class="metric">Tid</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                `;
                 teams.forEach((team, index) => {
-                    const tr = document.createElement('tr');
-                    tr.innerHTML = `
-                        <td class="rank">${index + 1}</td>
-                        <td class="name">${team.title}</td>
-                        <td class="metric primary-col">${team.averagePoints.toFixed(2)}</td>
-                        <td class="metric">${team.totalPoints.toFixed(2)}</td>
-                        <td class="metric">${team.memberCount}</td>
-                        <td class="metric">${team.totalWorkouts}</td>
-                        <td class="metric">${team.totalkilometers.toFixed(1)}</td>
-                        <td class="metric">${formatTime(team.totalSeconds)}</td>
+                    const medal = index === 0 ? '🥇' : index === 1 ? '🥈' : index === 2 ? '🥉' : index + 1;
+                    teamTable += `
+                        <tr>
+                            <td class="rank">${medal}</td>
+                            <td class="name">${team.title}</td>
+                            <td class="metric primary-col">${team.averagePoints.toFixed(2)}</td>
+                            <td class="metric">${team.totalPoints.toFixed(2)}</td>
+                            <td class="metric">${team.memberCount}</td>
+                            <td class="metric">${team.totalWorkouts}</td>
+                            <td class="metric">${team.totalkilometers.toFixed(1)}</td>
+                            <td class="metric">${formatTime(team.totalSeconds)}</td>
+                        </tr>
                     `;
-                    tbody.appendChild(tr);
                 });
+                teamTable += `</tbody></table>`;
+                slides.push(teamTable);
+
+                // Slide 3: Member Rankings (if data available)
+                if (members && members.memberLeaderboard && members.memberLeaderboard.length > 0) {
+                    const memberRankings = members.memberLeaderboard.sort((a, b) =>
+                        b.averagePoints !== a.averagePoints
+                            ? b.averagePoints - a.averagePoints
+                            : b.totalPoints - a.totalPoints
+                    );
+                    let memberTable = `
+                        <div class="board-header">
+                            <span class="board-title">👥 Medlemmer Oversikt</span>
+                        </div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th style="width:50px">#</th>
+                                    <th>Medlem</th>
+                                    <th class="metric primary-col">Snitt Poeng</th>
+                                    <th class="metric">Totalt Poeng</th>
+                                    <th class="metric">Økter</th>
+                                    <th class="metric">Km</th>
+                                    <th class="metric">Tid</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                    `;
+                    memberRankings.slice(0, 50).forEach((member, index) => {
+                        const medal = index === 0 ? '🥇' : index === 1 ? '🥈' : index === 2 ? '🥉' : index + 1;
+                        memberTable += `
+                            <tr>
+                                <td class="rank">${medal}</td>
+                                <td class="name">${member.memberName}</td>
+                                <td class="metric primary-col">${member.averagePoints.toFixed(2)}</td>
+                                <td class="metric">${member.totalPoints.toFixed(2)}</td>
+                                <td class="metric">${member.totalWorkouts}</td>
+                                <td class="metric">${formatKm(member.totalCentimeters)}</td>
+                                <td class="metric">${formatTime(member.totalSeconds)}</td>
+                            </tr>
+                        `;
+                    });
+                    memberTable += `</tbody></table>`;
+                    slides.push(memberTable);
+                }
+
+                // Build carousel HTML
+                let slidesHtml = slides.map(slide => `<div class="carousel-slide">${slide}</div>`).join('');
+
+                let html = `
+                    <div class="carousel-wrapper" id="carouselWrapper">
+                        <div class="progress-bar-wrapper">
+                            <div class="progress-bar" id="progressBar"></div>
+                        </div>
+                        <div class="carousel-track" id="carouselTrack">
+                            ${slidesHtml}
+                        </div>
+                        <div class="carousel-controls">
+                            <button class="carousel-btn" id="prevBtn" aria-label="Forrige">&#8249;</button>
+                            <div class="carousel-dots" id="carouselDots">
+                                ${slides.map((_, i) =>
+                                    `<button class="carousel-dot${i === 0 ? ' active' : ''}" data-index="${i}" aria-label="Slide ${i + 1}"></button>`
+                                ).join('')}
+                            </div>
+                            <button class="carousel-btn" id="nextBtn" aria-label="Neste">&#8250;</button>
+                        </div>
+                    </div>
+                `;
+
+                document.getElementById('leaderboard').innerHTML = html;
+
+                if (slides.length > 0) {
+                    initCarousel(slides.length);
+                }
 
             } catch (error) {
                 console.error('Error loading data:', error);
-                document.getElementById('company-stats').innerHTML = `
-                    <div class="notice" style="grid-column:1/-1">
-                        <strong>Data Error</strong>
+                document.getElementById('leaderboard').innerHTML = `
+                    <div class="loading">
+                        <strong>Datafeil</strong>
                         <p>Kunne ikke laste sykletiljobben.json. Kontakt administrator.</p>
                     </div>`;
             }
         }
 
+        function initCarousel(totalSlides) {
+            if (carouselAutoInterval) clearInterval(carouselAutoInterval);
+
+            let current = 0;
+            const INTERVAL = 8000;
+
+            const track = document.getElementById('carouselTrack');
+            const dots = document.querySelectorAll('.carousel-dot');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const progressBar = document.getElementById('progressBar');
+
+            function updateSlide(index) {
+                current = (index + totalSlides) % totalSlides;
+                track.style.transform = `translateX(-${current * 100}%)`;
+                
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === current);
+                });
+
+                let progress = ((current + 1) / totalSlides) * 100;
+                progressBar.style.width = progress + '%';
+            }
+
+            prevBtn.addEventListener('click', () => {
+                clearInterval(carouselAutoInterval);
+                updateSlide(current - 1);
+                startAutoCarousel();
+            });
+
+            nextBtn.addEventListener('click', () => {
+                clearInterval(carouselAutoInterval);
+                updateSlide(current + 1);
+                startAutoCarousel();
+            });
+
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    clearInterval(carouselAutoInterval);
+                    updateSlide(index);
+                    startAutoCarousel();
+                });
+            });
+
+            function startAutoCarousel() {
+                carouselAutoInterval = setInterval(() => {
+                    updateSlide(current + 1);
+                }, INTERVAL);
+            }
+
+            updateSlide(0);
+            startAutoCarousel();
+        }
+
         document.addEventListener('DOMContentLoaded', loadSykleData);
+
+        // Refresh page every minute to pick up JSON changes
+        setInterval(() => {
+            location.reload();
+        }, 60000);
     </script>
 </body>
 </html>

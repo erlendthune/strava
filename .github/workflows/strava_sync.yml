@@ -90,7 +90,7 @@ jobs:
           }
           
           const token = process.env.STRAVA_ACCESS_TOKEN;
-          const clubId = 1475451;
+          const clubId = 1286152;
           
           fetchAllMembers(token, clubId)
             .then(members => {
@@ -308,6 +308,10 @@ jobs:
             ].join('|');
           }
           
+          function getAthleteKey(athlete) {
+            return `${athlete.firstname} ${athlete.lastname}`;
+          }
+          
           const current = JSON.parse(fs.readFileSync('club_activities.json', 'utf8'));
           const now = new Date().toISOString();
           
@@ -321,18 +325,35 @@ jobs:
           // Build a set of fingerprints already in history
           const historyFps = new Set(history.map(fingerprint));
           
+          // Build a set of athletes already in history
+          const athletesInHistory = new Set(history.map(a => getAthleteKey(a.athlete)));
+          
           // Start from full existing history so nothing ages off
           const newHistory = [...history];
           let added = 0;
+          let newMembers = new Set();
           
           for (const activity of current) {
             const fp = fingerprint(activity);
+            const athleteKey = getAthleteKey(activity.athlete);
+            
             if (!historyFps.has(fp)) {
               // New activity not yet in history
               if (isFirstRun) {
                 newHistory.push({ ...activity, activity_date: null });
               } else {
-                newHistory.push({ ...activity, activity_date: now });
+                // Check if this athlete is new (not in history at all)
+                const isNewMember = !athletesInHistory.has(athleteKey);
+                
+                if (isNewMember) {
+                  // New member: set activity date to null so it's ignored (like historical activities)
+                  newHistory.push({ ...activity, activity_date: null });
+                  newMembers.add(athleteKey);
+                  console.log(`New member detected: ${athleteKey} - setting activities to null`);
+                } else {
+                  // Existing member: use today's date
+                  newHistory.push({ ...activity, activity_date: now });
+                }
                 added++;
               }
             }
@@ -344,6 +365,9 @@ jobs:
             console.log(`First run: Marked ${newHistory.length} historical activities (activity_date: null)`);
           } else {
             console.log(`Added ${added} new activities. Total: ${newHistory.length}`);
+            if (newMembers.size > 0) {
+              console.log(`New members detected: ${Array.from(newMembers).join(', ')}`);
+            }
           }
           EOF
 
@@ -379,13 +403,23 @@ jobs:
             -H 'Referer: https://www.sykletiljobben.no/' \
             --compressed \
             | jq '.' > sykletiljobben_community.json
-          echo "Fetched sykletiljobben.json, sykletiljobben_county.json, and sykletiljobben_community.json"
+          curl 'https://webapi.webfarm3.bloc.no/api/Competition/GetCompanyInternalToplist?companyId=17359' \
+            -H "Authorization: Bearer ${{ secrets.SYKLETILJOBBEN_TOKEN }}" \
+            -H 'aid: 1802569' \
+            -H 'isocode: nb-no' \
+            -H 'Accept: text/plain,application/json,text/json' \
+            -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.5 Safari/605.1.15' \
+            -H 'Origin: https://www.sykletiljobben.no' \
+            -H 'Referer: https://www.sykletiljobben.no/' \
+            --compressed \
+            | jq '.' > sykletiljobbenmembers.json
+          echo "Fetched sykletiljobben.json, sykletiljobben_county.json, sykletiljobben_community.json, and sykletiljobbenmembers.json"
 
       - name: Commit and Push if changed
         run: |
           git config --global user.name "GitHub Action"
           git config --global user.email "action@github.com"
-          git add club_activities.json club_members.json master_history.json config.json sykletiljobben.json sykletiljobben_county.json sykletiljobben_community.json
+          git add club_activities.json club_members.json master_history.json config.json sykletiljobben.json sykletiljobben_county.json sykletiljobben_community.json sykletiljobbenmembers.json
           git diff --cached --quiet && exit 0
           git commit -m "Update Strava club activities"
           git push --force https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main

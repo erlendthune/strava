@@ -3,8 +3,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
     "name": "Ride",
     "distance": 1600.3,
@@ -21,8 +21,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
     "name": "Ride",
     "distance": 3038.3,
@@ -39,8 +39,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Swan"
+      "firstname": "Kristin Sørli",
+      "lastname": "O."
     },
     "name": "EBikeRide",
     "distance": 7151.2,
@@ -56,8 +56,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
     "name": "Ride",
     "distance": 10872.9,
@@ -74,8 +74,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Jolly",
-      "lastname": "Mongoose"
+      "firstname": "Jørgen",
+      "lastname": "M."
     },
     "name": "Ride",
     "distance": 6983.6,
@@ -92,8 +92,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Swan"
+      "firstname": "Kristin Sørli",
+      "lastname": "O."
     },
     "name": "EBikeRide",
     "distance": 3920.6,
@@ -109,8 +109,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
     "name": "Run",
     "distance": 6698.7,
@@ -127,8 +127,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Swan"
+      "firstname": "Kristin Sørli",
+      "lastname": "O."
     },
     "name": "EBikeRide",
     "distance": 4699.1,
@@ -144,8 +144,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
+      "firstname": "Håkon",
+      "lastname": "R."
     },
     "name": "Ride",
     "distance": 16824,
@@ -162,8 +162,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Jolly",
-      "lastname": "Mongoose"
+      "firstname": "Jørgen",
+      "lastname": "M."
     },
     "name": "Ride",
     "distance": 8695.4,
@@ -180,8 +180,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Swan"
+      "firstname": "Kristin Sørli",
+      "lastname": "O."
     },
     "name": "EBikeRide",
     "distance": 7050.5,
@@ -197,8 +197,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
     "name": "Walk",
     "distance": 878.3,
@@ -214,8 +214,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
     "name": "EBikeRide",
     "distance": 2928.8,
@@ -231,8 +231,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
+      "firstname": "Håkon",
+      "lastname": "R."
     },
     "name": "Ride",
     "distance": 19836,
@@ -249,8 +249,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Horse"
+      "firstname": "Kjetil",
+      "lastname": "H."
     },
     "name": "Walk",
     "distance": 1482.5,
@@ -266,8 +266,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Jolly",
-      "lastname": "Mongoose"
+      "firstname": "Jørgen",
+      "lastname": "M."
     },
     "name": "Ride",
     "distance": 6986,
@@ -284,8 +284,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Swan"
+      "firstname": "Kristin Sørli",
+      "lastname": "O."
     },
     "name": "Walk",
     "distance": 5619,
@@ -301,8 +301,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
+      "firstname": "Håkon",
+      "lastname": "R."
     },
     "name": "Ride",
     "distance": 45592.6,
@@ -319,8 +319,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
     "name": "Ride",
     "distance": 3004.4,
@@ -337,8 +337,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
     "name": "Ride",
     "distance": 10809.5,
@@ -355,8 +355,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Jolly",
-      "lastname": "Mongoose"
+      "firstname": "Jørgen",
+      "lastname": "M."
     },
     "name": "Ride",
     "distance": 6990,
@@ -373,8 +373,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Mighty",
-      "lastname": "Horse"
+      "firstname": "Marius",
+      "lastname": "H."
     },
     "name": "Run",
     "distance": 11665.8,
@@ -391,8 +391,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
     "name": "Ride",
     "distance": 836.8,
@@ -409,8 +409,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
     "name": "Ride",
     "distance": 807.8,
@@ -427,8 +427,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
     "name": "Ride",
     "distance": 2782.8,
@@ -445,8 +445,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Agile",
-      "lastname": "Zebra"
+      "firstname": "Andreas",
+      "lastname": "Z."
     },
     "name": "Ride",
     "distance": 6274.6,
@@ -463,8 +463,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Jolly",
-      "lastname": "Mongoose"
+      "firstname": "Jørgen",
+      "lastname": "M."
     },
     "name": "Ride",
     "distance": 7069.8,
@@ -481,8 +481,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
     "name": "Ride",
     "distance": 10918.3,
@@ -499,8 +499,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Swan"
+      "firstname": "Kristin Sørli",
+      "lastname": "O."
     },
     "name": "Walk",
     "distance": 3333.9,
@@ -516,8 +516,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Horse"
+      "firstname": "Kjetil",
+      "lastname": "H."
     },
     "name": "WeightTraining",
     "distance": 0,
@@ -534,8 +534,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
     "name": "Run",
     "distance": 5266.4,
@@ -552,8 +552,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
     "name": "Ride",
     "distance": 10937.1,
@@ -570,8 +570,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
     "name": "Ride",
     "distance": 3042,
@@ -588,8 +588,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
     "name": "Ride",
     "distance": 3072.7,
@@ -606,8 +606,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
     "name": "Ride",
     "distance": 10825.9,
@@ -624,8 +624,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Horse"
+      "firstname": "Kjetil",
+      "lastname": "H."
     },
     "name": "WeightTraining",
     "distance": 0,
@@ -642,8 +642,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Mighty",
-      "lastname": "Horse"
+      "firstname": "Marius",
+      "lastname": "H."
     },
     "name": "Run",
     "distance": 12023.8,
@@ -660,8 +660,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
     "name": "Walk",
     "distance": 3038,
@@ -677,8 +677,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
     "name": "Walk",
     "distance": 3098.8,
@@ -694,8 +694,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
     "name": "Run",
     "distance": 5505,
@@ -712,8 +712,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
     "name": "TrailRun",
     "distance": 18948,
@@ -730,8 +730,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
+      "firstname": "Håkon",
+      "lastname": "R."
     },
     "name": "Ride",
     "distance": 88098,
@@ -748,8 +748,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Swan"
+      "firstname": "Kristin Sørli",
+      "lastname": "O."
     },
     "name": "Walk",
     "distance": 2491.2,
@@ -765,8 +765,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
+      "firstname": "Håkon",
+      "lastname": "R."
     },
     "name": "Ride",
     "distance": 27873.4,
@@ -783,8 +783,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Swan"
+      "firstname": "Kristin Sørli",
+      "lastname": "O."
     },
     "name": "Walk",
     "distance": 2405.7,
@@ -800,8 +800,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Swan"
+      "firstname": "Kristin Sørli",
+      "lastname": "O."
     },
     "name": "Walk",
     "distance": 3761,
@@ -817,8 +817,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Mighty",
-      "lastname": "Horse"
+      "firstname": "Marius",
+      "lastname": "H."
     },
     "name": "Run",
     "distance": 6642.1,
@@ -835,8 +835,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
+      "firstname": "Håkon",
+      "lastname": "R."
     },
     "name": "Ride",
     "distance": 18487,
@@ -853,8 +853,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
     "name": "Run",
     "distance": 10014.1,
@@ -871,8 +871,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
     "name": "Run",
     "distance": 5082.6,
@@ -889,8 +889,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
     "name": "Ride",
     "distance": 10800.3,
@@ -907,8 +907,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
     "name": "Ride",
     "distance": 3019.4,
@@ -925,8 +925,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Swan"
+      "firstname": "Kristin Sørli",
+      "lastname": "O."
     },
     "name": "Walk",
     "distance": 5570.1,
@@ -942,8 +942,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
     "name": "Ride",
     "distance": 10855.8,
@@ -960,8 +960,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
     "name": "Walk",
     "distance": 1768.7,
@@ -977,8 +977,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
+      "firstname": "Håkon",
+      "lastname": "R."
     },
     "name": "Ride",
     "distance": 58780.1,
@@ -995,8 +995,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
     "name": "Ride",
     "distance": 2455.6,
@@ -1013,8 +1013,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
     "name": "Run",
     "distance": 6306.9,
@@ -1031,8 +1031,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
     "name": "Ride",
     "distance": 3000.4,
@@ -1049,8 +1049,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
     "name": "Snowboard",
     "distance": 5970.3,
@@ -1066,8 +1066,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
+      "firstname": "Håkon",
+      "lastname": "R."
     },
     "name": "Ride",
     "distance": 33307.7,
@@ -1084,8 +1084,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
     "name": "Walk",
     "distance": 282.1,
@@ -1101,8 +1101,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
     "name": "Walk",
     "distance": 4231.6,
@@ -1118,8 +1118,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
     "name": "Snowboard",
     "distance": 4394.3,
@@ -1135,8 +1135,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Mighty",
-      "lastname": "Horse"
+      "firstname": "Marius",
+      "lastname": "H."
     },
     "name": "Run",
     "distance": 5083.8,
@@ -1153,8 +1153,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
     "name": "Run",
     "distance": 10140.4,
@@ -1171,8 +1171,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
+      "firstname": "Håkon",
+      "lastname": "R."
     },
     "name": "Ride",
     "distance": 15405.9,
@@ -1189,8 +1189,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
     "name": "Snowboard",
     "distance": 6280.1,
@@ -1206,8 +1206,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
     "name": "Snowboard",
     "distance": 3252.4,
@@ -1223,8 +1223,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Jolly",
-      "lastname": "Mongoose"
+      "firstname": "Jørgen",
+      "lastname": "M."
     },
     "name": "Run",
     "distance": 5334.6,
@@ -1241,8 +1241,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
     "name": "Ride",
     "distance": 10828.7,
@@ -1259,8 +1259,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
     "name": "Run",
     "distance": 5372.4,
@@ -1277,8 +1277,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
     "name": "Ride",
     "distance": 10835.3,
@@ -1295,8 +1295,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
     "name": "TrailRun",
     "distance": 8528,
@@ -1313,8 +1313,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
     "name": "Run",
     "distance": 4644.5,
@@ -1331,8 +1331,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
+      "firstname": "Håkon",
+      "lastname": "R."
     },
     "name": "Ride",
     "distance": 46679.1,
@@ -1349,8 +1349,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Horse"
+      "firstname": "Kjetil",
+      "lastname": "H."
     },
     "name": "WeightTraining",
     "distance": 0,
@@ -1367,8 +1367,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
     "name": "Workout",
     "distance": 0,
@@ -1385,8 +1385,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Agile",
-      "lastname": "Zebra"
+      "firstname": "Andreas",
+      "lastname": "Z."
     },
     "name": "Run",
     "distance": 7552,
@@ -1403,8 +1403,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
     "name": "Run",
     "distance": 15193.5,
@@ -1421,8 +1421,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
     "name": "Walk",
     "distance": 9882.3,
@@ -1438,8 +1438,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
+      "firstname": "Håkon",
+      "lastname": "R."
     },
     "name": "Ride",
     "distance": 162651,
@@ -1456,8 +1456,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
+      "firstname": "Håkon",
+      "lastname": "R."
     },
     "name": "Ride",
     "distance": 159052,
@@ -1474,8 +1474,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
     "name": "Ride",
     "distance": 11014.1,
@@ -1492,8 +1492,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
     "name": "Workout",
     "distance": 0,
@@ -1510,8 +1510,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
     "name": "Ride",
     "distance": 1607.6,
@@ -1528,8 +1528,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
     "name": "Run",
     "distance": 5560.5,
@@ -1546,8 +1546,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
     "name": "Ride",
     "distance": 11080.9,
@@ -1564,8 +1564,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Jolly",
-      "lastname": "Mongoose"
+      "firstname": "Jørgen",
+      "lastname": "M."
     },
     "name": "Run",
     "distance": 6186,
@@ -1582,8 +1582,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
     "name": "Walk",
     "distance": 9810.9,
@@ -1599,8 +1599,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
+      "firstname": "Håkon",
+      "lastname": "R."
     },
     "name": "Ride",
     "distance": 86263.1,
@@ -1617,8 +1617,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
     "name": "Run",
     "distance": 6256.8,
@@ -1635,8 +1635,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Horse"
+      "firstname": "Kjetil",
+      "lastname": "H."
     },
     "name": "Run",
     "distance": 6174.2,
@@ -1653,8 +1653,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Horse"
+      "firstname": "Kjetil",
+      "lastname": "H."
     },
     "name": "WeightTraining",
     "distance": 0,
@@ -1671,8 +1671,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
     "name": "Run",
     "distance": 11520.8,
@@ -1689,8 +1689,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
     "name": "Workout",
     "distance": 0,
@@ -1707,8 +1707,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Swan"
+      "firstname": "Kristin Sørli",
+      "lastname": "O."
     },
     "name": "Walk",
     "distance": 3132.6,
@@ -1724,8 +1724,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
+      "firstname": "Håkon",
+      "lastname": "R."
     },
     "name": "Ride",
     "distance": 58204.5,
@@ -1742,8 +1742,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
     "name": "Ride",
     "distance": 11480.1,
@@ -1760,8 +1760,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Horse"
+      "firstname": "Kjetil",
+      "lastname": "H."
     },
     "name": "WeightTraining",
     "distance": 0,
@@ -1778,8 +1778,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Mighty",
-      "lastname": "Horse"
+      "firstname": "Marius",
+      "lastname": "H."
     },
     "name": "Walk",
     "distance": 984.7,
@@ -1795,8 +1795,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Horse"
+      "firstname": "Kjetil",
+      "lastname": "H."
     },
     "name": "Run",
     "distance": 10937.3,
@@ -1813,8 +1813,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Mighty",
-      "lastname": "Horse"
+      "firstname": "Marius",
+      "lastname": "H."
     },
     "name": "Walk",
     "distance": 2724.7,
@@ -1830,8 +1830,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
     "name": "Run",
     "distance": 5401.6,
@@ -1848,8 +1848,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
+      "firstname": "Håkon",
+      "lastname": "R."
     },
     "name": "Ride",
     "distance": 58921.3,
@@ -1866,8 +1866,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
     "name": "Swim",
     "distance": 1975,
@@ -1883,8 +1883,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Agile",
-      "lastname": "Zebra"
+      "firstname": "Andreas",
+      "lastname": "Z."
     },
     "name": "Run",
     "distance": 6892,
@@ -1901,8 +1901,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
     "name": "Ride",
     "distance": 2998.7,
@@ -1919,8 +1919,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
     "name": "Workout",
     "distance": 0,
@@ -1937,8 +1937,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
     "name": "Ride",
     "distance": 17786.2,
@@ -1955,8 +1955,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
+      "firstname": "Håkon",
+      "lastname": "R."
     },
     "name": "Ride",
     "distance": 37056.5,
@@ -1973,8 +1973,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Horse"
+      "firstname": "Kjetil",
+      "lastname": "H."
     },
     "name": "WeightTraining",
     "distance": 0,
@@ -1991,8 +1991,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Horse"
+      "firstname": "Kjetil",
+      "lastname": "H."
     },
     "name": "Run",
     "distance": 6716.4,
@@ -2009,8 +2009,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
     "name": "Ride",
     "distance": 973.5,
@@ -2027,8 +2027,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
     "name": "Run",
     "distance": 6760.8,
@@ -2045,8 +2045,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Agile",
-      "lastname": "Zebra"
+      "firstname": "Andreas",
+      "lastname": "Z."
     },
     "name": "Run",
     "distance": 2445.6,
@@ -2063,8 +2063,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
+      "firstname": "Håkon",
+      "lastname": "R."
     },
     "name": "Ride",
     "distance": 60346.6,
@@ -2081,8 +2081,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
     "name": "Workout",
     "distance": 0,
@@ -2099,8 +2099,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
     "name": "Ride",
     "distance": 3012.9,
@@ -2117,8 +2117,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
     "name": "Run",
     "distance": 9756.6,
@@ -2135,8 +2135,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
+      "firstname": "Håkon",
+      "lastname": "R."
     },
     "name": "Ride",
     "distance": 47913.6,
@@ -2153,8 +2153,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
     "name": "Walk",
     "distance": 8680.8,
@@ -2170,8 +2170,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
     "name": "Run",
     "distance": 5335.8,
@@ -2188,8 +2188,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
+      "firstname": "Håkon",
+      "lastname": "R."
     },
     "name": "Ride",
     "distance": 12756.7,
@@ -2206,8 +2206,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
     "name": "Walk",
     "distance": 3027.4,
@@ -2223,8 +2223,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
     "name": "Workout",
     "distance": 0,
@@ -2241,8 +2241,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Swan"
+      "firstname": "Kristin Sørli",
+      "lastname": "O."
     },
     "name": "Walk",
     "distance": 3006.2,
@@ -2258,8 +2258,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
+      "firstname": "Håkon",
+      "lastname": "R."
     },
     "name": "Ride",
     "distance": 81273.3,
@@ -2276,8 +2276,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Swan"
+      "firstname": "Kristin Sørli",
+      "lastname": "O."
     },
     "name": "Walk",
     "distance": 1238.6,
@@ -2293,8 +2293,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Swan"
+      "firstname": "Kristin Sørli",
+      "lastname": "O."
     },
     "name": "Walk",
     "distance": 1030.9,
@@ -2310,8 +2310,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
     "name": "Run",
     "distance": 7999.2,
@@ -2328,8 +2328,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
     "name": "Walk",
     "distance": 3112.8,
@@ -2345,8 +2345,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
+      "firstname": "Håkon",
+      "lastname": "R."
     },
     "name": "Ride",
     "distance": 15137.3,
@@ -2363,8 +2363,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Mighty",
-      "lastname": "Horse"
+      "firstname": "Marius",
+      "lastname": "H."
     },
     "name": "Run",
     "distance": 6523.9,
@@ -2381,8 +2381,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
     "name": "Ride",
     "distance": 3035.5,
@@ -2399,8 +2399,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
     "name": "Ride",
     "distance": 10457.5,
@@ -2417,8 +2417,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
     "name": "Workout",
     "distance": 0,
@@ -2435,8 +2435,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
     "name": "Ride",
     "distance": 1595.9,
@@ -2453,8 +2453,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Jolly",
-      "lastname": "Mongoose"
+      "firstname": "Jørgen",
+      "lastname": "M."
     },
     "name": "NordicSki",
     "distance": 18258.7,
@@ -2470,8 +2470,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
     "name": "Ride",
     "distance": 11060.5,
@@ -2488,8 +2488,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Jolly",
-      "lastname": "Mongoose"
+      "firstname": "Jørgen",
+      "lastname": "M."
     },
     "name": "NordicSki",
     "distance": 20887.8,
@@ -2505,8 +2505,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
+      "firstname": "Håkon",
+      "lastname": "R."
     },
     "name": "Ride",
     "distance": 104737,
@@ -2523,8 +2523,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
     "name": "Walk",
     "distance": 6327.4,
@@ -2540,8 +2540,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
+      "firstname": "Håkon",
+      "lastname": "R."
     },
     "name": "Ride",
     "distance": 34409.3,
@@ -2558,8 +2558,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Swan"
+      "firstname": "Kristin Sørli",
+      "lastname": "O."
     },
     "name": "Walk",
     "distance": 2210,
@@ -2575,8 +2575,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
     "name": "Run",
     "distance": 6319.4,
@@ -2593,8 +2593,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
     "name": "Workout",
     "distance": 0,
@@ -2611,8 +2611,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
     "name": "Run",
     "distance": 5751.7,
@@ -2629,8 +2629,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
+      "firstname": "Håkon",
+      "lastname": "R."
     },
     "name": "VirtualRide",
     "distance": 22246.2,
@@ -2646,8 +2646,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
     "name": "Ride",
     "distance": 3010.3,
@@ -2664,8 +2664,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Horse"
+      "firstname": "Kjetil",
+      "lastname": "H."
     },
     "name": "WeightTraining",
     "distance": 0,
@@ -2682,8 +2682,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
     "name": "Ride",
     "distance": 3027.8,
@@ -2700,8 +2700,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
     "name": "Ride",
     "distance": 17839,
@@ -2718,8 +2718,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
+      "firstname": "Håkon",
+      "lastname": "R."
     },
     "name": "Ride",
     "distance": 22498.7,
@@ -2736,8 +2736,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
     "name": "Run",
     "distance": 9618.7,
@@ -2754,8 +2754,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Horse"
+      "firstname": "Kjetil",
+      "lastname": "H."
     },
     "name": "WeightTraining",
     "distance": 0,
@@ -2772,8 +2772,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
     "name": "Run",
     "distance": 17726.2,
@@ -2790,8 +2790,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Agile",
-      "lastname": "Zebra"
+      "firstname": "Andreas",
+      "lastname": "Z."
     },
     "name": "Run",
     "distance": 7063.5,
@@ -2808,8 +2808,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Jolly",
-      "lastname": "Mongoose"
+      "firstname": "Jørgen",
+      "lastname": "M."
     },
     "name": "Run",
     "distance": 7280.7,
@@ -2826,8 +2826,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
+      "firstname": "Håkon",
+      "lastname": "R."
     },
     "name": "Ride",
     "distance": 58887.4,
@@ -2844,8 +2844,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Swan"
+      "firstname": "Kristin Sørli",
+      "lastname": "O."
     },
     "name": "Walk",
     "distance": 3319.4,
@@ -2861,8 +2861,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
     "name": "Run",
     "distance": 6829.1,
@@ -2879,8 +2879,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
+      "firstname": "Håkon",
+      "lastname": "R."
     },
     "name": "Ride",
     "distance": 45552.5,
@@ -2897,8 +2897,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Jolly",
-      "lastname": "Mongoose"
+      "firstname": "Jørgen",
+      "lastname": "M."
     },
     "name": "Run",
     "distance": 11388.7,
@@ -2915,8 +2915,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Horse"
+      "firstname": "Kjetil",
+      "lastname": "H."
     },
     "name": "Run",
     "distance": 6761.3,
@@ -2933,8 +2933,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
+      "firstname": "Håkon",
+      "lastname": "R."
     },
     "name": "VirtualRide",
     "distance": 26102.1,
@@ -2950,8 +2950,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
     "name": "Run",
     "distance": 10042.2,
@@ -2968,8 +2968,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
     "name": "Run",
     "distance": 11353.3,
@@ -2986,8 +2986,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
     "name": "Ride",
     "distance": 3012.6,
@@ -3004,8 +3004,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
+      "firstname": "Håkon",
+      "lastname": "R."
     },
     "name": "VirtualRide",
     "distance": 28314.8,
@@ -3021,8 +3021,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Agile",
-      "lastname": "Zebra"
+      "firstname": "Andreas",
+      "lastname": "Z."
     },
     "name": "Run",
     "distance": 5592.3,
@@ -3039,8 +3039,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Swan"
+      "firstname": "Kristin Sørli",
+      "lastname": "O."
     },
     "name": "Walk",
     "distance": 0,
@@ -3056,8 +3056,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Horse"
+      "firstname": "Kjetil",
+      "lastname": "H."
     },
     "name": "Run",
     "distance": 8313.4,
@@ -3074,8 +3074,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
     "name": "Workout",
     "distance": 0,
@@ -3092,8 +3092,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
+      "firstname": "Håkon",
+      "lastname": "R."
     },
     "name": "VirtualRide",
     "distance": 24320.2,
@@ -3109,8 +3109,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Mighty",
-      "lastname": "Horse"
+      "firstname": "Marius",
+      "lastname": "H."
     },
     "name": "Run",
     "distance": 8101.8,
@@ -3127,8 +3127,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
     "name": "Swim",
     "distance": 1025,
@@ -3144,8 +3144,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Jolly",
-      "lastname": "Mongoose"
+      "firstname": "Jørgen",
+      "lastname": "M."
     },
     "name": "NordicSki",
     "distance": 9987.1,
@@ -3161,8 +3161,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Horse"
+      "firstname": "Kjetil",
+      "lastname": "H."
     },
     "name": "Run",
     "distance": 6240.8,
@@ -3179,8 +3179,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Horse"
+      "firstname": "Kjetil",
+      "lastname": "H."
     },
     "name": "Run",
     "distance": 6057,
@@ -3197,8 +3197,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
+      "firstname": "Håkon",
+      "lastname": "R."
     },
     "name": "Ride",
     "distance": 57833.5,
@@ -3215,8 +3215,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
     "name": "Workout",
     "distance": 0,
@@ -3233,8 +3233,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
     "name": "Ride",
     "distance": 2999.6,
@@ -3251,8 +3251,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Agile",
-      "lastname": "Zebra"
+      "firstname": "Andreas",
+      "lastname": "Z."
     },
     "name": "Run",
     "distance": 4804.9,
@@ -3269,8 +3269,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
+      "firstname": "Håkon",
+      "lastname": "R."
     },
     "name": "VirtualRide",
     "distance": 29675.8,
@@ -3286,8 +3286,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
     "name": "Run",
     "distance": 4053.3,
@@ -3304,8 +3304,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
     "name": "Ride",
     "distance": 2828.9,
@@ -3322,8 +3322,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
     "name": "Run",
     "distance": 7594.8,
@@ -3340,8 +3340,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
     "name": "Run",
     "distance": 17852.1,
@@ -3358,8 +3358,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
     "name": "Ride",
     "distance": 3002.4,
@@ -3376,8 +3376,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
+      "firstname": "Håkon",
+      "lastname": "R."
     },
     "name": "VirtualRide",
     "distance": 18641.4,
@@ -3393,8 +3393,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
     "name": "Ride",
     "distance": 3005.8,
@@ -3411,8 +3411,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
+      "firstname": "Håkon",
+      "lastname": "R."
     },
     "name": "VirtualRide",
     "distance": 28007.5,
@@ -3428,8 +3428,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
     "name": "Run",
     "distance": 9197.3,
@@ -3446,8 +3446,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
     "name": "Workout",
     "distance": 0,
@@ -3464,8 +3464,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
     "name": "Ride",
     "distance": 4712.4,
@@ -3482,8 +3482,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
+      "firstname": "Håkon",
+      "lastname": "R."
     },
     "name": "Ride",
     "distance": 36932.4,
@@ -3500,8 +3500,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Agile",
-      "lastname": "Zebra"
+      "firstname": "Andreas",
+      "lastname": "Z."
     },
     "name": "Run",
     "distance": 4361.7,
@@ -3518,8 +3518,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
+      "firstname": "Håkon",
+      "lastname": "R."
     },
     "name": "VirtualRide",
     "distance": 14044.3,
@@ -3535,8 +3535,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
+      "firstname": "Håkon",
+      "lastname": "R."
     },
     "name": "VirtualRide",
     "distance": 24951,
@@ -3552,8 +3552,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
     "name": "Walk",
     "distance": 822.7,
@@ -3569,8 +3569,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Swan"
+      "firstname": "Kristin Sørli",
+      "lastname": "O."
     },
     "name": "EBikeRide",
     "distance": 7063.3,
@@ -3586,8 +3586,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Horse"
+      "firstname": "Kjetil",
+      "lastname": "H."
     },
     "name": "WeightTraining",
     "distance": 0,
@@ -3604,8 +3604,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
     "name": "Run",
     "distance": 4549.5,
@@ -3622,8 +3622,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Jolly",
-      "lastname": "Mongoose"
+      "firstname": "Jørgen",
+      "lastname": "M."
     },
     "name": "Ride",
     "distance": 6946.4,
@@ -3640,8 +3640,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Swan"
+      "firstname": "Kristin Sørli",
+      "lastname": "O."
     },
     "name": "Walk",
     "distance": 2834,
@@ -3657,8 +3657,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
+      "firstname": "Terje",
+      "lastname": "B."
     },
     "name": "Ride",
     "distance": 3008.8,
@@ -3675,8 +3675,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "King",
-      "lastname": "Horse"
+      "firstname": "Kjetil",
+      "lastname": "H."
     },
     "name": "Run",
     "distance": 9556.4,
@@ -3693,8 +3693,8 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
+      "firstname": "Erlend",
+      "lastname": "T."
     },
     "name": "Walk",
     "distance": 962.1,

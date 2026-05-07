@@ -1,5 +1,7 @@
 name: Sync Strava Data
 on:
+  schedule:
+    - cron: '0 * * * *' # Every hour
   workflow_dispatch: # Allows you to click a button to run it manually
 
 concurrency:

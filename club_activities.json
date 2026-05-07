@@ -3,6 +3,122 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
+      "firstname": "Energetic",
+      "lastname": "Tortoise"
+    },
+    "name": "Walk",
+    "distance": 822.7,
+    "moving_time": 565,
+    "elapsed_time": 708,
+    "total_elevation_gain": 7,
+    "type": "Walk",
+    "sport_type": "Walk",
+    "device_name": "Garmin Forerunner 255"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "King",
+      "lastname": "Swan"
+    },
+    "name": "EBikeRide",
+    "distance": 7063.3,
+    "moving_time": 1037,
+    "elapsed_time": 1095,
+    "total_elevation_gain": 113.1,
+    "type": "EBikeRide",
+    "sport_type": "EBikeRide",
+    "device_name": "Strava App"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "King",
+      "lastname": "Horse"
+    },
+    "name": "WeightTraining",
+    "distance": 0,
+    "moving_time": 6514,
+    "elapsed_time": 6514,
+    "total_elevation_gain": 0,
+    "type": "WeightTraining",
+    "sport_type": "WeightTraining",
+    "workout_type": 30,
+    "device_name": "Apple Watch Ultra 3"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Turbo",
+      "lastname": "Bear"
+    },
+    "name": "Run",
+    "distance": 4549.5,
+    "moving_time": 1322,
+    "elapsed_time": 1322,
+    "total_elevation_gain": 19.7,
+    "type": "Run",
+    "sport_type": "Run",
+    "workout_type": null,
+    "device_name": "Garmin Forerunner 245 Music"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Jolly",
+      "lastname": "Mongoose"
+    },
+    "name": "Ride",
+    "distance": 6946.4,
+    "moving_time": 1191,
+    "elapsed_time": 1277,
+    "total_elevation_gain": 91,
+    "type": "Ride",
+    "sport_type": "Ride",
+    "workout_type": 10,
+    "device_name": "Garmin Forerunner 265"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "King",
+      "lastname": "Swan"
+    },
+    "name": "Walk",
+    "distance": 2834,
+    "moving_time": 1921,
+    "elapsed_time": 1999,
+    "total_elevation_gain": 9.4,
+    "type": "Walk",
+    "sport_type": "Walk",
+    "device_name": "Strava App"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Turbo",
+      "lastname": "Bear"
+    },
+    "name": "Ride",
+    "distance": 3008.8,
+    "moving_time": 648,
+    "elapsed_time": 648,
+    "total_elevation_gain": 98.6,
+    "type": "Ride",
+    "sport_type": "Ride",
+    "workout_type": null,
+    "device_name": "Garmin Forerunner 245 Music"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
       "firstname": "Turbo",
       "lastname": "Bear"
     },
@@ -181,6 +297,23 @@
     "type": "EBikeRide",
     "sport_type": "EBikeRide",
     "device_name": "Strava App"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "King",
+      "lastname": "Horse"
+    },
+    "name": "Run",
+    "distance": 9556.4,
+    "moving_time": 3703,
+    "elapsed_time": 3737,
+    "total_elevation_gain": 331.8,
+    "type": "Run",
+    "sport_type": "Run",
+    "workout_type": null,
+    "device_name": "Apple Watch Ultra 3"
   },
   {
     "resource_state": 2,
@@ -1661,6 +1794,22 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
+      "firstname": "Mighty",
+      "lastname": "Horse"
+    },
+    "name": "Walk",
+    "distance": 984.7,
+    "moving_time": 806,
+    "elapsed_time": 996,
+    "total_elevation_gain": 0,
+    "type": "Walk",
+    "sport_type": "Walk",
+    "device_name": "Garmin vívoactive 5"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
       "firstname": "King",
       "lastname": "Horse"
     },
@@ -1673,22 +1822,6 @@
     "sport_type": "WeightTraining",
     "workout_type": 30,
     "device_name": "Apple Watch Ultra 3"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Mighty",
-      "lastname": "Horse"
-    },
-    "name": "Walk",
-    "distance": 984.7,
-    "moving_time": 806,
-    "elapsed_time": 996,
-    "total_elevation_gain": 0,
-    "type": "Walk",
-    "sport_type": "Walk",
-    "device_name": "Garmin vívoactive 5"
   },
   {
     "resource_state": 2,
@@ -3214,138 +3347,5 @@
     "sport_type": "Ride",
     "workout_type": null,
     "device_name": "Garmin Forerunner 245 Music"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
-    },
-    "name": "VirtualRide",
-    "distance": 28007.5,
-    "moving_time": 3874,
-    "elapsed_time": 3874,
-    "total_elevation_gain": 347,
-    "type": "VirtualRide",
-    "sport_type": "VirtualRide",
-    "device_name": "Rouvy"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
-    },
-    "name": "Run",
-    "distance": 9197.3,
-    "moving_time": 2815,
-    "elapsed_time": 2815,
-    "total_elevation_gain": 128.3,
-    "type": "Run",
-    "sport_type": "Run",
-    "workout_type": 0,
-    "device_name": "Garmin Forerunner 245 Music"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Energetic",
-      "lastname": "Tortoise"
-    },
-    "name": "Workout",
-    "distance": 0,
-    "moving_time": 3867,
-    "elapsed_time": 3867,
-    "total_elevation_gain": 0,
-    "type": "Workout",
-    "sport_type": "Workout",
-    "workout_type": null,
-    "device_name": "Garmin Forerunner 255"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Turbo",
-      "lastname": "Bear"
-    },
-    "name": "Ride",
-    "distance": 4712.4,
-    "moving_time": 723,
-    "elapsed_time": 756,
-    "total_elevation_gain": 29.8,
-    "type": "Ride",
-    "sport_type": "Ride",
-    "workout_type": null,
-    "device_name": "Garmin Forerunner 245 Music"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
-    },
-    "name": "Ride",
-    "distance": 36932.4,
-    "moving_time": 6124,
-    "elapsed_time": 7037,
-    "total_elevation_gain": 434,
-    "type": "Ride",
-    "sport_type": "Ride",
-    "workout_type": null,
-    "device_name": "Garmin Edge 1030 Plus"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Agile",
-      "lastname": "Zebra"
-    },
-    "name": "Run",
-    "distance": 4361.7,
-    "moving_time": 1556,
-    "elapsed_time": 1556,
-    "total_elevation_gain": 87.6,
-    "type": "Run",
-    "sport_type": "Run",
-    "workout_type": null,
-    "device_name": "Strava App"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
-    },
-    "name": "VirtualRide",
-    "distance": 14044.3,
-    "moving_time": 2721,
-    "elapsed_time": 2743,
-    "total_elevation_gain": 384,
-    "type": "VirtualRide",
-    "sport_type": "VirtualRide",
-    "device_name": "Rouvy"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Heroic",
-      "lastname": "Rabbit"
-    },
-    "name": "VirtualRide",
-    "distance": 24951,
-    "moving_time": 3234,
-    "elapsed_time": 4758,
-    "total_elevation_gain": 192,
-    "type": "VirtualRide",
-    "sport_type": "VirtualRide",
-    "device_name": "Rouvy"
   }
 ]

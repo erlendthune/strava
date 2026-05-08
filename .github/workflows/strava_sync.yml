@@ -381,11 +381,21 @@ jobs:
             | jq '.' > sykletiljobbenmembers.json
           echo "Fetched sykletiljobben.json, sykletiljobben_county.json, sykletiljobben_community.json, and sykletiljobbenmembers.json"
 
+      - name: Update last_update.json
+        run: |
+          node << 'EOF'
+          const fs = require('fs');
+          const timestamp = new Date().toISOString();
+          const data = { timestamp };
+          fs.writeFileSync('last_update.json', JSON.stringify(data, null, 2));
+          console.log(`Created last_update.json with timestamp: ${timestamp}`);
+          EOF
+
       - name: Commit and Push if changed
         run: |
           git config --global user.name "GitHub Action"
           git config --global user.email "action@github.com"
-          git add club_activities.json club_members.json master_history.json config.json sykletiljobben.json sykletiljobben_county.json sykletiljobben_community.json sykletiljobbenmembers.json
+          git add club_activities.json club_members.json master_history.json config.json sykletiljobben.json sykletiljobben_county.json sykletiljobben_community.json sykletiljobbenmembers.json last_update.json
           git diff --cached --quiet && exit 0
           git commit -m "Update Strava club activities"
           git push --force https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main

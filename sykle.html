@@ -313,26 +313,27 @@
 
         async function loadSykleData() {
             try {
-                const [natRes, countyRes, communityRes, membersRes] = await Promise.allSettled([
+                const [natRes, countyRes, communityRes, membersRes, updateRes] = await Promise.allSettled([
                     fetch('sykletiljobben.json').then(r => r.ok ? r.json() : null),
                     fetch('sykletiljobben_county.json').then(r => r.ok ? r.json() : null),
                     fetch('sykletiljobben_community.json').then(r => r.ok ? r.json() : null),
-                    fetch('sykletiljobbenmembers.json').then(r => r.ok ? r.json() : null)
+                    fetch('sykletiljobbenmembers.json').then(r => r.ok ? r.json() : null),
+                    fetch('last_update.json').then(r => r.ok ? r.json() : null)
                 ]);
 
                 const national  = natRes.status       === 'fulfilled' ? natRes.value       : null;
                 const county    = countyRes.status    === 'fulfilled' ? countyRes.value    : null;
                 const community = communityRes.status === 'fulfilled' ? communityRes.value : null;
                 const members   = membersRes.status   === 'fulfilled' ? membersRes.value   : null;
+                const updateData = updateRes.status === 'fulfilled' ? updateRes.value : null;
 
                 const data = national;
                 if (!data) throw new Error('Nasjonale data mangler');
 
                 document.getElementById('main-title').textContent = `🏆 Sykle til jobben - ${data.title}`;
 
-                const now = new Date();
                 document.getElementById('headerMeta').innerHTML =
-                    `Sist oppdatert: ${new Date(data.lastUpdateTime).toLocaleString('no-NO')} <span class="competition-state active">Aktiv</span>`;
+                    `Sist oppdatert: ${updateData && updateData.timestamp ? new Date(updateData.timestamp).toLocaleString('no-NO') : 'N/A'} <span class="competition-state active">Aktiv</span>`;
 
                 // Section 1: Company Stats
                 const statsSlide = `

@@ -667,17 +667,19 @@
 
         async function loadLeaderboard() {
             try {
-                const [configResponse, activitiesResponse, membersResponse, sykleResponse] = await Promise.all([
+                const [configResponse, activitiesResponse, membersResponse, sykleResponse, updateResponse] = await Promise.all([
                     fetch('config.json'),
                     fetch('master_history.json'),
                     fetch('club_members.json'),
-                    fetch('sykletiljobben.json')
+                    fetch('sykletiljobben.json'),
+                    fetch('last_update.json')
                 ]);
 
                 const config = await configResponse.json();
                 const activities = await activitiesResponse.json();
                 const members = await membersResponse.json();
                 const sykleData = sykleResponse.ok ? await sykleResponse.json() : null;
+                const updateData = updateResponse.ok ? await updateResponse.json() : null;
 
                 const startDate = new Date(config.startDate);
                 const configuredEndDate = config.endDate ? new Date(config.endDate) : null;
@@ -987,8 +989,8 @@
 
                 document.getElementById('leaderboard').innerHTML = html;
                 
-                const updateTime = sykleData && sykleData.lastUpdateTime 
-                    ? new Date(sykleData.lastUpdateTime).toLocaleString('no-NO')
+                const updateTime = updateData && updateData.timestamp
+                    ? new Date(updateData.timestamp).toLocaleString('no-NO')
                     : 'N/A';
                 
                 document.getElementById('headerMeta').innerHTML =

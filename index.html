@@ -649,7 +649,6 @@
             </div>
             <div class="split-right">
                 <h2>🚲 Sykle til jobben</h2>
-                <div class="header-meta" id="sykleHeaderMeta">Laster…</div>
                 <div id="sykleLeaderboard" class="loading">Loading...</div>
             </div>
         </div>
@@ -668,15 +667,17 @@
 
         async function loadLeaderboard() {
             try {
-                const [configResponse, activitiesResponse, membersResponse] = await Promise.all([
+                const [configResponse, activitiesResponse, membersResponse, sykleResponse] = await Promise.all([
                     fetch('config.json'),
                     fetch('master_history.json'),
-                    fetch('club_members.json')
+                    fetch('club_members.json'),
+                    fetch('sykletiljobben.json')
                 ]);
 
                 const config = await configResponse.json();
                 const activities = await activitiesResponse.json();
                 const members = await membersResponse.json();
+                const sykleData = sykleResponse.ok ? await sykleResponse.json() : null;
 
                 const startDate = new Date(config.startDate);
                 const configuredEndDate = config.endDate ? new Date(config.endDate) : null;
@@ -985,11 +986,14 @@
                 }
 
                 document.getElementById('leaderboard').innerHTML = html;
+                
+                const updateTime = sykleData && sykleData.lastUpdateTime 
+                    ? new Date(sykleData.lastUpdateTime).toLocaleString('no-NO')
+                    : 'N/A';
+                
                 document.getElementById('headerMeta').innerHTML =
                     `Competition: ${displayStartDate} to ${displayEndDate}${competitionState}`
-                    + `<span class="sep">|</span>${activeMembers.length}&thinsp;/&thinsp;${uniqueMembers.length} members active`
-                    + `<span class="sep">|</span>Names anonymized 😉`
-                    + `<span class="sep">|</span>Updated ${now.toLocaleTimeString()}`;
+                    + `<span class="sep">|</span>Sist oppdatert: ${updateTime}`;
 
                 if (boards.length > 0) {
                     initCarousel(boards.length);
@@ -1127,13 +1131,11 @@
                 if (!data) throw new Error('Nasjonale data mangler');
 
                 const updateDate = new Date(data.lastUpdateTime).toLocaleString('no-NO');
-                document.getElementById('sykleHeaderMeta').textContent =
-                    `Sist oppdatert: ${updateDate}`;
 
                 // Build slides
                 const slides = [];
 
-                // Slide 1: Company Stats
+                // Slide 1: Company Stats + Team Rankings Combined
                 const rankCard = (label, d) => d
                     ? `<div class="stat-card">
                         <div class="value">#${d.rank}<span style="font-size:12px;color:#666"> / ${d.totalCompanies}</span></div>
@@ -1141,9 +1143,14 @@
                        </div>`
                     : '';
 
-                const statsSlide = `
+                const teams = [...data.teamsDetailed].sort((a, b) => {
+                    if (b.averagePoints !== a.averagePoints) return b.averagePoints - a.averagePoints;
+                    return b.totalPoints - a.totalPoints;
+                });
+
+                let combinedSlide = `
                     <div class="board-header">
-                        <span class="board-title">📊 Bedriftsstatistikk</span>
+                        <span class="board-title">📊 Bedriftsstatistikk & Lag oversikt</span>
                     </div>
                     <div class="stats-grid">
                         ${rankCard('Nasjonalt', data)}
@@ -1154,19 +1161,7 @@
                         <div class="stat-card"><div class="value">${data.totalWorkouts}</div><div class="label">Totalt Økter</div></div>
                         <div class="stat-card"><div class="value">${formatKm(data.totalCentimeters)} km</div><div class="label">Totalt Km</div></div>
                     </div>
-                `;
-                slides.push(statsSlide);
-
-                // Slide 2: Team Rankings
-                const teams = [...data.teamsDetailed].sort((a, b) => {
-                    if (b.averagePoints !== a.averagePoints) return b.averagePoints - a.averagePoints;
-                    return b.totalPoints - a.totalPoints;
-                });
-
-                let teamTable = `
-                    <div class="board-header">
-                        <span class="board-title">🎯 Lag oversikt</span>
-                    </div>
+                    <h3 style="margin-top: 20px; margin-bottom: 10px; font-size: 15px; color: #667eea;">Lag rangering</h3>
                     <div class="sykle-table-wrap">
                         <table>
                             <thead>
@@ -1186,7 +1181,7 @@
 
                 teams.forEach((team, index) => {
                     const medal = index === 0 ? '🥇' : index === 1 ? '🥈' : index === 2 ? '🥉' : index + 1;
-                    teamTable += `
+                    combinedSlide += `
                         <tr>
                             <td class="rank">${medal}</td>
                             <td class="name">${team.title}</td>
@@ -1200,8 +1195,8 @@
                     `;
                 });
 
-                teamTable += `</tbody></table></div>`;
-                slides.push(teamTable);
+                combinedSlide += `</tbody></table></div>`;
+                slides.push(combinedSlide);
 
                 // Slide 3: Member Rankings (if data available)
                 if (members && members.length > 0) {

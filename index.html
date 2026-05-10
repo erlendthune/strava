@@ -39,6 +39,7 @@
             margin-top: 0;
             margin-bottom: 15px;
             font-size: 20px;
+            text-align: center;
             border-bottom: 2px solid #f0f4ff;
             padding-bottom: 10px;
         }
@@ -645,6 +646,7 @@
 
         <div class="split-layout">
             <div class="split-left">
+                <h2>🏆 Strava Agder Leaderboard</h2>
                 <div id="leaderboard" class="loading">Loading...</div>
             </div>
             <div class="split-right">
@@ -658,6 +660,7 @@
         let carouselAutoInterval = null;
         let hasSuccessfulRender = false;
         let funRaceConfettiTimer = null;
+        let stjLastUpdate = null;
 
         function formatTime(seconds) {
             const h = Math.floor(seconds / 3600);
@@ -1200,7 +1203,7 @@
                 combinedSlide += `</tbody></table></div>`;
                 slides.push(combinedSlide);
 
-                // Slide 3: Member Rankings (if data available)
+                // Slide 2: Member Rankings (if data available)
                 if (members && members.length > 0) {
                     let memberTable = `
                         <div class="board-header">
@@ -1292,8 +1295,15 @@
                     dot.classList.toggle('active', i === current);
                 });
 
-                let progress = ((current + 1) / totalSlides) * 100;
-                progressBar.style.width = progress + '%';
+                animateProgress();
+            }
+
+            function animateProgress() {
+                progressBar.style.transition = 'none';
+                progressBar.style.width = '0%';
+                progressBar.offsetWidth; // force reflow
+                progressBar.style.transition = `width ${INTERVAL}ms linear`;
+                progressBar.style.width = '100%';
             }
 
             prevBtn.addEventListener('click', () => {

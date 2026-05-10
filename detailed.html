@@ -1,0 +1,1342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strava Club Leaderboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 12px;
+        }
+        
+        .container {
+            width: 100%;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            padding: 20px 24px;
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 6px;
+            text-align: center;
+            font-size: 22px;
+        }
+        
+        h2 {
+            color: #667eea;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 20px;
+            text-align: center;
+            border-bottom: 2px solid #f0f4ff;
+            padding-bottom: 10px;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        
+        .notice {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .notice strong {
+            color: #856404;
+            font-size: 16px;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .notice p {
+            color: #856404;
+            font-size: 14px;
+            margin: 5px 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        
+        thead {
+            background: #f8f9fa;
+            border-bottom: 2px solid #667eea;
+        }
+        
+        th {
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        tbody tr:hover {
+            background: #f0f4ff;
+        }
+        
+        .rank {
+            font-weight: 600;
+            color: #667eea;
+            font-size: 18px;
+            width: 50px;
+        }
+        
+        .name {
+            font-weight: 500;
+        }
+        
+        .metric {
+            text-align: right;
+            color: #555;
+        }
+        
+        .inactive-row {
+            opacity: 0.5;
+        }
+        
+        .inactive-row td {
+            color: #999;
+        }
+        
+        .inactive-message {
+            font-style: italic;
+            color: #999;
+        }
+        
+        .loading {
+            text-align: center;
+            color: #666;
+            padding: 40px;
+        }
+        
+        .header-meta {
+            text-align: center;
+            color: #888;
+            font-size: 13px;
+            margin: 0 0 6px;
+            line-height: 1.6;
+        }
+
+        .competition-state {
+            display: inline-block;
+            margin-left: 8px;
+            padding: 2px 8px;
+            border-radius: 999px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.2px;
+            vertical-align: middle;
+        }
+
+        .competition-state.ended {
+            color: #8a2c2c;
+            background: #ffe3e3;
+            border: 1px solid #ffc9c9;
+        }
+
+        .competition-state.active {
+            color: #1f6f43;
+            background: #ddfbe8;
+            border: 1px solid #b7f0ce;
+        }
+
+        .header-meta .sep {
+            color: #ccc;
+            margin: 0 6px;
+        }
+
+        .carousel-wrapper {
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+
+        .carousel-track {
+            display: flex;
+            width: 100%;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            flex-shrink: 0;
+        }
+
+        .board-header {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 8px;
+        }
+
+        .board-title {
+            font-size: 17px;
+            font-weight: 700;
+            color: #333;
+            white-space: nowrap;
+        }
+
+        .board-leader {
+            font-size: 13px;
+            color: #667eea;
+            font-weight: 500;
+        }
+
+        .carousel-controls {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin: 10px 0 24px;
+        }
+
+        .carousel-btn {
+            background: none;
+            border: 2px solid #667eea;
+            color: #667eea;
+            border-radius: 50%;
+            width: 34px;
+            height: 34px;
+            cursor: pointer;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+            transition: all 0.2s;
+            flex-shrink: 0;
+        }
+
+        .carousel-btn:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        .carousel-dots {
+            display: flex;
+            gap: 8px;
+        }
+
+        .carousel-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #ddd;
+            cursor: pointer;
+            border: none;
+            padding: 0;
+            transition: background 0.3s;
+        }
+
+        .carousel-dot.active {
+            background: #667eea;
+        }
+
+        .progress-bar-wrapper {
+            height: 3px;
+            background: #eee;
+            border-radius: 3px;
+            margin-bottom: 8px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 3px;
+            width: 0%;
+        }
+
+        th.primary-col { color: #667eea; }
+        td.primary-col { font-weight: 700; color: #333; }
+
+        /* ── Fun Carousel Slide ─────────────────────────────── */
+        .fun-board {
+            position: relative;
+            height: 270px;
+            border-radius: 14px;
+            overflow: hidden;
+            border: 2px solid #cae3ff;
+            background:
+                radial-gradient(circle at 84% 20%, #ffe681 0, #ffd86a 12%, transparent 13%),
+                linear-gradient(to bottom, #91d6ff 0%, #bce9ff 56%, #85d276 56%, #64b85a 100%);
+        }
+
+        .fun-cloud {
+            position: absolute;
+            color: rgba(255, 255, 255, 0.95);
+            filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.08));
+            user-select: none;
+            pointer-events: none;
+            animation: cloudDrift linear infinite;
+            z-index: 1;
+        }
+
+        .fun-cloud.c1 { top: 20px; left: -80px; font-size: 28px; animation-duration: 22s; }
+        .fun-cloud.c2 { top: 58px; left: -140px; font-size: 32px; animation-duration: 27s; animation-delay: -8s; }
+        .fun-cloud.c3 { top: 36px; left: -210px; font-size: 22px; animation-duration: 30s; animation-delay: -16s; }
+
+        .fun-hill {
+            position: absolute;
+            border-radius: 50% 50% 0 0;
+            bottom: 64px;
+            z-index: 2;
+        }
+
+        .fun-hill.h1 {
+            left: -80px;
+            width: 250px;
+            height: 92px;
+            background: #74c96a;
+        }
+
+        .fun-hill.h2 {
+            left: 240px;
+            width: 300px;
+            height: 106px;
+            background: #60b956;
+        }
+
+        .fun-hill.h3 {
+            right: -90px;
+            width: 260px;
+            height: 96px;
+            background: #4cae48;
+        }
+
+        .fun-road {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 76px;
+            background: linear-gradient(to bottom, #6e7785, #4e5563);
+            z-index: 3;
+        }
+
+        .fun-road::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 36px;
+            height: 4px;
+            background: repeating-linear-gradient(
+                90deg,
+                #f8f1c7 0, #f8f1c7 22px,
+                transparent 22px, transparent 40px
+            );
+        }
+
+        .fun-racer {
+            position: absolute;
+            bottom: 48px;
+            left: -14%;
+            line-height: 1;
+            user-select: none;
+            pointer-events: none;
+            transform: scaleX(-1);
+            z-index: 5;
+        }
+
+        .fun-racer span { display: block; }
+
+        .fun-racer.r1 { font-size: 34px; animation: funRace 7s linear infinite; }
+        .fun-racer.r2 { font-size: 30px; bottom: 42px; animation: funRace 10s linear infinite -3s; }
+        .fun-racer.r3 { font-size: 36px; bottom: 40px; animation: funRace 8.5s linear infinite -5s; }
+        .fun-racer.r4 { font-size: 32px; bottom: 51px; animation: funRace 12.5s linear infinite -4s; }
+        .fun-racer.r5 { font-size: 28px; bottom: 40px; animation: funRace 18s linear infinite -7s; }
+
+        .fun-bike {
+            font-size: 24px;
+            transform: translateY(-4px);
+        }
+
+        .fun-tribune {
+            position: absolute;
+            right: 170px;
+            bottom: 72px;
+            width: 200px;
+            height: 56px;
+            border-radius: 12px 12px 6px 6px;
+            background: linear-gradient(to bottom, #3a4a64, #2a3447);
+            box-shadow: 0 3px 0 rgba(0, 0, 0, 0.2);
+            z-index: 4;
+        }
+
+        .fun-tribune::before {
+            content: '';
+            position: absolute;
+            left: 12px;
+            right: 12px;
+            top: 16px;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        .fun-tribune::after {
+            content: '';
+            position: absolute;
+            left: 12px;
+            right: 12px;
+            top: 32px;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .fun-crowd {
+            position: absolute;
+            left: 14px;
+            right: 14px;
+            top: -8px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 6px 5px;
+            pointer-events: none;
+        }
+
+        .fun-spectator {
+            font-size: 14px;
+            line-height: 1;
+            animation: crowdCheer 1.3s ease-in-out infinite;
+            transform-origin: bottom center;
+        }
+
+        .fun-spectator.s2 { animation-delay: -0.2s; }
+        .fun-spectator.s3 { animation-delay: -0.6s; }
+        .fun-spectator.s4 { animation-delay: -0.9s; }
+
+        .fun-goal {
+            position: absolute;
+            right: 70px;
+            bottom: 74px;
+            width: 88px;
+            height: 94px;
+            z-index: 6;
+            pointer-events: none;
+        }
+
+        .fun-goal-pole {
+            position: absolute;
+            bottom: 0;
+            width: 6px;
+            height: 92px;
+            background: linear-gradient(to bottom, #f1f3f5, #b8bec8);
+            border: 1px solid #99a1ac;
+            border-radius: 3px;
+        }
+
+        .fun-goal-pole.left { left: 0; }
+        .fun-goal-pole.right { right: 0; }
+
+        .fun-goal-banner {
+            position: absolute;
+            left: 8px;
+            right: 8px;
+            top: 10px;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            color: #5f6978;
+            text-align: center;
+            padding: 5px 0;
+            border-radius: 6px;
+            border: 1px solid #d9dee6;
+            background: #ffffff;
+            box-shadow: 0 2px 0 rgba(0, 0, 0, 0.15);
+        }
+
+        .fun-finish-line {
+            position: absolute;
+            right: 108px;
+            bottom: 0;
+            width: 10px;
+            height: 76px;
+            z-index: 4;
+            background: repeating-linear-gradient(
+                to bottom,
+                #ffffff 0,
+                #ffffff 8px,
+                #e8edf5 8px,
+                #e8edf5 16px
+            );
+            box-shadow: 0 0 0 1px rgba(130, 144, 163, 0.45);
+        }
+
+        .fun-confetti {
+            position: absolute;
+            right: 46px;
+            bottom: 118px;
+            width: 150px;
+            height: 110px;
+            z-index: 7;
+            pointer-events: none;
+        }
+
+        .fun-confetti-piece {
+            position: absolute;
+            top: 18px;
+            left: 50px;
+            width: 6px;
+            height: 10px;
+            border-radius: 2px;
+            opacity: 0;
+            transform: translate(0, 0) rotate(0deg);
+        }
+
+        .fun-confetti.burst .fun-confetti-piece {
+            animation: confettiPiece 2200ms ease-out forwards;
+        }
+
+        .fun-confetti-piece:nth-child(1) { background: #ff4d6d; --dx: -40px; --dy: 54px; animation-delay: 0ms; }
+        .fun-confetti-piece:nth-child(2) { background: #ffd166; --dx: -24px; --dy: 62px; animation-delay: 60ms; }
+        .fun-confetti-piece:nth-child(3) { background: #06d6a0; --dx: 2px; --dy: 58px; animation-delay: 80ms; }
+        .fun-confetti-piece:nth-child(4) { background: #118ab2; --dx: 24px; --dy: 66px; animation-delay: 120ms; }
+        .fun-confetti-piece:nth-child(5) { background: #ef476f; --dx: 42px; --dy: 56px; animation-delay: 140ms; }
+        .fun-confetti-piece:nth-child(6) { background: #ff9f1c; --dx: -12px; --dy: 48px; animation-delay: 170ms; }
+        .fun-confetti-piece:nth-child(7) { background: #8338ec; --dx: 16px; --dy: 50px; animation-delay: 190ms; }
+        .fun-confetti-piece:nth-child(8) { background: #3a86ff; --dx: -34px; --dy: 60px; animation-delay: 220ms; }
+        .fun-confetti-piece:nth-child(9) { background: #12b886; --dx: 48px; --dy: 70px; animation-delay: 30ms; }
+        .fun-confetti-piece:nth-child(10) { background: #ff6b6b; --dx: -52px; --dy: 66px; animation-delay: 90ms; }
+        .fun-confetti-piece:nth-child(11) { background: #f59f00; --dx: 30px; --dy: 74px; animation-delay: 110ms; }
+        .fun-confetti-piece:nth-child(12) { background: #2f9e44; --dx: -18px; --dy: 68px; animation-delay: 150ms; }
+        .fun-confetti-piece:nth-child(13) { background: #e64980; --dx: 56px; --dy: 62px; animation-delay: 180ms; }
+        .fun-confetti-piece:nth-child(14) { background: #4c6ef5; --dx: -62px; --dy: 78px; animation-delay: 210ms; }
+        .fun-confetti-piece:nth-child(15) { background: #0ca678; --dx: 8px; --dy: 72px; animation-delay: 240ms; }
+        .fun-confetti-piece:nth-child(16) { background: #f03e3e; --dx: -8px; --dy: 70px; animation-delay: 260ms; }
+
+        .fun-racer.r6 { font-size: 30px; }
+
+        .fun-race-caption {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            right: 14px;
+            font-size: 14px;
+            font-weight: 700;
+            color: #1b4b7c;
+            text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+            z-index: 5;
+        }
+
+        @keyframes cloudDrift {
+            from { transform: translateX(0); }
+            to { transform: translateX(1250px); }
+        }
+
+        @keyframes funRace {
+            from { left: -14%; }
+            to { left: 102%; }
+        }
+
+        @keyframes crowdCheer {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-3px) rotate(5deg); }
+        }
+
+        @keyframes confettiPiece {
+            0% {
+                opacity: 0;
+                transform: translate(0, 0) rotate(0deg);
+            }
+            8% {
+                opacity: 1;
+                transform: translate(0, -6px) rotate(40deg);
+            }
+            100% {
+                opacity: 0;
+                transform: translate(var(--dx), var(--dy)) rotate(320deg);
+            }
+        }
+
+        /* ── Split layout ────────────────────────────────────── */
+        .split-layout {
+            display: flex;
+            gap: 28px;
+            align-items: flex-start;
+        }
+
+        .split-left {
+            flex: 1 1 0;
+            min-width: 0;
+        }
+
+        .split-right {
+            flex: 1 1 0;
+            min-width: 0;
+            border-left: 2px solid #f0f4ff;
+            padding-left: 24px;
+        }
+
+        /* ── Sykle stats grid ────────────────────────────────── */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+            gap: 10px;
+            margin: 10px 0 18px;
+        }
+
+        .stat-card {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 12px 10px;
+            text-align: center;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .stat-card .value {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 4px;
+        }
+
+        .stat-card .label {
+            font-size: 11px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .sykle-table-wrap {
+            overflow-x: auto;
+        }
+
+        .sykle-table-wrap table {
+            font-size: 13px;
+        }
+
+        .sykle-table-wrap th,
+        .sykle-table-wrap td {
+            padding: 8px 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏆 Bouvet Agder Strava Leaderboard</h1>
+        <div class="header-meta" id="headerMeta">Loading…</div>
+
+        <div class="split-layout">
+            <div class="split-left">
+                <h2>🏆 Strava Agder Leaderboard</h2>
+                <div id="leaderboard" class="loading">Loading...</div>
+            </div>
+            <div class="split-right">
+                <h2>🚲 Sykle til jobben</h2>
+                <div id="sykleLeaderboard" class="loading">Loading...</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let carouselAutoInterval = null;
+        let hasSuccessfulRender = false;
+        let funRaceConfettiTimer = null;
+        let stjLastUpdate = null;
+
+        function formatTime(seconds) {
+            const h = Math.floor(seconds / 3600);
+            const m = Math.floor((seconds % 3600) / 60);
+            return `${h}h ${m}m`;
+        }
+
+        async function loadLeaderboard() {
+            try {
+                const [configResponse, activitiesResponse, membersResponse, sykleResponse, updateResponse] = await Promise.all([
+                    fetch('config.json'),
+                    fetch('master_history.json'),
+                    fetch('club_members.json'),
+                    fetch('sykletiljobben.json'),
+                    fetch('last_update.json')
+                ]);
+
+                const config = await configResponse.json();
+                const activities = await activitiesResponse.json();
+                const members = await membersResponse.json();
+                const sykleData = sykleResponse.ok ? await sykleResponse.json() : null;
+                const updateData = updateResponse.ok ? await updateResponse.json() : null;
+
+                const startDate = new Date(config.startDate);
+                const configuredEndDate = config.endDate ? new Date(config.endDate) : null;
+                const endDate = configuredEndDate && !Number.isNaN(configuredEndDate.getTime())
+                    ? configuredEndDate
+                    : null;
+
+                const displayStartDate = startDate.toLocaleDateString('en-US', {
+                    year: 'numeric', month: 'long', day: 'numeric'
+                });
+                const displayEndDate = endDate
+                    ? endDate.toLocaleDateString('en-US', {
+                        year: 'numeric', month: 'long', day: 'numeric'
+                    })
+                    : 'Ongoing';
+                const now = new Date();
+                const competitionState = endDate && now > endDate
+                    ? '<span class="competition-state ended">Competition ended</span>'
+                    : '<span class="competition-state active">Competition active</span>';
+
+                // Aggregate stats by athlete
+                const athleteStats = {};
+                const sportStats = {};
+
+                function formatSportName(sport) {
+                    return sport
+                        .replace(/([a-z])([A-Z])/g, '$1 $2')
+                        .replace(/_/g, ' ')
+                        .trim();
+                }
+
+                activities.forEach(activity => {
+                    if (!activity.activity_date) return;
+                    const activityDate = new Date(activity.activity_date);
+                    if (activityDate < startDate) return;
+                    if (endDate && activityDate > endDate) return;
+
+                    const athlete = activity.athlete;
+                    const name = `${athlete.firstname} ${athlete.lastname}`;
+
+                    if (!athleteStats[name]) {
+                        athleteStats[name] = {
+                            name, activities: 0, distance: 0,
+                            movingTime: 0, elevation: 0, hasActivities: false
+                        };
+                    }
+
+                    athleteStats[name].activities += 1;
+                    athleteStats[name].distance += activity.distance;
+                    athleteStats[name].movingTime += activity.moving_time;
+                    athleteStats[name].elevation += activity.total_elevation_gain;
+                    athleteStats[name].hasActivities = true;
+
+                    const sport = activity.sport_type || activity.type || 'Other';
+                    if (!sportStats[sport]) sportStats[sport] = {};
+                    if (!sportStats[sport][name]) {
+                        sportStats[sport][name] = {
+                            name, activities: 0, distance: 0,
+                            movingTime: 0, elevation: 0
+                        };
+                    }
+
+                    sportStats[sport][name].activities += 1;
+                    sportStats[sport][name].distance += activity.distance;
+                    sportStats[sport][name].movingTime += activity.moving_time;
+                    sportStats[sport][name].elevation += activity.total_elevation_gain;
+                });
+
+                const uniqueMembers = [...new Map(
+                    members.map(m => [`${m.firstname} ${m.lastname}`, m])
+                ).values()];
+
+                uniqueMembers.forEach(member => {
+                    const name = `${member.firstname} ${member.lastname}`;
+                    if (!athleteStats[name]) {
+                        athleteStats[name] = {
+                            name, activities: 0, distance: 0,
+                            movingTime: 0, elevation: 0, hasActivities: false
+                        };
+                    }
+                });
+
+                const activeMembers = Object.values(athleteStats).filter(a => a.hasActivities);
+                const inactiveMembers = Object.values(athleteStats)
+                    .filter(a => !a.hasActivities)
+                    .sort((a, b) => a.name.localeCompare(b.name));
+
+                // Metric definitions used to build sport-specific boards
+                const metricDefs = [
+                    {
+                        id: 'movingTime',
+                        icon: '⏱️',
+                        title: 'Most Active Time',
+                        label: 'Moving Time',
+                        hasData: a => a.movingTime > 0,
+                        value: a => formatTime(a.movingTime),
+                        leaderText: (a, sportLabel) => `${a.name} leads ${sportLabel} with ${formatTime(a.movingTime)} of moving time`
+                    },
+                    {
+                        id: 'distance',
+                        icon: '📏',
+                        title: 'Most Distance',
+                        label: 'Distance',
+                        hasData: a => a.distance > 0,
+                        value: a => `${(a.distance / 1000).toFixed(1)} km`,
+                        leaderText: (a, sportLabel) => `${a.name} leads ${sportLabel} with ${(a.distance / 1000).toFixed(1)} km`
+                    },
+                    {
+                        id: 'elevation',
+                        icon: '⛰️',
+                        title: 'Most Elevation',
+                        label: 'Elevation',
+                        hasData: a => a.elevation > 0,
+                        value: a => `${a.elevation.toFixed(0)} m`,
+                        leaderText: (a, sportLabel) => `${a.name} leads ${sportLabel} with ${a.elevation.toFixed(0)} m climbed`
+                    }
+                ];
+
+                // Build sport-specific boards dynamically from detected sports in the data
+                const sportsByActivityVolume = Object.entries(sportStats)
+                    .map(([sport, athleteMap]) => ({
+                        sport,
+                        athletes: Object.values(athleteMap).filter(a => a.activities > 0),
+                        totalActivities: Object.values(athleteMap).reduce((sum, a) => sum + a.activities, 0)
+                    }))
+                    .filter(s => s.athletes.length > 0)
+                    .sort((a, b) => b.totalActivities - a.totalActivities || a.sport.localeCompare(b.sport));
+
+                const boards = [];
+
+                // Add one overall board based only on total moving time
+                const overallMovingTimeMetric = {
+                    id: 'movingTime',
+                    label: 'Moving Time',
+                    value: a => formatTime(a.movingTime)
+                };
+                const overallSortedByMovingTime = [...activeMembers]
+                    .sort((a, b) => b.movingTime - a.movingTime);
+                if (overallSortedByMovingTime.length > 0) {
+                    const overallLeader = overallSortedByMovingTime[0];
+                    boards.push({
+                        icon: '⏱️',
+                        title: 'Most Active Time • Overall',
+                        sortKey: 'movingTime',
+                        metric: overallMovingTimeMetric,
+                        sorted: overallSortedByMovingTime,
+                        leaderText: `${overallLeader.name} leads overall with ${formatTime(overallLeader.movingTime)} of moving time`
+                    });
+                }
+
+                boards.unshift({
+                    icon: '🎬',
+                    title: 'Bouvet strava race',
+                    customHtml: `
+                        <div class="fun-board" aria-hidden="true">
+                            <div class="fun-cloud c1">☁️</div>
+                            <div class="fun-cloud c2">☁️</div>
+                            <div class="fun-cloud c3">☁️</div>
+                            <div class="fun-hill h1"></div>
+                            <div class="fun-hill h2"></div>
+                            <div class="fun-hill h3"></div>
+                            <div class="fun-tribune">
+                                <div class="fun-crowd">
+                                    <span class="fun-spectator s1">🧑</span>
+                                    <span class="fun-spectator s2">👩</span>
+                                    <span class="fun-spectator s3">👨</span>
+                                    <span class="fun-spectator s4">👩‍🦱</span>
+                                    <span class="fun-spectator s1">👨‍🦰</span>
+                                    <span class="fun-spectator s2">👩‍🦳</span>
+                                    <span class="fun-spectator s3">🧔</span>
+                                    <span class="fun-spectator s4">👱</span>
+                                    <span class="fun-spectator s2">👩‍🦲</span>
+                                    <span class="fun-spectator s3">🧑‍🦱</span>
+                                    <span class="fun-spectator s4">👨‍🦳</span>
+                                    <span class="fun-spectator s1">👩‍🦰</span>
+                                </div>
+                            </div>
+                            <div class="fun-goal">
+                                <div class="fun-goal-pole left"></div>
+                                <div class="fun-goal-banner">FINISH</div>
+                                <div class="fun-goal-pole right"></div>
+                            </div>
+                            <div class="fun-finish-line"></div>
+                            <div class="fun-confetti">
+                                <span class="fun-confetti-piece"></span>
+                                <span class="fun-confetti-piece"></span>
+                                <span class="fun-confetti-piece"></span>
+                                <span class="fun-confetti-piece"></span>
+                                <span class="fun-confetti-piece"></span>
+                                <span class="fun-confetti-piece"></span>
+                                <span class="fun-confetti-piece"></span>
+                                <span class="fun-confetti-piece"></span>
+                                <span class="fun-confetti-piece"></span>
+                                <span class="fun-confetti-piece"></span>
+                                <span class="fun-confetti-piece"></span>
+                                <span class="fun-confetti-piece"></span>
+                                <span class="fun-confetti-piece"></span>
+                                <span class="fun-confetti-piece"></span>
+                                <span class="fun-confetti-piece"></span>
+                                <span class="fun-confetti-piece"></span>
+                            </div>
+                            <div class="fun-racer r1"><span>🐇</span></div>
+                            <div class="fun-racer r2"><span>🐺</span></div>
+                            <div class="fun-racer r3"><span>🐴</span></div>
+                            <div class="fun-racer r4"><span>🐻</span></div>
+                            <div class="fun-racer r5"><span>🐢</span></div>
+                            <div class="fun-racer r6">
+                                <span>🦊</span><span class="fun-bike">🚲</span>
+                            </div>
+                            <div class="fun-road"></div>
+                        </div>
+                    `
+                });
+
+                sportsByActivityVolume.forEach(sportEntry => {
+                    const sportLabel = formatSportName(sportEntry.sport);
+
+                    metricDefs.forEach(metric => {
+                        const hasMetricData = sportEntry.athletes.some(metric.hasData);
+                        if (!hasMetricData) return;
+
+                        const sorted = [...sportEntry.athletes].sort((a, b) => b[metric.id] - a[metric.id]);
+                        const leader = sorted[0];
+
+                        boards.push({
+                            icon: metric.icon,
+                            title: `${metric.title} • ${sportLabel}`,
+                            sortKey: metric.id,
+                            metric,
+                            sorted,
+                            leaderText: leader ? metric.leaderText(leader, sportLabel) : ''
+                        });
+                    });
+                });
+
+                // Generate carousel slides
+                let slidesHtml = '';
+                boards.forEach(board => {
+                    const sorted = board.sorted || [];
+                    const leader = sorted[0];
+                    const activeCol = board.metric;
+
+                    let slide = `
+                        <div class="board-header">
+                            <span class="board-title">${board.icon} ${board.title}</span>
+                        </div>
+                    `;
+
+                    if (board.customHtml) {
+                        slide += board.customHtml;
+                    } else {
+                        slide += `
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th style="width:50px">#</th>
+                                        <th>Athlete</th>
+                                        ${activeCol ? `<th class="primary-col" style="text-align:right">${activeCol.label}</th>` : ''}
+                                    </tr>
+                                </thead>
+                                <tbody>
+                        `;
+
+                        sorted.forEach((athlete, index) => {
+                            const medal = index === 0 ? '🥇' : index === 1 ? '🥈' : index === 2 ? '🥉' : index + 1;
+                            slide += `
+                                <tr>
+                                    <td class="rank">${medal}</td>
+                                    <td class="name">${athlete.name}</td>
+                                    ${activeCol ? `<td class="metric primary-col">${activeCol.value(athlete)}</td>` : ''}
+                                </tr>
+                            `;
+                        });
+
+                        slide += `</tbody></table>`;
+                    }
+                    slidesHtml += `<div class="carousel-slide">${slide}</div>`;
+                });
+
+                // Build full leaderboard HTML
+                let html = '';
+
+                if (boards.length > 0) {
+                    html += `
+                        <div class="carousel-wrapper" id="carouselWrapper">
+                            <div class="progress-bar-wrapper">
+                                <div class="progress-bar" id="progressBar"></div>
+                            </div>
+                            <div class="carousel-track" id="carouselTrack">
+                                ${slidesHtml}
+                            </div>
+                            <div class="carousel-controls">
+                                <button class="carousel-btn" id="prevBtn" aria-label="Previous">&#8249;</button>
+                                <div class="carousel-dots" id="carouselDots">
+                                    ${boards.map((b, i) =>
+                                        `<button class="carousel-dot${i === 0 ? ' active' : ''}" data-index="${i}" aria-label="${b.title}"></button>`
+                                    ).join('')}
+                                </div>
+                                <button class="carousel-btn" id="nextBtn" aria-label="Next">&#8250;</button>
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    html += `<div class="loading">No sport-specific distance/elevation activities found in the selected period.</div>`;
+                }
+
+                document.getElementById('leaderboard').innerHTML = html;
+                
+                const updateTime = updateData && updateData.timestamp
+                    ? new Date(updateData.timestamp).toLocaleString('no-NO')
+                    : 'N/A';
+                
+                document.getElementById('headerMeta').innerHTML =
+                    `Competition: ${displayStartDate} to ${displayEndDate}${competitionState}`
+                    + `<span class="sep">|</span>Sist oppdatert: ${updateTime}`;
+
+                if (boards.length > 0) {
+                    initCarousel(boards.length);
+                }
+
+                hasSuccessfulRender = true;
+
+            } catch (error) {
+                // Keep the last successful view when data files are temporarily unavailable.
+                if (!hasSuccessfulRender) {
+                    document.getElementById('leaderboard').innerHTML =
+                        `<div class="loading">Loading...</div>`;
+                }
+                console.warn('Skipping refresh due to temporary data load error:', error);
+            }
+        }
+
+        function initCarousel(totalSlides) {
+            if (carouselAutoInterval) clearInterval(carouselAutoInterval);
+            if (funRaceConfettiTimer) {
+                clearTimeout(funRaceConfettiTimer);
+                funRaceConfettiTimer = null;
+            }
+
+            let current = 0;
+            const INTERVAL = 8000;
+
+            const track = document.getElementById('carouselTrack');
+            const dots = document.querySelectorAll('.carousel-dot');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const progressBar = document.getElementById('progressBar');
+
+            function setupFunRace(slideIndex) {
+                if (funRaceConfettiTimer) {
+                    clearTimeout(funRaceConfettiTimer);
+                    funRaceConfettiTimer = null;
+                }
+
+                const slides = track.querySelectorAll('.carousel-slide');
+                const activeSlide = slides[slideIndex];
+                if (!activeSlide) return;
+
+                const funBoard = activeSlide.querySelector('.fun-board');
+                if (!funBoard) return;
+
+                const racers = [...funBoard.querySelectorAll('.fun-racer')];
+                if (racers.length === 0) return;
+
+                const winnerIndex = Math.floor(Math.random() * racers.length);
+
+                racers.forEach((racer, idx) => {
+                    const duration = idx === winnerIndex
+                        ? 6.2 + Math.random() * 0.8
+                        : 8.2 + Math.random() * 4.4;
+                    const bottom = 36 + Math.random() * 18;
+                    // Reset first so the race reliably restarts even on the same slide.
+                    racer.style.animation = 'none';
+                    racer.style.left = '-14%';
+                    racer.offsetWidth; // force reflow to commit reset before re-applying animation
+                    racer.style.animation = `funRace ${duration.toFixed(2)}s linear 1 forwards`;
+                    racer.style.bottom = `${bottom.toFixed(0)}px`;
+                    racer.dataset.duration = duration.toString();
+                });
+
+                const confetti = funBoard.querySelector('.fun-confetti');
+                if (!confetti) return;
+
+                confetti.classList.remove('burst');
+                confetti.offsetWidth; // force reflow
+
+                const winnerDuration = parseFloat(racers[winnerIndex].dataset.duration || '6.8');
+                const finishProgress = 96 / 116; // from -14% to ~82% where finish line is
+                const triggerMs = Math.max(0, Math.round(winnerDuration * finishProgress * 1000));
+
+                funRaceConfettiTimer = setTimeout(() => {
+                    confetti.classList.add('burst');
+                }, triggerMs);
+            }
+
+            function goTo(index) {
+                current = ((index % totalSlides) + totalSlides) % totalSlides;
+                track.style.transform = `translateX(-${current * 100}%)`;
+                dots.forEach((d, i) => d.classList.toggle('active', i === current));
+                setupFunRace(current);
+                animateProgress();
+            }
+
+            function animateProgress() {
+                progressBar.style.transition = 'none';
+                progressBar.style.width = '0%';
+                progressBar.offsetWidth; // force reflow
+                progressBar.style.transition = `width ${INTERVAL}ms linear`;
+                progressBar.style.width = '100%';
+            }
+
+            function resetAutoAdvance() {
+                clearInterval(carouselAutoInterval);
+                carouselAutoInterval = setInterval(() => goTo(current + 1), INTERVAL);
+            }
+
+            prevBtn.addEventListener('click', () => { goTo(current - 1); resetAutoAdvance(); });
+            nextBtn.addEventListener('click', () => { goTo(current + 1); resetAutoAdvance(); });
+            dots.forEach(dot => {
+                dot.addEventListener('click', () => { goTo(parseInt(dot.dataset.index)); resetAutoAdvance(); });
+            });
+
+            setupFunRace(current);
+            animateProgress();
+            resetAutoAdvance();
+        }
+
+        loadLeaderboard();
+        setInterval(loadLeaderboard, 5 * 60 * 1000);
+
+        function formatKm(centimeters) {
+            if (!centimeters) return '0.0';
+            return (centimeters / 100000).toFixed(1);
+        }
+
+        async function loadSykleData() {
+            try {
+                const [natRes, countyRes, communityRes, membersRes] = await Promise.allSettled([
+                    fetch('sykletiljobben.json').then(r => r.ok ? r.json() : null),
+                    fetch('sykletiljobben_county.json').then(r => r.ok ? r.json() : null),
+                    fetch('sykletiljobben_community.json').then(r => r.ok ? r.json() : null),
+                    fetch('sykletiljobbenmembers.json').then(r => r.ok ? r.json() : null)
+                ]);
+
+                const data     = natRes.status      === 'fulfilled' ? natRes.value      : null;
+                const county   = countyRes.status   === 'fulfilled' ? countyRes.value   : null;
+                const community = communityRes.status === 'fulfilled' ? communityRes.value : null;
+                const members  = membersRes.status  === 'fulfilled' ? membersRes.value  : null;
+
+                if (!data) throw new Error('Nasjonale data mangler');
+
+                const updateDate = new Date(data.lastUpdateTime).toLocaleString('no-NO');
+
+                // Build slides
+                const slides = [];
+
+                // Slide 1: Company Stats + Team Rankings Combined
+                const rankCard = (label, d) => d
+                    ? `<div class="stat-card">
+                        <div class="value">#${d.rank}<span style="font-size:12px;color:#666"> / ${d.totalCompanies}</span></div>
+                        <div class="label">${label}</div>
+                       </div>`
+                    : '';
+
+                const teams = [...data.teamsDetailed].sort((a, b) => {
+                    if (b.averagePoints !== a.averagePoints) return b.averagePoints - a.averagePoints;
+                    return b.totalPoints - a.totalPoints;
+                });
+
+                let combinedSlide = `
+                    <div class="board-header">
+                        <span class="board-title">📊 Bedriftsstatistikk & Lag oversikt</span>
+                    </div>
+                    <div class="stats-grid">
+                        ${rankCard('Nasjonalt', data)}
+                        ${rankCard('Fylke', county)}
+                        ${rankCard('Kommune', community)}
+                        <div class="stat-card"><div class="value">${data.countCompanyMembers}</div><div class="label">Medlemmer</div></div>
+                        <div class="stat-card"><div class="value">${data.pointsTotal.toFixed(2)}</div><div class="label">Totalt Poeng</div></div>
+                        <div class="stat-card"><div class="value">${data.totalWorkouts}</div><div class="label">Totalt Økter</div></div>
+                        <div class="stat-card"><div class="value">${formatKm(data.totalCentimeters)} km</div><div class="label">Totalt Km</div></div>
+                    </div>
+                    <h3 style="margin-top: 20px; margin-bottom: 10px; font-size: 15px; color: #667eea;">Lag rangering</h3>
+                    <div class="sykle-table-wrap">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th style="width:44px">#</th>
+                                    <th>Lag</th>
+                                    <th class="metric primary-col" style="text-align:right">Snitt</th>
+                                    <th class="metric" style="text-align:right">Poeng</th>
+                                    <th class="metric" style="text-align:right">Medl.</th>
+                                    <th class="metric" style="text-align:right">Økter</th>
+                                    <th class="metric" style="text-align:right">Km</th>
+                                    <th class="metric" style="text-align:right">Tid</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                `;
+
+                teams.forEach((team, index) => {
+                    const medal = index === 0 ? '🥇' : index === 1 ? '🥈' : index === 2 ? '🥉' : index + 1;
+                    combinedSlide += `
+                        <tr>
+                            <td class="rank">${medal}</td>
+                            <td class="name">${team.title}</td>
+                            <td class="metric primary-col">${team.averagePoints.toFixed(2)}</td>
+                            <td class="metric">${team.totalPoints.toFixed(2)}</td>
+                            <td class="metric">${team.memberCount}</td>
+                            <td class="metric">${team.totalWorkouts}</td>
+                            <td class="metric">${team.totalkilometers.toFixed(1)}</td>
+                            <td class="metric">${formatTime(team.totalSeconds)}</td>
+                        </tr>
+                    `;
+                });
+
+                combinedSlide += `</tbody></table></div>`;
+                slides.push(combinedSlide);
+
+                // Slide 2: Member Rankings (if data available)
+                if (members && members.length > 0) {
+                    let memberTable = `
+                        <div class="board-header">
+                            <span class="board-title">👥 Medlemmer Oversikt</span>
+                        </div>
+                        <div class="sykle-table-wrap">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th style="width:44px">#</th>
+                                        <th>Medlem</th>
+                                        <th class="metric" style="text-align:right">Lag</th>
+                                        <th class="metric primary-col" style="text-align:right">Poeng</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                    `;
+                    members.forEach((member) => {
+                        const fullName = `${member.firstname} ${member.lastname}`;
+                        const medal = member.rank === 1 ? '🥇' : member.rank === 2 ? '🥈' : member.rank === 3 ? '🥉' : member.rank;
+                        memberTable += `
+                            <tr>
+                                <td class="rank">${medal}</td>
+                                <td class="name">${fullName}</td>
+                                <td class="metric">${member.teamTitle}</td>
+                                <td class="metric primary-col">${member.points.toFixed(2)}</td>
+                            </tr>
+                        `;
+                    });
+                    memberTable += `</tbody></table></div>`;
+                    slides.push(memberTable);
+                }
+
+                // Build carousel HTML
+                let slidesHtml = slides.map(slide => `<div class="carousel-slide">${slide}</div>`).join('');
+
+                let html = `
+                    <div class="carousel-wrapper" id="sykleCarouselWrapper">
+                        <div class="progress-bar-wrapper">
+                            <div class="progress-bar" id="sykleProgressBar"></div>
+                        </div>
+                        <div class="carousel-track" id="sykleCarouselTrack">
+                            ${slidesHtml}
+                        </div>
+                        <div class="carousel-controls">
+                            <button class="carousel-btn" id="syklePrevBtn" aria-label="Forrige">&#8249;</button>
+                            <div class="carousel-dots" id="sykleCarouselDots">
+                                ${slides.map((_, i) =>
+                                    `<button class="carousel-dot${i === 0 ? ' active' : ''}" data-index="${i}" aria-label="Slide ${i + 1}"></button>`
+                                ).join('')}
+                            </div>
+                            <button class="carousel-btn" id="sykleNextBtn" aria-label="Neste">&#8250;</button>
+                        </div>
+                    </div>
+                `;
+
+                document.getElementById('sykleLeaderboard').innerHTML = html;
+
+                if (slides.length > 0) {
+                    initSykleCarousel(slides.length);
+                }
+
+            } catch (error) {
+                console.error('Error loading sykle data:', error);
+                document.getElementById('sykleLeaderboard').innerHTML = `
+                    <div class="loading">
+                        Kunne ikke laste sykletiljobben.json
+                    </div>`;
+            }
+        }
+
+        function initSykleCarousel(totalSlides) {
+            let current = 0;
+            const INTERVAL = 8000;
+
+            const track = document.getElementById('sykleCarouselTrack');
+            const dots = document.querySelectorAll('#sykleCarouselDots .carousel-dot');
+            const prevBtn = document.getElementById('syklePrevBtn');
+            const nextBtn = document.getElementById('sykleNextBtn');
+            const progressBar = document.getElementById('sykleProgressBar');
+
+            let autoInterval = null;
+
+            function updateSlide(index) {
+                current = (index + totalSlides) % totalSlides;
+                track.style.transform = `translateX(-${current * 100}%)`;
+                
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === current);
+                });
+
+                animateProgress();
+            }
+
+            function animateProgress() {
+                progressBar.style.transition = 'none';
+                progressBar.style.width = '0%';
+                progressBar.offsetWidth; // force reflow
+                progressBar.style.transition = `width ${INTERVAL}ms linear`;
+                progressBar.style.width = '100%';
+            }
+
+            prevBtn.addEventListener('click', () => {
+                clearInterval(autoInterval);
+                updateSlide(current - 1);
+                startAutoCarousel();
+            });
+
+            nextBtn.addEventListener('click', () => {
+                clearInterval(autoInterval);
+                updateSlide(current + 1);
+                startAutoCarousel();
+            });
+
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    clearInterval(autoInterval);
+                    updateSlide(index);
+                    startAutoCarousel();
+                });
+            });
+
+            function startAutoCarousel() {
+                autoInterval = setInterval(() => {
+                    updateSlide(current + 1);
+                }, INTERVAL);
+            }
+
+            updateSlide(0);
+            startAutoCarousel();
+        }
+
+        loadSykleData();
+        setInterval(loadSykleData, 5 * 60 * 1000);
+    </script>
+</body>
+</html>

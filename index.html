@@ -39,6 +39,7 @@
             margin-top: 0;
             margin-bottom: 15px;
             font-size: 20px;
+            text-align: center;
             border-bottom: 2px solid #f0f4ff;
             padding-bottom: 10px;
         }
@@ -645,6 +646,7 @@
 
         <div class="split-layout">
             <div class="split-left">
+                <h2>🏆 Strava Agder Leaderboard</h2>
                 <div id="leaderboard" class="loading">Loading...</div>
             </div>
             <div class="split-right">
@@ -659,6 +661,7 @@
         let carouselAutoInterval = null;
         let hasSuccessfulRender = false;
         let funRaceConfettiTimer = null;
+        let stjLastUpdate = null;
 
         function formatTime(seconds) {
             const h = Math.floor(seconds / 3600);
@@ -668,15 +671,17 @@
 
         async function loadLeaderboard() {
             try {
-                const [configResponse, activitiesResponse, membersResponse] = await Promise.all([
+                const [configResponse, activitiesResponse, membersResponse, stjResponse] = await Promise.all([
                     fetch('config.json'),
                     fetch('master_history.json'),
-                    fetch('club_members.json')
+                    fetch('club_members.json'),
+                    fetch('sykletiljobben.json').catch(() => null)
                 ]);
 
                 const config = await configResponse.json();
                 const activities = await activitiesResponse.json();
                 const members = await membersResponse.json();
+                const stjData = stjResponse && stjResponse.ok ? await stjResponse.json() : null;
 
                 const startDate = new Date(config.startDate);
                 const configuredEndDate = config.endDate ? new Date(config.endDate) : null;
@@ -985,11 +990,15 @@
                 }
 
                 document.getElementById('leaderboard').innerHTML = html;
+                const updatedStr = stjLastUpdate
+                    ? new Date(stjLastUpdate).toLocaleString('no-NO')
+                    : now.toLocaleString('no-NO');
+                const syncTime = stjData && stjData.lastUpdateTime
+                    ? new Date(stjData.lastUpdateTime).toLocaleString('no-NO')
+                    : null;
                 document.getElementById('headerMeta').innerHTML =
                     `Competition: ${displayStartDate} to ${displayEndDate}${competitionState}`
-                    + `<span class="sep">|</span>${activeMembers.length}&thinsp;/&thinsp;${uniqueMembers.length} members active`
-                    + `<span class="sep">|</span>Names anonymized 😉`
-                    + `<span class="sep">|</span>Updated ${now.toLocaleTimeString()}`;
+                    + (syncTime ? `<span class="sep">|</span>Sist oppdatert: ${syncTime}` : '');
 
                 if (boards.length > 0) {
                     initCarousel(boards.length);
@@ -1126,9 +1135,8 @@
 
                 if (!data) throw new Error('Nasjonale data mangler');
 
-                const updateDate = new Date(data.lastUpdateTime).toLocaleString('no-NO');
-                document.getElementById('sykleHeaderMeta').textContent =
-                    `Sist oppdatert: ${updateDate}`;
+                stjLastUpdate = data.lastUpdateTime;
+                document.getElementById('sykleHeaderMeta').textContent = '';
 
                 // Build slides
                 const slides = [];
@@ -1155,9 +1163,9 @@
                         <div class="stat-card"><div class="value">${formatKm(data.totalCentimeters)} km</div><div class="label">Totalt Km</div></div>
                     </div>
                 `;
-                slides.push(statsSlide);
+                // Slide 1 also includes Team Rankings (combined below)
 
-                // Slide 2: Team Rankings
+                // Slide 1b: Team Rankings
                 const teams = [...data.teamsDetailed].sort((a, b) => {
                     if (b.averagePoints !== a.averagePoints) return b.averagePoints - a.averagePoints;
                     return b.totalPoints - a.totalPoints;
@@ -1201,9 +1209,9 @@
                 });
 
                 teamTable += `</tbody></table></div>`;
-                slides.push(teamTable);
+                slides.push(statsSlide + teamTable);
 
-                // Slide 3: Member Rankings (if data available)
+                // Slide 2: Member Rankings (if data available)
                 if (members && members.length > 0) {
                     let memberTable = `
                         <div class="board-header">
@@ -1295,8 +1303,15 @@
                     dot.classList.toggle('active', i === current);
                 });
 
-                let progress = ((current + 1) / totalSlides) * 100;
-                progressBar.style.width = progress + '%';
+                animateProgress();
+            }
+
+            function animateProgress() {
+                progressBar.style.transition = 'none';
+                progressBar.style.width = '0%';
+                progressBar.offsetWidth; // force reflow
+                progressBar.style.transition = `width ${INTERVAL}ms linear`;
+                progressBar.style.width = '100%';
             }
 
             prevBtn.addEventListener('click', () => {

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sykle til jobben 2026 - Bouvet Norge As Agder</title>
+    <title>Leaderboard - Sykle til jobben 2026</title>
     <style>
         * {
             margin: 0;
@@ -13,456 +13,703 @@
         
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
             min-height: 100vh;
-            padding: 12px;
+            padding: 20px;
+            color: #fff;
         }
         
         .container {
             width: 100%;
+            max-width: 1200px;
             margin: 0 auto;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-            padding: 20px 24px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
         }
         
         h1 {
-            color: #333;
-            margin-bottom: 6px;
+            color: #fff;
+            margin-bottom: 10px;
             text-align: center;
-            font-size: 22px;
+            font-size: 48px;
+            letter-spacing: -1px;
         }
-        
-        h2 {
-            color: #667eea;
-            margin-top: 0;
+
+        .subtitle {
+            text-align: center;
+            color: #aaa;
+            font-size: 16px;
+            margin-bottom: 40px;
+            letter-spacing: 0.5px;
+        }
+
+        /* Leaderboard Container */
+        #leaderboard-container {
+            position: relative;
+            width: 100%;
+            min-height: 600px;
+            margin-bottom: 40px;
+        }
+
+        /* The "Secret Sauce" - Team Row Animation */
+        .team-row {
+            transition: all 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+            position: absolute;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 20px 30px;
+            background: linear-gradient(90deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            border-radius: 12px;
             margin-bottom: 15px;
-            font-size: 20px;
-            border-bottom: 2px solid #f0f4ff;
-            padding-bottom: 10px;
+            border-left: 4px solid #667eea;
+            backdrop-filter: blur(5px);
+            z-index: 5;
         }
-        
-        .header-meta {
-            text-align: center;
+
+        .team-row.crown-glow {
+            animation: glow 1.5s ease-in-out infinite alternate;
+            border-left-color: #00f2ff;
+            z-index: 10;
+        }
+
+        .team-row.fall-off {
+            transform: translateX(150%) rotate(15deg) translateY(50%);
+            opacity: 0;
+        }
+
+        @keyframes glow {
+            from {
+                box-shadow: 0 0 10px #00f2ff, 0 0 20px rgba(0, 242, 255, 0.5);
+                border-left-color: #00f2ff;
+                background: linear-gradient(90deg, rgba(0, 242, 255, 0.15) 0%, rgba(112, 0, 255, 0.1) 100%);
+            }
+            to {
+                box-shadow: 0 0 30px #00f2ff, 0 0 50px #7000ff, 0 0 10px rgba(112, 0, 255, 0.5);
+                border-left-color: #7000ff;
+                background: linear-gradient(90deg, rgba(0, 242, 255, 0.2) 0%, rgba(112, 0, 255, 0.15) 100%);
+            }
+        }
+
+        /* Rank Badge */
+        .rank-badge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            font-size: 28px;
+            font-weight: bold;
+            flex-shrink: 0;
+            min-width: 60px;
+        }
+
+        .team-row.crown-glow .rank-badge {
+            background: linear-gradient(135deg, #00f2ff, #7000ff);
+            box-shadow: 0 0 20px rgba(0, 242, 255, 0.6);
+        }
+
+        /* Team Info */
+        .team-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .team-name {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+
+        .team-row.crown-glow .team-name {
+            color: #00f2ff;
+            text-shadow: 0 0 10px rgba(0, 242, 255, 0.6);
+        }
+
+        .team-distance {
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        .team-members {
+            font-size: 12px;
+            color: #b9c2ff;
+            margin-top: 6px;
+            line-height: 1.35;
+            max-width: 95%;
+            white-space: normal;
+            overflow-wrap: anywhere;
+            word-break: break-word;
+        }
+
+        .team-row.crown-glow .team-distance {
+            color: #00d4ff;
+        }
+
+        .team-row.crown-glow .team-members {
+            color: #8ff8ff;
+        }
+
+        /* Stats */
+        .team-stats {
+            display: flex;
+            gap: 30px;
+            flex-shrink: 0;
+        }
+
+        .stat {
+            text-align: right;
+        }
+
+        .stat-value {
+            font-size: 22px;
+            font-weight: bold;
+            color: #00f2ff;
+            font-family: 'Courier New', monospace;
+        }
+
+        .team-row.crown-glow .stat-value {
+            color: #00ff88;
+            text-shadow: 0 0 10px rgba(0, 255, 136, 0.4);
+        }
+
+        .stat-label {
+            font-size: 12px;
             color: #888;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 3px;
+        }
+
+        /* Crown Icon for Champion */
+        .crown-icon {
+            font-size: 32px;
+            animation: float 3s ease-in-out infinite;
+            margin-right: 10px;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+
+        /* Loading State */
+        .loading {
+            text-align: center;
+            color: #aaa;
+            padding: 60px 20px;
+            font-size: 18px;
+        }
+
+        .loading::after {
+            content: '';
+            animation: dots 1.5s steps(4, end) infinite;
+        }
+
+        @keyframes dots {
+            0%, 20% { content: ''; }
+            40% { content: '.'; }
+            60% { content: '..'; }
+            80%, 100% { content: '...'; }
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            color: #666;
             font-size: 13px;
-            margin: 0 0 6px;
-            line-height: 1.6;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .competition-state {
-            display: inline-block;
-            margin-left: 8px;
-            padding: 2px 8px;
-            border-radius: 999px;
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 0.2px;
-            vertical-align: middle;
+        .last-update {
+            color: #00f2ff;
+            font-weight: 500;
         }
 
-        .competition-state.active {
-            color: #1f6f43;
-            background: #ddfbe8;
-            border: 1px solid #b7f0ce;
+        /* Company Stats Grid */
+        .company-stats-section {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 2px solid rgba(255, 255, 255, 0.1);
         }
 
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
-            gap: 10px;
-            margin: 10px 0 18px;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 12px;
+            margin-bottom: 20px;
         }
-        
+
         .stat-card {
-            background: #f8f9fa;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.15) 0%, rgba(118, 75, 162, 0.1) 100%);
             border-radius: 8px;
-            padding: 12px 10px;
+            padding: 16px 12px;
             text-align: center;
-            border-bottom: 3px solid #667eea;
+            border: 1px solid rgba(102, 126, 234, 0.3);
+            backdrop-filter: blur(5px);
         }
-        
+
         .stat-card .value {
-            font-size: 20px;
+            font-size: 24px;
             font-weight: bold;
-            color: #333;
-            margin-bottom: 4px;
+            color: #00f2ff;
+            margin-bottom: 6px;
         }
-        
+
         .stat-card .label {
             font-size: 11px;
-            color: #666;
+            color: #aaa;
             text-transform: uppercase;
             letter-spacing: 0.3px;
         }
-        
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-        }
-        
-        thead {
-            background: #f8f9fa;
-            border-bottom: 2px solid #667eea;
-        }
-        
-        th {
-            padding: 15px;
-            text-align: left;
-            font-weight: 600;
-            color: #333;
-        }
-        
-        td {
-            padding: 12px 15px;
-            border-bottom: 1px solid #eee;
-        }
-        
-        tbody tr:hover {
-            background: #f0f4ff;
-        }
-        
-        .rank {
-            font-weight: 600;
-            color: #667eea;
-            font-size: 18px;
-            width: 50px;
-        }
 
-        .primary-col {
-            font-weight: bold;
-            color: #667eea;
-        }
-
-        .metric {
-            text-align: right;
-            font-family: monospace;
-            font-size: 15px;
-        }
-
-        th.metric {
-            font-family: inherit;
-        }
-
-        .name {
-            font-weight: 500;
-        }
-
-        .loading {
-            text-align: center;
-            color: #666;
-            padding: 40px;
-        }
-
-        .carousel-wrapper {
-            overflow: hidden;
-            margin-bottom: 10px;
-        }
-
-        .carousel-track {
-            display: flex;
-            width: 100%;
-            transition: transform 0.5s ease;
-        }
-
-        .carousel-slide {
-            min-width: 100%;
-            flex-shrink: 0;
-        }
-
-        .carousel-controls {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            margin: 10px 0 24px;
-        }
-
-        .carousel-btn {
-            background: none;
-            border: 2px solid #667eea;
-            color: #667eea;
-            border-radius: 50%;
-            width: 34px;
-            height: 34px;
-            cursor: pointer;
-            font-size: 18px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            line-height: 1;
-            transition: all 0.2s;
-            flex-shrink: 0;
-        }
-
-        .carousel-btn:hover {
-            background: #667eea;
-            color: white;
-        }
-
-        .carousel-dots {
-            display: flex;
-            gap: 8px;
-        }
-
-        .carousel-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: #ddd;
-            cursor: pointer;
-            border: none;
-            padding: 0;
-            transition: background 0.3s;
-        }
-
-        .carousel-dot.active {
-            background: #667eea;
-        }
-
-        .progress-bar-wrapper {
-            height: 3px;
-            background: #eee;
-            border-radius: 3px;
-            margin-bottom: 8px;
-            overflow: hidden;
-        }
-
-        .progress-bar {
-            height: 100%;
-            background: linear-gradient(90deg, #667eea, #764ba2);
-            border-radius: 3px;
-            width: 0%;
-        }
-
-        .board-header {
-            display: flex;
-            align-items: baseline;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin-bottom: 8px;
-        }
-
-        .board-title {
-            font-size: 17px;
-            font-weight: 700;
-            color: #333;
-            white-space: nowrap;
-        }
-
-        .board-leader {
-            font-size: 13px;
-            color: #667eea;
-            font-weight: 500;
-        }
-
-        .two-col-layout {
-            display: grid;
-            grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
-            gap: 24px;
-            align-items: start;
-        }
-
-        .column {
-            min-width: 0;
-        }
-
-        .right-column {
-            border-left: 2px solid #f0f4ff;
-            padding-left: 20px;
-        }
-
-        .section-header {
-            margin-top: 6px;
-        }
-
-        @media (max-width: 1100px) {
-            .two-col-layout {
-                grid-template-columns: 1fr;
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
             }
 
-            .right-column {
-                border-left: none;
-                padding-left: 0;
+            h1 {
+                font-size: 32px;
+            }
+
+            .team-row {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 15px 20px;
+                gap: 10px;
+            }
+
+            .rank-badge {
+                width: 50px;
+                height: 50px;
+                font-size: 24px;
+            }
+
+            .team-name {
+                font-size: 20px;
+            }
+
+            .team-stats {
+                width: 100%;
+                gap: 15px;
+                flex-wrap: wrap;
+            }
+
+            .stat {
+                flex: 1;
+                text-align: left;
+            }
+
+            #leaderboard-container {
+                min-height: auto;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1 id="main-title">🏆 Sykle til jobben - Bouvet Norge As Agder</h1>
-        <div class="header-meta" id="headerMeta">Laster…</div>
+        <h1>🏆 Leaderboard - Sykle til jobben 2026</h1>
+        <div class="subtitle" id="subtitle">Bouvet Norge As Agder - Live Rankings</div>
 
-        <div id="leaderboard" class="loading">Loading...</div>
+        <div id="leaderboard-container" class="loading">Loading leaderboard...</div>
+
+        <div class="company-stats-section" id="statsSection"></div>
+
+        <div class="footer">
+            Last updated: <span class="last-update" id="lastUpdate">--:--</span>
+            <br>
+            Auto-refreshing every 30 seconds
+        </div>
     </div>
 
     <script>
-        function formatTime(totalSeconds) {
-            if (!totalSeconds) return "0t 0m";
-            const hours = Math.floor(totalSeconds / 3600);
-            const minutes = Math.floor((totalSeconds % 3600) / 60);
-            return `${hours}t ${minutes}m`;
-        }
+        const ROW_GAP = 14;
+        let currentChampion = "";
+        let leaderboardData = [];
+        let teamRowElements = {};
+        let teamMembersByTeamId = {};
+        let teamMembersByTitle = {};
+        let lastUpdateTimestamp = null;
+        let nationalData = null;
+        let countyData = null;
+        let communityData = null;
 
         function formatKm(centimeters) {
             if (!centimeters) return "0.0";
             return (centimeters / 100000).toFixed(1);
         }
 
-        async function loadSykleData() {
-            try {
-                const [natRes, countyRes, communityRes, membersRes, updateRes] = await Promise.allSettled([
-                    fetch('sykletiljobben.json').then(r => r.ok ? r.json() : null),
-                    fetch('sykletiljobben_county.json').then(r => r.ok ? r.json() : null),
-                    fetch('sykletiljobben_community.json').then(r => r.ok ? r.json() : null),
-                    fetch('sykletiljobbenmembers.json').then(r => r.ok ? r.json() : null),
-                    fetch('last_update.json').then(r => r.ok ? r.json() : null)
-                ]);
+        function formatTime(totalSeconds) {
+            if (!totalSeconds) return "0h 0m";
+            const hours = Math.floor(totalSeconds / 3600);
+            const minutes = Math.floor((totalSeconds % 3600) / 60);
+            return `${hours}h ${minutes}m`;
+        }
 
-                const national  = natRes.status       === 'fulfilled' ? natRes.value       : null;
-                const county    = countyRes.status    === 'fulfilled' ? countyRes.value    : null;
-                const community = communityRes.status === 'fulfilled' ? communityRes.value : null;
-                const members   = membersRes.status   === 'fulfilled' ? membersRes.value   : null;
-                const updateData = updateRes.status === 'fulfilled' ? updateRes.value : null;
+        function updateTeamMembersLookup(members) {
+            teamMembersByTeamId = {};
+            teamMembersByTitle = {};
 
-                const data = national;
-                if (!data) throw new Error('Nasjonale data mangler');
+            members.forEach((member) => {
+                const fullName = `${member.firstname || ''} ${member.lastname || ''}`.trim();
+                if (!fullName) return;
 
-                document.getElementById('main-title').textContent = `🏆 Sykle til jobben - ${data.title}`;
+                const memberData = {
+                    name: fullName,
+                    points: Number(member.points) || 0
+                };
 
-                document.getElementById('headerMeta').innerHTML =
-                    `Sist oppdatert: ${updateData && updateData.timestamp ? new Date(updateData.timestamp).toLocaleString('no-NO') : 'N/A'} <span class="competition-state active">Aktiv</span>`;
-
-                // Section 1: Company Stats
-                const statsSlide = `
-                    <div class="board-header section-header">
-                        <span class="board-title">📊 Bedriftsstatistikk</span>
-                    </div>
-                    <div class="stats-grid">
-                        ${national ? `<div class="stat-card"><div class="value">#${national.rank} <span style="font-size:14px;color:#666">/ ${national.totalCompanies}</span></div><div class="label">Nasjonalt</div></div>` : ''}
-                        ${county ? `<div class="stat-card"><div class="value">#${county.rank} <span style="font-size:14px;color:#666">/ ${county.totalCompanies}</span></div><div class="label">Fylke</div></div>` : ''}
-                        ${community ? `<div class="stat-card"><div class="value">#${community.rank} <span style="font-size:14px;color:#666">/ ${community.totalCompanies}</span></div><div class="label">Kommune</div></div>` : ''}
-                        <div class="stat-card"><div class="value">${data.countCompanyMembers}</div><div class="label">Medlemmer</div></div>
-                        <div class="stat-card"><div class="value">${data.pointsTotal.toFixed(2)}</div><div class="label">Totalt Poeng</div></div>
-                        <div class="stat-card"><div class="value">${data.totalWorkouts}</div><div class="label">Totalt Økter</div></div>
-                        <div class="stat-card"><div class="value">${formatKm(data.totalCentimeters)} km</div><div class="label">Totalt Km</div></div>
-                    </div>
-                `;
-
-                // Section 2: Team Rankings
-                const teams = (data.teamsDetailed || []).sort((a, b) =>
-                    b.averagePoints !== a.averagePoints
-                        ? b.averagePoints - a.averagePoints
-                        : b.totalPoints - a.totalPoints
-                );
-                let teamTable = `
-                    <div class="board-header section-header">
-                        <span class="board-title">🎯 Lag oversikt</span>
-                    </div>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th style="width:50px">#</th>
-                                <th>Lag</th>
-                                <th class="metric primary-col">Snitt Poeng</th>
-                                <th class="metric">Totalt Poeng</th>
-                                <th class="metric">Medlemmer</th>
-                                <th class="metric">Økter</th>
-                                <th class="metric">Km</th>
-                                <th class="metric">Tid</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                `;
-                teams.forEach((team, index) => {
-                    const medal = index === 0 ? '🥇' : index === 1 ? '🥈' : index === 2 ? '🥉' : index + 1;
-                    teamTable += `
-                        <tr>
-                            <td class="rank">${medal}</td>
-                            <td class="name">${team.title}</td>
-                            <td class="metric primary-col">${team.averagePoints.toFixed(2)}</td>
-                            <td class="metric">${team.totalPoints.toFixed(2)}</td>
-                            <td class="metric">${team.memberCount}</td>
-                            <td class="metric">${team.totalWorkouts}</td>
-                            <td class="metric">${team.totalkilometers.toFixed(1)}</td>
-                            <td class="metric">${formatTime(team.totalSeconds)}</td>
-                        </tr>
-                    `;
-                });
-                teamTable += `</tbody></table>`;
-
-                // Section 3: Member Rankings (if data available)
-                let memberTable = '';
-                if (members && members.length > 0) {
-                    memberTable = `
-                        <div class="board-header section-header">
-                            <span class="board-title">👥 Medlemmer Oversikt</span>
-                        </div>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th style="width:50px">#</th>
-                                    <th>Medlem</th>
-                                    <th class="metric" style="text-align:right">Lag</th>
-                                    <th class="metric primary-col" style="text-align:right">Poeng</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                    `;
-                    members.forEach((member) => {
-                        const fullName = `${member.firstname} ${member.lastname}`;
-                        const medal = member.rank === 1 ? '🥇' : member.rank === 2 ? '🥈' : member.rank === 3 ? '🥉' : member.rank;
-                        memberTable += `
-                            <tr>
-                                <td class="rank">${medal}</td>
-                                <td class="name">${fullName}</td>
-                                <td class="metric">${member.teamTitle}</td>
-                                <td class="metric primary-col">${member.points.toFixed(2)}</td>
-                            </tr>
-                        `;
-                    });
-                    memberTable += `</tbody></table>`;
+                if (!teamMembersByTeamId[member.teamId]) {
+                    teamMembersByTeamId[member.teamId] = [];
                 }
+                teamMembersByTeamId[member.teamId].push(memberData);
 
-                const memberColumn = memberTable || `
-                    <div class="board-header section-header">
-                        <span class="board-title">👥 Medlemmer Oversikt</span>
-                    </div>
-                    <div class="loading">Ingen medlemsdata tilgjengelig.</div>
-                `;
+                if (!teamMembersByTitle[member.teamTitle]) {
+                    teamMembersByTitle[member.teamTitle] = [];
+                }
+                teamMembersByTitle[member.teamTitle].push(memberData);
+            });
 
-                let html = `
-                    <div class="two-col-layout">
-                        <div class="column left-column">
-                            ${statsSlide}
-                            ${teamTable}
-                        </div>
-                        <div class="column right-column">
-                            ${memberColumn}
-                        </div>
-                    </div>
-                `;
+            Object.keys(teamMembersByTeamId).forEach((teamId) => {
+                teamMembersByTeamId[teamId].sort((a, b) => b.points - a.points || a.name.localeCompare(b.name));
+            });
 
-                document.getElementById('leaderboard').innerHTML = html;
+            Object.keys(teamMembersByTitle).forEach((title) => {
+                teamMembersByTitle[title].sort((a, b) => b.points - a.points || a.name.localeCompare(b.name));
+            });
+        }
 
-            } catch (error) {
-                console.error('Error loading data:', error);
-                document.getElementById('leaderboard').innerHTML = `
-                    <div class="loading">
-                        <strong>Datafeil</strong>
-                        <p>Kunne ikke laste sykletiljobben.json. Kontakt administrator.</p>
-                    </div>`;
+        function getTeamMembers(team) {
+            return teamMembersByTeamId[team.teamId] || teamMembersByTitle[team.title] || [];
+        }
+
+        function formatTeamMembers(team) {
+            const members = getTeamMembers(team);
+            if (!members.length) return 'Medlemmer: Ingen registrert';
+            const memberStrings = members.map((m) => `${m.name} (${m.points.toFixed(0)}p)`).join(', ');
+            return `Medlemmer: ${memberStrings}`;
+        }
+
+        function layoutRows() {
+            const container = document.getElementById('leaderboard-container');
+            const rows = Array.from(container.getElementsByClassName('team-row'));
+            let top = 0;
+
+            rows.forEach((row) => {
+                row.style.top = `${top}px`;
+                top += row.offsetHeight + ROW_GAP;
+            });
+
+            container.style.minHeight = `${Math.max(top, 420)}px`;
+        }
+
+        function updateRankBadges() {
+            const container = document.getElementById('leaderboard-container');
+            const rows = Array.from(container.getElementsByClassName('team-row'));
+
+            rows.forEach((row, index) => {
+                const rankBadge = row.querySelector('.rank-badge');
+                if (rankBadge) {
+                    rankBadge.textContent = index + 1;
+                }
+                
+                // First place always glows
+                if (index === 0) {
+                    row.classList.add('crown-glow');
+                } else {
+                    row.classList.remove('crown-glow');
+                }
+            });
+        }
+
+        function renderLeaderboard(data) {
+            const container = document.getElementById('leaderboard-container');
+            
+            // Only show top 3
+            const topThree = data.slice(0, 3);
+            
+            // Clear existing rows but keep them for animation reference
+            if (leaderboardData.length === 0) {
+                container.innerHTML = '';
+            }
+
+            leaderboardData = topThree;
+
+            // If this is the first load, create all rows
+            if (Object.keys(teamRowElements).length === 0) {
+                topThree.forEach((team, index) => {
+                    const row = createTeamRow(team, index + 1);
+                    container.appendChild(row);
+                    teamRowElements[team.title] = row;
+                });
+                container.classList.remove('loading');
+                layoutRows();
+                updateRankBadges();
+            } else {
+                // Update positions for existing rows
+                topThree.forEach((team, index) => {
+                    const row = teamRowElements[team.title];
+                    if (row) {
+                        updateTeamStats(row, team);
+                    } else {
+                        const newRow = createTeamRow(team, index + 1);
+                        container.appendChild(newRow);
+                        teamRowElements[team.title] = newRow;
+                    }
+                });
+                layoutRows();
+                updateRankBadges();
             }
         }
 
-        document.addEventListener('DOMContentLoaded', loadSykleData);
+        function createTeamRow(team, rank) {
+            const row = document.createElement('div');
+            row.className = 'team-row';
+            row.setAttribute('data-team', team.title);
+            row.style.top = '0px';
 
-        // Refresh page every minute to pick up JSON changes
-        setInterval(() => {
-            location.reload();
-        }, 60000);
+            const isChampion = rank === 1;
+
+            row.innerHTML = `
+                ${isChampion ? '<span class="crown-icon">👑</span>' : ''}
+                <div class="rank-badge">${rank}</div>
+                <div class="team-info">
+                    <div class="team-name">${team.title}</div>
+                    <div class="team-distance">${formatKm(team.totalCentimeters)} km</div>
+                    <div class="team-members">${formatTeamMembers(team)}</div>
+                </div>
+                <div class="team-stats">
+                    <div class="stat">
+                        <div class="stat-value">${(team.totalPoints || 0).toFixed(2)}</div>
+                        <div class="stat-label">Points</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">${team.totalWorkouts}</div>
+                        <div class="stat-label">Workouts</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">${formatTime(team.totalSeconds)}</div>
+                        <div class="stat-label">Time</div>
+                    </div>
+                </div>
+            `;
+
+            return row;
+        }
+
+        function updateTeamStats(row, team) {
+            const stats = row.querySelector('.team-stats');
+            stats.innerHTML = `
+                <div class="stat">
+                    <div class="stat-value">${(team.totalPoints || 0).toFixed(2)}</div>
+                    <div class="stat-label">Points</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">${team.totalWorkouts}</div>
+                    <div class="stat-label">Workouts</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">${formatTime(team.totalSeconds)}</div>
+                    <div class="stat-label">Time</div>
+                </div>
+            `;
+
+            const distance = row.querySelector('.team-distance');
+            distance.textContent = `${formatKm(team.totalCentimeters)} km`;
+
+            const members = row.querySelector('.team-members');
+            if (members) {
+                members.textContent = formatTeamMembers(team);
+            }
+        }
+
+        function updateLeaderboard(newFirstTeamName) {
+            const container = document.getElementById('leaderboard-container');
+            const rows = container.getElementsByClassName('team-row');
+
+            let oldFirst = null;
+            let newFirst = null;
+
+            // 1. Find the current #1 and the team that is supposed to be #1
+            for (let i = 0; i < rows.length; i++) {
+                if (i === 0) oldFirst = rows[i];
+                if (rows[i].getAttribute('data-team') === newFirstTeamName) {
+                    newFirst = rows[i];
+                }
+            }
+
+            // 2. Only animate if there is a change
+            if (oldFirst && newFirst && oldFirst !== newFirst) {
+                // Add the "fall off" class to the old leader
+                oldFirst.classList.add('fall-off');
+
+                // Wait a beat, then rearrange
+                setTimeout(() => {
+                    // Remove the old leader from DOM or move to bottom
+                    container.appendChild(oldFirst);
+                    oldFirst.classList.remove('fall-off');
+                    oldFirst.classList.remove('crown-glow');
+                    oldFirst.className = 'team-row';
+
+                    // Remove crown icon from old first
+                    const oldCrown = oldFirst.querySelector('.crown-icon');
+                    if (oldCrown) oldCrown.remove();
+
+                    // Move new leader to top of the DOM
+                    container.insertBefore(newFirst, container.firstChild);
+
+                    // Add crown to new first
+                    if (!newFirst.querySelector('.crown-icon')) {
+                        const crown = document.createElement('span');
+                        crown.className = 'crown-icon';
+                        crown.textContent = '👑';
+                        newFirst.insertBefore(crown, newFirst.firstChild);
+                    }
+
+                    // Reposition all rows and update glow
+                    layoutRows();
+                    updateRankBadges();
+                    // Glow is now permanently maintained by updateRankBadges()
+                }, 800);
+            }
+        }
+
+        function checkForCoup(teams) {
+            if (teams.length === 0) return;
+
+            // Get the top team
+            const topTeam = teams[0].title;
+
+            if (currentChampion !== "" && currentChampion !== topTeam) {
+                // BOOM! Someone was overtaken
+                console.log(`🏆 New Champion! ${topTeam} overtook ${currentChampion}`);
+                updateLeaderboard(topTeam);
+            }
+
+            currentChampion = topTeam;
+        }
+
+        function renderCompanyStats() {
+            const statsSection = document.getElementById('statsSection');
+            if (!nationalData) {
+                statsSection.innerHTML = '';
+                return;
+            }
+
+            let html = '<div class="stats-grid">';
+            
+            if (nationalData.rank && nationalData.totalCompanies) {
+                html += `<div class="stat-card"><div class="value">#${nationalData.rank} / ${nationalData.totalCompanies}</div><div class="label">Nasjonalt</div></div>`;
+            }
+            if (countyData && countyData.rank && countyData.totalCompanies) {
+                html += `<div class="stat-card"><div class="value">#${countyData.rank} / ${countyData.totalCompanies}</div><div class="label">Fylke</div></div>`;
+            }
+            if (communityData && communityData.rank && communityData.totalCompanies) {
+                html += `<div class="stat-card"><div class="value">#${communityData.rank} / ${communityData.totalCompanies}</div><div class="label">Kommune</div></div>`;
+            }
+            if (nationalData.countCompanyMembers) {
+                html += `<div class="stat-card"><div class="value">${nationalData.countCompanyMembers}</div><div class="label">Medlemmer</div></div>`;
+            }
+            if (nationalData.pointsTotal !== undefined) {
+                html += `<div class="stat-card"><div class="value">${nationalData.pointsTotal.toFixed(2)}</div><div class="label">Totalt Poeng</div></div>`;
+            }
+            if (nationalData.totalWorkouts) {
+                html += `<div class="stat-card"><div class="value">${nationalData.totalWorkouts}</div><div class="label">Totalt Økter</div></div>`;
+            }
+            if (nationalData.totalCentimeters) {
+                html += `<div class="stat-card"><div class="value">${(nationalData.totalCentimeters / 100000).toFixed(1)} km</div><div class="label">Totalt Km</div></div>`;
+            }
+            
+            html += '</div>';
+            statsSection.innerHTML = html;
+        }
+
+        function updateTimestamp() {
+            const lastUpdate = document.getElementById('lastUpdate');
+            if (lastUpdateTimestamp) {
+                const date = new Date(lastUpdateTimestamp);
+                lastUpdate.textContent = date.toLocaleString('no-NO');
+            } else {
+                lastUpdate.textContent = '--:--';
+            }
+        }
+
+        async function loadLeaderboardData() {
+            try {
+                const [teamsResponse, membersResponse, updateResponse, natResponse, countyResponse, communityResponse] = await Promise.all([
+                    fetch('sykletiljobben.json'),
+                    fetch('sykletiljobbenmembers.json'),
+                    fetch('last_update.json'),
+                    fetch('sykletiljobben.json'),
+                    fetch('sykletiljobben_county.json'),
+                    fetch('sykletiljobben_community.json')
+                ]);
+                if (!teamsResponse.ok) throw new Error('Failed to load leaderboard data');
+
+                const data = await teamsResponse.json();
+                const teams = data.teamsDetailed || [];
+                const teamMembers = membersResponse.ok ? await membersResponse.json() : [];
+                const updateData = updateResponse.ok ? await updateResponse.json() : null;
+                
+                // Load company-level data
+                if (natResponse.ok) {
+                    const natData = await natResponse.json();
+                    nationalData = natData;
+                }
+                if (countyResponse.ok) {
+                    const countyDataFetched = await countyResponse.json();
+                    countyData = countyDataFetched;
+                }
+                if (communityResponse.ok) {
+                    const commDataFetched = await communityResponse.json();
+                    communityData = commDataFetched;
+                }
+                
+                if (updateData && updateData.timestamp) {
+                    lastUpdateTimestamp = updateData.timestamp;
+                }
+                
+                updateTeamMembersLookup(Array.isArray(teamMembers) ? teamMembers : []);
+                
+                // Sort by points first, then distance (descending)
+                teams.sort((a, b) => {
+                    const pointDiff = (b.totalPoints || 0) - (a.totalPoints || 0);
+                    if (pointDiff !== 0) return pointDiff;
+                    return (b.totalCentimeters || 0) - (a.totalCentimeters || 0);
+                });
+
+                checkForCoup(teams);
+                renderLeaderboard(teams);
+                renderCompanyStats();
+                updateTimestamp();
+
+            } catch (error) {
+                console.error('Error loading leaderboard:', error);
+                const container = document.getElementById('leaderboard-container');
+                container.classList.remove('loading');
+                container.innerHTML = `<div class="loading" style="color: #ff4444;">Error loading leaderboard. Retrying...</div>`;
+            }
+        }
+
+        // Initial load
+        loadLeaderboardData();
+
+        // Auto-refresh every 30 seconds
+        setInterval(loadLeaderboardData, 30000);
+
+        // Update timestamp every second
+        setInterval(updateTimestamp, 1000);
     </script>
 </body>
 </html>

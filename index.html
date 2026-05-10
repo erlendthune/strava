@@ -651,7 +651,6 @@
             </div>
             <div class="split-right">
                 <h2>🚲 Sykle til jobben</h2>
-                <div class="header-meta" id="sykleHeaderMeta">Laster…</div>
                 <div id="sykleLeaderboard" class="loading">Loading...</div>
             </div>
         </div>
@@ -671,17 +670,19 @@
 
         async function loadLeaderboard() {
             try {
-                const [configResponse, activitiesResponse, membersResponse, stjResponse] = await Promise.all([
+                const [configResponse, activitiesResponse, membersResponse, sykleResponse, updateResponse] = await Promise.all([
                     fetch('config.json'),
                     fetch('master_history.json'),
                     fetch('club_members.json'),
-                    fetch('sykletiljobben.json').catch(() => null)
+                    fetch('sykletiljobben.json'),
+                    fetch('last_update.json')
                 ]);
 
                 const config = await configResponse.json();
                 const activities = await activitiesResponse.json();
                 const members = await membersResponse.json();
-                const stjData = stjResponse && stjResponse.ok ? await stjResponse.json() : null;
+                const sykleData = sykleResponse.ok ? await sykleResponse.json() : null;
+                const updateData = updateResponse.ok ? await updateResponse.json() : null;
 
                 const startDate = new Date(config.startDate);
                 const configuredEndDate = config.endDate ? new Date(config.endDate) : null;
@@ -990,15 +991,14 @@
                 }
 
                 document.getElementById('leaderboard').innerHTML = html;
-                const updatedStr = stjLastUpdate
-                    ? new Date(stjLastUpdate).toLocaleString('no-NO')
-                    : now.toLocaleString('no-NO');
-                const syncTime = stjData && stjData.lastUpdateTime
-                    ? new Date(stjData.lastUpdateTime).toLocaleString('no-NO')
-                    : null;
+                
+                const updateTime = updateData && updateData.timestamp
+                    ? new Date(updateData.timestamp).toLocaleString('no-NO')
+                    : 'N/A';
+                
                 document.getElementById('headerMeta').innerHTML =
                     `Competition: ${displayStartDate} to ${displayEndDate}${competitionState}`
-                    + (syncTime ? `<span class="sep">|</span>Sist oppdatert: ${syncTime}` : '');
+                    + `<span class="sep">|</span>Sist oppdatert: ${updateTime}`;
 
                 if (boards.length > 0) {
                     initCarousel(boards.length);
@@ -1135,13 +1135,12 @@
 
                 if (!data) throw new Error('Nasjonale data mangler');
 
-                stjLastUpdate = data.lastUpdateTime;
-                document.getElementById('sykleHeaderMeta').textContent = '';
+                const updateDate = new Date(data.lastUpdateTime).toLocaleString('no-NO');
 
                 // Build slides
                 const slides = [];
 
-                // Slide 1: Company Stats
+                // Slide 1: Company Stats + Team Rankings Combined
                 const rankCard = (label, d) => d
                     ? `<div class="stat-card">
                         <div class="value">#${d.rank}<span style="font-size:12px;color:#666"> / ${d.totalCompanies}</span></div>
@@ -1149,9 +1148,14 @@
                        </div>`
                     : '';
 
-                const statsSlide = `
+                const teams = [...data.teamsDetailed].sort((a, b) => {
+                    if (b.averagePoints !== a.averagePoints) return b.averagePoints - a.averagePoints;
+                    return b.totalPoints - a.totalPoints;
+                });
+
+                let combinedSlide = `
                     <div class="board-header">
-                        <span class="board-title">📊 Bedriftsstatistikk</span>
+                        <span class="board-title">📊 Bedriftsstatistikk & Lag oversikt</span>
                     </div>
                     <div class="stats-grid">
                         ${rankCard('Nasjonalt', data)}
@@ -1162,19 +1166,7 @@
                         <div class="stat-card"><div class="value">${data.totalWorkouts}</div><div class="label">Totalt Økter</div></div>
                         <div class="stat-card"><div class="value">${formatKm(data.totalCentimeters)} km</div><div class="label">Totalt Km</div></div>
                     </div>
-                `;
-                // Slide 1 also includes Team Rankings (combined below)
-
-                // Slide 1b: Team Rankings
-                const teams = [...data.teamsDetailed].sort((a, b) => {
-                    if (b.averagePoints !== a.averagePoints) return b.averagePoints - a.averagePoints;
-                    return b.totalPoints - a.totalPoints;
-                });
-
-                let teamTable = `
-                    <div class="board-header">
-                        <span class="board-title">🎯 Lag oversikt</span>
-                    </div>
+                    <h3 style="margin-top: 20px; margin-bottom: 10px; font-size: 15px; color: #667eea;">Lag rangering</h3>
                     <div class="sykle-table-wrap">
                         <table>
                             <thead>
@@ -1194,7 +1186,7 @@
 
                 teams.forEach((team, index) => {
                     const medal = index === 0 ? '🥇' : index === 1 ? '🥈' : index === 2 ? '🥉' : index + 1;
-                    teamTable += `
+                    combinedSlide += `
                         <tr>
                             <td class="rank">${medal}</td>
                             <td class="name">${team.title}</td>
@@ -1208,8 +1200,8 @@
                     `;
                 });
 
-                teamTable += `</tbody></table></div>`;
-                slides.push(statsSlide + teamTable);
+                combinedSlide += `</tbody></table></div>`;
+                slides.push(combinedSlide);
 
                 // Slide 2: Member Rankings (if data available)
                 if (members && members.length > 0) {

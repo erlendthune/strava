@@ -7738,5 +7738,22 @@
     "sport_type": "Walk",
     "device_name": "Garmin Forerunner 245 Music",
     "activity_date": "2026-05-11T09:41:50.659Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Kristin Sørli",
+      "lastname": "O."
+    },
+    "name": "Gåtur på formiddagen",
+    "distance": 1212.7,
+    "moving_time": 696,
+    "elapsed_time": 696,
+    "total_elevation_gain": 0,
+    "type": "Walk",
+    "sport_type": "Walk",
+    "device_name": "Strava App",
+    "activity_date": "2026-05-11T12:02:30.313Z"
   }
 ]

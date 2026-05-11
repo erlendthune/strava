@@ -7,6 +7,22 @@
       "lastname": "O."
     },
     "name": "Gåtur på formiddagen",
+    "distance": 1212.7,
+    "moving_time": 696,
+    "elapsed_time": 696,
+    "total_elevation_gain": 0,
+    "type": "Walk",
+    "sport_type": "Walk",
+    "device_name": "Strava App"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Kristin Sørli",
+      "lastname": "O."
+    },
+    "name": "Gåtur på formiddagen",
     "distance": 1220.7,
     "moving_time": 685,
     "elapsed_time": 733,
@@ -3302,23 +3318,6 @@
     "type": "Walk",
     "sport_type": "Walk",
     "device_name": "Apple Watch Series 9"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Terje",
-      "lastname": "B."
-    },
-    "name": "Furulunden 😎",
-    "distance": 6829.1,
-    "moving_time": 1907,
-    "elapsed_time": 1915,
-    "total_elevation_gain": 36.4,
-    "type": "Run",
-    "sport_type": "Run",
-    "workout_type": 0,
-    "device_name": "Garmin Forerunner 245 Music"
   },
   {
     "resource_state": 2,

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sykletiljobben: May 7–13 Report</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            width: 100%;
+            height: 100%;
+            padding: 40px;
+            overflow-y: auto;
+            scroll-behavior: smooth;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+            margin: 0 0 30px 0;
+            font-size: clamp(1.5em, 4vw, 2.5em);
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 15px;
+            flex-shrink: 0;
+        }
+        
+        .dialogue {
+            line-height: 1.8;
+            flex-grow: 1;
+        }
+        
+        .speaker {
+            font-weight: bold;
+            color: #667eea;
+            margin-top: 15px;
+            font-size: clamp(1em, 2vw, 1.1em);
+            display: inline;
+        }
+        
+        .speaker.hayes {
+            color: #d32f2f;
+        }
+        
+        .speaker.solveig {
+            color: #388e3c;
+        }
+        
+        .speech {
+            display: inline;
+            color: #555;
+            margin-bottom: 8px;
+            font-size: clamp(0.9em, 1.8vw, 1em);
+            line-height: 1.6;
+        }
+        
+        .speech em {
+            color: #888;
+            font-style: italic;
+        }
+        
+        .divider {
+            text-align: center;
+            margin: 30px 0;
+            color: #999;
+            font-size: clamp(1em, 2.5vw, 1.3em);
+        }
+        
+        .conclusion {
+            background: #f5f5f5;
+            padding: 20px;
+            border-left: 4px solid #667eea;
+            margin-top: 30px;
+            font-style: italic;
+            color: #666;
+            line-height: 1.6;
+            font-size: clamp(0.85em, 1.6vw, 0.95em);
+        }
+        
+        .meta {
+            text-align: center;
+            font-size: clamp(0.75em, 1.4vw, 0.85em);
+            color: #999;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            flex-shrink: 0;
+        }
+        
+        /* Tablet: 769px - 1024px */
+        @media (max-width: 1024px) {
+            .container {
+                padding: 30px;
+            }
+            .speech {
+                margin-left: 15px;
+            }
+        }
+        
+        /* Mobile: under 768px */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                border-radius: 8px;
+            }
+            h1 {
+                margin-bottom: 20px;
+            }
+            .speaker {
+                margin-top: 12px;
+            }
+            .speech {
+                margin-left: 12px;
+                margin-bottom: 6px;
+            }
+            .divider {
+                margin: 20px 0;
+            }
+            .conclusion {
+                padding: 15px;
+                margin-top: 20px;
+            }
+        }
+        
+        /* Ultra-wide screens: info displays */
+        @media (min-width: 2560px) {
+            .container {
+                padding: 60px;
+                max-width: 1400px;
+                margin: 0 auto;
+            }
+        }
+        
+        /* Scrollbar styling */
+        .container::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        .container::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        .container::-webkit-scrollbar-thumb {
+            background: #667eea;
+            border-radius: 4px;
+        }
+        
+        .container::-webkit-scrollbar-thumb:hover {
+            background: #5568d3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚴 Sykletiljobben: May 7–13 Report 🚴</h1>
+        
+        <div class="dialogue">
+            <div>
+                <span class="speaker hayes">HAYES:</span>
+                <div class="speech">ALRIGHT, FRESH DATA! May 7 through 13, CURATED, NO GARBAGE! This is what SHOWS UP! Kristin Sørli is on a MISSION—e-bike EVERY DAY! Morning, afternoon, evening! That's COMMITMENT! That's CONSISTENCY!</div>
+            </div>
+
+            <div>
+                <span class="speaker solveig">SOLVEIG:</span>
+                <div class="speech"><em>nods thoughtfully</em> Kristin moves with the rhythm of the seasons. Morning light, evening light—she <em>honors</em> each moment of motion. Her e-bike is not escape, it is <em>presence</em>.</div>
+            </div>
+
+            <div>
+                <span class="speaker hayes">HAYES:</span>
+                <div class="speech">Erlend! THIS GUY! Walks, runs, rides—May 7, 8, 9, 10—he's MIXING IT UP! One day he's running 5.5 km, next day he's walking 5.8 km! That's ADAPTABILITY! That's INTELLIGENCE!</div>
+            </div>
+
+            <div>
+                <span class="speaker solveig">SOLVEIG:</span>
+                <div class="speech">Yes. Erlend dances through the week. His body speaks different languages. Tuesday the legs cry "run!" Wednesday they whisper "walk." There is wisdom in <em>listening</em> to what your body needs.</div>
+            </div>
+
+            <div>
+                <span class="speaker hayes">HAYES:</span>
+                <div class="speech">Terje's SHOWING UP! Walks on May 7, 10. Rides on May 7, 8. That's CONSISTENT ATTENDANCE! Not flashy, but PRESENT! And Kjetil—weight training 6,514 seconds on May 7! That's 1.8 HOURS in the gym! THAT'S DEDICATION!</div>
+            </div>
+
+            <div>
+                <span class="speaker solveig">SOLVEIG:</span>
+                <div class="speech">Kjetil understands that strength is not only in the legs. The <em>whole</em> body must sing. He builds his foundation. Terje takes his time, short walks—but every step counts in the grand rhythm.</div>
+            </div>
+
+            <div>
+                <span class="speaker hayes">HAYES:</span>
+                <div class="speech">May 8—THAT'S THE DAY! Håkon puts down 17.6 km in ONE RIDE! Marius does 8.1 km run! Jørgen and Terje both riding! Kristin double-dipping e-bike! THAT was a WARRIOR'S DAY!</div>
+            </div>
+
+            <div>
+                <span class="speaker solveig">SOLVEIG:</span>
+                <div class="speech">Thursday, May 8—the earth was calling. The afternoon sun pulled them forth. All together in one day, they climbed and moved and <em>became</em> alive. That is when the spirit finds its voice.</div>
+            </div>
+
+            <div>
+                <span class="speaker hayes">HAYES:</span>
+                <div class="speech">May 9—lighter day, but STILL MOVING! Erlend's got a 5.8 km morning walk! Andreas showing up with TWO e-bike rides! This isn't burnout—this is PACING! Smart athletes know REST!</div>
+            </div>
+
+            <div>
+                <span class="speaker solveig">SOLVEIG:</span>
+                <div class="speech">The rhythm must breathe. Not every day is a mountain. Some days are gentle valleys. May 9 was the valley. Kristin still walks. Andreas still rides. The body speaks softly, and they <em>listen</em>.</div>
+            </div>
+
+            <div>
+                <span class="speaker hayes">HAYES:</span>
+                <div class="speech">May 10—Terje's out there with THREE walks! Morning, afternoon, evening! 2.5 km total walking! And Erlend's running again! Kristin's on her walks! CONSISTENCY! That's what builds CHARACTER!</div>
+            </div>
+
+            <div>
+                <span class="speaker solveig">SOLVEIG:</span>
+                <div class="speech">Three times Terje meets the ground with his feet. Small distances, but <em>present</em>. This is the meditation of the working person. Not the epic journey—the <em>daily</em> return. May 10 is love letter to the ordinary.</div>
+            </div>
+
+            <div>
+                <span class="speaker hayes">HAYES:</span>
+                <div class="speech">And Håkon—even with lighter traffic—he's still putting in 113 KILOMETERS in ONE RIDE on May 10! That man is a FORCE OF NATURE! Solo warrior!</div>
+            </div>
+
+            <div>
+                <span class="speaker solveig">SOLVEIG:</span>
+                <div class="speech">Håkon rides alone, ja? But he reminds us: some souls need vast distance to find themselves. While others find truth in 447 meters walked. Both are <em>sacred</em>.</div>
+            </div>
+
+            <div>
+                <span class="speaker hayes">HAYES:</span>
+                <div class="speech">FINAL WORD: May 7 to 13 shows what REAL looks like! Kristin with her daily e-bikes, Erlend with his multi-sport mastery, Terje with his faithful walks, Kjetil in the gym, Marius and Andreas showing up! No legends, no ancient archives—just PEOPLE MOVING!</div>
+            </div>
+
+            <div>
+                <span class="speaker solveig">SOLVEIG:</span>
+                <div class="speech">From May 7 to May 13, 2026—Kristiansand and Kristiansand 2 built something profound. Not records. Rhythms. Not numbers. Promises kept. Each day, each person asked themselves: "Will I move today?" And again and again, they answered: "Yes."</div>
+            </div>
+
+            <div>
+                <span class="speaker hayes">HAYES:</span>
+                <div class="speech">THAT is the story. DISMISSED!</div>
+            </div>
+
+            <div class="divider">🚴 🚴 🚴</div>
+
+            <div class="conclusion">
+                <strong>Final Verdict:</strong> May 7–13, 2026. Not legends or season totals. Just <strong>real people</strong> making real choices: Kristin's daily e-bike commitment, Erlend's fluid multi-sport mastery, Terje's faithful walks, Kjetil's strength training, Håkon's solo epics, Marius and Andreas showing up. Every entry is a choice. Every name is a warrior. Every day, the question: "Will I move?" Every day, the answer: "Yes."
+            </div>
+
+            <div class="meta">
+                <p>Data: Strava activities from May 7–13, 2026 | Bouvet Norge AS Agder</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

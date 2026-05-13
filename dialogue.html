@@ -268,5 +268,65 @@
             </div>
         </div>
     </div>
-</body>
-</html>
+
+    <script>
+        // Auto-scroll if content overflows
+        const container = document.querySelector('.container');
+        
+        function startAutoScroll() {
+            // Check if content overflows
+            if (container.scrollHeight > container.clientHeight) {
+                let scrollPosition = 0;
+                const scrollSpeed = 1; // pixels per frame
+                const pauseAtEnd = 3000; // pause 3 seconds at the end
+                
+                function scroll() {
+                    // Check if we've reached the bottom
+                    if (scrollPosition < container.scrollHeight - container.clientHeight) {
+                        scrollPosition += scrollSpeed;
+                        container.scrollTop = scrollPosition;
+                        requestAnimationFrame(scroll);
+                    } else {
+                        // Pause at the end, then scroll back to top
+                        setTimeout(() => {
+                            scrollPosition = 0;
+                            container.scrollTop = 0;
+                            // Restart scrolling after a brief pause
+                            setTimeout(scroll, 500);
+                        }, pauseAtEnd);
+                    }
+                }
+                
+                scroll();
+            }
+        }
+        
+        // Start auto-scroll when page loads
+        window.addEventListener('load', startAutoScroll);
+        
+        // Restart if window is resized
+        window.addEventListener('resize', startAutoScroll);
+        
+        // Stop auto-scroll when user manually scrolls
+        let userScrolling = false;
+        container.addEventListener('wheel', () => {
+            userScrolling = true;
+            clearTimeout(container.scrollTimeout);
+            container.scrollTimeout = setTimeout(() => {
+                userScrolling = false;
+                startAutoScroll();
+            }, 5000); // Resume auto-scroll 5 seconds after user stops scrolling
+        }, { passive: true });
+        
+        container.addEventListener('touchstart', () => {
+            userScrolling = true;
+            clearTimeout(container.scrollTimeout);
+        });
+        
+        container.addEventListener('touchend', () => {
+            container.scrollTimeout = setTimeout(() => {
+                userScrolling = false;
+                startAutoScroll();
+            }, 5000);
+        });
+    </script>

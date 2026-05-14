@@ -8318,5 +8318,110 @@
     "sport_type": "EBikeRide",
     "device_name": "Strava App",
     "activity_date": "2026-05-13T15:50:44.239Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Marius",
+      "lastname": "H."
+    },
+    "name": "Morning Walk",
+    "distance": 2008.1,
+    "moving_time": 1886,
+    "elapsed_time": 1886,
+    "total_elevation_gain": 55.9,
+    "type": "Walk",
+    "sport_type": "Walk",
+    "device_name": "Garmin vívoactive 5",
+    "activity_date": "2026-05-14T09:10:40.394Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Terje",
+      "lastname": "B."
+    },
+    "name": "Lund",
+    "distance": 10014.2,
+    "moving_time": 3041,
+    "elapsed_time": 3041,
+    "total_elevation_gain": 139.4,
+    "type": "Run",
+    "sport_type": "Run",
+    "workout_type": null,
+    "device_name": "Garmin Forerunner 245 Music",
+    "activity_date": "2026-05-14T09:10:40.394Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Terje",
+      "lastname": "B."
+    },
+    "name": "Evening Ride",
+    "distance": 1268.8,
+    "moving_time": 224,
+    "elapsed_time": 304,
+    "total_elevation_gain": 29.3,
+    "type": "EBikeRide",
+    "sport_type": "EBikeRide",
+    "device_name": "Garmin Forerunner 245 Music",
+    "activity_date": "2026-05-14T09:10:40.394Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Terje",
+      "lastname": "B."
+    },
+    "name": "Afternoon Ride",
+    "distance": 2525.8,
+    "moving_time": 342,
+    "elapsed_time": 362,
+    "total_elevation_gain": 35.2,
+    "type": "EBikeRide",
+    "sport_type": "EBikeRide",
+    "device_name": "Garmin Forerunner 245 Music",
+    "activity_date": "2026-05-14T09:10:40.394Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Terje",
+      "lastname": "B."
+    },
+    "name": "Afternoon Ride",
+    "distance": 973.5,
+    "moving_time": 291,
+    "elapsed_time": 291,
+    "total_elevation_gain": 47,
+    "type": "Ride",
+    "sport_type": "Ride",
+    "workout_type": null,
+    "device_name": "Garmin Forerunner 245 Music",
+    "activity_date": "2026-05-14T09:10:40.394Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Terje",
+      "lastname": "B."
+    },
+    "name": "1. løp Terrengkarusellen 2026- Brannvaktaløpe",
+    "distance": 6760.8,
+    "moving_time": 1833,
+    "elapsed_time": 1833,
+    "total_elevation_gain": 96.8,
+    "type": "Run",
+    "sport_type": "Run",
+    "workout_type": null,
+    "device_name": "Garmin Forerunner 245 Music",
+    "activity_date": "2026-05-14T09:10:40.394Z"
   }
 ]

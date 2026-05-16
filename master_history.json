@@ -8582,5 +8582,23 @@
     "workout_type": null,
     "device_name": "Garmin Forerunner 255",
     "activity_date": "2026-05-16T08:20:32.926Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Andreas",
+      "lastname": "Z."
+    },
+    "name": "Morning Run",
+    "distance": 6496.4,
+    "moving_time": 3612,
+    "elapsed_time": 3612,
+    "total_elevation_gain": 0,
+    "type": "Run",
+    "sport_type": "Run",
+    "workout_type": null,
+    "device_name": "Garmin fēnix 5S Plus",
+    "activity_date": "2026-05-16T10:39:23.537Z"
   }
 ]

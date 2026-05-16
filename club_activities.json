@@ -3,6 +3,40 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
+      "firstname": "Erlend",
+      "lastname": "T."
+    },
+    "name": "Morning Run",
+    "distance": 5503.9,
+    "moving_time": 2427,
+    "elapsed_time": 2502,
+    "total_elevation_gain": 109,
+    "type": "Run",
+    "sport_type": "Run",
+    "workout_type": null,
+    "device_name": "Garmin Forerunner 255"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Erlend",
+      "lastname": "T."
+    },
+    "name": "Evening Run",
+    "distance": 5561.1,
+    "moving_time": 2739,
+    "elapsed_time": 2739,
+    "total_elevation_gain": 130,
+    "type": "Run",
+    "sport_type": "Run",
+    "workout_type": null,
+    "device_name": "Garmin Forerunner 255"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
       "firstname": "Terje",
       "lastname": "B."
     },
@@ -13,7 +47,7 @@
     "total_elevation_gain": 100.8,
     "type": "Ride",
     "sport_type": "Ride",
-    "workout_type": null,
+    "workout_type": 10,
     "device_name": "Garmin Forerunner 245 Music"
   },
   {
@@ -1619,40 +1653,6 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Erlend",
-      "lastname": "T."
-    },
-    "name": "Afternoon Ride",
-    "distance": 10809.5,
-    "moving_time": 1780,
-    "elapsed_time": 1879,
-    "total_elevation_gain": 195,
-    "type": "Ride",
-    "sport_type": "Ride",
-    "workout_type": null,
-    "device_name": "Garmin Forerunner 255"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Marius",
-      "lastname": "H."
-    },
-    "name": "Afternoon Run",
-    "distance": 11665.8,
-    "moving_time": 3745,
-    "elapsed_time": 3745,
-    "total_elevation_gain": 176.9,
-    "type": "Run",
-    "sport_type": "Run",
-    "workout_type": 0,
-    "device_name": "Garmin vívoactive 5"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
       "firstname": "Terje",
       "lastname": "B."
     },
@@ -1670,6 +1670,23 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
+      "firstname": "Erlend",
+      "lastname": "T."
+    },
+    "name": "Afternoon Ride",
+    "distance": 10809.5,
+    "moving_time": 1780,
+    "elapsed_time": 1879,
+    "total_elevation_gain": 195,
+    "type": "Ride",
+    "sport_type": "Ride",
+    "workout_type": null,
+    "device_name": "Garmin Forerunner 255"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
       "firstname": "Jørgen",
       "lastname": "M."
     },
@@ -1682,6 +1699,23 @@
     "sport_type": "Ride",
     "workout_type": 10,
     "device_name": "Garmin Forerunner 265"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Marius",
+      "lastname": "H."
+    },
+    "name": "Afternoon Run",
+    "distance": 11665.8,
+    "moving_time": 3745,
+    "elapsed_time": 3745,
+    "total_elevation_gain": 176.9,
+    "type": "Run",
+    "sport_type": "Run",
+    "workout_type": 0,
+    "device_name": "Garmin vívoactive 5"
   },
   {
     "resource_state": 2,
@@ -3294,39 +3328,5 @@
     "sport_type": "Workout",
     "workout_type": null,
     "device_name": "Garmin Forerunner 255"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Terje",
-      "lastname": "B."
-    },
-    "name": "Afternoon Ride",
-    "distance": 3012.9,
-    "moving_time": 616,
-    "elapsed_time": 616,
-    "total_elevation_gain": 99.2,
-    "type": "Ride",
-    "sport_type": "Ride",
-    "workout_type": null,
-    "device_name": "Garmin Forerunner 245 Music"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Håkon",
-      "lastname": "R."
-    },
-    "name": "Afternoon Ride",
-    "distance": 47913.6,
-    "moving_time": 8701,
-    "elapsed_time": 10269,
-    "total_elevation_gain": 571,
-    "type": "Ride",
-    "sport_type": "Ride",
-    "workout_type": null,
-    "device_name": "Garmin Edge 1030 Plus"
   }
 ]

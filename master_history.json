@@ -8546,5 +8546,41 @@
     "workout_type": null,
     "device_name": "Garmin Forerunner 245 Music",
     "activity_date": "2026-05-15T14:38:43.103Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Erlend",
+      "lastname": "T."
+    },
+    "name": "Morning Run",
+    "distance": 5503.9,
+    "moving_time": 2427,
+    "elapsed_time": 2502,
+    "total_elevation_gain": 109,
+    "type": "Run",
+    "sport_type": "Run",
+    "workout_type": null,
+    "device_name": "Garmin Forerunner 255",
+    "activity_date": "2026-05-16T08:20:32.926Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Erlend",
+      "lastname": "T."
+    },
+    "name": "Evening Run",
+    "distance": 5561.1,
+    "moving_time": 2739,
+    "elapsed_time": 2739,
+    "total_elevation_gain": 130,
+    "type": "Run",
+    "sport_type": "Run",
+    "workout_type": null,
+    "device_name": "Garmin Forerunner 255",
+    "activity_date": "2026-05-16T08:20:32.926Z"
   }
 ]

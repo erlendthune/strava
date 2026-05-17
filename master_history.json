@@ -8600,5 +8600,58 @@
     "workout_type": null,
     "device_name": "Garmin fēnix 5S Plus",
     "activity_date": "2026-05-16T10:39:23.537Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Terje",
+      "lastname": "B."
+    },
+    "name": "Morning Walk",
+    "distance": 1188.3,
+    "moving_time": 1107,
+    "elapsed_time": 1107,
+    "total_elevation_gain": 7,
+    "type": "Walk",
+    "sport_type": "Walk",
+    "device_name": "Garmin Forerunner 245 Music",
+    "activity_date": "2026-05-17T08:33:42.013Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Terje",
+      "lastname": "B."
+    },
+    "name": "Lavlandet",
+    "distance": 10043.1,
+    "moving_time": 2807,
+    "elapsed_time": 2810,
+    "total_elevation_gain": 119.5,
+    "type": "Run",
+    "sport_type": "Run",
+    "workout_type": null,
+    "device_name": "Garmin Forerunner 245 Music",
+    "activity_date": "2026-05-17T08:33:42.013Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Håkon",
+      "lastname": "R."
+    },
+    "name": "Afternoon Ride",
+    "distance": 20367.6,
+    "moving_time": 4377,
+    "elapsed_time": 4494,
+    "total_elevation_gain": 421,
+    "type": "Ride",
+    "sport_type": "Ride",
+    "workout_type": null,
+    "device_name": "Garmin Edge 1030 Plus",
+    "activity_date": "2026-05-17T08:33:42.013Z"
   }
 ]

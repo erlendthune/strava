@@ -6,6 +6,22 @@
       "firstname": "Terje",
       "lastname": "B."
     },
+    "name": "Lunch Walk",
+    "distance": 1172.6,
+    "moving_time": 1239,
+    "elapsed_time": 2222,
+    "total_elevation_gain": 0,
+    "type": "Walk",
+    "sport_type": "Walk",
+    "device_name": "Garmin Forerunner 245 Music"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Terje",
+      "lastname": "B."
+    },
     "name": "Morning Walk",
     "distance": 1188.3,
     "moving_time": 1107,
@@ -3310,22 +3326,5 @@
     "sport_type": "Run",
     "workout_type": null,
     "device_name": "Apple Watch Ultra 3"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Terje",
-      "lastname": "B."
-    },
-    "name": "Afternoon Ride",
-    "distance": 973.5,
-    "moving_time": 291,
-    "elapsed_time": 291,
-    "total_elevation_gain": 47,
-    "type": "Ride",
-    "sport_type": "Ride",
-    "workout_type": null,
-    "device_name": "Garmin Forerunner 245 Music"
   }
 ]

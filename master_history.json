@@ -8653,5 +8653,22 @@
     "workout_type": null,
     "device_name": "Garmin Edge 1030 Plus",
     "activity_date": "2026-05-17T08:33:42.013Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Terje",
+      "lastname": "B."
+    },
+    "name": "Lunch Walk",
+    "distance": 1172.6,
+    "moving_time": 1239,
+    "elapsed_time": 2222,
+    "total_elevation_gain": 0,
+    "type": "Walk",
+    "sport_type": "Walk",
+    "device_name": "Garmin Forerunner 245 Music",
+    "activity_date": "2026-05-17T10:40:33.680Z"
   }
 ]

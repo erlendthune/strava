@@ -7,13 +7,130 @@
       "lastname": "B."
     },
     "name": "Morning Ride",
-    "distance": 2833.9,
-    "moving_time": 392,
-    "elapsed_time": 700,
+    "distance": 2906.7,
+    "moving_time": 407,
+    "elapsed_time": 558,
     "total_elevation_gain": 2.1,
     "type": "Ride",
     "sport_type": "Ride",
     "workout_type": null,
+    "device_name": "Garmin Forerunner 245 Music"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Erlend",
+      "lastname": "T."
+    },
+    "name": "Morning Ride",
+    "distance": 11033,
+    "moving_time": 1872,
+    "elapsed_time": 2353,
+    "total_elevation_gain": 134.6,
+    "type": "Ride",
+    "sport_type": "Ride",
+    "workout_type": 10,
+    "device_name": "Strava App"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Terje",
+      "lastname": "B."
+    },
+    "name": "Grusen i Jegers",
+    "distance": 4528.7,
+    "moving_time": 1321,
+    "elapsed_time": 1334,
+    "total_elevation_gain": 79.7,
+    "type": "Run",
+    "sport_type": "Run",
+    "workout_type": null,
+    "device_name": "Garmin Forerunner 245 Music"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Erlend",
+      "lastname": "T."
+    },
+    "name": "Afternoon Run",
+    "distance": 12435.3,
+    "moving_time": 4844,
+    "elapsed_time": 4924,
+    "total_elevation_gain": 216.8,
+    "type": "Run",
+    "sport_type": "Run",
+    "workout_type": null,
+    "device_name": "Strava App"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Jørgen",
+      "lastname": "M."
+    },
+    "name": "Afternoon Run",
+    "distance": 5911.9,
+    "moving_time": 2259,
+    "elapsed_time": 2266,
+    "total_elevation_gain": 172,
+    "type": "Run",
+    "sport_type": "Run",
+    "workout_type": null,
+    "device_name": "Garmin Forerunner 265"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Terje",
+      "lastname": "B."
+    },
+    "name": "Hjem",
+    "distance": 3033.9,
+    "moving_time": 531,
+    "elapsed_time": 552,
+    "total_elevation_gain": 100.2,
+    "type": "EBikeRide",
+    "sport_type": "EBikeRide",
+    "device_name": "Garmin Forerunner 245 Music"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Jørgen",
+      "lastname": "M."
+    },
+    "name": "Afternoon Ride",
+    "distance": 6985.1,
+    "moving_time": 1188,
+    "elapsed_time": 1358,
+    "total_elevation_gain": 95,
+    "type": "Ride",
+    "sport_type": "Ride",
+    "workout_type": 10,
+    "device_name": "Garmin Forerunner 265"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Terje",
+      "lastname": "B."
+    },
+    "name": "Morning Ride",
+    "distance": 2833.9,
+    "moving_time": 392,
+    "elapsed_time": 700,
+    "total_elevation_gain": 2.1,
+    "type": "EBikeRide",
+    "sport_type": "EBikeRide",
     "device_name": "Garmin Forerunner 245 Music"
   },
   {
@@ -395,6 +512,23 @@
     "sport_type": "Ride",
     "workout_type": null,
     "device_name": "Garmin Edge 1030 Plus"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Jørgen",
+      "lastname": "M."
+    },
+    "name": "Afternoon Ride",
+    "distance": 6947.6,
+    "moving_time": 1171,
+    "elapsed_time": 1292,
+    "total_elevation_gain": 96,
+    "type": "Ride",
+    "sport_type": "Ride",
+    "workout_type": 10,
+    "device_name": "Garmin Forerunner 265"
   },
   {
     "resource_state": 2,
@@ -2341,6 +2475,22 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
+      "firstname": "Kristin Sørli",
+      "lastname": "O."
+    },
+    "name": "Ettermiddag med gåtur",
+    "distance": 5570.1,
+    "moving_time": 3875,
+    "elapsed_time": 4226,
+    "total_elevation_gain": 67.6,
+    "type": "Walk",
+    "sport_type": "Walk",
+    "device_name": "Apple Watch Series 9"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
       "firstname": "Terje",
       "lastname": "B."
     },
@@ -2353,22 +2503,6 @@
     "sport_type": "Ride",
     "workout_type": null,
     "device_name": "Garmin Forerunner 245 Music"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Kristin Sørli",
-      "lastname": "O."
-    },
-    "name": "Ettermiddag med gåtur",
-    "distance": 5570.1,
-    "moving_time": 3875,
-    "elapsed_time": 4226,
-    "total_elevation_gain": 67.6,
-    "type": "Walk",
-    "sport_type": "Walk",
-    "device_name": "Apple Watch Series 9"
   },
   {
     "resource_state": 2,
@@ -3191,139 +3325,5 @@
     "sport_type": "Run",
     "workout_type": null,
     "device_name": "Apple Watch Ultra 3"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Marius",
-      "lastname": "H."
-    },
-    "name": "Evening Walk",
-    "distance": 2724.7,
-    "moving_time": 1749,
-    "elapsed_time": 1996,
-    "total_elevation_gain": 56.7,
-    "type": "Walk",
-    "sport_type": "Walk",
-    "device_name": "Garmin vívoactive 5"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Terje",
-      "lastname": "B."
-    },
-    "name": "GK",
-    "distance": 5401.6,
-    "moving_time": 1693,
-    "elapsed_time": 1693,
-    "total_elevation_gain": 92.1,
-    "type": "Run",
-    "sport_type": "Run",
-    "workout_type": null,
-    "device_name": "Garmin Forerunner 245 Music"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Håkon",
-      "lastname": "R."
-    },
-    "name": "Afternoon Ride",
-    "distance": 58921.3,
-    "moving_time": 9567,
-    "elapsed_time": 9599,
-    "total_elevation_gain": 833,
-    "type": "Ride",
-    "sport_type": "Ride",
-    "workout_type": null,
-    "device_name": "Garmin Edge 1030 Plus"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Erlend",
-      "lastname": "T."
-    },
-    "name": "Lunch Swim",
-    "distance": 1975,
-    "moving_time": 2918,
-    "elapsed_time": 3019,
-    "total_elevation_gain": 0,
-    "type": "Swim",
-    "sport_type": "Swim",
-    "device_name": "Garmin Forerunner 255"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Andreas",
-      "lastname": "Z."
-    },
-    "name": "Lunch Run",
-    "distance": 6892,
-    "moving_time": 2294,
-    "elapsed_time": 2433,
-    "total_elevation_gain": 115,
-    "type": "Run",
-    "sport_type": "Run",
-    "workout_type": null,
-    "device_name": "Garmin fēnix 5S Plus"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Terje",
-      "lastname": "B."
-    },
-    "name": "Afternoon Ride",
-    "distance": 2998.7,
-    "moving_time": 744,
-    "elapsed_time": 744,
-    "total_elevation_gain": 99.1,
-    "type": "Ride",
-    "sport_type": "Ride",
-    "workout_type": null,
-    "device_name": "Garmin Forerunner 245 Music"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Erlend",
-      "lastname": "T."
-    },
-    "name": "Afternoon Workout",
-    "distance": 0,
-    "moving_time": 4296,
-    "elapsed_time": 4296,
-    "total_elevation_gain": 0,
-    "type": "Workout",
-    "sport_type": "Workout",
-    "workout_type": null,
-    "device_name": "Garmin Forerunner 255"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Erlend",
-      "lastname": "T."
-    },
-    "name": "Evening Ride",
-    "distance": 17786.2,
-    "moving_time": 2920,
-    "elapsed_time": 3080,
-    "total_elevation_gain": 358,
-    "type": "Ride",
-    "sport_type": "Ride",
-    "workout_type": null,
-    "device_name": "Garmin Forerunner 255"
   }
 ]

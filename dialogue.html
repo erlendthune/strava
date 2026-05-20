@@ -1,261 +1,328 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sykletiljobben: May 7–13 Report</title>
+    <title>Sykle til jobben: Siste 7 Dager</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@400;700;900&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --bg-1: #11152b;
+            --bg-2: #16213e;
+            --panel-bg: rgba(19, 27, 58, 0.7);
+            --panel-border: rgba(124, 150, 255, 0.35);
+            --panel-title: #d8e2ff;
+            --muted: #9fb0d7;
+            --text-main: #eef4ff;
+            --accent: #6fa1ff;
+            --accent-2: #00f2ff;
+            --glow: #7000ff;
+            --hayes: #ff8f8f;
+            --teacher: #9af7cb;
+            --bubble-bg: rgba(11, 18, 40, 0.72);
+            --line: rgba(143, 169, 255, 0.2);
+        }
+
         * {
             box-sizing: border-box;
         }
-        
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             margin: 0;
-            padding: 0;
-            width: 100vw;
-            height: 100vh;
+            min-height: 100vh;
+            font-family: "IBM Plex Sans", sans-serif;
+            color: var(--text-main);
+            background: linear-gradient(130deg, var(--bg-1) 0%, var(--bg-2) 100%);
+            padding: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+        }
+
+        .stage {
+            width: min(1100px, 100%);
+            background:
+                radial-gradient(circle at 12% 18%, rgba(0, 242, 255, 0.14), transparent 36%),
+                radial-gradient(circle at 88% 12%, rgba(112, 0, 255, 0.18), transparent 38%),
+                rgba(15, 21, 47, 0.74);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: 14px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 18px 52px rgba(0, 0, 0, 0.42);
             overflow: hidden;
         }
-        
-        .container {
-            background: white;
+
+        .header {
+            padding: 24px 28px;
+            border-bottom: 2px solid rgba(111, 161, 255, 0.25);
+            background: linear-gradient(100deg, rgba(24, 32, 69, 0.88), rgba(16, 22, 46, 0.82));
+        }
+
+        h1 {
+            margin: 0;
+            font-family: "Chivo", sans-serif;
+            font-size: clamp(1.4rem, 3.2vw, 2.2rem);
+            letter-spacing: 0.02em;
+            color: #f4f7ff;
+            text-shadow: 0 0 10px rgba(0, 242, 255, 0.4), 0 0 24px rgba(112, 0, 255, 0.35);
+        }
+
+        .subtitle {
+            margin: 8px 0 0;
+            color: var(--muted);
+            font-size: 0.98rem;
+        }
+
+        .week-meta {
+            margin-top: 10px;
+            font-weight: 600;
+            color: #b7c6ea;
+        }
+
+        .dialogue-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            padding: 24px;
+        }
+
+        .card {
+            background: var(--panel-bg);
+            border: 2px solid var(--panel-border);
             border-radius: 12px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            box-shadow: 0 0 0 1px rgba(111, 161, 255, 0.12), 0 0 20px rgba(58, 93, 228, 0.15);
+            backdrop-filter: blur(6px);
+            padding: 16px;
+            display: grid;
+            grid-template-columns: 84px 1fr;
+            gap: 14px;
+            align-items: start;
+            animation: rise 500ms ease both;
+        }
+
+        .card.teacher {
+            animation-delay: 120ms;
+        }
+
+        .card:hover {
+            box-shadow: 0 0 0 1px rgba(111, 161, 255, 0.18), 0 0 28px rgba(0, 242, 255, 0.16);
+        }
+
+        .avatar-wrap {
+            width: 84px;
+            height: 84px;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 2px solid rgba(122, 154, 255, 0.35);
+            background: repeating-linear-gradient(
+                45deg,
+                rgba(8, 18, 45, 0.55),
+                rgba(8, 18, 45, 0.55) 8px,
+                rgba(18, 33, 75, 0.8) 8px,
+                rgba(18, 33, 75, 0.8) 16px
+            );
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 0.74rem;
+            color: #8ff8ff;
+            font-weight: 600;
+            line-height: 1.2;
+            padding: 8px;
+            box-shadow: 0 0 14px rgba(0, 242, 255, 0.22);
+        }
+
+        .avatar-wrap img {
             width: 100%;
             height: 100%;
-            padding: 40px;
-            overflow-y: auto;
-            scroll-behavior: smooth;
-            display: flex;
-            flex-direction: column;
+            object-fit: cover;
+            display: block;
         }
-        
-        h1 {
-            text-align: center;
-            color: #333;
-            margin: 0 0 30px 0;
-            font-size: clamp(1.5em, 4vw, 2.5em);
-            border-bottom: 3px solid #667eea;
-            padding-bottom: 15px;
-            flex-shrink: 0;
-        }
-        
-        .dialogue {
-            line-height: 1.8;
-            flex-grow: 1;
-        }
-        
+
         .speaker {
-            font-weight: bold;
-            color: #667eea;
-            margin-top: 15px;
-            font-size: clamp(1em, 2vw, 1.1em);
-            display: inline;
+            margin: 0;
+            font-family: "Chivo", sans-serif;
+            font-size: 1rem;
+            letter-spacing: 0.03em;
+            color: var(--panel-title);
         }
-        
+
         .speaker.hayes {
-            color: #d32f2f;
+            color: var(--hayes);
+            text-shadow: 0 0 10px rgba(255, 143, 143, 0.25);
         }
-        
-        .speaker.solveig {
-            color: #388e3c;
+
+        .speaker.teacher {
+            color: var(--teacher);
+            text-shadow: 0 0 10px rgba(154, 247, 203, 0.22);
         }
-        
-        .speech {
-            display: inline;
-            color: #555;
-            margin-bottom: 8px;
-            font-size: clamp(0.9em, 1.8vw, 1em);
+
+        .bubble {
+            margin-top: 8px;
+            background: var(--bubble-bg);
+            border: 1px solid rgba(122, 154, 255, 0.3);
+            border-radius: 14px;
+            padding: 14px;
             line-height: 1.6;
+            color: var(--text-main);
+            min-height: 180px;
+            white-space: pre-wrap;
+            box-shadow: inset 0 0 0 1px rgba(111, 161, 255, 0.08);
         }
-        
-        .speech em {
-            color: #888;
-            font-style: italic;
+
+        .stats {
+            border-top: 1px solid rgba(111, 161, 255, 0.25);
+            margin: 0 24px 24px;
+            padding-top: 14px;
+            color: var(--muted);
+            font-size: 0.94rem;
+            line-height: 1.5;
+            text-shadow: 0 0 8px rgba(111, 161, 255, 0.18);
         }
-        
-        .divider {
-            text-align: center;
-            margin: 30px 0;
-            color: #999;
-            font-size: clamp(1em, 2.5vw, 1.3em);
-        }
-        
-        .conclusion {
-            background: #f5f5f5;
-            padding: 20px;
-            border-left: 4px solid #667eea;
-            margin-top: 30px;
-            font-style: italic;
-            color: #666;
-            line-height: 1.6;
-            font-size: clamp(0.85em, 1.6vw, 0.95em);
-        }
-        
-        .meta {
-            text-align: center;
-            font-size: clamp(0.75em, 1.4vw, 0.85em);
-            color: #999;
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
-            flex-shrink: 0;
-        }
-        
-        /* Tablet: 769px - 1024px */
-        @media (max-width: 1024px) {
-            .container {
-                padding: 30px;
+
+        @keyframes rise {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
             }
-            .speech {
-                margin-left: 15px;
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
-        
-        /* Mobile: under 768px */
-        @media (max-width: 768px) {
-            .container {
-                padding: 20px;
-                border-radius: 8px;
+
+        @media (max-width: 900px) {
+            .dialogue-grid {
+                grid-template-columns: 1fr;
             }
-            h1 {
-                margin-bottom: 20px;
-            }
-            .speaker {
-                margin-top: 12px;
-            }
-            .speech {
-                margin-left: 12px;
-                margin-bottom: 6px;
-            }
-            .divider {
-                margin: 20px 0;
-            }
-            .conclusion {
-                padding: 15px;
-                margin-top: 20px;
+
+            .bubble {
+                min-height: 0;
             }
         }
-        
-        /* Ultra-wide screens: info displays */
-        @media (min-width: 2560px) {
-            .container {
-                padding: 60px;
-                max-width: 1400px;
-                margin: 0 auto;
+
+        @media (max-width: 560px) {
+            body {
+                padding: 10px;
             }
-        }
-        
-        /* Scrollbar styling */
-        .container::-webkit-scrollbar {
-            width: 8px;
-        }
-        
-        .container::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
-        
-        .container::-webkit-scrollbar-thumb {
-            background: #667eea;
-            border-radius: 4px;
-        }
-        
-        .container::-webkit-scrollbar-thumb:hover {
-            background: #5568d3;
+
+            .header {
+                padding: 18px;
+            }
+
+            .dialogue-grid {
+                padding: 14px;
+                gap: 12px;
+            }
+
+            .card {
+                grid-template-columns: 68px 1fr;
+                padding: 12px;
+            }
+
+            .avatar-wrap {
+                width: 68px;
+                height: 68px;
+            }
+
+            .stats {
+                margin: 0 14px 14px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>🚴 Sykletiljobben: Ukerapport 🚴</h1>
-        
-        <div class="dialogue">
-            <div>
-                <div class="speech"><strong>Vi har bedt instruktør Hayes og lærer Solveig om å oppsummere forrige ukes aktiviteter:</strong></div>
-            </div>
+    <main class="stage">
+        <section class="header">
+            <h1>Sykle til jobben: Siste 7 Dager</h1>
+            <p id="week-label" class="week-meta">Laster uke...</p>
+        </section>
 
-            <div>
-                <span class="speaker hayes">HAYES:</span>
-                <div class="speech">HØR HER! Fra 7. til 13. mai—det er det som TELLER! Kristin sykler E-sykkel DAGLIG! Men det er ikke bare sykkling—vi har løpeintervaller, gåturer, styrketreningøkter! Erlend blander det—løptur, gåtur, sykling! Terje er STØ—han viser opp igjen og igjen med sine gåturer! Kjetil i gymmen i 1,8 TIMER med styrketrening! Håkon legger ned 113 KILOMETER på EN SYKKELTUR! Dette er ikke legende fra tidligere—det er MENNESKER SOM BEVEGER SEG på MANGE måter! Det er EKTE VARIASJON!</div>
-            </div>
+        <section class="dialogue-grid">
+            <article class="card">
+                <div class="avatar-wrap" id="hayes-avatar-wrap">
+                    <img id="hayes-avatar" src="avatars/hayes.png" alt="Avatar for drill sergeant Hayes">
+                </div>
+                <div>
+                    <h2 class="speaker hayes">DRILL SERGEANT HAYES</h2>
+                    <div id="hayes-text" class="bubble">Laster Hayes-oppsummering...</div>
+                </div>
+            </article>
 
-            <div>
-                <span class="speaker solveig">SOLVEIG:</span>
-                <div class="speech"><em>nikker tankefullt</em> Fra 7. til 13. mai—Kristiansand bygde noe dypmeningsfylt. Ikke rekorder. Rytmer. Ikke tall. Løfter som ble holdt. Hver dag spurte hver person seg selv: "Skal jeg bevege meg i dag?" Og igjen og igjen kom svaret: "Ja." Dette er ikke historien om heroer. Det er historien om mennesker som valgte å vise opp. Og det er den vakreste historien av alle.</div>
-            </div>
+            <article class="card teacher">
+                <div class="avatar-wrap" id="teacher-avatar-wrap">
+                    <img id="teacher-avatar" src="avatars/teacher.png" alt="Avatar for positiv lærer">
+                </div>
+                <div>
+                    <h2 class="speaker teacher">POSITIV PEDAGOG</h2>
+                    <div id="teacher-text" class="bubble">Laster læreroppsummering...</div>
+                </div>
+            </article>
+        </section>
 
-            <div class="divider">🚴 🚴 🚴</div>
-
-            <div class="conclusion">
-                <strong>Konklusjon:</strong> Fra 7. til 13. mai 2026—ikke legender eller totaler fra tidligere sesonger. Bare <strong>virkelige mennesker</strong> som gjør virkelige valg. Kristin med sitt daglige e-sykkelengasjement, Erlend med sitt fleksible multisport-mestring, Terje med sine trofaste gåturer, Kjetil med sitt styrketrening, Håkon med sine ensomme episke turer, Marius og Andreas som viser opp. Hver aktivitet er et valg. Hvert navn er en kriger. Hver dag, spørsmålet: "Skal jeg bevege meg?" Hver dag, svaret: "Ja."
-            </div>
-
-            <div class="meta">
-                <p>Data: Strava-aktiviteter fra 7.–13. mai 2026 | Bouvet Norge AS Agder</p>
-            </div>
-        </div>
-    </div>
+        <section id="stats" class="stats"></section>
+    </main>
 
     <script>
-        // Auto-scroll if content overflows
-        const container = document.querySelector('.container');
-        
-        function startAutoScroll() {
-            // Check if content overflows
-            if (container.scrollHeight > container.clientHeight) {
-                let scrollPosition = 0;
-                const scrollSpeed = 1; // pixels per frame
-                const pauseAtEnd = 3000; // pause 3 seconds at the end
-                
-                function scroll() {
-                    // Check if we've reached the bottom
-                    if (scrollPosition < container.scrollHeight - container.clientHeight) {
-                        scrollPosition += scrollSpeed;
-                        container.scrollTop = scrollPosition;
-                        requestAnimationFrame(scroll);
-                    } else {
-                        // Pause at the end, then scroll back to top
-                        setTimeout(() => {
-                            scrollPosition = 0;
-                            container.scrollTop = 0;
-                            // Restart scrolling after a brief pause
-                            setTimeout(scroll, 500);
-                        }, pauseAtEnd);
-                    }
+        const weekLabelEl = document.getElementById("week-label");
+        const hayesTextEl = document.getElementById("hayes-text");
+        const teacherTextEl = document.getElementById("teacher-text");
+        const statsEl = document.getElementById("stats");
+
+        function setFallbackAvatar(imgId, fallbackText) {
+            const img = document.getElementById(imgId);
+            const wrap = img.parentElement;
+            img.addEventListener("error", () => {
+                img.remove();
+                wrap.textContent = fallbackText;
+            });
+        }
+
+        setFallbackAvatar("hayes-avatar", "LEGG INN\nHAYES-BILDE");
+        setFallbackAvatar("teacher-avatar", "LEGG INN\nLÆRER-BILDE");
+
+        function formatTypeMix(activityTypeMix) {
+            if (!Array.isArray(activityTypeMix) || !activityTypeMix.length) {
+                return "Ingen data";
+            }
+
+            return activityTypeMix
+                .map(entry => `${entry.type}: ${entry.count}`)
+                .join(", ");
+        }
+
+        async function loadDialogue() {
+            try {
+                const response = await fetch("weekly_dialogue.json", { cache: "no-store" });
+                if (!response.ok) {
+                    throw new Error(`Kunne ikke lese weekly_dialogue.json (${response.status})`);
                 }
-                
-                scroll();
+
+                const dialogue = await response.json();
+                const stats = dialogue.stats || {};
+
+                weekLabelEl.textContent = `Ukegrunnlag: ${dialogue.week_label || "Ingen datert aktivitet"}`;
+                hayesTextEl.textContent = dialogue.hayes || "Hayes-oppsummering mangler.";
+                teacherTextEl.textContent = dialogue.teacher || "Læreroppsummering mangler.";
+                statsEl.textContent = [
+                    `Aktiviteter: ${stats.activities ?? 0}`,
+                    `Deltakere: ${stats.participants ?? 0}`,
+                    `Distanse: ${Number(stats.distance_km ?? 0).toFixed(1)} km`,
+                    `Tid: ${Number(stats.moving_hours ?? 0).toFixed(1)} timer`,
+                    `Aktivitetsmiks: ${formatTypeMix(stats.activity_type_mix)}`
+                ].join(" | ");
+            } catch (error) {
+                weekLabelEl.textContent = "Kunne ikke laste dialoggrunnlag";
+                hayesTextEl.textContent = "Data mangler. Kjør generate_weekly_dialogue.py for å lage weekly_dialogue.json.";
+                teacherTextEl.textContent = "Når weekly_dialogue.json finnes, vises den genererte læreroppsummeringen her.";
+                statsEl.textContent = error.message;
             }
         }
-        
-        // Start auto-scroll when page loads
-        window.addEventListener('load', startAutoScroll);
-        
-        // Restart if window is resized
-        window.addEventListener('resize', startAutoScroll);
-        
-        // Stop auto-scroll when user manually scrolls
-        let userScrolling = false;
-        container.addEventListener('wheel', () => {
-            userScrolling = true;
-            clearTimeout(container.scrollTimeout);
-            container.scrollTimeout = setTimeout(() => {
-                userScrolling = false;
-                startAutoScroll();
-            }, 5000); // Resume auto-scroll 5 seconds after user stops scrolling
-        }, { passive: true });
-        
-        container.addEventListener('touchstart', () => {
-            userScrolling = true;
-            clearTimeout(container.scrollTimeout);
-        });
-        
-        container.addEventListener('touchend', () => {
-            container.scrollTimeout = setTimeout(() => {
-                userScrolling = false;
-                startAutoScroll();
-            }, 5000);
-        });
+
+        loadDialogue();
     </script>
+</body>
+</html>

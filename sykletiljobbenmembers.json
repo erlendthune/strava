@@ -14,9 +14,23 @@
     "totalCentimeters": 4241100
   },
   {
+    "userGuid": "2bd3e601-68fe-41be-a5d3-18a2345cb595",
+    "userId": 1103463900,
+    "rank": 2,
+    "firstname": "Kristin Sørli",
+    "lastname": "Ommundsen",
+    "teamId": 37917,
+    "teamTitle": "Bouvet Quantum",
+    "companyId": 17359,
+    "companyTitle": "Bouvet Norge As Agder",
+    "points": 30.00,
+    "totalSeconds": 42091,
+    "totalCentimeters": 17232050
+  },
+  {
     "userGuid": "cd61f903-763d-46e2-b237-2a937ae853cd",
     "userId": 1103868471,
-    "rank": 2,
+    "rank": 3,
     "firstname": "Jørgen",
     "lastname": "Myrvold",
     "teamId": 37917,
@@ -28,20 +42,6 @@
     "totalCentimeters": 14211130
   },
   {
-    "userGuid": "2bd3e601-68fe-41be-a5d3-18a2345cb595",
-    "userId": 1103463900,
-    "rank": 3,
-    "firstname": "Kristin Sørli",
-    "lastname": "Ommundsen",
-    "teamId": 37917,
-    "teamTitle": "Bouvet Quantum",
-    "companyId": 17359,
-    "companyTitle": "Bouvet Norge As Agder",
-    "points": 29.00,
-    "totalSeconds": 41041,
-    "totalCentimeters": 16523790
-  },
-  {
     "userGuid": "84db5589-5d05-4e88-b600-a5cab7e66f9d",
     "userId": 1103547198,
     "rank": 4,
@@ -51,9 +51,9 @@
     "teamTitle": "Bouvet Quantum",
     "companyId": 17359,
     "companyTitle": "Bouvet Norge As Agder",
-    "points": 26.00,
-    "totalSeconds": 42643,
-    "totalCentimeters": 13287890
+    "points": 27.00,
+    "totalSeconds": 44505,
+    "totalCentimeters": 14375110
   },
   {
     "userGuid": "6c209820-cccd-4284-9e09-06d57b7abab1",
@@ -79,9 +79,9 @@
     "teamTitle": "Bouvet Quantum",
     "companyId": 17359,
     "companyTitle": "Bouvet Norge As Agder",
-    "points": 16.00,
-    "totalSeconds": 19978,
-    "totalCentimeters": 8233110
+    "points": 17.00,
+    "totalSeconds": 21326,
+    "totalCentimeters": 8900050
   },
   {
     "userGuid": "bd546b06-7fcf-44c5-9219-44f2e9932e15",
@@ -150,8 +150,8 @@
     "companyId": 17359,
     "companyTitle": "Bouvet Norge As Agder",
     "points": 7.00,
-    "totalSeconds": 32049,
-    "totalCentimeters": 11731380
+    "totalSeconds": 32650,
+    "totalCentimeters": 12040190
   },
   {
     "userGuid": "be4cbe2a-976c-414c-97c5-504c509f63a0",

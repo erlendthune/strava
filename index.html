@@ -34,11 +34,12 @@
             min-height: 100vh;
             padding: 10px;
             color: var(--text-main);
+            overflow: hidden;
         }
 
         .container {
             width: 100%;
-            min-height: calc(100vh - 20px);
+            height: calc(100vh - 20px);
             margin: 0 auto;
             background:
                 radial-gradient(circle at 12% 18%, rgba(0, 242, 255, 0.14), transparent 36%),
@@ -102,8 +103,45 @@
             min-height: 0;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            grid-template-rows: 1fr 1fr;
+            grid-template-rows: minmax(250px, 1fr) minmax(230px, 0.9fr);
+            grid-template-areas:
+                "sykle dialogue"
+                "bottom bottom";
             gap: 10px;
+        }
+
+        .panel-sykle {
+            grid-area: sykle;
+        }
+
+        .panel-dialogue {
+            grid-area: dialogue;
+        }
+
+        .bottom-strip {
+            grid-area: bottom;
+            min-height: 0;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 10px;
+        }
+
+        .bottom-strip .panel h2 {
+            font-size: 15px;
+            margin-bottom: 6px;
+        }
+
+        .bottom-strip .panel {
+            padding: 8px;
+        }
+
+        .bottom-strip table {
+            font-size: 12px;
+        }
+
+        .bottom-strip th,
+        .bottom-strip td {
+            padding: 6px 7px;
         }
 
         .panel {
@@ -394,6 +432,94 @@
             padding: 24px 10px;
         }
 
+        .dialogue-meta {
+            color: #9fb0d7;
+            font-size: 12px;
+            margin-bottom: 8px;
+        }
+
+        .panel-dialogue .panel-body {
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .dialogue-split {
+            min-height: 0;
+            flex: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+        }
+
+        .dialogue-card {
+            min-height: 0;
+            border: 1px solid rgba(122, 154, 255, 0.35);
+            border-radius: 10px;
+            padding: 8px;
+            background: linear-gradient(90deg, rgba(102, 126, 234, 0.13) 0%, rgba(118, 75, 162, 0.12) 100%);
+            display: grid;
+            grid-template-columns: 56px 1fr;
+            gap: 8px;
+            height: 100%;
+        }
+
+        .dialogue-card > div:last-child {
+            min-height: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .dialogue-avatar {
+            width: 56px;
+            height: 56px;
+            border-radius: 10px;
+            border: 2px solid rgba(122, 154, 255, 0.4);
+            object-fit: cover;
+            box-shadow: 0 0 12px rgba(0, 242, 255, 0.22);
+            background: rgba(11, 18, 40, 0.9);
+        }
+
+        .dialogue-avatar-fallback {
+            width: 56px;
+            height: 56px;
+            border-radius: 10px;
+            border: 2px solid rgba(122, 154, 255, 0.4);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 9px;
+            color: #8ff8ff;
+            background: rgba(11, 18, 40, 0.9);
+            padding: 4px;
+        }
+
+        .dialogue-label {
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .dialogue-label.hayes {
+            color: #ff8f8f;
+        }
+
+        .dialogue-label.teacher {
+            color: #9af7cb;
+        }
+
+        .dialogue-text {
+            font-size: 12px;
+            color: #e8f0ff;
+            line-height: 1.45;
+            min-height: 0;
+            flex: 1;
+            overflow: hidden;
+            white-space: pre-wrap;
+            padding-right: 2px;
+        }
+
         .fun-board {
             position: relative;
             height: 150px;
@@ -627,7 +753,15 @@
         @media (max-width: 1200px) {
             .dashboard-grid {
                 grid-template-columns: 1fr;
-                grid-template-rows: repeat(4, minmax(260px, auto));
+                grid-template-rows: auto auto auto;
+                grid-template-areas:
+                    "sykle"
+                    "dialogue"
+                    "bottom";
+            }
+
+            .bottom-strip {
+                grid-template-columns: 1fr;
             }
 
             .container {
@@ -636,6 +770,10 @@
 
             .sport-winner-row {
                 grid-template-columns: minmax(100px, 0.8fr) minmax(130px, 1fr) auto;
+            }
+
+            .dialogue-split {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -646,33 +784,64 @@
         <div class="header-meta" id="headerMeta">Loading…</div>
 
         <div class="dashboard-grid">
-            <section class="panel">
+            <section class="panel panel-sykle">
                 <h2>🚲 Sykle til jobben · Top 3 lag</h2>
                 <div class="panel-body" id="panelSykleTop3">
                     <div class="loading">Loading...</div>
                 </div>
             </section>
 
-            <section class="panel">
-                <h2>⏱️ Strava · Mest aktiv tid</h2>
-                <div class="panel-body" id="panelStravaActiveTime">
-                    <div class="loading">Loading...</div>
+            <section class="panel panel-dialogue">
+                <h2>🗣️ Dialog · Hayes og lærer</h2>
+                <div class="panel-body">
+                    <div class="dialogue-meta" id="dialogueMeta">Laster dialoggrunnlag...</div>
+                    <div class="dialogue-split">
+                        <article class="dialogue-card">
+                            <div>
+                                <img id="hayesAvatar" class="dialogue-avatar" src="avatars/hayes.png" alt="Hayes avatar">
+                                <div id="hayesAvatarFallback" class="dialogue-avatar-fallback">LEGG INN HAYES</div>
+                            </div>
+                            <div>
+                                <div class="dialogue-label hayes">HAYES</div>
+                                <div id="dialogueHayes" class="dialogue-text">Laster...</div>
+                            </div>
+                        </article>
+                        <article class="dialogue-card">
+                            <div>
+                                <img id="teacherAvatar" class="dialogue-avatar" src="avatars/teacher.png" alt="Lærer avatar">
+                                <div id="teacherAvatarFallback" class="dialogue-avatar-fallback">LEGG INN LÆRER</div>
+                            </div>
+                            <div>
+                                <div class="dialogue-label teacher">LÆRER</div>
+                                <div id="dialogueTeacher" class="dialogue-text">Laster...</div>
+                            </div>
+                        </article>
+                    </div>
                 </div>
             </section>
 
-            <section class="panel">
-                <h2>🥇 Beste per aktivitet</h2>
-                <div class="panel-body" id="panelBestPerSport">
-                    <div class="loading">Loading...</div>
-                </div>
-            </section>
+            <div class="bottom-strip">
+                <section class="panel">
+                    <h2>⏱️ Strava · Mest aktiv tid</h2>
+                    <div class="panel-body" id="panelStravaActiveTime">
+                        <div class="loading">Loading...</div>
+                    </div>
+                </section>
 
-            <section class="panel">
-                <h2>📋 Strava detaljer · Rullerende</h2>
-                <div class="panel-body" id="panelStravaRolling">
-                    <div class="loading">Loading...</div>
-                </div>
-            </section>
+                <section class="panel">
+                    <h2>🥇 Beste per aktivitet</h2>
+                    <div class="panel-body" id="panelBestPerSport">
+                        <div class="loading">Loading...</div>
+                    </div>
+                </section>
+
+                <section class="panel">
+                    <h2>📋 Strava detaljer · Rullerende</h2>
+                    <div class="panel-body" id="panelStravaRolling">
+                        <div class="loading">Loading...</div>
+                    </div>
+                </section>
+            </div>
         </div>
     </div>
 
@@ -994,6 +1163,88 @@
             };
         }
 
+        function setupDialogueAvatars() {
+            const pairs = [
+                ['hayesAvatar', 'hayesAvatarFallback'],
+                ['teacherAvatar', 'teacherAvatarFallback']
+            ];
+
+            pairs.forEach(([imgId, fallbackId]) => {
+                const img = document.getElementById(imgId);
+                const fallback = document.getElementById(fallbackId);
+                if (!img || !fallback) return;
+
+                img.addEventListener('error', () => {
+                    img.style.display = 'none';
+                    fallback.style.display = 'flex';
+                }, { once: true });
+            });
+        }
+
+        function renderDialogue(dialogue) {
+            const metaEl = document.getElementById('dialogueMeta');
+            const hayesEl = document.getElementById('dialogueHayes');
+            const teacherEl = document.getElementById('dialogueTeacher');
+
+            if (!dialogue || (!dialogue.hayes && !dialogue.teacher)) {
+                metaEl.textContent = 'Kunne ikke laste dialoggrunnlag.';
+                hayesEl.textContent = 'Kjør generate_weekly_dialogue.py for å lage weekly_dialogue.json.';
+                teacherEl.textContent = 'Når weekly_dialogue.json finnes, vises læreroppsummeringen her.';
+                fitDialogueTextSoon();
+                return;
+            }
+
+            metaEl.textContent = `Ukegrunnlag: ${dialogue.week_label || 'Ingen datert aktivitet'}`;
+            hayesEl.textContent = dialogue.hayes || 'Hayes-oppsummering mangler.';
+            teacherEl.textContent = dialogue.teacher || 'Læreroppsummering mangler.';
+            fitDialogueTextSoon();
+        }
+
+        function fitDialogueTextElement(element) {
+            if (!element) return;
+
+            const maxFont = 14;
+            const minFont = 6;
+            const tolerance = 0.1;
+
+            if (element.clientHeight <= 0 || element.clientWidth <= 0) return;
+
+            element.style.lineHeight = '1.4';
+            let low = minFont;
+            let high = maxFont;
+            let best = minFont;
+
+            while ((high - low) > tolerance) {
+                const mid = (low + high) / 2;
+                element.style.fontSize = `${mid}px`;
+
+                const fitsHeight = element.scrollHeight <= element.clientHeight;
+                const fitsWidth = element.scrollWidth <= element.clientWidth;
+
+                if (fitsHeight && fitsWidth) {
+                    best = mid;
+                    low = mid;
+                } else {
+                    high = mid;
+                }
+            }
+
+            element.style.fontSize = `${best.toFixed(2)}px`;
+        }
+
+        function fitDialogueTextSoon() {
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                    fitDialogueText();
+                });
+            });
+        }
+
+        function fitDialogueText() {
+            fitDialogueTextElement(document.getElementById('dialogueHayes'));
+            fitDialogueTextElement(document.getElementById('dialogueTeacher'));
+        }
+
         function renderSyklePanel(state) {
             const el = document.getElementById('panelSykleTop3');
             if (!state || !state.topTeams.length) {
@@ -1229,6 +1480,16 @@
                     membersRes.json()
                 ]);
 
+                let dialogueData = null;
+                try {
+                    const dialogueRes = await fetch('weekly_dialogue.json');
+                    if (dialogueRes.ok) {
+                        dialogueData = await dialogueRes.json();
+                    }
+                } catch (dialogueError) {
+                    console.warn('Could not load weekly_dialogue.json:', dialogueError);
+                }
+
                 const updateData = updateRes.ok ? await updateRes.json() : null;
                 const sykleData = sykleNatRes.ok ? await sykleNatRes.json() : null;
                 const countyData = sykleCountyRes.ok ? await sykleCountyRes.json() : null;
@@ -1243,6 +1504,7 @@
                 renderSyklePanel(sykleState);
                 renderOverallActiveTime(stravaState.overallByMovingTime);
                 renderBestPerSport(stravaState.bestPerSport);
+                renderDialogue(dialogueData);
 
                 rollingBoards = stravaState.rolling;
                 rollingIndex = 0;
@@ -1261,8 +1523,10 @@
             }
         }
 
+        setupDialogueAvatars();
         loadDashboard();
         setInterval(loadDashboard, DATA_REFRESH_MS);
+        window.addEventListener('resize', fitDialogueTextSoon);
     </script>
 </body>
 </html>

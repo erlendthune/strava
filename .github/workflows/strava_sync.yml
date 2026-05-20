@@ -1,12 +1,9 @@
 name: Sync Strava Data
 on:
   schedule:
-    - cron: '17 6-13 * * *' # Every hour at :17, 06:17–13:17 UTC (08:17–15:17 Oslo/CEST)
+    - cron: '17 6-13 * * *' # Hourly at :17, 06:17–13:17 UTC (08:17–15:17 Oslo/CEST)
+    - cron: '47 6-13 * * *' # Staggered backup slot to reduce missed windows during scheduler load
   workflow_dispatch: # Allows you to click a button to run it manually
-
-concurrency:
-  group: strava-sync
-  cancel-in-progress: false
 
 jobs:
   sync:

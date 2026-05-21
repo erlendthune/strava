@@ -9216,5 +9216,109 @@
     "sport_type": "EBikeRide",
     "device_name": "Garmin fēnix 5S Plus",
     "activity_date": "2026-05-20T16:35:06.445Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Terje",
+      "lastname": "B."
+    },
+    "name": "Lunch Ride",
+    "distance": 3192.6,
+    "moving_time": 561,
+    "elapsed_time": 797,
+    "total_elevation_gain": 5.5,
+    "type": "Ride",
+    "sport_type": "Ride",
+    "workout_type": null,
+    "device_name": "Garmin Forerunner 245 Music",
+    "activity_date": "2026-05-21T10:04:38.489Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Kristin Sørli",
+      "lastname": "O."
+    },
+    "name": "Morgentur på elsykkel",
+    "distance": 7124,
+    "moving_time": 1027,
+    "elapsed_time": 1106,
+    "total_elevation_gain": 85,
+    "type": "EBikeRide",
+    "sport_type": "EBikeRide",
+    "device_name": "Strava App",
+    "activity_date": "2026-05-21T10:04:38.489Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Terje",
+      "lastname": "B."
+    },
+    "name": "Morning Ride",
+    "distance": 3045.8,
+    "moving_time": 421,
+    "elapsed_time": 517,
+    "total_elevation_gain": 5,
+    "type": "EBikeRide",
+    "sport_type": "EBikeRide",
+    "device_name": "Garmin Forerunner 245 Music",
+    "activity_date": "2026-05-21T10:04:38.489Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Jørgen",
+      "lastname": "M."
+    },
+    "name": "Morning E-Bike Ride",
+    "distance": 5739.1,
+    "moving_time": 878,
+    "elapsed_time": 981,
+    "total_elevation_gain": 60,
+    "type": "EBikeRide",
+    "sport_type": "EBikeRide",
+    "device_name": "Garmin Forerunner 265",
+    "activity_date": "2026-05-21T10:04:38.489Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Jørgen",
+      "lastname": "M."
+    },
+    "name": "Afternoon Ride",
+    "distance": 7755.6,
+    "moving_time": 1376,
+    "elapsed_time": 2055,
+    "total_elevation_gain": 102,
+    "type": "Ride",
+    "sport_type": "Ride",
+    "workout_type": 10,
+    "device_name": "Garmin Forerunner 265",
+    "activity_date": "2026-05-21T10:04:38.489Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Terje",
+      "lastname": "B."
+    },
+    "name": "Afternoon Ride",
+    "distance": 3088.1,
+    "moving_time": 601,
+    "elapsed_time": 637,
+    "total_elevation_gain": 100.9,
+    "type": "EBikeRide",
+    "sport_type": "EBikeRide",
+    "device_name": "Garmin Forerunner 245 Music",
+    "activity_date": "2026-05-21T10:04:38.489Z"
   }
 ]

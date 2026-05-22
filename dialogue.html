@@ -296,7 +296,7 @@
 
         async function loadDialogue() {
             try {
-                const response = await fetch("weekly_dialogue.json", { cache: "no-store" });
+                const response = await fetch("weekly_dialogue.json");
                 if (!response.ok) {
                     throw new Error(`Kunne ikke lese weekly_dialogue.json (${response.status})`);
                 }

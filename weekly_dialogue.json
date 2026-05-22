@@ -1,26 +1,22 @@
 {
-  "week_label": "2026-05-14 til 2026-05-20",
-  "generated_at": "2026-05-20T16:22:20Z",
+  "week_label": "2026-05-16 til 2026-05-22",
+  "generated_at": "2026-05-22T22:00:00Z",
   "stats": {
-    "activities": 47,
-    "participants": 7,
-    "distance_km": 336.9,
-    "moving_hours": 21.9,
+    "activities": 82,
+    "participants": 6,
+    "distance_km": 722.1,
+    "moving_hours": 178.3,
     "top_participants": [
-      "Terje (19)",
-      "Erlend (7)",
-      "Jørgen (7)",
-      "Håkon (5)",
-      "Kristin Sørli (5)"
+      "Terje B. (21)",
+      "Jørgen M. (14)",
+      "Kristin Sørli O. (11)",
+      "Erlend T. (9)",
+      "Håkon R. (8)"
     ],
     "activity_type_mix": [
       {
-        "type": "Ride",
-        "count": 20
-      },
-      {
-        "type": "EBikeRide",
-        "count": 13
+        "type": "Ride/EBikeRide",
+        "count": 54
       },
       {
         "type": "Run",
@@ -28,14 +24,10 @@
       },
       {
         "type": "Walk",
-        "count": 4
-      },
-      {
-        "type": "Soccer",
-        "count": 1
+        "count": 8
       }
     ]
   },
-  "hayes": "Hør her: 47 aktiviteter fra 7 personer de siste 7 dagene. Oppmøtet er brukbart, men standarden må holdes oppe uten slark og hull i uka. Totalen landet på 336.9 km og 21.9 timer. Toppen nå er Terje (19), Erlend (7), Jørgen (7), Håkon (5), Kristin Sørli (5). Aktivitetsmiksen viser Ride (20), EBikeRide (13), Run (9). Det er godkjent innsats, men ikke ferdig arbeid. Neste uke trenger klarere planer, flere repeterte økter og mindre tilfeldig drift. Ingen unnskyldninger. Bare oppmøte, trykk og fremdrift.",
-  "teacher": "De siste 7 dagene viser 47 aktiviteter fordelt på 7 personer. Til sammen ble det 336.9 km og 21.9 timer bevegelse. Det gir et fint bilde av stabil innsats, spesielt fra Terje (19), Erlend (7), Jørgen (7), Håkon (5), Kristin Sørli (5). Aktivitetsmiksen med Ride (20), EBikeRide (13), Run (9) viser variasjon og flere innganger til mestring. Neste steg er å bevare rytmen, dele gode vaner og gjøre det enkelt for flere å bli med jevnlig. Når flere heier på hverandre, blir terskelen lavere for alle."
+  "hayes": "Nittien kilometer per aktivitet – DET er tyngde! Terje dominerer med 21 økter, Jørgen skal ha skryt for sin dedikasjon, og Kristin Sørli holder tempoet konstant. 722 kilometer på syv dager? Det er ikke småplukk – det er PRESTASJON. Men nei, kjære venner: løpingen forsvinner! Ni løpeturer på 82 aktiviteter? For dårlig. Neste uke – jeg vil se løping, jeg vil se variasjon, og jeg vil se samme disiplin. Punktum.",
+  "teacher": "Wow – denne uken viser ekte dedikasjon fra alle! 82 aktiviteter, 722 kilometer, og 178 timer bevegelse – dere setter ny standard for hva som er mulig når man holder på sammen. Terje T. er en maskin med 21 økter, og Jørgen bringer energi med sin regelmessighet. Kristin Sørli er morgenens helt med daglige sykkelturer. Én ting å tenke på framover: legg til litt mer løping for balanse og variasjon. Det er en fantastisk base dere har bygget opp – hold farten framover!"
 }

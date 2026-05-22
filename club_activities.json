@@ -3,6 +3,22 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
+      "firstname": "Andreas",
+      "lastname": "Z."
+    },
+    "name": "Lunch Ride",
+    "distance": 6111.7,
+    "moving_time": 1033,
+    "elapsed_time": 1217,
+    "total_elevation_gain": 110,
+    "type": "EBikeRide",
+    "sport_type": "EBikeRide",
+    "device_name": "Garmin fēnix 5S Plus"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
       "firstname": "Terje",
       "lastname": "B."
     },
@@ -14,6 +30,22 @@
     "type": "Walk",
     "sport_type": "Walk",
     "device_name": "Garmin Forerunner 245 Music"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Kristin Sørli",
+      "lastname": "O."
+    },
+    "name": "Gåtur på morgenen",
+    "distance": 2911.8,
+    "moving_time": 2055,
+    "elapsed_time": 3862,
+    "total_elevation_gain": 10.6,
+    "type": "Walk",
+    "sport_type": "Walk",
+    "device_name": "Strava App"
   },
   {
     "resource_state": 2,
@@ -3278,37 +3310,5 @@
     "type": "Walk",
     "sport_type": "Walk",
     "device_name": "Garmin Forerunner 245 Music"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Erlend",
-      "lastname": "T."
-    },
-    "name": "Morning Walk",
-    "distance": 4231.6,
-    "moving_time": 3361,
-    "elapsed_time": 3699,
-    "total_elevation_gain": 62,
-    "type": "Walk",
-    "sport_type": "Walk",
-    "device_name": "Garmin Forerunner 255"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Erlend",
-      "lastname": "T."
-    },
-    "name": "Morning Nordic Ski and snowboard",
-    "distance": 4394.3,
-    "moving_time": 4278,
-    "elapsed_time": 7683,
-    "total_elevation_gain": 398,
-    "type": "Snowboard",
-    "sport_type": "Snowboard",
-    "device_name": "Garmin Forerunner 255"
   }
 ]

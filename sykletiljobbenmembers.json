@@ -23,9 +23,9 @@
     "teamTitle": "Bouvet Quantum",
     "companyId": 17359,
     "companyTitle": "Bouvet Norge As Agder",
-    "points": 34.00,
-    "totalSeconds": 47105,
-    "totalCentimeters": 19654370
+    "points": 36.00,
+    "totalSeconds": 49160,
+    "totalCentimeters": 19945550
   },
   {
     "userGuid": "cd61f903-763d-46e2-b237-2a937ae853cd",
@@ -70,9 +70,23 @@
     "totalCentimeters": 38312310
   },
   {
+    "userGuid": "095de6d6-3236-40b6-8985-0feb3c4d2e2e",
+    "userId": 1103984184,
+    "rank": 6,
+    "firstname": "Andreas Zahl",
+    "lastname": "Kristiansen",
+    "teamId": 37917,
+    "teamTitle": "Bouvet Quantum",
+    "companyId": 17359,
+    "companyTitle": "Bouvet Norge As Agder",
+    "points": 20.00,
+    "totalSeconds": 24979,
+    "totalCentimeters": 10877990
+  },
+  {
     "userGuid": "d90862ee-760b-4986-8153-808c15dfbf8b",
     "userId": 1103999506,
-    "rank": 6,
+    "rank": 7,
     "firstname": "Idris Schultz",
     "lastname": "Amrandi",
     "teamId": 37963,
@@ -82,20 +96,6 @@
     "points": 19.00,
     "totalSeconds": 33300,
     "totalCentimeters": 0
-  },
-  {
-    "userGuid": "095de6d6-3236-40b6-8985-0feb3c4d2e2e",
-    "userId": 1103984184,
-    "rank": 7,
-    "firstname": "Andreas Zahl",
-    "lastname": "Kristiansen",
-    "teamId": 37917,
-    "teamTitle": "Bouvet Quantum",
-    "companyId": 17359,
-    "companyTitle": "Bouvet Norge As Agder",
-    "points": 19.00,
-    "totalSeconds": 23946,
-    "totalCentimeters": 10266820
   },
   {
     "userGuid": "bd546b06-7fcf-44c5-9219-44f2e9932e15",

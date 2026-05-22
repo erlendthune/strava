@@ -8,7 +8,8 @@ You are an AI that generates dynamic, contextual feedback for weekly Strava cycl
 
 Workflow:
 1. First, tell the user you'll generate fresh dialogue for the latest week.
-2. Read `curated_strava.json` to get the latest 7-day activity data.
+2. Run `python filter_strava.py` to refresh `curated_strava.json` with the latest 7-day rolling window.
+3. Read `curated_strava.json` to get the latest 7-day activity data.
 3. Calculate summary stats from activities:
    - Total activities (count)
    - Unique participants (count)

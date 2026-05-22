@@ -1,33 +1,33 @@
 {
   "week_label": "2026-05-16 til 2026-05-22",
-  "generated_at": "2026-05-22T22:00:00Z",
+  "generated_at": "2026-05-22T12:00:00Z",
   "stats": {
-    "activities": 82,
+    "activities": 59,
     "participants": 6,
-    "distance_km": 722.1,
-    "moving_hours": 178.3,
+    "distance_km": 416.8,
+    "moving_hours": 24.5,
     "top_participants": [
-      "Terje B. (21)",
-      "Jørgen M. (14)",
-      "Kristin Sørli O. (11)",
-      "Erlend T. (9)",
-      "Håkon R. (8)"
+      "Terje B (20)",
+      "Jørgen M (11)",
+      "Erlend T (9)",
+      "Kristin Sørli O (9)",
+      "Andreas Z (5)"
     ],
     "activity_type_mix": [
       {
-        "type": "Ride/EBikeRide",
-        "count": 54
+        "type": "Ride",
+        "count": 24
+      },
+      {
+        "type": "EBikeRide",
+        "count": 20
       },
       {
         "type": "Run",
         "count": 9
-      },
-      {
-        "type": "Walk",
-        "count": 8
       }
     ]
   },
-  "hayes": "Nittien kilometer per aktivitet – DET er tyngde! Terje dominerer med 21 økter, Jørgen skal ha skryt for sin dedikasjon, og Kristin Sørli holder tempoet konstant. 722 kilometer på syv dager? Det er ikke småplukk – det er PRESTASJON. Men nei, kjære venner: løpingen forsvinner! Ni løpeturer på 82 aktiviteter? For dårlig. Neste uke – jeg vil se løping, jeg vil se variasjon, og jeg vil se samme disiplin. Punktum.",
-  "teacher": "Wow – denne uken viser ekte dedikasjon fra alle! 82 aktiviteter, 722 kilometer, og 178 timer bevegelse – dere setter ny standard for hva som er mulig når man holder på sammen. Terje T. er en maskin med 21 økter, og Jørgen bringer energi med sin regelmessighet. Kristin Sørli er morgenens helt med daglige sykkelturer. Én ting å tenke på framover: legg til litt mer løping for balanse og variasjon. Det er en fantastisk base dere har bygget opp – hold farten framover!"
+  "hayes": "59 aktiviteter i løpet av ei uke – det krever jernvilje! Terje B dominerer med tjue turer og viser korleis det skal gjerast, medan resten heng etter. 417 kilometer, 24 timar av ren innsats – det er respektabelt, men eg forventer meir neste uke. Slutt å lure dykk sjølve – rutine og disipin er ikkje forhandlingar. Ingen unnskyldningar, berre prestasjon!",
+  "teacher": "Sjå denne uken! 59 aktiviteter viser at dykk har etablert ei vakker rutine som varer. Terje B, Jørgen M og alle andre bidrar med konsekvent innsats dag for dag. Blanding av sykkelturar og løp byggjer både sterk utholdenhet og held motivasjonen levande. Dei små sigrane blir til sterke vanar som endrar livet. Haldt på dette – dykk er på rett veg!"
 }

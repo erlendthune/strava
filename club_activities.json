@@ -6,14 +6,30 @@
       "firstname": "Terje",
       "lastname": "B."
     },
+    "name": "Jegers-Gill-Grostøl-Justvik-Gimlekollen",
+    "distance": 15303.2,
+    "moving_time": 4786,
+    "elapsed_time": 4789,
+    "total_elevation_gain": 286.6,
+    "type": "Run",
+    "sport_type": "Run",
+    "workout_type": null,
+    "device_name": "Garmin Forerunner 245 Music"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Terje",
+      "lastname": "B."
+    },
     "name": "Afternoon Ride",
     "distance": 3111.6,
     "moving_time": 630,
     "elapsed_time": 866,
     "total_elevation_gain": 101.8,
-    "type": "Ride",
-    "sport_type": "Ride",
-    "workout_type": 10,
+    "type": "EBikeRide",
+    "sport_type": "EBikeRide",
     "device_name": "Garmin Forerunner 245 Music"
   },
   {
@@ -3294,21 +3310,5 @@
     "sport_type": "Ride",
     "workout_type": 10,
     "device_name": "Garmin Forerunner 245 Music"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Erlend",
-      "lastname": "T."
-    },
-    "name": "Afternoon Snowboard",
-    "distance": 5970.3,
-    "moving_time": 5527,
-    "elapsed_time": 7210,
-    "total_elevation_gain": 349,
-    "type": "Snowboard",
-    "sport_type": "Snowboard",
-    "device_name": "Garmin Forerunner 255"
   }
 ]

@@ -3,6 +3,22 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
+      "firstname": "Marius",
+      "lastname": "H."
+    },
+    "name": "Afternoon Walk",
+    "distance": 2494.5,
+    "moving_time": 2207,
+    "elapsed_time": 2207,
+    "total_elevation_gain": 43,
+    "type": "Walk",
+    "sport_type": "Walk",
+    "device_name": "Garmin vívoactive 5"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
       "firstname": "Kristin Sørli",
       "lastname": "O."
     },
@@ -2428,22 +2444,6 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Kristin Sørli",
-      "lastname": "O."
-    },
-    "name": "Kveldstur på el-sykkel",
-    "distance": 4699.1,
-    "moving_time": 766,
-    "elapsed_time": 794,
-    "total_elevation_gain": 88.7,
-    "type": "EBikeRide",
-    "sport_type": "EBikeRide",
-    "device_name": "Strava App"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
       "firstname": "Håkon",
       "lastname": "R."
     },
@@ -2473,6 +2473,22 @@
     "sport_type": "Ride",
     "workout_type": 10,
     "device_name": "Garmin Forerunner 265"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Kristin Sørli",
+      "lastname": "O."
+    },
+    "name": "Kveldstur på el-sykkel",
+    "distance": 4699.1,
+    "moving_time": 766,
+    "elapsed_time": 794,
+    "total_elevation_gain": 88.7,
+    "type": "EBikeRide",
+    "sport_type": "EBikeRide",
+    "device_name": "Strava App"
   },
   {
     "resource_state": 2,
@@ -3290,23 +3306,6 @@
     "total_elevation_gain": 91.2,
     "type": "Ride",
     "sport_type": "Ride",
-    "workout_type": null,
-    "device_name": "Garmin Forerunner 245 Music"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Terje",
-      "lastname": "B."
-    },
-    "name": "5 x 1000 meter",
-    "distance": 6306.9,
-    "moving_time": 1665,
-    "elapsed_time": 1665,
-    "total_elevation_gain": 55.6,
-    "type": "Run",
-    "sport_type": "Run",
     "workout_type": null,
     "device_name": "Garmin Forerunner 245 Music"
   }

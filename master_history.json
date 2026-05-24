@@ -9789,5 +9789,22 @@
     "workout_type": null,
     "device_name": "Garmin Forerunner 255",
     "activity_date": "2026-05-24T10:51:03.033Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Kristin Sørli",
+      "lastname": "O."
+    },
+    "name": "Ettermiddagstur på el-sykkel",
+    "distance": 6708.4,
+    "moving_time": 1391,
+    "elapsed_time": 1779,
+    "total_elevation_gain": 52.1,
+    "type": "EBikeRide",
+    "sport_type": "EBikeRide",
+    "device_name": "Strava App",
+    "activity_date": "2026-05-24T12:47:59.092Z"
   }
 ]

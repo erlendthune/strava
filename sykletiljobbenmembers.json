@@ -98,9 +98,23 @@
     "totalCentimeters": 0
   },
   {
+    "userGuid": "7ca59f01-f24b-4e15-a8da-ae4440a04fcd",
+    "userId": 1103750078,
+    "rank": 8,
+    "firstname": "Daniel",
+    "lastname": "Groos",
+    "teamId": 37918,
+    "teamTitle": "Bouvet Forge",
+    "companyId": 17359,
+    "companyTitle": "Bouvet Norge As Agder",
+    "points": 14.00,
+    "totalSeconds": 40270,
+    "totalCentimeters": 9510710
+  },
+  {
     "userGuid": "bd546b06-7fcf-44c5-9219-44f2e9932e15",
     "userId": 1103999508,
-    "rank": 8,
+    "rank": 9,
     "firstname": "Marius",
     "lastname": "Holen",
     "teamId": 37963,
@@ -110,20 +124,6 @@
     "points": 14.00,
     "totalSeconds": 38655,
     "totalCentimeters": 3589230
-  },
-  {
-    "userGuid": "7ca59f01-f24b-4e15-a8da-ae4440a04fcd",
-    "userId": 1103750078,
-    "rank": 9,
-    "firstname": "Daniel",
-    "lastname": "Groos",
-    "teamId": 37918,
-    "teamTitle": "Bouvet Forge",
-    "companyId": 17359,
-    "companyTitle": "Bouvet Norge As Agder",
-    "points": 12.00,
-    "totalSeconds": 35450,
-    "totalCentimeters": 6529930
   },
   {
     "userGuid": "197b24fb-9c13-44a4-9d25-24a7b78bae29",

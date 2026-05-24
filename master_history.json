@@ -9806,5 +9806,23 @@
     "sport_type": "EBikeRide",
     "device_name": "Strava App",
     "activity_date": "2026-05-24T12:47:59.092Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Håkon",
+      "lastname": "R."
+    },
+    "name": "Afternoon Ride",
+    "distance": 34300.6,
+    "moving_time": 6603,
+    "elapsed_time": 6709,
+    "total_elevation_gain": 511,
+    "type": "Ride",
+    "sport_type": "Ride",
+    "workout_type": null,
+    "device_name": "Garmin Edge 1030 Plus",
+    "activity_date": "2026-05-24T14:02:59.855Z"
   }
 ]

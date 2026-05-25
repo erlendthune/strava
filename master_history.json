@@ -9824,5 +9824,40 @@
     "workout_type": null,
     "device_name": "Garmin Edge 1030 Plus",
     "activity_date": "2026-05-24T14:02:59.855Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Erlend",
+      "lastname": "T."
+    },
+    "name": "Morning Ride",
+    "distance": 18022.8,
+    "moving_time": 3029,
+    "elapsed_time": 3055,
+    "total_elevation_gain": 330,
+    "type": "Ride",
+    "sport_type": "Ride",
+    "workout_type": null,
+    "device_name": "Garmin Forerunner 255",
+    "activity_date": "2026-05-25T10:50:37.305Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Kristin Sørli",
+      "lastname": "O."
+    },
+    "name": "Gåtur på ettermiddagen",
+    "distance": 3869,
+    "moving_time": 2946,
+    "elapsed_time": 3115,
+    "total_elevation_gain": 36,
+    "type": "Walk",
+    "sport_type": "Walk",
+    "device_name": "Strava App",
+    "activity_date": "2026-05-25T10:50:37.305Z"
   }
 ]

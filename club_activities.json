@@ -3,6 +3,39 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
+      "firstname": "Erlend",
+      "lastname": "T."
+    },
+    "name": "Morning Ride",
+    "distance": 18022.8,
+    "moving_time": 3029,
+    "elapsed_time": 3055,
+    "total_elevation_gain": 330,
+    "type": "Ride",
+    "sport_type": "Ride",
+    "workout_type": null,
+    "device_name": "Garmin Forerunner 255"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Kristin Sørli",
+      "lastname": "O."
+    },
+    "name": "Gåtur på ettermiddagen",
+    "distance": 3869,
+    "moving_time": 2946,
+    "elapsed_time": 3115,
+    "total_elevation_gain": 36,
+    "type": "Walk",
+    "sport_type": "Walk",
+    "device_name": "Strava App"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
       "firstname": "Håkon",
       "lastname": "R."
     },
@@ -55,7 +88,7 @@
       "firstname": "Terje",
       "lastname": "B."
     },
-    "name": "Lunch Walk",
+    "name": "Helleviga",
     "distance": 686.1,
     "moving_time": 694,
     "elapsed_time": 991,
@@ -3270,40 +3303,6 @@
     "total_elevation_gain": 159,
     "type": "Run",
     "sport_type": "Run",
-    "workout_type": null,
-    "device_name": "Garmin Forerunner 255"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Terje",
-      "lastname": "B."
-    },
-    "name": "Løpetur under spilletimen til C",
-    "distance": 5082.6,
-    "moving_time": 1485,
-    "elapsed_time": 1495,
-    "total_elevation_gain": 23.9,
-    "type": "Run",
-    "sport_type": "Run",
-    "workout_type": null,
-    "device_name": "Garmin Forerunner 245 Music"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Erlend",
-      "lastname": "T."
-    },
-    "name": "Afternoon Ride",
-    "distance": 10800.3,
-    "moving_time": 1832,
-    "elapsed_time": 1916,
-    "total_elevation_gain": 184,
-    "type": "Ride",
-    "sport_type": "Ride",
     "workout_type": null,
     "device_name": "Garmin Forerunner 255"
   }

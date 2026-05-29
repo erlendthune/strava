@@ -10231,5 +10231,182 @@
     "workout_type": 10,
     "device_name": "Strava App",
     "activity_date": "2026-05-28T14:45:58.694Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Terje",
+      "lastname": "B."
+    },
+    "name": "Sykkeltur om morgenen",
+    "distance": 3092.8,
+    "moving_time": 523,
+    "elapsed_time": 743,
+    "total_elevation_gain": 3.2,
+    "type": "Ride",
+    "sport_type": "Ride",
+    "workout_type": null,
+    "device_name": "Garmin Forerunner 245 Music",
+    "activity_date": "2026-05-29T10:14:50.251Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Andreas",
+      "lastname": "Z."
+    },
+    "name": "Morning Ride",
+    "distance": 7061.6,
+    "moving_time": 1295,
+    "elapsed_time": 1646,
+    "total_elevation_gain": 73,
+    "type": "EBikeRide",
+    "sport_type": "EBikeRide",
+    "device_name": "Garmin fēnix 5S Plus",
+    "activity_date": "2026-05-29T10:14:50.251Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Kristin Sørli",
+      "lastname": "O."
+    },
+    "name": "Morgentur på elsykkel",
+    "distance": 7091.2,
+    "moving_time": 1015,
+    "elapsed_time": 1126,
+    "total_elevation_gain": 84.9,
+    "type": "EBikeRide",
+    "sport_type": "EBikeRide",
+    "device_name": "Strava App",
+    "activity_date": "2026-05-29T10:14:50.251Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Erlend",
+      "lastname": "T."
+    },
+    "name": "Morning Ride",
+    "distance": 11272.5,
+    "moving_time": 1699,
+    "elapsed_time": 2630,
+    "total_elevation_gain": 136.3,
+    "type": "Ride",
+    "sport_type": "Ride",
+    "workout_type": 10,
+    "device_name": "Strava App",
+    "activity_date": "2026-05-29T10:14:50.251Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Kristin Sørli",
+      "lastname": "O."
+    },
+    "name": "Fottur på kvelden",
+    "distance": 5427.5,
+    "moving_time": 4551,
+    "elapsed_time": 4994,
+    "total_elevation_gain": 179.8,
+    "type": "Hike",
+    "sport_type": "Hike",
+    "device_name": "Strava App",
+    "activity_date": "2026-05-29T10:14:50.251Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Håkon",
+      "lastname": "R."
+    },
+    "name": "Ettermiddag med sykkeltur",
+    "distance": 20205.7,
+    "moving_time": 3093,
+    "elapsed_time": 3093,
+    "total_elevation_gain": 258,
+    "type": "Ride",
+    "sport_type": "Ride",
+    "workout_type": null,
+    "device_name": "Garmin Edge 1030 Plus",
+    "activity_date": "2026-05-29T10:14:50.251Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Kjetil",
+      "lastname": "H."
+    },
+    "name": "Evening Workout",
+    "distance": 0,
+    "moving_time": 6138,
+    "elapsed_time": 6138,
+    "total_elevation_gain": 0,
+    "type": "Workout",
+    "sport_type": "Workout",
+    "workout_type": null,
+    "device_name": "Apple Watch Ultra 3",
+    "activity_date": "2026-05-29T10:14:50.251Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Kjetil",
+      "lastname": "H."
+    },
+    "name": "Afternoon Weight Training",
+    "distance": 0,
+    "moving_time": 5725,
+    "elapsed_time": 5725,
+    "total_elevation_gain": 0,
+    "type": "WeightTraining",
+    "sport_type": "WeightTraining",
+    "workout_type": 30,
+    "device_name": "Apple Watch Ultra 3",
+    "activity_date": "2026-05-29T10:14:50.251Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Kjetil",
+      "lastname": "H."
+    },
+    "name": "Afternoon Weight Training",
+    "distance": 0,
+    "moving_time": 4027,
+    "elapsed_time": 4027,
+    "total_elevation_gain": 0,
+    "type": "WeightTraining",
+    "sport_type": "WeightTraining",
+    "workout_type": 30,
+    "device_name": "Apple Watch Ultra 3",
+    "activity_date": "2026-05-29T10:14:50.251Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Kjetil",
+      "lastname": "H."
+    },
+    "name": "Evening Weight Training",
+    "distance": 0,
+    "moving_time": 4563,
+    "elapsed_time": 4563,
+    "total_elevation_gain": 0,
+    "type": "WeightTraining",
+    "sport_type": "WeightTraining",
+    "workout_type": 30,
+    "device_name": "Apple Watch Ultra 3",
+    "activity_date": "2026-05-29T10:14:50.251Z"
   }
 ]

@@ -10408,5 +10408,40 @@
     "workout_type": 30,
     "device_name": "Apple Watch Ultra 3",
     "activity_date": "2026-05-29T10:14:50.251Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Terje",
+      "lastname": "B."
+    },
+    "name": "Ettermiddag med sykkeltur",
+    "distance": 3003.7,
+    "moving_time": 510,
+    "elapsed_time": 526,
+    "total_elevation_gain": 98.4,
+    "type": "Ride",
+    "sport_type": "Ride",
+    "workout_type": null,
+    "device_name": "Garmin Forerunner 245 Music",
+    "activity_date": "2026-05-29T13:36:10.418Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Andreas",
+      "lastname": "Z."
+    },
+    "name": "Afternoon Ride",
+    "distance": 5545.5,
+    "moving_time": 1175,
+    "elapsed_time": 1998,
+    "total_elevation_gain": 121,
+    "type": "EBikeRide",
+    "sport_type": "EBikeRide",
+    "device_name": "Garmin fēnix 5S Plus",
+    "activity_date": "2026-05-29T13:36:10.418Z"
   }
 ]

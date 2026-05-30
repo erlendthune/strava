@@ -6,6 +6,22 @@
       "firstname": "Kristin Sørli",
       "lastname": "O."
     },
+    "name": "Formiddagstur på el-sykkel",
+    "distance": 8247.4,
+    "moving_time": 1285,
+    "elapsed_time": 1460,
+    "total_elevation_gain": 90.1,
+    "type": "EBikeRide",
+    "sport_type": "EBikeRide",
+    "device_name": "Strava App"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Kristin Sørli",
+      "lastname": "O."
+    },
     "name": "Gåtur på ettermiddagen",
     "distance": 3950.1,
     "moving_time": 2674,
@@ -807,22 +823,6 @@
     "type": "Walk",
     "sport_type": "Walk",
     "device_name": "Strava App"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Andreas",
-      "lastname": "Z."
-    },
-    "name": "Morning Ride",
-    "distance": 6967.7,
-    "moving_time": 1272,
-    "elapsed_time": 1538,
-    "total_elevation_gain": 65,
-    "type": "EBikeRide",
-    "sport_type": "EBikeRide",
-    "device_name": "Garmin fēnix 5S Plus"
   },
   {
     "resource_state": 2,

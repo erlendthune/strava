@@ -10495,5 +10495,22 @@
     "workout_type": 10,
     "device_name": "Strava App",
     "activity_date": "2026-05-30T08:41:27.002Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Kristin Sørli",
+      "lastname": "O."
+    },
+    "name": "Formiddagstur på el-sykkel",
+    "distance": 8247.4,
+    "moving_time": 1285,
+    "elapsed_time": 1460,
+    "total_elevation_gain": 90.1,
+    "type": "EBikeRide",
+    "sport_type": "EBikeRide",
+    "device_name": "Strava App",
+    "activity_date": "2026-05-30T11:07:10.723Z"
   }
 ]

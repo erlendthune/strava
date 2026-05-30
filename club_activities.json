@@ -828,6 +828,22 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
+      "firstname": "Andreas",
+      "lastname": "Z."
+    },
+    "name": "Morning Ride",
+    "distance": 6967.7,
+    "moving_time": 1272,
+    "elapsed_time": 1538,
+    "total_elevation_gain": 65,
+    "type": "EBikeRide",
+    "sport_type": "EBikeRide",
+    "device_name": "Garmin fēnix 5S Plus"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
       "firstname": "Kristin Sørli",
       "lastname": "O."
     },
@@ -1620,23 +1636,6 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Terje",
-      "lastname": "B."
-    },
-    "name": "Lavlandet",
-    "distance": 10043.1,
-    "moving_time": 2807,
-    "elapsed_time": 2810,
-    "total_elevation_gain": 119.5,
-    "type": "Run",
-    "sport_type": "Run",
-    "workout_type": null,
-    "device_name": "Garmin Forerunner 245 Music"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
       "firstname": "Håkon",
       "lastname": "R."
     },
@@ -1649,6 +1648,23 @@
     "sport_type": "Ride",
     "workout_type": null,
     "device_name": "Garmin Edge 1030 Plus"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Terje",
+      "lastname": "B."
+    },
+    "name": "Lavlandet",
+    "distance": 10043.1,
+    "moving_time": 2807,
+    "elapsed_time": 2810,
+    "total_elevation_gain": 119.5,
+    "type": "Run",
+    "sport_type": "Run",
+    "workout_type": null,
+    "device_name": "Garmin Forerunner 245 Music"
   },
   {
     "resource_state": 2,
@@ -3285,21 +3301,5 @@
     "type": "Walk",
     "sport_type": "Walk",
     "device_name": "Apple Watch Ultra 3"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Terje",
-      "lastname": "B."
-    },
-    "name": "Morning Ride",
-    "distance": 2928.8,
-    "moving_time": 412,
-    "elapsed_time": 412,
-    "total_elevation_gain": 2.1,
-    "type": "EBikeRide",
-    "sport_type": "EBikeRide",
-    "device_name": "Garmin Forerunner 245 Music"
   }
 ]

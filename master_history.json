@@ -10704,5 +10704,109 @@
     "workout_type": 10,
     "device_name": "Garmin Forerunner 265",
     "activity_date": "2026-06-01T12:10:42.620Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Terje",
+      "lastname": "B."
+    },
+    "name": "5 x 1000 meter",
+    "distance": 6172,
+    "moving_time": 1664,
+    "elapsed_time": 1670,
+    "total_elevation_gain": 52.1,
+    "type": "Run",
+    "sport_type": "Run",
+    "workout_type": null,
+    "device_name": "Garmin Forerunner 245 Music",
+    "activity_date": "2026-06-01T18:17:33.255Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Terje",
+      "lastname": "B."
+    },
+    "name": "Ettermiddag med sykkeltur",
+    "distance": 2744.1,
+    "moving_time": 579,
+    "elapsed_time": 579,
+    "total_elevation_gain": 79.8,
+    "type": "Ride",
+    "sport_type": "Ride",
+    "workout_type": null,
+    "device_name": "Garmin Forerunner 245 Music",
+    "activity_date": "2026-06-01T18:17:33.255Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Erlend",
+      "lastname": "T."
+    },
+    "name": "Afternoon Wingfoil",
+    "distance": 22946.4,
+    "moving_time": 6379,
+    "elapsed_time": 8326,
+    "total_elevation_gain": 10.3,
+    "type": "Windsurf",
+    "sport_type": "Windsurf",
+    "device_name": "Garmin Instinct 3 Solar",
+    "activity_date": "2026-06-01T18:17:33.255Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Kristin Sørli",
+      "lastname": "O."
+    },
+    "name": "Ettermiddagstur på el-sykkel",
+    "distance": 7094.1,
+    "moving_time": 1114,
+    "elapsed_time": 1443,
+    "total_elevation_gain": 112.7,
+    "type": "EBikeRide",
+    "sport_type": "EBikeRide",
+    "device_name": "Strava App",
+    "activity_date": "2026-06-01T18:17:33.255Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Andreas",
+      "lastname": "Z."
+    },
+    "name": "Ettermiddag med sykkeltur",
+    "distance": 6106.8,
+    "moving_time": 1000,
+    "elapsed_time": 1000,
+    "total_elevation_gain": 110,
+    "type": "EBikeRide",
+    "sport_type": "EBikeRide",
+    "device_name": "Garmin fēnix 5S Plus",
+    "activity_date": "2026-06-01T18:17:33.255Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Erlend",
+      "lastname": "T."
+    },
+    "name": "Afternoon Hike",
+    "distance": 4513.2,
+    "moving_time": 2807,
+    "elapsed_time": 2862,
+    "total_elevation_gain": 115,
+    "type": "Hike",
+    "sport_type": "Hike",
+    "device_name": "Garmin Instinct 3 Solar",
+    "activity_date": "2026-06-01T18:17:33.255Z"
   }
 ]

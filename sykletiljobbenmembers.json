@@ -1,22 +1,36 @@
 [
   {
+    "userGuid": "84db5589-5d05-4e88-b600-a5cab7e66f9d",
+    "userId": 1103547198,
+    "rank": 1,
+    "firstname": "Erlend",
+    "lastname": "Thune",
+    "teamId": 37917,
+    "teamTitle": "Bouvet Quantum",
+    "companyId": 17359,
+    "companyTitle": "Bouvet Norge As Agder",
+    "points": 54.00,
+    "totalSeconds": 89525,
+    "totalCentimeters": 30508120
+  },
+  {
     "userGuid": "2bd3e601-68fe-41be-a5d3-18a2345cb595",
     "userId": 1103463900,
-    "rank": 1,
+    "rank": 2,
     "firstname": "Kristin Sørli",
     "lastname": "Ommundsen",
     "teamId": 37917,
     "teamTitle": "Bouvet Quantum",
     "companyId": 17359,
     "companyTitle": "Bouvet Norge As Agder",
-    "points": 52.00,
-    "totalSeconds": 79289,
-    "totalCentimeters": 30741760
+    "points": 53.00,
+    "totalSeconds": 80403,
+    "totalCentimeters": 31451170
   },
   {
     "userGuid": "0f1c5348-84b2-4207-a222-c61f08c16801",
     "userId": 1102748495,
-    "rank": 2,
+    "rank": 3,
     "firstname": "Kjetil",
     "lastname": "Haugland",
     "teamId": 37917,
@@ -26,20 +40,6 @@
     "points": 51.00,
     "totalSeconds": 81709,
     "totalCentimeters": 5828100
-  },
-  {
-    "userGuid": "84db5589-5d05-4e88-b600-a5cab7e66f9d",
-    "userId": 1103547198,
-    "rank": 3,
-    "firstname": "Erlend",
-    "lastname": "Thune",
-    "teamId": 37917,
-    "teamTitle": "Bouvet Quantum",
-    "companyId": 17359,
-    "companyTitle": "Bouvet Norge As Agder",
-    "points": 50.00,
-    "totalSeconds": 80339,
-    "totalCentimeters": 27762160
   },
   {
     "userGuid": "cd61f903-763d-46e2-b237-2a937ae853cd",
@@ -79,9 +79,9 @@
     "teamTitle": "Bouvet Quantum",
     "companyId": 17359,
     "companyTitle": "Bouvet Norge As Agder",
-    "points": 29.00,
-    "totalSeconds": 38669,
-    "totalCentimeters": 14034150
+    "points": 30.00,
+    "totalSeconds": 39669,
+    "totalCentimeters": 14644830
   },
   {
     "userGuid": "d90862ee-760b-4986-8153-808c15dfbf8b",
@@ -136,8 +136,8 @@
     "companyId": 17359,
     "companyTitle": "Bouvet Norge As Agder",
     "points": 11.00,
-    "totalSeconds": 55145,
-    "totalCentimeters": 20924200
+    "totalSeconds": 57388,
+    "totalCentimeters": 21815810
   },
   {
     "userGuid": "f8f3d2ca-54a9-4eff-b745-c0ab0fb96cb0",

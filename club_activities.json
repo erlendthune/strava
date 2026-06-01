@@ -6,6 +6,88 @@
       "firstname": "Terje",
       "lastname": "B."
     },
+    "name": "5 x 1000 meter",
+    "distance": 6172,
+    "moving_time": 1664,
+    "elapsed_time": 1670,
+    "total_elevation_gain": 52.1,
+    "type": "Run",
+    "sport_type": "Run",
+    "workout_type": null,
+    "device_name": "Garmin Forerunner 245 Music"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Terje",
+      "lastname": "B."
+    },
+    "name": "Ettermiddag med sykkeltur",
+    "distance": 2744.1,
+    "moving_time": 579,
+    "elapsed_time": 579,
+    "total_elevation_gain": 79.8,
+    "type": "Ride",
+    "sport_type": "Ride",
+    "workout_type": null,
+    "device_name": "Garmin Forerunner 245 Music"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Erlend",
+      "lastname": "T."
+    },
+    "name": "Afternoon Wingfoil",
+    "distance": 22946.4,
+    "moving_time": 6379,
+    "elapsed_time": 8326,
+    "total_elevation_gain": 10.3,
+    "type": "Windsurf",
+    "sport_type": "Windsurf",
+    "device_name": "Garmin Instinct 3 Solar"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Kristin Sørli",
+      "lastname": "O."
+    },
+    "name": "Ettermiddagstur på el-sykkel",
+    "distance": 7094.1,
+    "moving_time": 1114,
+    "elapsed_time": 1443,
+    "total_elevation_gain": 112.7,
+    "type": "EBikeRide",
+    "sport_type": "EBikeRide",
+    "device_name": "Strava App"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Andreas",
+      "lastname": "Z."
+    },
+    "name": "Ettermiddag med sykkeltur",
+    "distance": 6106.8,
+    "moving_time": 1000,
+    "elapsed_time": 1000,
+    "total_elevation_gain": 110,
+    "type": "EBikeRide",
+    "sport_type": "EBikeRide",
+    "device_name": "Garmin fēnix 5S Plus"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Terje",
+      "lastname": "B."
+    },
     "name": "Sykkeltur om morgenen",
     "distance": 3172.7,
     "moving_time": 955,
@@ -81,6 +163,22 @@
     "sport_type": "Ride",
     "workout_type": 10,
     "device_name": "Garmin Forerunner 265"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Erlend",
+      "lastname": "T."
+    },
+    "name": "Afternoon Hike",
+    "distance": 4513.2,
+    "moving_time": 2807,
+    "elapsed_time": 2862,
+    "total_elevation_gain": 115,
+    "type": "Hike",
+    "sport_type": "Hike",
+    "device_name": "Garmin Instinct 3 Solar"
   },
   {
     "resource_state": 2,
@@ -3189,23 +3287,6 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Jørgen",
-      "lastname": "M."
-    },
-    "name": "Afternoon Ride",
-    "distance": 6946.4,
-    "moving_time": 1191,
-    "elapsed_time": 1277,
-    "total_elevation_gain": 91,
-    "type": "Ride",
-    "sport_type": "Ride",
-    "workout_type": 10,
-    "device_name": "Garmin Forerunner 265"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
       "firstname": "Kristin Sørli",
       "lastname": "O."
     },
@@ -3217,89 +3298,5 @@
     "type": "Walk",
     "sport_type": "Walk",
     "device_name": "Strava App"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Terje",
-      "lastname": "B."
-    },
-    "name": "Afternoon Ride",
-    "distance": 3008.8,
-    "moving_time": 648,
-    "elapsed_time": 648,
-    "total_elevation_gain": 98.6,
-    "type": "Ride",
-    "sport_type": "Ride",
-    "workout_type": null,
-    "device_name": "Garmin Forerunner 245 Music"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Terje",
-      "lastname": "B."
-    },
-    "name": "Lunch Ride",
-    "distance": 1600.3,
-    "moving_time": 291,
-    "elapsed_time": 291,
-    "total_elevation_gain": 0,
-    "type": "Ride",
-    "sport_type": "Ride",
-    "workout_type": null,
-    "device_name": "Garmin Forerunner 245 Music"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Terje",
-      "lastname": "B."
-    },
-    "name": "Morning Ride",
-    "distance": 3038.3,
-    "moving_time": 448,
-    "elapsed_time": 492,
-    "total_elevation_gain": 2,
-    "type": "Ride",
-    "sport_type": "Ride",
-    "workout_type": 10,
-    "device_name": "Garmin Forerunner 245 Music"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Kristin Sørli",
-      "lastname": "O."
-    },
-    "name": "Morgentur på elsykkel",
-    "distance": 7151.2,
-    "moving_time": 1054,
-    "elapsed_time": 1094,
-    "total_elevation_gain": 82.8,
-    "type": "EBikeRide",
-    "sport_type": "EBikeRide",
-    "device_name": "Strava App"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Erlend",
-      "lastname": "T."
-    },
-    "name": "Morning Ride",
-    "distance": 10872.9,
-    "moving_time": 1789,
-    "elapsed_time": 1903,
-    "total_elevation_gain": 171,
-    "type": "Ride",
-    "sport_type": "Ride",
-    "workout_type": null,
-    "device_name": "Garmin Forerunner 255"
   }
 ]

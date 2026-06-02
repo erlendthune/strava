@@ -36,7 +36,15 @@ Workflow:
 - If no activities: frame as an opportunity to restart with low barriers
 - Finish with an uplifting, motivational one-liner to inspire them to keep going
 
-6. Write the JSON directly to `weekly_dialogue.json`:
+6. Update dialogue.html by replacing the content in the following divs:
+   - `#week-label` with: `Ukegrunnlag: YYYY-MM-DD to YYYY-MM-DD`
+   - `#hayes-text` with: The Hayes commentary
+   - `#teacher-text` with: The Teacher commentary
+   - `#stats` with: `Aktiviteter: X | Deltakere: Y | Distanse: Z km | Tid: W timer | Aktivitetsmiks: type1: count, type2: count, etc.`
+   
+   To do this: Read dialogue.html, find each div's content (e.g., `<div id="week-label" class="week-meta">...</div>`), and replace only the content inside the closing tag, preserving the opening tag and all attributes. Use proper HTML escaping for any special characters in the commentary text.
+
+7. Also write the JSON data to `weekly_dialogue.json` for archival purposes with this structure:
 {
   "week_label": "YYYY-MM-DD to YYYY-MM-DD",
   "generated_at": "ISO 8601 timestamp",
@@ -61,4 +69,4 @@ Constraints:
   - Do NOT use German words (e.g., "ausdauer" is German → use "utholdenhet" in Norwegian)
   - Check all words are Norwegian spelling and vocabulary
   - Examples: "rutine" (routine), "utholdenhet" (endurance), "dager" (days), "kilometer" (kilometers)
-- Return ONLY valid JSON output with no markdown formatting
+- Return updated HTML with properly escaped content and valid JSON output with no markdown formatting

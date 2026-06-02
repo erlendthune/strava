@@ -238,7 +238,7 @@
     <main class="stage">
         <section class="header">
             <h1>Sykle til jobben: Siste 7 Dager</h1>
-            <p id="week-label" class="week-meta">Laster uke...</p>
+            <p id="week-label" class="week-meta">Ukegrunnlag: 2026-05-27 til 2026-06-02</p>
         </section>
 
         <section class="dialogue-grid">
@@ -248,7 +248,7 @@
                 </div>
                 <div>
                     <h2 class="speaker hayes">DRILL SERGEANT HAYES</h2>
-                    <div id="hayes-text" class="bubble">Laster Hayes-oppsummering...</div>
+                    <div id="hayes-text" class="bubble">49 aktiviteter fra 8 deltakere, og likevel er det altfor mye slingringsmonn. Terje B, Kristin Sørli O og Erlend T leverer, men resten må slutte å gjemme seg bak enkeltøkter og tilfeldigheter. 327,6 kilometer og 27,4 timer er arbeid, ikke unntak, så neste uke krever jeg flere som møter opp og gjentar innsatsen. Hvis dere vil kalle dette en vane, får dere først bevise at dere tåler en vanlig uke uten å falle av.</div>
                 </div>
             </article>
 
@@ -258,71 +258,26 @@
                 </div>
                 <div>
                     <h2 class="speaker teacher">POSITIV PEDAGOG</h2>
-                    <div id="teacher-text" class="bubble">Laster læreroppsummering...</div>
+                    <div id="teacher-text" class="bubble">49 aktiviteter på én uke viser at gruppen har bygget god bevegelse i hverdagen. Terje B, Kristin Sørli O og Erlend T setter et tydelig tempo, og bredden med 8 deltakere gir et godt grunnlag å bygge videre på. 327,6 kilometer og 27,4 timer forteller at innsatsen allerede er stabil, så neste steg er å hjelpe flere til å få inn to eller tre faste økter i uken. Fortsett med små, gjennomførbare avtaler med dere selv, for det er slik gode vaner blir varige.</div>
                 </div>
             </article>
         </section>
 
-        <section id="stats" class="stats"></section>
+        <section id="stats" class="stats">Aktiviteter: 49 | Deltakere: 8 | Distanse: 327,6 km | Tid: 27,4 timer | Aktivitetsmiks: Ride: 22, EBikeRide: 12, Run: 4</section>
     </main>
 
     <script>
-        const weekLabelEl = document.getElementById("week-label");
-        const hayesTextEl = document.getElementById("hayes-text");
-        const teacherTextEl = document.getElementById("teacher-text");
-        const statsEl = document.getElementById("stats");
-
-        function setFallbackAvatar(imgId, fallbackText) {
+        const avatarFallback = (imgId, fallbackText) => {
             const img = document.getElementById(imgId);
-            const wrap = img.parentElement;
-            img.addEventListener("error", () => {
-                img.remove();
-                wrap.textContent = fallbackText;
-            });
-        }
-
-        setFallbackAvatar("hayes-avatar", "LEGG INN\nHAYES-BILDE");
-        setFallbackAvatar("teacher-avatar", "LEGG INN\nLÆRER-BILDE");
-
-        function formatTypeMix(activityTypeMix) {
-            if (!Array.isArray(activityTypeMix) || !activityTypeMix.length) {
-                return "Ingen data";
+            if (img) {
+                img.addEventListener("error", () => {
+                    img.remove();
+                    img.parentElement.textContent = fallbackText;
+                });
             }
-
-            return activityTypeMix
-                .map(entry => `${entry.type}: ${entry.count}`)
-                .join(", ");
-        }
-
-        async function loadDialogue() {
-            try {
-                const response = await fetch("weekly_dialogue.json");
-                if (!response.ok) {
-                    throw new Error(`Kunne ikke lese weekly_dialogue.json (${response.status})`);
-                }
-
-                const dialogue = await response.json();
-                const stats = dialogue.stats || {};
-
-                weekLabelEl.textContent = `Ukegrunnlag: ${dialogue.week_label || "Ingen datert aktivitet"}`;
-                hayesTextEl.textContent = dialogue.hayes || "Hayes-oppsummering mangler.";
-                teacherTextEl.textContent = dialogue.teacher || "Læreroppsummering mangler.";
-                statsEl.textContent = [
-                    `Aktiviteter: ${stats.activities ?? 0}`,
-                    `Deltakere: ${stats.participants ?? 0}`,
-                    `Distanse: ${Number(stats.distance_km ?? 0).toFixed(1)} km`,
-                    `Tid: ${Number(stats.moving_hours ?? 0).toFixed(1)} timer`,
-                    `Aktivitetsmiks: ${formatTypeMix(stats.activity_type_mix)}`
-                ].join(" | ");
-            } catch (error) {
-                weekLabelEl.textContent = "Kunne ikke laste dialoggrunnlag";
-                hayesTextEl.textContent = "Data mangler. Kjør generate_weekly_dialogue.py for å lage weekly_dialogue.json.";
-                teacherTextEl.textContent = "Når weekly_dialogue.json finnes, vises den genererte læreroppsummeringen her.";
-                statsEl.textContent = error.message;
-            }
-        }
-
-        loadDialogue();
+        };
+        avatarFallback("hayes-avatar", "LEGG INN\nHAYES-BILDE");
+        avatarFallback("teacher-avatar", "LEGG INN\nLÆRER-BILDE");
     </script>
 </body>
 </html>

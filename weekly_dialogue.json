@@ -1,33 +1,33 @@
 {
-  "week_label": "2026-05-16 til 2026-05-22",
-  "generated_at": "2026-05-22T12:00:00Z",
+  "week_label": "2026-05-27 til 2026-06-02",
+  "generated_at": "2026-06-02T11:00:19Z",
   "stats": {
-    "activities": 59,
-    "participants": 6,
-    "distance_km": 416.8,
-    "moving_hours": 24.5,
+    "activities": 49,
+    "participants": 8,
+    "distance_km": 327.6,
+    "moving_hours": 27.4,
     "top_participants": [
-      "Terje B (20)",
-      "Jørgen M (11)",
+      "Terje B (13)",
+      "Kristin Sørli O (10)",
       "Erlend T (9)",
-      "Kristin Sørli O (9)",
-      "Andreas Z (5)"
+      "Jørgen M (5)",
+      "Andreas Z (4)"
     ],
     "activity_type_mix": [
       {
         "type": "Ride",
-        "count": 24
+        "count": 22
       },
       {
         "type": "EBikeRide",
-        "count": 20
+        "count": 12
       },
       {
         "type": "Run",
-        "count": 9
+        "count": 4
       }
     ]
   },
-  "hayes": "59 aktiviteter i løpet av ei uke – det krever jernvilje! Terje B dominerer med tjue turer og viser korleis det skal gjerast, medan resten heng etter. 417 kilometer, 24 timar av ren innsats – det er respektabelt, men eg forventer meir neste uke. Slutt å lure dykk sjølve – rutine og disipin er ikkje forhandlingar. Ingen unnskyldningar, berre prestasjon!",
-  "teacher": "Sjå denne uken! 59 aktiviteter viser at dykk har etablert ei vakker rutine som varer. Terje B, Jørgen M og alle andre bidrar med konsekvent innsats dag for dag. Blanding av sykkelturar og løp byggjer både sterk utholdenhet og held motivasjonen levande. Dei små sigrane blir til sterke vanar som endrar livet. Haldt på dette – dykk er på rett veg!"
+  "hayes": "49 aktiviteter fra 8 deltakere, og likevel er det altfor mye slingringsmonn. Terje B, Kristin Sørli O og Erlend T leverer, men resten må slutte å gjemme seg bak enkeltøkter og tilfeldigheter. 327,6 kilometer og 27,4 timer er arbeid, ikke unntak, så neste uke krever jeg flere som møter opp og gjentar innsatsen. Hvis dere vil kalle dette en vane, får dere først bevise at dere tåler en vanlig uke uten å falle av."
+  ,"teacher": "49 aktiviteter på én uke viser at gruppen har bygget god bevegelse i hverdagen. Terje B, Kristin Sørli O og Erlend T setter et tydelig tempo, og bredden med 8 deltakere gir et godt grunnlag å bygge videre på. 327,6 kilometer og 27,4 timer forteller at innsatsen allerede er stabil, så neste steg er å hjelpe flere til å få inn to eller tre faste økter i uken. Fortsett med små, gjennomførbare avtaler med dere selv, for det er slik gode vaner blir varige."
 }

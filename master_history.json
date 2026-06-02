@@ -10916,5 +10916,23 @@
     "workout_type": null,
     "device_name": "Garmin Forerunner 245 Music",
     "activity_date": "2026-06-02T15:00:22.717Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Erlend",
+      "lastname": "T."
+    },
+    "name": "Evening Run",
+    "distance": 17614.6,
+    "moving_time": 7619,
+    "elapsed_time": 7623,
+    "total_elevation_gain": 302,
+    "type": "Run",
+    "sport_type": "Run",
+    "workout_type": null,
+    "device_name": "Garmin Instinct 3 Solar",
+    "activity_date": "2026-06-02T20:30:23.562Z"
   }
 ]

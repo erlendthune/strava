@@ -10970,5 +10970,22 @@
     "workout_type": null,
     "device_name": "Garmin Forerunner 245 Music",
     "activity_date": "2026-06-03T14:00:23.080Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Erlend",
+      "lastname": "T."
+    },
+    "name": "Afternoon Inline Skate",
+    "distance": 11056.6,
+    "moving_time": 3038,
+    "elapsed_time": 3493,
+    "total_elevation_gain": 186,
+    "type": "InlineSkate",
+    "sport_type": "InlineSkate",
+    "device_name": "Garmin Instinct 3 Solar",
+    "activity_date": "2026-06-03T15:00:23.583Z"
   }
 ]

@@ -11149,5 +11149,41 @@
     "workout_type": 10,
     "device_name": "Garmin Forerunner 265",
     "activity_date": "2026-06-04T06:00:21.901Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Terje",
+      "lastname": "B."
+    },
+    "name": "Ettermiddag med sykkeltur",
+    "distance": 3069.2,
+    "moving_time": 625,
+    "elapsed_time": 799,
+    "total_elevation_gain": 99.5,
+    "type": "Ride",
+    "sport_type": "Ride",
+    "workout_type": null,
+    "device_name": "Garmin Forerunner 245 Music",
+    "activity_date": "2026-06-04T14:30:26.482Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Terje",
+      "lastname": "B."
+    },
+    "name": "Sykkeltur om morgenen",
+    "distance": 3178.9,
+    "moving_time": 505,
+    "elapsed_time": 602,
+    "total_elevation_gain": 2.1,
+    "type": "Ride",
+    "sport_type": "Ride",
+    "workout_type": null,
+    "device_name": "Garmin Forerunner 245 Music",
+    "activity_date": "2026-06-04T14:30:26.482Z"
   }
 ]

@@ -3,6 +3,22 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
+      "firstname": "Kristin Sørli",
+      "lastname": "O."
+    },
+    "name": "Gåtur på kvelden",
+    "distance": 2562.6,
+    "moving_time": 2133,
+    "elapsed_time": 3464,
+    "total_elevation_gain": 71.5,
+    "type": "Walk",
+    "sport_type": "Walk",
+    "device_name": "Strava App"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
       "firstname": "Erlend",
       "lastname": "T."
     },
@@ -3297,21 +3313,5 @@
     "type": "Walk",
     "sport_type": "Walk",
     "device_name": "Garmin Forerunner 245 Music"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Kristin Sørli",
-      "lastname": "O."
-    },
-    "name": "Gåtur på ettermiddagen",
-    "distance": 3676.4,
-    "moving_time": 2506,
-    "elapsed_time": 2793,
-    "total_elevation_gain": 33.9,
-    "type": "Walk",
-    "sport_type": "Walk",
-    "device_name": "Strava App"
   }
 ]

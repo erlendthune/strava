@@ -11239,5 +11239,23 @@
     "workout_type": 10,
     "device_name": "Garmin Forerunner 265",
     "activity_date": "2026-06-05T10:30:20.887Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Terje",
+      "lastname": "B."
+    },
+    "name": "Afternoon Run",
+    "distance": 5479.9,
+    "moving_time": 2293,
+    "elapsed_time": 2308,
+    "total_elevation_gain": 163.6,
+    "type": "Run",
+    "sport_type": "Run",
+    "workout_type": null,
+    "device_name": "Garmin Forerunner 245 Music",
+    "activity_date": "2026-06-05T15:30:17.961Z"
   }
 ]

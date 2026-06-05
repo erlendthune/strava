@@ -3,6 +3,40 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
+      "firstname": "Jørgen",
+      "lastname": "M."
+    },
+    "name": "Sykkeltur om morgenen",
+    "distance": 6939.2,
+    "moving_time": 1089,
+    "elapsed_time": 1118,
+    "total_elevation_gain": 65,
+    "type": "Ride",
+    "sport_type": "Ride",
+    "workout_type": 10,
+    "device_name": "Garmin Forerunner 265"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Jørgen",
+      "lastname": "M."
+    },
+    "name": "Sykkeltur på kvelden",
+    "distance": 9145.7,
+    "moving_time": 1563,
+    "elapsed_time": 1603,
+    "total_elevation_gain": 121,
+    "type": "Ride",
+    "sport_type": "Ride",
+    "workout_type": 10,
+    "device_name": "Garmin Forerunner 265"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
       "firstname": "Terje",
       "lastname": "B."
     },
@@ -819,23 +853,6 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Håkon",
-      "lastname": "R."
-    },
-    "name": "Ettermiddag med sykkeltur",
-    "distance": 20205.7,
-    "moving_time": 3093,
-    "elapsed_time": 3093,
-    "total_elevation_gain": 258,
-    "type": "Ride",
-    "sport_type": "Ride",
-    "workout_type": null,
-    "device_name": "Garmin Edge 1030 Plus"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
       "firstname": "Kristin Sørli",
       "lastname": "O."
     },
@@ -864,6 +881,23 @@
     "sport_type": "Ride",
     "workout_type": 10,
     "device_name": "Strava App"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Håkon",
+      "lastname": "R."
+    },
+    "name": "Ettermiddag med sykkeltur",
+    "distance": 20205.7,
+    "moving_time": 3093,
+    "elapsed_time": 3093,
+    "total_elevation_gain": 258,
+    "type": "Ride",
+    "sport_type": "Ride",
+    "workout_type": null,
+    "device_name": "Garmin Edge 1030 Plus"
   },
   {
     "resource_state": 2,
@@ -1612,22 +1646,6 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Kristin Sørli",
-      "lastname": "O."
-    },
-    "name": "Gåtur på ettermiddagen",
-    "distance": 1541.1,
-    "moving_time": 1006,
-    "elapsed_time": 1033,
-    "total_elevation_gain": 7.4,
-    "type": "Walk",
-    "sport_type": "Walk",
-    "device_name": "Strava App"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
       "firstname": "Håkon",
       "lastname": "R."
     },
@@ -1640,6 +1658,22 @@
     "sport_type": "Ride",
     "workout_type": null,
     "device_name": "Garmin Edge 1030 Plus"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Kristin Sørli",
+      "lastname": "O."
+    },
+    "name": "Gåtur på ettermiddagen",
+    "distance": 1541.1,
+    "moving_time": 1006,
+    "elapsed_time": 1033,
+    "total_elevation_gain": 7.4,
+    "type": "Walk",
+    "sport_type": "Walk",
+    "device_name": "Strava App"
   },
   {
     "resource_state": 2,
@@ -3267,22 +3301,6 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Kristin Sørli",
-      "lastname": "O."
-    },
-    "name": "Gåtur på formiddagen",
-    "distance": 4196.5,
-    "moving_time": 3045,
-    "elapsed_time": 4442,
-    "total_elevation_gain": 35.2,
-    "type": "Walk",
-    "sport_type": "Walk",
-    "device_name": "Strava App"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
       "firstname": "Håkon",
       "lastname": "R."
     },
@@ -3295,21 +3313,5 @@
     "sport_type": "Ride",
     "workout_type": null,
     "device_name": "Garmin Edge 1030 Plus"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Erlend",
-      "lastname": "T."
-    },
-    "name": "Morning Walk",
-    "distance": 5857.8,
-    "moving_time": 3876,
-    "elapsed_time": 3891,
-    "total_elevation_gain": 138,
-    "type": "Walk",
-    "sport_type": "Walk",
-    "device_name": "Garmin Forerunner 255"
   }
 ]

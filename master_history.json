@@ -11414,5 +11414,22 @@
     "workout_type": null,
     "device_name": "Garmin Edge 1030 Plus",
     "activity_date": "2026-06-06T17:00:16.813Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Kristin Sørli",
+      "lastname": "O."
+    },
+    "name": "Ettermiddagstur på el-sykkel",
+    "distance": 18878.9,
+    "moving_time": 5528,
+    "elapsed_time": 7108,
+    "total_elevation_gain": 537.3,
+    "type": "EBikeRide",
+    "sport_type": "EBikeRide",
+    "device_name": "Strava App",
+    "activity_date": "2026-06-06T18:00:21.202Z"
   }
 ]

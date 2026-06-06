@@ -11291,5 +11291,58 @@
     "sport_type": "Walk",
     "device_name": "Strava App",
     "activity_date": "2026-06-05T18:30:25.925Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Erlend",
+      "lastname": "T."
+    },
+    "name": "Morning Ride",
+    "distance": 4134.2,
+    "moving_time": 1590,
+    "elapsed_time": 1853,
+    "total_elevation_gain": 93,
+    "type": "Ride",
+    "sport_type": "Ride",
+    "workout_type": null,
+    "device_name": "Garmin Instinct 3 Solar",
+    "activity_date": "2026-06-06T10:00:19.247Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Erlend",
+      "lastname": "T."
+    },
+    "name": "Morning Walk",
+    "distance": 2060.7,
+    "moving_time": 1388,
+    "elapsed_time": 1596,
+    "total_elevation_gain": 74,
+    "type": "Walk",
+    "sport_type": "Walk",
+    "device_name": "Garmin Instinct 3 Solar",
+    "activity_date": "2026-06-06T10:00:19.247Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Erlend",
+      "lastname": "T."
+    },
+    "name": "Morning Ride",
+    "distance": 4794.9,
+    "moving_time": 1430,
+    "elapsed_time": 1774,
+    "total_elevation_gain": 52,
+    "type": "Ride",
+    "sport_type": "Ride",
+    "workout_type": null,
+    "device_name": "Garmin Instinct 3 Solar",
+    "activity_date": "2026-06-06T10:00:19.247Z"
   }
 ]

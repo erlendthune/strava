@@ -3,6 +3,56 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
+      "firstname": "Erlend",
+      "lastname": "T."
+    },
+    "name": "Morning Ride",
+    "distance": 4134.2,
+    "moving_time": 1590,
+    "elapsed_time": 1853,
+    "total_elevation_gain": 93,
+    "type": "Ride",
+    "sport_type": "Ride",
+    "workout_type": null,
+    "device_name": "Garmin Instinct 3 Solar"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Erlend",
+      "lastname": "T."
+    },
+    "name": "Morning Walk",
+    "distance": 2060.7,
+    "moving_time": 1388,
+    "elapsed_time": 1596,
+    "total_elevation_gain": 74,
+    "type": "Walk",
+    "sport_type": "Walk",
+    "device_name": "Garmin Instinct 3 Solar"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Erlend",
+      "lastname": "T."
+    },
+    "name": "Morning Ride",
+    "distance": 4794.9,
+    "moving_time": 1430,
+    "elapsed_time": 1774,
+    "total_elevation_gain": 52,
+    "type": "Ride",
+    "sport_type": "Ride",
+    "workout_type": null,
+    "device_name": "Garmin Instinct 3 Solar"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
       "firstname": "Kristin Sørli",
       "lastname": "O."
     },
@@ -3264,54 +3314,5 @@
     "sport_type": "WeightTraining",
     "workout_type": 30,
     "device_name": "Apple Watch Ultra 3"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Terje",
-      "lastname": "B."
-    },
-    "name": "Morning Walk",
-    "distance": 447.8,
-    "moving_time": 570,
-    "elapsed_time": 646,
-    "total_elevation_gain": 48,
-    "type": "Walk",
-    "sport_type": "Walk",
-    "device_name": "Garmin Forerunner 245 Music"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Erlend",
-      "lastname": "T."
-    },
-    "name": "Morning Run",
-    "distance": 5512.8,
-    "moving_time": 2590,
-    "elapsed_time": 2788,
-    "total_elevation_gain": 119,
-    "type": "Run",
-    "sport_type": "Run",
-    "workout_type": null,
-    "device_name": "Garmin Forerunner 255"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Terje",
-      "lastname": "B."
-    },
-    "name": "Evening Walk",
-    "distance": 940.6,
-    "moving_time": 868,
-    "elapsed_time": 1021,
-    "total_elevation_gain": 2.7,
-    "type": "Walk",
-    "sport_type": "Walk",
-    "device_name": "Garmin Forerunner 245 Music"
   }
 ]

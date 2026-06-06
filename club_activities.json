@@ -3,6 +3,22 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
+      "firstname": "Kristin Sørli",
+      "lastname": "O."
+    },
+    "name": "Formiddagstur på el-sykkel",
+    "distance": 24789.8,
+    "moving_time": 4533,
+    "elapsed_time": 8491,
+    "total_elevation_gain": 204.7,
+    "type": "EBikeRide",
+    "sport_type": "EBikeRide",
+    "device_name": "Strava App"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
       "firstname": "Erlend",
       "lastname": "T."
     },
@@ -3297,22 +3313,5 @@
     "type": "Walk",
     "sport_type": "Walk",
     "device_name": "Garmin Forerunner 245 Music"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Kjetil",
-      "lastname": "H."
-    },
-    "name": "Lunch Weight Training",
-    "distance": 0,
-    "moving_time": 3669,
-    "elapsed_time": 3669,
-    "total_elevation_gain": 0,
-    "type": "WeightTraining",
-    "sport_type": "WeightTraining",
-    "workout_type": 30,
-    "device_name": "Apple Watch Ultra 3"
   }
 ]

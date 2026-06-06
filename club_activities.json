@@ -3,6 +3,22 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
+      "firstname": "Kristin Sørli",
+      "lastname": "O."
+    },
+    "name": "Ettermiddagstur på el-sykkel",
+    "distance": 15843.4,
+    "moving_time": 2953,
+    "elapsed_time": 5105,
+    "total_elevation_gain": 91.9,
+    "type": "EBikeRide",
+    "sport_type": "EBikeRide",
+    "device_name": "Strava App"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
       "firstname": "Terje",
       "lastname": "B."
     },
@@ -3298,21 +3314,5 @@
     "type": "Walk",
     "sport_type": "Walk",
     "device_name": "Garmin Forerunner 245 Music"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Kristin Sørli",
-      "lastname": "O."
-    },
-    "name": "Gåtur på ettermiddagen",
-    "distance": 3168.1,
-    "moving_time": 2235,
-    "elapsed_time": 2278,
-    "total_elevation_gain": 12,
-    "type": "Walk",
-    "sport_type": "Walk",
-    "device_name": "Strava App"
   }
 ]

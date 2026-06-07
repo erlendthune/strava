@@ -3,6 +3,22 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
+      "firstname": "Erlend",
+      "lastname": "T."
+    },
+    "name": "Lunch Swim",
+    "distance": 590.6,
+    "moving_time": 1167,
+    "elapsed_time": 1167,
+    "total_elevation_gain": 3.9,
+    "type": "Swim",
+    "sport_type": "Swim",
+    "device_name": "Garmin Instinct 3 Solar"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
       "firstname": "Kristin Sørli",
       "lastname": "O."
     },
@@ -1647,22 +1663,6 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Kristin Sørli",
-      "lastname": "O."
-    },
-    "name": "Gåtur på morgenen",
-    "distance": 2911.8,
-    "moving_time": 2055,
-    "elapsed_time": 3862,
-    "total_elevation_gain": 10.6,
-    "type": "Walk",
-    "sport_type": "Walk",
-    "device_name": "Strava App"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
       "firstname": "Terje",
       "lastname": "B."
     },
@@ -1674,6 +1674,22 @@
     "type": "Walk",
     "sport_type": "Walk",
     "device_name": "Garmin Forerunner 245 Music"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Kristin Sørli",
+      "lastname": "O."
+    },
+    "name": "Gåtur på morgenen",
+    "distance": 2911.8,
+    "moving_time": 2055,
+    "elapsed_time": 3862,
+    "total_elevation_gain": 10.6,
+    "type": "Walk",
+    "sport_type": "Walk",
+    "device_name": "Strava App"
   },
   {
     "resource_state": 2,
@@ -3298,21 +3314,5 @@
     "type": "EBikeRide",
     "sport_type": "EBikeRide",
     "device_name": "Strava App"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Kjetil",
-      "lastname": "H."
-    },
-    "name": "Morning Walk",
-    "distance": 1513.1,
-    "moving_time": 861,
-    "elapsed_time": 861,
-    "total_elevation_gain": 10.4,
-    "type": "Walk",
-    "sport_type": "Walk",
-    "device_name": "Apple Watch Ultra 3"
   }
 ]

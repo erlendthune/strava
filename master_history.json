@@ -11484,5 +11484,22 @@
     "workout_type": null,
     "device_name": "Garmin Edge 1030 Plus",
     "activity_date": "2026-06-07T16:30:19.303Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Erlend",
+      "lastname": "T."
+    },
+    "name": "Evening Walk",
+    "distance": 2522.7,
+    "moving_time": 3484,
+    "elapsed_time": 7244,
+    "total_elevation_gain": 16,
+    "type": "Walk",
+    "sport_type": "Walk",
+    "device_name": "Garmin Instinct 3 Solar",
+    "activity_date": "2026-06-07T19:00:16.707Z"
   }
 ]

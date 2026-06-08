@@ -81,15 +81,15 @@
       "activemembercount": 0,
       "totalPoints": 273.00,
       "averagePoints": 54.60,
-      "totalSeconds": 456852,
-      "totalminutes": 7614.2,
-      "totalCentimeters": 124235080,
-      "totalWorkouts": 228,
-      "totalkilometers": 1242.351,
+      "totalSeconds": 457706,
+      "totalminutes": 7628.4333333333333333333333333,
+      "totalCentimeters": 124280310,
+      "totalWorkouts": 229,
+      "totalkilometers": 1242.803,
       "avgWorkouts": 0,
       "avgKm": 0,
       "avgMinutes": 0,
-      "statsLastUpdateTime": "2026-06-08T09:32:36.747",
+      "statsLastUpdateTime": "2026-06-08T11:03:25.363",
       "companyTitle": "Bouvet Norge As Agder",
       "sdir_groupId": null
     }
@@ -118,8 +118,8 @@
   "totalCompanies": 33,
   "pointsTotal": 437.00,
   "pointsAverage": 33.62,
-  "totalSeconds": 983389,
-  "totalCentimeters": 263451060,
-  "totalWorkouts": 414,
-  "lastUpdateTime": "2026-06-08T09:53:28.057"
+  "totalSeconds": 984243,
+  "totalCentimeters": 263496290,
+  "totalWorkouts": 415,
+  "lastUpdateTime": "2026-06-08T11:03:25.36"
 }

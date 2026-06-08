@@ -11535,5 +11535,22 @@
     "sport_type": "Walk",
     "device_name": "Garmin Instinct 3 Solar",
     "activity_date": "2026-06-08T08:00:18.197Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Erlend",
+      "lastname": "T."
+    },
+    "name": "Morning Swim",
+    "distance": 452.3,
+    "moving_time": 854,
+    "elapsed_time": 854,
+    "total_elevation_gain": 0,
+    "type": "Swim",
+    "sport_type": "Swim",
+    "device_name": "Garmin Instinct 3 Solar",
+    "activity_date": "2026-06-08T09:30:20.190Z"
   }
 ]

@@ -3,6 +3,22 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
+      "firstname": "Kristin Sørli",
+      "lastname": "O."
+    },
+    "name": "Ettermiddagstur på el-sykkel",
+    "distance": 7075.3,
+    "moving_time": 1065,
+    "elapsed_time": 1188,
+    "total_elevation_gain": 112.6,
+    "type": "EBikeRide",
+    "sport_type": "EBikeRide",
+    "device_name": "Strava App"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
       "firstname": "Terje",
       "lastname": "B."
     },
@@ -3296,22 +3312,5 @@
     "sport_type": "Run",
     "workout_type": null,
     "device_name": "Garmin Forerunner 255"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Marius",
-      "lastname": "H."
-    },
-    "name": "Evening Run",
-    "distance": 6435.2,
-    "moving_time": 1854,
-    "elapsed_time": 1854,
-    "total_elevation_gain": 71.7,
-    "type": "Run",
-    "sport_type": "Run",
-    "workout_type": 0,
-    "device_name": "Garmin vívoactive 5"
   }
 ]

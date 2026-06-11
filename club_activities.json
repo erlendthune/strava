@@ -20,6 +20,22 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
+      "firstname": "Erlend",
+      "lastname": "T."
+    },
+    "name": "Afternoon Inline Skate",
+    "distance": 10971.3,
+    "moving_time": 2452,
+    "elapsed_time": 2687,
+    "total_elevation_gain": 187,
+    "type": "InlineSkate",
+    "sport_type": "InlineSkate",
+    "device_name": "Garmin Instinct 3 Solar"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
       "firstname": "Terje",
       "lastname": "B."
     },
@@ -3290,23 +3306,6 @@
     "moving_time": 303,
     "elapsed_time": 369,
     "total_elevation_gain": 0,
-    "type": "Ride",
-    "sport_type": "Ride",
-    "workout_type": null,
-    "device_name": "Garmin Forerunner 245 Music"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Terje",
-      "lastname": "B."
-    },
-    "name": "Lunch Ride",
-    "distance": 1541.9,
-    "moving_time": 301,
-    "elapsed_time": 358,
-    "total_elevation_gain": 6.5,
     "type": "Ride",
     "sport_type": "Ride",
     "workout_type": null,

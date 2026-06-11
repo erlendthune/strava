@@ -3,6 +3,22 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
+      "firstname": "Erlend",
+      "lastname": "T."
+    },
+    "name": "Morning Inline Skate",
+    "distance": 11088.2,
+    "moving_time": 2394,
+    "elapsed_time": 2611,
+    "total_elevation_gain": 132,
+    "type": "InlineSkate",
+    "sport_type": "InlineSkate",
+    "device_name": "Garmin Instinct 3 Solar"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
       "firstname": "Kristin Sørli",
       "lastname": "O."
     },
@@ -31,6 +47,22 @@
     "sport_type": "Run",
     "workout_type": null,
     "device_name": "Garmin Forerunner 245 Music"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Erlend",
+      "lastname": "T."
+    },
+    "name": "Evening Walk",
+    "distance": 5621.6,
+    "moving_time": 3974,
+    "elapsed_time": 4004,
+    "total_elevation_gain": 110,
+    "type": "Walk",
+    "sport_type": "Walk",
+    "device_name": "Garmin Instinct 3 Solar"
   },
   {
     "resource_state": 2,
@@ -3279,38 +3311,5 @@
     "type": "Walk",
     "sport_type": "Walk",
     "device_name": "Strava App"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Terje",
-      "lastname": "B."
-    },
-    "name": "Kalkheia",
-    "distance": 5755.7,
-    "moving_time": 2351,
-    "elapsed_time": 2424,
-    "total_elevation_gain": 180.6,
-    "type": "Run",
-    "sport_type": "TrailRun",
-    "workout_type": null,
-    "device_name": "Garmin Forerunner 245 Music"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Erlend",
-      "lastname": "T."
-    },
-    "name": "Afternoon Walk",
-    "distance": 933.3,
-    "moving_time": 731,
-    "elapsed_time": 1090,
-    "total_elevation_gain": 41,
-    "type": "Walk",
-    "sport_type": "Walk",
-    "device_name": "Garmin Forerunner 255"
   }
 ]

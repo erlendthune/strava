@@ -11954,5 +11954,22 @@
     "workout_type": 10,
     "device_name": "Garmin Forerunner 265",
     "activity_date": "2026-06-12T08:00:19.993Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Kristin Sørli",
+      "lastname": "O."
+    },
+    "name": "Gåtur på natten",
+    "distance": 3962.3,
+    "moving_time": 2525,
+    "elapsed_time": 2548,
+    "total_elevation_gain": 35.4,
+    "type": "Walk",
+    "sport_type": "Walk",
+    "device_name": "Strava App",
+    "activity_date": "2026-06-12T20:00:18.215Z"
   }
 ]

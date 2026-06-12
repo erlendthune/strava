@@ -447,6 +447,22 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
+      "firstname": "Jørgen",
+      "lastname": "M."
+    },
+    "name": "Padletur i Reddalskanalen",
+    "distance": 13813.9,
+    "moving_time": 9539,
+    "elapsed_time": 14440,
+    "total_elevation_gain": 17,
+    "type": "Kayaking",
+    "sport_type": "Kayaking",
+    "device_name": "Garmin Forerunner 265"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
       "firstname": "Kristin Sørli",
       "lastname": "O."
     },
@@ -475,6 +491,22 @@
     "sport_type": "Ride",
     "workout_type": null,
     "device_name": "Garmin Edge 1030 Plus"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Jørgen",
+      "lastname": "M."
+    },
+    "name": "Padletur Grimstad",
+    "distance": 3737.8,
+    "moving_time": 2834,
+    "elapsed_time": 4615,
+    "total_elevation_gain": 20,
+    "type": "Kayaking",
+    "sport_type": "Kayaking",
+    "device_name": "Garmin Forerunner 265"
   },
   {
     "resource_state": 2,
@@ -623,6 +655,23 @@
     "sport_type": "Run",
     "workout_type": null,
     "device_name": "Garmin Forerunner 245 Music"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Jørgen",
+      "lastname": "M."
+    },
+    "name": "Ettermiddag med sykkeltur",
+    "distance": 7198.6,
+    "moving_time": 1381,
+    "elapsed_time": 1884,
+    "total_elevation_gain": 96,
+    "type": "Ride",
+    "sport_type": "Ride",
+    "workout_type": 10,
+    "device_name": "Garmin Forerunner 265"
   },
   {
     "resource_state": 2,
@@ -2469,22 +2518,6 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Andreas",
-      "lastname": "Z."
-    },
-    "name": "Afternoon Ride",
-    "distance": 6669.4,
-    "moving_time": 1348,
-    "elapsed_time": 1719,
-    "total_elevation_gain": 122,
-    "type": "EBikeRide",
-    "sport_type": "EBikeRide",
-    "device_name": "Garmin fēnix 5S Plus"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
       "firstname": "Kristin Sørli",
       "lastname": "O."
     },
@@ -2496,6 +2529,22 @@
     "type": "EBikeRide",
     "sport_type": "EBikeRide",
     "device_name": "Strava App"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Andreas",
+      "lastname": "Z."
+    },
+    "name": "Afternoon Ride",
+    "distance": 6669.4,
+    "moving_time": 1348,
+    "elapsed_time": 1719,
+    "total_elevation_gain": 122,
+    "type": "EBikeRide",
+    "sport_type": "EBikeRide",
+    "device_name": "Garmin fēnix 5S Plus"
   },
   {
     "resource_state": 2,
@@ -3247,39 +3296,6 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Terje",
-      "lastname": "B."
-    },
-    "name": "Afternoon Ride",
-    "distance": 3057,
-    "moving_time": 707,
-    "elapsed_time": 749,
-    "total_elevation_gain": 101.6,
-    "type": "Ride",
-    "sport_type": "Ride",
-    "workout_type": 10,
-    "device_name": "Garmin Forerunner 245 Music"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Kristin Sørli",
-      "lastname": "O."
-    },
-    "name": "Ettermiddagstur på el-sykkel",
-    "distance": 8332.7,
-    "moving_time": 1193,
-    "elapsed_time": 1219,
-    "total_elevation_gain": 90.2,
-    "type": "EBikeRide",
-    "sport_type": "EBikeRide",
-    "device_name": "Strava App"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
       "firstname": "Håkon",
       "lastname": "R."
     },
@@ -3292,22 +3308,5 @@
     "sport_type": "Ride",
     "workout_type": null,
     "device_name": "Garmin Edge 1030 Plus"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Jørgen",
-      "lastname": "M."
-    },
-    "name": "Afternoon Ride",
-    "distance": 6947.6,
-    "moving_time": 1171,
-    "elapsed_time": 1292,
-    "total_elevation_gain": 96,
-    "type": "Ride",
-    "sport_type": "Ride",
-    "workout_type": 10,
-    "device_name": "Garmin Forerunner 265"
   }
 ]

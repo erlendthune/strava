@@ -3,6 +3,22 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
+      "firstname": "Erlend",
+      "lastname": "T."
+    },
+    "name": "Afternoon Windsurf",
+    "distance": 9889.7,
+    "moving_time": 2765,
+    "elapsed_time": 3923,
+    "total_elevation_gain": 304,
+    "type": "Windsurf",
+    "sport_type": "Windsurf",
+    "device_name": "Garmin Instinct 3 Solar"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
       "firstname": "Kristin Sørli",
       "lastname": "O."
     },
@@ -1643,23 +1659,6 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Erlend",
-      "lastname": "T."
-    },
-    "name": "Morning Ride",
-    "distance": 11429.8,
-    "moving_time": 1851,
-    "elapsed_time": 3050,
-    "total_elevation_gain": 136.5,
-    "type": "Ride",
-    "sport_type": "Ride",
-    "workout_type": 10,
-    "device_name": "Strava App"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
       "firstname": "Håkon",
       "lastname": "R."
     },
@@ -1672,6 +1671,23 @@
     "sport_type": "Ride",
     "workout_type": 10,
     "device_name": "Garmin Edge 1030 Plus"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Erlend",
+      "lastname": "T."
+    },
+    "name": "Morning Ride",
+    "distance": 11429.8,
+    "moving_time": 1851,
+    "elapsed_time": 3050,
+    "total_elevation_gain": 136.5,
+    "type": "Ride",
+    "sport_type": "Ride",
+    "workout_type": 10,
+    "device_name": "Strava App"
   },
   {
     "resource_state": 2,
@@ -2451,22 +2467,6 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Jørgen",
-      "lastname": "M."
-    },
-    "name": "Morning E-Bike Ride",
-    "distance": 5739.1,
-    "moving_time": 878,
-    "elapsed_time": 981,
-    "total_elevation_gain": 60,
-    "type": "EBikeRide",
-    "sport_type": "EBikeRide",
-    "device_name": "Garmin Forerunner 265"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
       "firstname": "Håkon",
       "lastname": "R."
     },
@@ -2479,6 +2479,22 @@
     "sport_type": "Ride",
     "workout_type": null,
     "device_name": "Garmin Edge 1030 Plus"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Jørgen",
+      "lastname": "M."
+    },
+    "name": "Morning E-Bike Ride",
+    "distance": 5739.1,
+    "moving_time": 878,
+    "elapsed_time": 981,
+    "total_elevation_gain": 60,
+    "type": "EBikeRide",
+    "sport_type": "EBikeRide",
+    "device_name": "Garmin Forerunner 265"
   },
   {
     "resource_state": 2,
@@ -3272,22 +3288,6 @@
     "moving_time": 224,
     "elapsed_time": 304,
     "total_elevation_gain": 29.3,
-    "type": "EBikeRide",
-    "sport_type": "EBikeRide",
-    "device_name": "Garmin Forerunner 245 Music"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Terje",
-      "lastname": "B."
-    },
-    "name": "Afternoon Ride",
-    "distance": 2525.8,
-    "moving_time": 342,
-    "elapsed_time": 362,
-    "total_elevation_gain": 35.2,
     "type": "EBikeRide",
     "sport_type": "EBikeRide",
     "device_name": "Garmin Forerunner 245 Music"

@@ -12006,5 +12006,22 @@
     "workout_type": null,
     "device_name": "Garmin Instinct 3 Solar",
     "activity_date": "2026-06-14T09:00:25.703Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Kristin Sørli",
+      "lastname": "O."
+    },
+    "name": "Gåtur på ettermiddagen",
+    "distance": 2756.6,
+    "moving_time": 2076,
+    "elapsed_time": 2222,
+    "total_elevation_gain": 7.6,
+    "type": "Walk",
+    "sport_type": "Walk",
+    "device_name": "Strava App",
+    "activity_date": "2026-06-14T12:00:20.387Z"
   }
 ]

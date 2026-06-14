@@ -11988,5 +11988,23 @@
     "sport_type": "Windsurf",
     "device_name": "Garmin Instinct 3 Solar",
     "activity_date": "2026-06-13T15:00:18.017Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Erlend",
+      "lastname": "T."
+    },
+    "name": "Morning Run",
+    "distance": 6114.5,
+    "moving_time": 3001,
+    "elapsed_time": 3059,
+    "total_elevation_gain": 108,
+    "type": "Run",
+    "sport_type": "Run",
+    "workout_type": null,
+    "device_name": "Garmin Instinct 3 Solar",
+    "activity_date": "2026-06-14T09:00:25.703Z"
   }
 ]

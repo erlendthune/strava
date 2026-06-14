@@ -6,6 +6,23 @@
       "firstname": "Erlend",
       "lastname": "T."
     },
+    "name": "Morning Run",
+    "distance": 6114.5,
+    "moving_time": 3001,
+    "elapsed_time": 3059,
+    "total_elevation_gain": 108,
+    "type": "Run",
+    "sport_type": "Run",
+    "workout_type": null,
+    "device_name": "Garmin Instinct 3 Solar"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Erlend",
+      "lastname": "T."
+    },
     "name": "Afternoon Windsurf",
     "distance": 9889.7,
     "moving_time": 2765,
@@ -794,23 +811,6 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Jørgen",
-      "lastname": "M."
-    },
-    "name": "Morning Ride",
-    "distance": 6990.3,
-    "moving_time": 1174,
-    "elapsed_time": 1174,
-    "total_elevation_gain": 70,
-    "type": "Ride",
-    "sport_type": "Ride",
-    "workout_type": 10,
-    "device_name": "Garmin Forerunner 265"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
       "firstname": "Erlend",
       "lastname": "T."
     },
@@ -823,6 +823,23 @@
     "sport_type": "Ride",
     "workout_type": null,
     "device_name": "Garmin Instinct 3 Solar"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Jørgen",
+      "lastname": "M."
+    },
+    "name": "Morning Ride",
+    "distance": 6990.3,
+    "moving_time": 1174,
+    "elapsed_time": 1174,
+    "total_elevation_gain": 70,
+    "type": "Ride",
+    "sport_type": "Ride",
+    "workout_type": 10,
+    "device_name": "Garmin Forerunner 265"
   },
   {
     "resource_state": 2,
@@ -1626,6 +1643,22 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
+      "firstname": "Kristin Sørli",
+      "lastname": "O."
+    },
+    "name": "Morgentur på elsykkel",
+    "distance": 7128,
+    "moving_time": 1108,
+    "elapsed_time": 1316,
+    "total_elevation_gain": 85.1,
+    "type": "EBikeRide",
+    "sport_type": "EBikeRide",
+    "device_name": "Strava App"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
       "firstname": "Terje",
       "lastname": "B."
     },
@@ -1638,22 +1671,6 @@
     "sport_type": "Ride",
     "workout_type": null,
     "device_name": "Garmin Forerunner 245 Music"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Kristin Sørli",
-      "lastname": "O."
-    },
-    "name": "Morgentur på elsykkel",
-    "distance": 7128,
-    "moving_time": 1108,
-    "elapsed_time": 1316,
-    "total_elevation_gain": 85.1,
-    "type": "EBikeRide",
-    "sport_type": "EBikeRide",
-    "device_name": "Strava App"
   },
   {
     "resource_state": 2,
@@ -2467,6 +2484,22 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
+      "firstname": "Jørgen",
+      "lastname": "M."
+    },
+    "name": "Morning E-Bike Ride",
+    "distance": 5739.1,
+    "moving_time": 878,
+    "elapsed_time": 981,
+    "total_elevation_gain": 60,
+    "type": "EBikeRide",
+    "sport_type": "EBikeRide",
+    "device_name": "Garmin Forerunner 265"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
       "firstname": "Håkon",
       "lastname": "R."
     },
@@ -2479,22 +2512,6 @@
     "sport_type": "Ride",
     "workout_type": null,
     "device_name": "Garmin Edge 1030 Plus"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Jørgen",
-      "lastname": "M."
-    },
-    "name": "Morning E-Bike Ride",
-    "distance": 5739.1,
-    "moving_time": 878,
-    "elapsed_time": 981,
-    "total_elevation_gain": 60,
-    "type": "EBikeRide",
-    "sport_type": "EBikeRide",
-    "device_name": "Garmin Forerunner 265"
   },
   {
     "resource_state": 2,
@@ -3291,21 +3308,5 @@
     "type": "EBikeRide",
     "sport_type": "EBikeRide",
     "device_name": "Garmin Forerunner 245 Music"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Kristin Sørli",
-      "lastname": "O."
-    },
-    "name": "Ettermiddagstur på el-sykkel",
-    "distance": 8258.9,
-    "moving_time": 1206,
-    "elapsed_time": 1208,
-    "total_elevation_gain": 114.5,
-    "type": "EBikeRide",
-    "sport_type": "EBikeRide",
-    "device_name": "Strava App"
   }
 ]

@@ -12076,5 +12076,39 @@
     "sport_type": "EBikeRide",
     "device_name": "Strava App",
     "activity_date": "2026-06-15T06:00:23.462Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Kristin Sørli",
+      "lastname": "O."
+    },
+    "name": "Ettermiddagstur på el-sykkel",
+    "distance": 7070,
+    "moving_time": 1022,
+    "elapsed_time": 1137,
+    "total_elevation_gain": 113.1,
+    "type": "EBikeRide",
+    "sport_type": "EBikeRide",
+    "device_name": "Strava App",
+    "activity_date": "2026-06-15T17:30:24.774Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Erlend",
+      "lastname": "T."
+    },
+    "name": "Afternoon Windsurf",
+    "distance": 18326.8,
+    "moving_time": 4715,
+    "elapsed_time": 5303,
+    "total_elevation_gain": 201,
+    "type": "Windsurf",
+    "sport_type": "Windsurf",
+    "device_name": "Garmin Instinct 3 Solar",
+    "activity_date": "2026-06-15T17:30:24.774Z"
   }
 ]

@@ -1,0 +1,19 @@
+{
+  "slides": [
+    {
+      "url": "strava.html",
+      "description": "Strava leaderboard",
+      "timer": 20
+    },
+    {
+      "url": "sykle.html",
+      "description": "Sykle til jobben leaderboard",
+      "timer": 20
+    },
+    {
+      "url": "https://bouvm.tech/Screen/sor?key=xAbQwlPy8wg",
+      "description": "Konkurrenten infoskjerm",
+      "timer": 20
+    }
+  ]
+}

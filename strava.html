@@ -1,0 +1,1532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strava Club Leaderboard</title>
+    <style>
+        :root {
+            --bg-1: #11152b;
+            --bg-2: #16213e;
+            --panel-bg: rgba(19, 27, 58, 0.7);
+            --panel-border: rgba(124, 150, 255, 0.35);
+            --panel-title: #d8e2ff;
+            --muted: #9fb0d7;
+            --text-main: #eef4ff;
+            --accent: #6fa1ff;
+            --accent-2: #00f2ff;
+            --glow: #7000ff;
+            --good-bg: rgba(3, 109, 74, 0.42);
+            --good-text: #9af7cb;
+            --bad-bg: rgba(133, 34, 34, 0.45);
+            --bad-text: #ffc1c1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(130deg, var(--bg-1) 0%, var(--bg-2) 100%);
+            min-height: 100vh;
+            padding: 10px;
+            color: var(--text-main);
+            overflow: hidden;
+        }
+
+        .container {
+            width: 100%;
+            height: calc(100vh - 20px);
+            margin: 0 auto;
+            background:
+                radial-gradient(circle at 12% 18%, rgba(0, 242, 255, 0.14), transparent 36%),
+                radial-gradient(circle at 88% 12%, rgba(112, 0, 255, 0.18), transparent 38%),
+                rgba(15, 21, 47, 0.74);
+            border-radius: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 18px 52px rgba(0, 0, 0, 0.42);
+            padding: 12px 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        h1 {
+            color: #f4f7ff;
+            text-align: center;
+            font-size: 23px;
+            line-height: 1.2;
+            text-shadow: 0 0 10px rgba(0, 242, 255, 0.4), 0 0 24px rgba(112, 0, 255, 0.35);
+        }
+
+        .header-meta {
+            text-align: center;
+            color: #b7c6ea;
+            font-size: 12px;
+            line-height: 1.4;
+        }
+
+        .header-meta .sep {
+            color: #8ea1cb;
+            margin: 0 6px;
+        }
+
+        .competition-state {
+            display: inline-block;
+            margin-left: 8px;
+            padding: 2px 8px;
+            border-radius: 999px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.2px;
+            vertical-align: middle;
+        }
+
+        .competition-state.ended {
+            color: var(--bad-text);
+            background: var(--bad-bg);
+            border: 1px solid rgba(248, 113, 113, 0.45);
+        }
+
+        .competition-state.active {
+            color: var(--good-text);
+            background: var(--good-bg);
+            border: 1px solid rgba(52, 211, 153, 0.45);
+        }
+
+        .dashboard-grid {
+            flex: 1;
+            min-height: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: minmax(250px, 1fr) minmax(230px, 0.9fr);
+            grid-template-areas:
+                "sykle dialogue"
+                "bottom bottom";
+            gap: 10px;
+        }
+
+        .panel-sykle {
+            grid-area: sykle;
+        }
+
+        .panel-dialogue {
+            grid-area: dialogue;
+        }
+
+        .bottom-strip {
+            grid-area: bottom;
+            min-height: 0;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 10px;
+        }
+
+        .bottom-strip .panel h2 {
+            font-size: 15px;
+            margin-bottom: 6px;
+        }
+
+        .bottom-strip .panel {
+            padding: 8px;
+        }
+
+        .bottom-strip table {
+            font-size: 12px;
+        }
+
+        .bottom-strip th,
+        .bottom-strip td {
+            padding: 6px 7px;
+        }
+
+        .panel {
+            min-height: 0;
+            background: var(--panel-bg);
+            border: 2px solid var(--panel-border);
+            border-radius: 12px;
+            box-shadow: 0 0 0 1px rgba(111, 161, 255, 0.12), 0 0 20px rgba(58, 93, 228, 0.15);
+            backdrop-filter: blur(6px);
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .panel h2 {
+            color: var(--panel-title);
+            margin: 0 0 8px;
+            font-size: 17px;
+            border-bottom: 2px solid rgba(111, 161, 255, 0.25);
+            padding-bottom: 5px;
+            text-shadow: 0 0 10px rgba(111, 161, 255, 0.35);
+        }
+
+        .panel-body {
+            flex: 1;
+            min-height: 0;
+            overflow: auto;
+        }
+
+        .loading {
+            text-align: center;
+            color: var(--muted);
+            padding: 30px 10px;
+        }
+
+        .loading::after {
+            content: '';
+            animation: dots 1.5s steps(4, end) infinite;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+        }
+
+        thead {
+            background: rgba(89, 121, 229, 0.2);
+            border-bottom: 2px solid rgba(111, 161, 255, 0.38);
+        }
+
+        th {
+            padding: 8px 10px;
+            text-align: left;
+            font-weight: 600;
+            color: #d4e0ff;
+            font-size: 12px;
+        }
+
+        td {
+            padding: 7px 10px;
+            border-bottom: 1px solid rgba(143, 169, 255, 0.2);
+        }
+
+        .rank {
+            width: 44px;
+            color: var(--accent-2);
+            font-weight: 700;
+        }
+
+        .name {
+            font-weight: 500;
+        }
+
+        .metric {
+            text-align: right;
+            white-space: nowrap;
+            color: #e8f0ff;
+        }
+
+        .primary-col {
+            color: #95deff;
+            font-weight: 700;
+            text-shadow: 0 0 8px rgba(0, 242, 255, 0.3);
+        }
+
+        .sport-winner-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 7px;
+        }
+
+        .sport-winner-row {
+            display: grid;
+            grid-template-columns: minmax(110px, 0.9fr) minmax(150px, 1.2fr) auto;
+            gap: 8px;
+            align-items: center;
+            padding: 8px;
+            border-radius: 8px;
+            border: 1px solid rgba(128, 159, 255, 0.35);
+            background: linear-gradient(90deg, rgba(100, 126, 234, 0.14) 0%, rgba(118, 75, 162, 0.14) 100%);
+            font-size: 13px;
+        }
+
+        .sport-name {
+            font-weight: 700;
+            color: #93d5ff;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .sport-athlete {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .sport-metric {
+            text-align: right;
+            color: #9effd9;
+            white-space: nowrap;
+            font-weight: 600;
+        }
+
+        .sykle-top3 {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 8px;
+        }
+
+        .team-card {
+            border: 1px solid rgba(122, 154, 255, 0.35);
+            border-radius: 10px;
+            padding: 8px;
+            background: linear-gradient(90deg, rgba(102, 126, 234, 0.13) 0%, rgba(118, 75, 162, 0.12) 100%);
+            display: grid;
+            grid-template-columns: 42px 1fr;
+            gap: 8px;
+        }
+
+        .team-card.winner {
+            border-color: #00f2ff;
+            background: linear-gradient(90deg, rgba(0, 242, 255, 0.2) 0%, rgba(112, 0, 255, 0.18) 100%);
+            box-shadow: 0 0 14px rgba(0, 242, 255, 0.42), 0 0 26px rgba(112, 0, 255, 0.26);
+            animation: neonPulse 1.6s ease-in-out infinite alternate;
+        }
+
+        .team-rank {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            font-weight: 800;
+        }
+
+        .team-card.winner .team-rank {
+            background: linear-gradient(135deg, #00f2ff, #7000ff);
+            box-shadow: 0 0 14px rgba(0, 242, 255, 0.5);
+        }
+
+        .team-main {
+            min-width: 0;
+        }
+
+        .team-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #edf4ff;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .team-members {
+            margin-top: 6px;
+            font-size: 11px;
+            line-height: 1.35;
+            color: #b9c8ec;
+            overflow-wrap: anywhere;
+            word-break: break-word;
+        }
+
+        .team-card.winner .team-title {
+            color: #00f2ff;
+            text-shadow: 0 0 10px rgba(0, 242, 255, 0.45);
+        }
+
+        .team-card.winner .team-members {
+            color: #8ff8ff;
+        }
+
+        .team-stats {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(45px, 1fr));
+            gap: 6px;
+            margin-top: 6px;
+        }
+
+        .team-stat {
+            background: rgba(13, 20, 45, 0.55);
+            border: 1px solid rgba(122, 154, 255, 0.3);
+            border-radius: 6px;
+            text-align: center;
+            padding: 5px 4px;
+        }
+
+        .team-stat .v {
+            font-size: 12px;
+            font-weight: 700;
+            color: #a6fff0;
+            line-height: 1.2;
+            font-family: 'Courier New', monospace;
+        }
+
+        .team-stat .l {
+            font-size: 10px;
+            color: #9eb0dc;
+            line-height: 1.2;
+        }
+
+        .sykle-context {
+            margin-top: 8px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+            font-size: 11px;
+            color: #bed0f5;
+        }
+
+        .context-pill {
+            border: 1px solid rgba(122, 154, 255, 0.42);
+            background: rgba(21, 31, 68, 0.7);
+            border-radius: 999px;
+            padding: 3px 8px;
+            white-space: nowrap;
+        }
+
+        .rolling-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 6px;
+        }
+
+        .rolling-title {
+            font-size: 14px;
+            color: #cbddff;
+            font-weight: 700;
+        }
+
+        .rolling-index {
+            font-size: 12px;
+            color: #97a9d8;
+            white-space: nowrap;
+        }
+
+        .progress-bar-wrapper {
+            height: 3px;
+            background: rgba(147, 170, 244, 0.28);
+            border-radius: 999px;
+            overflow: hidden;
+            margin-bottom: 6px;
+        }
+
+        .progress-bar {
+            width: 0;
+            height: 100%;
+            background: linear-gradient(90deg, #00f2ff, #7000ff);
+            box-shadow: 0 0 12px rgba(0, 242, 255, 0.6);
+        }
+
+        .rolling-content {
+            min-height: 0;
+            flex: 1;
+            overflow: auto;
+        }
+
+        .rolling-empty {
+            color: #9eb0dc;
+            text-align: center;
+            padding: 24px 10px;
+        }
+
+        .dialogue-meta {
+            color: #9fb0d7;
+            font-size: 12px;
+            margin-bottom: 8px;
+        }
+
+        .panel-dialogue .panel-body {
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .dialogue-split {
+            min-height: 0;
+            flex: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+        }
+
+        .dialogue-card {
+            min-height: 0;
+            border: 1px solid rgba(122, 154, 255, 0.35);
+            border-radius: 10px;
+            padding: 8px;
+            background: linear-gradient(90deg, rgba(102, 126, 234, 0.13) 0%, rgba(118, 75, 162, 0.12) 100%);
+            display: grid;
+            grid-template-columns: 56px 1fr;
+            gap: 8px;
+            height: 100%;
+        }
+
+        .dialogue-card > div:last-child {
+            min-height: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .dialogue-avatar {
+            width: 56px;
+            height: 56px;
+            border-radius: 10px;
+            border: 2px solid rgba(122, 154, 255, 0.4);
+            object-fit: cover;
+            box-shadow: 0 0 12px rgba(0, 242, 255, 0.22);
+            background: rgba(11, 18, 40, 0.9);
+        }
+
+        .dialogue-avatar-fallback {
+            width: 56px;
+            height: 56px;
+            border-radius: 10px;
+            border: 2px solid rgba(122, 154, 255, 0.4);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 9px;
+            color: #8ff8ff;
+            background: rgba(11, 18, 40, 0.9);
+            padding: 4px;
+        }
+
+        .dialogue-label {
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .dialogue-label.hayes {
+            color: #ff8f8f;
+        }
+
+        .dialogue-label.teacher {
+            color: #9af7cb;
+        }
+
+        .dialogue-text {
+            font-size: 12px;
+            color: #e8f0ff;
+            line-height: 1.45;
+            min-height: 0;
+            flex: 1;
+            overflow: hidden;
+            white-space: pre-wrap;
+            padding-right: 2px;
+        }
+
+        .fun-board {
+            position: relative;
+            height: 150px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 2px solid rgba(159, 207, 255, 0.7);
+            box-shadow: inset 0 0 10px rgba(0, 242, 255, 0.2);
+            background:
+                radial-gradient(circle at 84% 20%, #ffe681 0, #ffd86a 12%, transparent 13%),
+                linear-gradient(to bottom, #91d6ff 0%, #bce9ff 56%, #85d276 56%, #64b85a 100%);
+        }
+
+        .fun-cloud {
+            position: absolute;
+            color: rgba(255, 255, 255, 0.95);
+            filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.08));
+            user-select: none;
+            pointer-events: none;
+            animation: cloudDrift linear infinite;
+            z-index: 1;
+        }
+
+        .fun-cloud.c1 { top: 14px; left: -80px; font-size: 22px; animation-duration: 22s; }
+        .fun-cloud.c2 { top: 38px; left: -140px; font-size: 25px; animation-duration: 27s; animation-delay: -8s; }
+        .fun-cloud.c3 { top: 28px; left: -210px; font-size: 18px; animation-duration: 30s; animation-delay: -16s; }
+
+        .fun-hill {
+            position: absolute;
+            border-radius: 50% 50% 0 0;
+            bottom: 42px;
+            z-index: 2;
+        }
+
+        .fun-hill.h1 { left: -80px; width: 220px; height: 64px; background: #74c96a; }
+        .fun-hill.h2 { left: 180px; width: 250px; height: 78px; background: #60b956; }
+        .fun-hill.h3 { right: -80px; width: 220px; height: 72px; background: #4cae48; }
+
+        .fun-road {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 48px;
+            background: linear-gradient(to bottom, #6e7785, #4e5563);
+            z-index: 3;
+        }
+
+        .fun-road::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 23px;
+            height: 3px;
+            background: repeating-linear-gradient(90deg, #f8f1c7 0, #f8f1c7 20px, transparent 20px, transparent 34px);
+        }
+
+        .fun-racer {
+            position: absolute;
+            bottom: 28px;
+            left: -14%;
+            line-height: 1;
+            user-select: none;
+            pointer-events: none;
+            transform: scaleX(-1);
+            z-index: 5;
+        }
+
+        .fun-racer span {
+            display: block;
+        }
+
+        .fun-racer.r1 { font-size: 26px; }
+        .fun-racer.r2 { font-size: 24px; bottom: 24px; }
+        .fun-racer.r3 { font-size: 28px; bottom: 24px; }
+        .fun-racer.r4 { font-size: 24px; bottom: 30px; }
+        .fun-racer.r5 { font-size: 22px; bottom: 22px; }
+        .fun-racer.r6 { font-size: 22px; bottom: 27px; }
+
+        .fun-bike {
+            font-size: 18px;
+            transform: translateY(-2px);
+        }
+
+        .fun-goal {
+            position: absolute;
+            right: 42px;
+            bottom: 48px;
+            width: 62px;
+            height: 62px;
+            z-index: 6;
+            pointer-events: none;
+        }
+
+        .fun-goal-pole {
+            position: absolute;
+            bottom: 0;
+            width: 4px;
+            height: 60px;
+            background: linear-gradient(to bottom, #f1f3f5, #b8bec8);
+            border: 1px solid #99a1ac;
+            border-radius: 3px;
+        }
+
+        .fun-goal-pole.left { left: 0; }
+        .fun-goal-pole.right { right: 0; }
+
+        .fun-goal-banner {
+            position: absolute;
+            left: 6px;
+            right: 6px;
+            top: 8px;
+            font-size: 8px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            color: #5f6978;
+            text-align: center;
+            padding: 4px 0;
+            border-radius: 6px;
+            border: 1px solid #d9dee6;
+            background: #ffffff;
+            box-shadow: 0 2px 0 rgba(0, 0, 0, 0.15);
+        }
+
+        .fun-finish-line {
+            position: absolute;
+            right: 69px;
+            bottom: 0;
+            width: 8px;
+            height: 48px;
+            z-index: 4;
+            background: repeating-linear-gradient(to bottom, #ffffff 0, #ffffff 7px, #e8edf5 7px, #e8edf5 14px);
+            box-shadow: 0 0 0 1px rgba(130, 144, 163, 0.45);
+        }
+
+        .fun-confetti {
+            position: absolute;
+            right: 24px;
+            bottom: 78px;
+            width: 110px;
+            height: 72px;
+            z-index: 7;
+            pointer-events: none;
+        }
+
+        .fun-confetti-piece {
+            position: absolute;
+            top: 14px;
+            left: 36px;
+            width: 5px;
+            height: 8px;
+            border-radius: 2px;
+            opacity: 0;
+            transform: translate(0, 0) rotate(0deg);
+        }
+
+        .fun-confetti.burst .fun-confetti-piece {
+            animation: confettiPiece 2200ms ease-out forwards;
+        }
+
+        .fun-confetti-piece:nth-child(1) { background: #ff4d6d; --dx: -34px; --dy: 36px; animation-delay: 0ms; }
+        .fun-confetti-piece:nth-child(2) { background: #ffd166; --dx: -20px; --dy: 40px; animation-delay: 60ms; }
+        .fun-confetti-piece:nth-child(3) { background: #06d6a0; --dx: 2px; --dy: 40px; animation-delay: 80ms; }
+        .fun-confetti-piece:nth-child(4) { background: #118ab2; --dx: 20px; --dy: 44px; animation-delay: 120ms; }
+        .fun-confetti-piece:nth-child(5) { background: #ef476f; --dx: 36px; --dy: 40px; animation-delay: 140ms; }
+        .fun-confetti-piece:nth-child(6) { background: #ff9f1c; --dx: -12px; --dy: 34px; animation-delay: 170ms; }
+        .fun-confetti-piece:nth-child(7) { background: #8338ec; --dx: 12px; --dy: 34px; animation-delay: 190ms; }
+        .fun-confetti-piece:nth-child(8) { background: #3a86ff; --dx: -28px; --dy: 44px; animation-delay: 220ms; }
+        .fun-confetti-piece:nth-child(9) { background: #12b886; --dx: 40px; --dy: 48px; animation-delay: 30ms; }
+        .fun-confetti-piece:nth-child(10) { background: #ff6b6b; --dx: -44px; --dy: 46px; animation-delay: 90ms; }
+        .fun-confetti-piece:nth-child(11) { background: #f59f00; --dx: 24px; --dy: 54px; animation-delay: 110ms; }
+        .fun-confetti-piece:nth-child(12) { background: #2f9e44; --dx: -14px; --dy: 50px; animation-delay: 150ms; }
+        .fun-confetti-piece:nth-child(13) { background: #e64980; --dx: 46px; --dy: 46px; animation-delay: 180ms; }
+        .fun-confetti-piece:nth-child(14) { background: #4c6ef5; --dx: -48px; --dy: 58px; animation-delay: 210ms; }
+        .fun-confetti-piece:nth-child(15) { background: #0ca678; --dx: 6px; --dy: 56px; animation-delay: 240ms; }
+        .fun-confetti-piece:nth-child(16) { background: #f03e3e; --dx: -6px; --dy: 54px; animation-delay: 260ms; }
+
+        .fun-race-caption {
+            position: absolute;
+            top: 8px;
+            left: 10px;
+            right: 10px;
+            font-size: 12px;
+            font-weight: 700;
+            color: #0b3157;
+            text-shadow: 0 1px 0 rgba(255, 255, 255, 0.9);
+            z-index: 5;
+        }
+
+        @keyframes neonPulse {
+            from {
+                box-shadow: 0 0 10px rgba(0, 242, 255, 0.35), 0 0 24px rgba(112, 0, 255, 0.18);
+            }
+            to {
+                box-shadow: 0 0 18px rgba(0, 242, 255, 0.58), 0 0 34px rgba(112, 0, 255, 0.35);
+            }
+        }
+
+        @keyframes dots {
+            0%, 20% { content: ''; }
+            40% { content: '.'; }
+            60% { content: '..'; }
+            80%, 100% { content: '...'; }
+        }
+
+        @keyframes cloudDrift {
+            from { transform: translateX(0); }
+            to { transform: translateX(900px); }
+        }
+
+        @keyframes funRace {
+            from { left: -14%; }
+            to { left: 102%; }
+        }
+
+        @keyframes confettiPiece {
+            0% {
+                opacity: 0;
+                transform: translate(0, 0) rotate(0deg);
+            }
+            8% {
+                opacity: 1;
+                transform: translate(0, -6px) rotate(40deg);
+            }
+            100% {
+                opacity: 0;
+                transform: translate(var(--dx), var(--dy)) rotate(320deg);
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto auto;
+                grid-template-areas:
+                    "sykle"
+                    "dialogue"
+                    "bottom";
+            }
+
+            .bottom-strip {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                min-height: auto;
+            }
+
+            .sport-winner-row {
+                grid-template-columns: minmax(100px, 0.8fr) minmax(130px, 1fr) auto;
+            }
+
+            .dialogue-split {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏆 Bouvet Agder Strava Leaderboard</h1>
+        <div class="header-meta" id="headerMeta">Loading…</div>
+
+        <div class="dashboard-grid">
+            <section class="panel panel-sykle">
+                <h2>🚲 Sykle til jobben · Top 3 lag</h2>
+                <div class="panel-body" id="panelSykleTop3">
+                    <div class="loading">Loading...</div>
+                </div>
+            </section>
+
+            <section class="panel panel-dialogue">
+                <h2>🗣️ Dialog · Hayes og lærer</h2>
+                <div class="panel-body">
+                    <div class="dialogue-meta" id="dialogueMeta">Laster dialoggrunnlag...</div>
+                    <div class="dialogue-split">
+                        <article class="dialogue-card">
+                            <div>
+                                <img id="hayesAvatar" class="dialogue-avatar" src="avatars/hayes.png" alt="Hayes avatar">
+                                <div id="hayesAvatarFallback" class="dialogue-avatar-fallback">LEGG INN HAYES</div>
+                            </div>
+                            <div>
+                                <div class="dialogue-label hayes">HAYES</div>
+                                <div id="dialogueHayes" class="dialogue-text">Laster...</div>
+                            </div>
+                        </article>
+                        <article class="dialogue-card">
+                            <div>
+                                <img id="teacherAvatar" class="dialogue-avatar" src="avatars/teacher.png" alt="Lærer avatar">
+                                <div id="teacherAvatarFallback" class="dialogue-avatar-fallback">LEGG INN LÆRER</div>
+                            </div>
+                            <div>
+                                <div class="dialogue-label teacher">LÆRER</div>
+                                <div id="dialogueTeacher" class="dialogue-text">Laster...</div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <div class="bottom-strip">
+                <section class="panel">
+                    <h2>⏱️ Strava · Mest aktiv tid</h2>
+                    <div class="panel-body" id="panelStravaActiveTime">
+                        <div class="loading">Loading...</div>
+                    </div>
+                </section>
+
+                <section class="panel">
+                    <h2>🥇 Beste per aktivitet</h2>
+                    <div class="panel-body" id="panelBestPerSport">
+                        <div class="loading">Loading...</div>
+                    </div>
+                </section>
+
+                <section class="panel">
+                    <h2>📋 Strava detaljer · Rullerende</h2>
+                    <div class="panel-body" id="panelStravaRolling">
+                        <div class="loading">Loading...</div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const DATA_REFRESH_MS = 5 * 60 * 1000;
+        const ROLL_INTERVAL_MS = 10000;
+        const TOP_ACTIVE_ROWS = 10;
+
+        let hasSuccessfulRender = false;
+        let rollingInterval = null;
+        let rollingIndex = 0;
+        let rollingBoards = [];
+        let funRaceConfettiTimer = null;
+
+        function formatTime(seconds) {
+            const safe = Number.isFinite(seconds) ? Math.max(0, seconds) : 0;
+            const h = Math.floor(safe / 3600);
+            const m = Math.floor((safe % 3600) / 60);
+            return `${h}h ${m}m`;
+        }
+
+        function formatKm(centimeters) {
+            if (!centimeters) return '0.0';
+            return (centimeters / 100000).toFixed(1);
+        }
+
+        function formatSportName(sport) {
+            return String(sport || 'Other')
+                .replace(/([a-z])([A-Z])/g, '$1 $2')
+                .replace(/_/g, ' ')
+                .trim();
+        }
+
+        function setHeaderMeta(config, updateData) {
+            const startDate = new Date(config.startDate);
+            const configuredEndDate = config.endDate ? new Date(config.endDate) : null;
+            const endDate = configuredEndDate && !Number.isNaN(configuredEndDate.getTime()) ? configuredEndDate : null;
+
+            const displayStartDate = startDate.toLocaleDateString('en-US', {
+                year: 'numeric', month: 'long', day: 'numeric'
+            });
+            const displayEndDate = endDate
+                ? endDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
+                : 'Ongoing';
+            const now = new Date();
+            const competitionState = endDate && now > endDate
+                ? '<span class="competition-state ended">Competition ended</span>'
+                : '<span class="competition-state active">Competition active</span>';
+
+            const updateTime = updateData && updateData.timestamp
+                ? new Date(updateData.timestamp).toLocaleString('no-NO')
+                : 'N/A';
+
+            document.getElementById('headerMeta').innerHTML =
+                `Competition: ${displayStartDate} to ${displayEndDate}${competitionState}`
+                + `<span class="sep">|</span>Sist oppdatert: ${updateTime}`;
+        }
+
+        function buildStravaState(config, activities, members) {
+            const startDate = new Date(config.startDate);
+            const configuredEndDate = config.endDate ? new Date(config.endDate) : null;
+            const endDate = configuredEndDate && !Number.isNaN(configuredEndDate.getTime()) ? configuredEndDate : null;
+
+            const athleteStats = {};
+            const sportStats = {};
+
+            activities.forEach(activity => {
+                if (!activity.activity_date || !activity.athlete) return;
+                const activityDate = new Date(activity.activity_date);
+                if (Number.isNaN(activityDate.getTime())) return;
+                if (activityDate < startDate) return;
+                if (endDate && activityDate > endDate) return;
+
+                const athlete = activity.athlete;
+                const name = `${athlete.firstname} ${athlete.lastname}`;
+
+                if (!athleteStats[name]) {
+                    athleteStats[name] = {
+                        name,
+                        activities: 0,
+                        distance: 0,
+                        movingTime: 0,
+                        elevation: 0,
+                        hasActivities: false
+                    };
+                }
+
+                athleteStats[name].activities += 1;
+                athleteStats[name].distance += activity.distance || 0;
+                athleteStats[name].movingTime += activity.moving_time || 0;
+                athleteStats[name].elevation += activity.total_elevation_gain || 0;
+                athleteStats[name].hasActivities = true;
+
+                const sport = activity.sport_type || activity.type || 'Other';
+                if (!sportStats[sport]) sportStats[sport] = {};
+                if (!sportStats[sport][name]) {
+                    sportStats[sport][name] = {
+                        name,
+                        activities: 0,
+                        distance: 0,
+                        movingTime: 0,
+                        elevation: 0
+                    };
+                }
+
+                sportStats[sport][name].activities += 1;
+                sportStats[sport][name].distance += activity.distance || 0;
+                sportStats[sport][name].movingTime += activity.moving_time || 0;
+                sportStats[sport][name].elevation += activity.total_elevation_gain || 0;
+            });
+
+            const uniqueMembers = [...new Map(
+                (members || []).map(m => [`${m.firstname} ${m.lastname}`, m])
+            ).values()];
+
+            uniqueMembers.forEach(member => {
+                const name = `${member.firstname} ${member.lastname}`;
+                if (!athleteStats[name]) {
+                    athleteStats[name] = {
+                        name,
+                        activities: 0,
+                        distance: 0,
+                        movingTime: 0,
+                        elevation: 0,
+                        hasActivities: false
+                    };
+                }
+            });
+
+            const activeMembers = Object.values(athleteStats).filter(a => a.hasActivities);
+            const overallByMovingTime = [...activeMembers].sort((a, b) => b.movingTime - a.movingTime);
+
+            const sportsByActivityVolume = Object.entries(sportStats)
+                .map(([sport, athleteMap]) => ({
+                    sport,
+                    athletes: Object.values(athleteMap).filter(a => a.activities > 0),
+                    totalActivities: Object.values(athleteMap).reduce((sum, a) => sum + a.activities, 0)
+                }))
+                .filter(s => s.athletes.length > 0)
+                .sort((a, b) => b.totalActivities - a.totalActivities || a.sport.localeCompare(b.sport));
+
+            const bestPerSport = sportsByActivityVolume
+                .map(entry => {
+                    const leader = [...entry.athletes].sort((a, b) => b.movingTime - a.movingTime)[0];
+                    if (!leader) return null;
+                    return {
+                        sport: formatSportName(entry.sport),
+                        athlete: leader.name,
+                        movingTime: leader.movingTime,
+                        distance: leader.distance,
+                        elevation: leader.elevation
+                    };
+                })
+                .filter(Boolean);
+
+            const metricDefs = [
+                {
+                    id: 'movingTime',
+                    icon: '⏱️',
+                    title: 'Most Active Time',
+                    label: 'Moving Time',
+                    hasData: a => a.movingTime > 0,
+                    value: a => formatTime(a.movingTime)
+                },
+                {
+                    id: 'distance',
+                    icon: '📏',
+                    title: 'Most Distance',
+                    label: 'Distance',
+                    hasData: a => a.distance > 0,
+                    value: a => `${(a.distance / 1000).toFixed(1)} km`
+                },
+                {
+                    id: 'elevation',
+                    icon: '⛰️',
+                    title: 'Most Elevation',
+                    label: 'Elevation',
+                    hasData: a => a.elevation > 0,
+                    value: a => `${a.elevation.toFixed(0)} m`
+                }
+            ];
+
+            const rolling = [];
+
+            rolling.push({
+                title: 'Bouvet Strava Race',
+                icon: '🎬',
+                customHtml: `
+                    <div class="fun-board" aria-hidden="true">
+                        <div class="fun-race-caption">Peloton sprint to the finish</div>
+                        <div class="fun-cloud c1">☁️</div>
+                        <div class="fun-cloud c2">☁️</div>
+                        <div class="fun-cloud c3">☁️</div>
+                        <div class="fun-hill h1"></div>
+                        <div class="fun-hill h2"></div>
+                        <div class="fun-hill h3"></div>
+                        <div class="fun-goal">
+                            <div class="fun-goal-pole left"></div>
+                            <div class="fun-goal-banner">FINISH</div>
+                            <div class="fun-goal-pole right"></div>
+                        </div>
+                        <div class="fun-finish-line"></div>
+                        <div class="fun-confetti">
+                            <span class="fun-confetti-piece"></span>
+                            <span class="fun-confetti-piece"></span>
+                            <span class="fun-confetti-piece"></span>
+                            <span class="fun-confetti-piece"></span>
+                            <span class="fun-confetti-piece"></span>
+                            <span class="fun-confetti-piece"></span>
+                            <span class="fun-confetti-piece"></span>
+                            <span class="fun-confetti-piece"></span>
+                            <span class="fun-confetti-piece"></span>
+                            <span class="fun-confetti-piece"></span>
+                            <span class="fun-confetti-piece"></span>
+                            <span class="fun-confetti-piece"></span>
+                            <span class="fun-confetti-piece"></span>
+                            <span class="fun-confetti-piece"></span>
+                            <span class="fun-confetti-piece"></span>
+                            <span class="fun-confetti-piece"></span>
+                        </div>
+                        <div class="fun-racer r1"><span>🐇</span></div>
+                        <div class="fun-racer r2"><span>🐺</span></div>
+                        <div class="fun-racer r3"><span>🐴</span></div>
+                        <div class="fun-racer r4"><span>🐻</span></div>
+                        <div class="fun-racer r5"><span>🐢</span></div>
+                        <div class="fun-racer r6"><span>🦊</span><span class="fun-bike">🚲</span></div>
+                        <div class="fun-road"></div>
+                    </div>
+                `
+            });
+
+            sportsByActivityVolume.forEach(sportEntry => {
+                const sportLabel = formatSportName(sportEntry.sport);
+                metricDefs.forEach(metric => {
+                    if (!sportEntry.athletes.some(metric.hasData)) return;
+                    const sorted = [...sportEntry.athletes].sort((a, b) => b[metric.id] - a[metric.id]);
+                    rolling.push({
+                        title: `${metric.title} - ${sportLabel}`,
+                        icon: metric.icon,
+                        metricLabel: metric.label,
+                        metricValue: metric.value,
+                        rows: sorted
+                    });
+                });
+            });
+
+            return {
+                overallByMovingTime,
+                bestPerSport,
+                rolling
+            };
+        }
+
+        function buildSykleState(data, county, community, members) {
+            if (!data || !Array.isArray(data.teamsDetailed)) return null;
+
+            const membersByTeamId = new Map();
+            const membersByTeamTitle = new Map();
+            (members || []).forEach(member => {
+                const first = String(member.firstname || '').trim();
+                const last = String(member.lastname || '').trim();
+                const fullName = `${first} ${last}`.trim();
+                if (!fullName) return;
+
+                const points = Number(member.points || 0);
+                const item = {
+                    name: fullName,
+                    points,
+                    text: `${fullName} (${points.toFixed(2)})`
+                };
+
+                if (member.teamId !== undefined && member.teamId !== null) {
+                    if (!membersByTeamId.has(member.teamId)) {
+                        membersByTeamId.set(member.teamId, []);
+                    }
+                    membersByTeamId.get(member.teamId).push(item);
+                }
+
+                const teamTitleKey = String(member.teamTitle || '').trim().toLowerCase();
+                if (teamTitleKey) {
+                    if (!membersByTeamTitle.has(teamTitleKey)) {
+                        membersByTeamTitle.set(teamTitleKey, []);
+                    }
+                    membersByTeamTitle.get(teamTitleKey).push(item);
+                }
+            });
+
+            const sortMembers = list => list.slice().sort((a, b) => b.points - a.points || a.name.localeCompare(b.name));
+
+            const topTeams = [...data.teamsDetailed]
+                .sort((a, b) => {
+                    if (b.averagePoints !== a.averagePoints) return b.averagePoints - a.averagePoints;
+                    return b.totalPoints - a.totalPoints;
+                })
+                .slice(0, 3)
+                .map(team => {
+                    const byId = team.id !== undefined && team.id !== null ? membersByTeamId.get(team.id) : null;
+                    const byTitle = membersByTeamTitle.get(String(team.title || '').trim().toLowerCase());
+                    const memberList = sortMembers(byId || byTitle || []);
+
+                    return {
+                        ...team,
+                        membersText: memberList.length > 0
+                            ? memberList.map(member => member.text).join(', ')
+                            : 'Ingen medlemmer funnet'
+                    };
+                });
+
+            return {
+                topTeams,
+                members: data.countCompanyMembers,
+                totalPoints: data.pointsTotal,
+                totalWorkouts: data.totalWorkouts,
+                totalKm: formatKm(data.totalCentimeters),
+                nationalRank: data.rank,
+                nationalCount: data.totalCompanies,
+                countyRank: county && county.rank ? `${county.rank}/${county.totalCompanies}` : null,
+                communityRank: community && community.rank ? `${community.rank}/${community.totalCompanies}` : null
+            };
+        }
+
+        function setupDialogueAvatars() {
+            const pairs = [
+                ['hayesAvatar', 'hayesAvatarFallback'],
+                ['teacherAvatar', 'teacherAvatarFallback']
+            ];
+
+            pairs.forEach(([imgId, fallbackId]) => {
+                const img = document.getElementById(imgId);
+                const fallback = document.getElementById(fallbackId);
+                if (!img || !fallback) return;
+
+                img.addEventListener('error', () => {
+                    img.style.display = 'none';
+                    fallback.style.display = 'flex';
+                }, { once: true });
+            });
+        }
+
+        function renderDialogue(dialogue) {
+            const metaEl = document.getElementById('dialogueMeta');
+            const hayesEl = document.getElementById('dialogueHayes');
+            const teacherEl = document.getElementById('dialogueTeacher');
+
+            if (!dialogue || (!dialogue.hayes && !dialogue.teacher)) {
+                metaEl.textContent = 'Kunne ikke laste dialoggrunnlag.';
+                hayesEl.textContent = 'Kjør generate_weekly_dialogue.py for å lage weekly_dialogue.json.';
+                teacherEl.textContent = 'Når weekly_dialogue.json finnes, vises læreroppsummeringen her.';
+                fitDialogueTextSoon();
+                return;
+            }
+
+            metaEl.textContent = `Ukegrunnlag: ${dialogue.week_label || 'Ingen datert aktivitet'}`;
+            hayesEl.textContent = dialogue.hayes || 'Hayes-oppsummering mangler.';
+            teacherEl.textContent = dialogue.teacher || 'Læreroppsummering mangler.';
+            fitDialogueTextSoon();
+        }
+
+        function fitDialogueTextElement(element) {
+            if (!element) return;
+
+            const maxFont = 14;
+            const minFont = 6;
+            const tolerance = 0.1;
+
+            if (element.clientHeight <= 0 || element.clientWidth <= 0) return;
+
+            element.style.lineHeight = '1.4';
+            let low = minFont;
+            let high = maxFont;
+            let best = minFont;
+
+            while ((high - low) > tolerance) {
+                const mid = (low + high) / 2;
+                element.style.fontSize = `${mid}px`;
+
+                const fitsHeight = element.scrollHeight <= element.clientHeight;
+                const fitsWidth = element.scrollWidth <= element.clientWidth;
+
+                if (fitsHeight && fitsWidth) {
+                    best = mid;
+                    low = mid;
+                } else {
+                    high = mid;
+                }
+            }
+
+            element.style.fontSize = `${best.toFixed(2)}px`;
+        }
+
+        function fitDialogueTextSoon() {
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                    fitDialogueText();
+                });
+            });
+        }
+
+        function fitDialogueText() {
+            fitDialogueTextElement(document.getElementById('dialogueHayes'));
+            fitDialogueTextElement(document.getElementById('dialogueTeacher'));
+        }
+
+        function renderSyklePanel(state) {
+            const el = document.getElementById('panelSykleTop3');
+            if (!state || !state.topTeams.length) {
+                el.innerHTML = '<div class="loading">Kunne ikke laste topplag for sykletiljobben.</div>';
+                return;
+            }
+
+            const rows = state.topTeams.map((team, index) => {
+                const rank = index + 1;
+                const medal = rank === 1 ? '👑' : String(rank);
+                const winnerClass = rank === 1 ? ' winner' : '';
+                return `
+                    <div class="team-card${winnerClass}">
+                        <div class="team-rank">${medal}</div>
+                        <div class="team-main">
+                            <div class="team-title">${team.title}</div>
+                            <div class="team-members">${team.membersText}</div>
+                            <div class="team-stats">
+                                <div class="team-stat"><div class="v">${team.averagePoints.toFixed(2)}</div><div class="l">Snitt</div></div>
+                                <div class="team-stat"><div class="v">${team.totalPoints.toFixed(1)}</div><div class="l">Poeng</div></div>
+                                <div class="team-stat"><div class="v">${team.totalkilometers.toFixed(1)}</div><div class="l">Km</div></div>
+                                <div class="team-stat"><div class="v">${formatTime(team.totalSeconds)}</div><div class="l">Tid</div></div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            el.innerHTML = `
+                <div class="sykle-top3">${rows}</div>
+                <div class="sykle-context">
+                    <span class="context-pill">Nasjonalt: #${state.nationalRank}/${state.nationalCount}</span>
+                    ${state.countyRank ? `<span class="context-pill">Fylke: #${state.countyRank}</span>` : ''}
+                    ${state.communityRank ? `<span class="context-pill">Kommune: #${state.communityRank}</span>` : ''}
+                    <span class="context-pill">Medlemmer: ${state.members}</span>
+                    <span class="context-pill">Økter: ${state.totalWorkouts}</span>
+                    <span class="context-pill">Km: ${state.totalKm}</span>
+                </div>
+            `;
+        }
+
+        function renderOverallActiveTime(rows) {
+            const el = document.getElementById('panelStravaActiveTime');
+            if (!rows || rows.length === 0) {
+                el.innerHTML = '<div class="loading">Ingen aktiviteter i valgt periode.</div>';
+                return;
+            }
+
+            const topRows = rows.slice(0, TOP_ACTIVE_ROWS);
+            const tableRows = topRows.map((athlete, index) => {
+                const medal = index === 0 ? '🥇' : index === 1 ? '🥈' : index === 2 ? '🥉' : String(index + 1);
+                return `
+                    <tr>
+                        <td class="rank">${medal}</td>
+                        <td class="name">${athlete.name}</td>
+                        <td class="metric primary-col">${formatTime(athlete.movingTime)}</td>
+                    </tr>
+                `;
+            }).join('');
+
+            el.innerHTML = `
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width:44px">#</th>
+                            <th>Athlete</th>
+                            <th style="text-align:right">Moving Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>${tableRows}</tbody>
+                </table>
+            `;
+        }
+
+        function renderBestPerSport(rows) {
+            const el = document.getElementById('panelBestPerSport');
+            if (!rows || rows.length === 0) {
+                el.innerHTML = '<div class="loading">Ingen sportstyper med aktivitet.</div>';
+                return;
+            }
+
+            const html = rows.map(row => `
+                <div class="sport-winner-row">
+                    <div class="sport-name">${row.sport}</div>
+                    <div class="sport-athlete">${row.athlete}</div>
+                    <div class="sport-metric">${formatTime(row.movingTime)}</div>
+                </div>
+            `).join('');
+
+            el.innerHTML = `<div class="sport-winner-grid">${html}</div>`;
+        }
+
+        function setupFunRace(panelRoot) {
+            if (funRaceConfettiTimer) {
+                clearTimeout(funRaceConfettiTimer);
+                funRaceConfettiTimer = null;
+            }
+
+            if (!panelRoot) return;
+
+            const funBoard = panelRoot.querySelector('.fun-board');
+            if (!funBoard) return;
+
+            const racers = [...funBoard.querySelectorAll('.fun-racer')];
+            if (racers.length === 0) return;
+
+            const winnerIndex = Math.floor(Math.random() * racers.length);
+            racers.forEach((racer, idx) => {
+                const duration = idx === winnerIndex ? 6.2 + Math.random() * 0.8 : 8.2 + Math.random() * 4.4;
+                const bottom = 20 + Math.random() * 12;
+                racer.style.animation = 'none';
+                racer.style.left = '-14%';
+                racer.offsetWidth;
+                racer.style.animation = `funRace ${duration.toFixed(2)}s linear 1 forwards`;
+                racer.style.bottom = `${bottom.toFixed(0)}px`;
+                racer.dataset.duration = duration.toString();
+            });
+
+            const confetti = funBoard.querySelector('.fun-confetti');
+            if (!confetti) return;
+
+            confetti.classList.remove('burst');
+            confetti.offsetWidth;
+
+            const winnerDuration = parseFloat(racers[winnerIndex].dataset.duration || '6.8');
+            const finishProgress = 96 / 116;
+            const triggerMs = Math.max(0, Math.round(winnerDuration * finishProgress * 1000));
+
+            funRaceConfettiTimer = setTimeout(() => {
+                confetti.classList.add('burst');
+            }, triggerMs);
+        }
+
+        function animateRollingProgress(progressEl) {
+            if (!progressEl) return;
+            progressEl.style.transition = 'none';
+            progressEl.style.width = '0%';
+            progressEl.offsetWidth;
+            progressEl.style.transition = `width ${ROLL_INTERVAL_MS}ms linear`;
+            progressEl.style.width = '100%';
+        }
+
+        function renderRollingPanel() {
+            const host = document.getElementById('panelStravaRolling');
+            if (!rollingBoards || rollingBoards.length === 0) {
+                host.innerHTML = '<div class="rolling-empty">Ingen detaljer tilgjengelig.</div>';
+                return;
+            }
+
+            const board = rollingBoards[rollingIndex % rollingBoards.length];
+            let content = '';
+
+            if (board.customHtml) {
+                content = board.customHtml;
+            } else {
+                const rows = (board.rows || []).slice(0, 9).map((athlete, index) => {
+                    const medal = index === 0 ? '🥇' : index === 1 ? '🥈' : index === 2 ? '🥉' : String(index + 1);
+                    return `
+                        <tr>
+                            <td class="rank">${medal}</td>
+                            <td class="name">${athlete.name}</td>
+                            <td class="metric primary-col">${board.metricValue(athlete)}</td>
+                        </tr>
+                    `;
+                }).join('');
+
+                content = `
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width:44px">#</th>
+                                <th>Athlete</th>
+                                <th style="text-align:right">${board.metricLabel}</th>
+                            </tr>
+                        </thead>
+                        <tbody>${rows}</tbody>
+                    </table>
+                `;
+            }
+
+            host.innerHTML = `
+                <div class="rolling-header">
+                    <div class="rolling-title">${board.icon || ''} ${board.title}</div>
+                    <div class="rolling-index">${rollingIndex + 1}/${rollingBoards.length}</div>
+                </div>
+                <div class="progress-bar-wrapper"><div class="progress-bar" id="rollingProgress"></div></div>
+                <div class="rolling-content">${content}</div>
+            `;
+
+            const progressEl = document.getElementById('rollingProgress');
+            animateRollingProgress(progressEl);
+            setupFunRace(host);
+        }
+
+        function restartRollingInterval() {
+            if (rollingInterval) clearInterval(rollingInterval);
+            rollingInterval = setInterval(() => {
+                if (!rollingBoards || rollingBoards.length === 0) return;
+                rollingIndex = (rollingIndex + 1) % rollingBoards.length;
+                renderRollingPanel();
+            }, ROLL_INTERVAL_MS);
+        }
+
+        async function loadDashboard() {
+            try {
+                const [
+                    configRes,
+                    activitiesRes,
+                    membersRes,
+                    updateRes,
+                    sykleNatRes,
+                    sykleCountyRes,
+                    sykleCommunityRes,
+                    sykleMembersRes
+                ] = await Promise.all([
+                    fetch('config.json'),
+                    fetch('master_history.json'),
+                    fetch('club_members.json'),
+                    fetch('last_update.json'),
+                    fetch('sykletiljobben.json'),
+                    fetch('sykletiljobben_county.json'),
+                    fetch('sykletiljobben_community.json'),
+                    fetch('sykletiljobbenmembers.json')
+                ]);
+
+                if (!configRes.ok || !activitiesRes.ok || !membersRes.ok) {
+                    throw new Error('Strava core files missing');
+                }
+
+                const [config, activities, members] = await Promise.all([
+                    configRes.json(),
+                    activitiesRes.json(),
+                    membersRes.json()
+                ]);
+
+                let dialogueData = null;
+                try {
+                    const dialogueRes = await fetch('weekly_dialogue.json');
+                    if (dialogueRes.ok) {
+                        dialogueData = await dialogueRes.json();
+                    }
+                } catch (dialogueError) {
+                    console.warn('Could not load weekly_dialogue.json:', dialogueError);
+                }
+
+                const updateData = updateRes.ok ? await updateRes.json() : null;
+                const sykleData = sykleNatRes.ok ? await sykleNatRes.json() : null;
+                const countyData = sykleCountyRes.ok ? await sykleCountyRes.json() : null;
+                const communityData = sykleCommunityRes.ok ? await sykleCommunityRes.json() : null;
+                const sykleMembersData = sykleMembersRes.ok ? await sykleMembersRes.json() : [];
+
+                setHeaderMeta(config, updateData);
+
+                const stravaState = buildStravaState(config, activities, members);
+                const sykleState = buildSykleState(sykleData, countyData, communityData, sykleMembersData);
+
+                renderSyklePanel(sykleState);
+                renderOverallActiveTime(stravaState.overallByMovingTime);
+                renderBestPerSport(stravaState.bestPerSport);
+                renderDialogue(dialogueData);
+
+                rollingBoards = stravaState.rolling;
+                rollingIndex = 0;
+                renderRollingPanel();
+                restartRollingInterval();
+
+                hasSuccessfulRender = true;
+            } catch (error) {
+                if (!hasSuccessfulRender) {
+                    document.getElementById('panelSykleTop3').innerHTML = '<div class="loading">Loading...</div>';
+                    document.getElementById('panelStravaActiveTime').innerHTML = '<div class="loading">Loading...</div>';
+                    document.getElementById('panelBestPerSport').innerHTML = '<div class="loading">Loading...</div>';
+                    document.getElementById('panelStravaRolling').innerHTML = '<div class="loading">Loading...</div>';
+                }
+                console.warn('Skipping refresh due to temporary data load error:', error);
+            }
+        }
+
+        setupDialogueAvatars();
+        loadDashboard();
+        setInterval(loadDashboard, DATA_REFRESH_MS);
+        window.addEventListener('resize', fitDialogueTextSoon);
+    </script>
+</body>
+</html>

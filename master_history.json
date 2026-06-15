@@ -12110,5 +12110,59 @@
     "sport_type": "Windsurf",
     "device_name": "Garmin Instinct 3 Solar",
     "activity_date": "2026-06-15T17:30:24.774Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Terje",
+      "lastname": "B."
+    },
+    "name": "Løping på kvelden",
+    "distance": 5664.4,
+    "moving_time": 1555,
+    "elapsed_time": 1555,
+    "total_elevation_gain": 74.4,
+    "type": "Run",
+    "sport_type": "Run",
+    "workout_type": null,
+    "device_name": "Garmin Forerunner 245 Music",
+    "activity_date": "2026-06-15T18:00:29.407Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Terje",
+      "lastname": "B."
+    },
+    "name": "Ettermiddag med sykkeltur",
+    "distance": 2964.9,
+    "moving_time": 673,
+    "elapsed_time": 673,
+    "total_elevation_gain": 98.3,
+    "type": "Ride",
+    "sport_type": "Ride",
+    "workout_type": null,
+    "device_name": "Garmin Forerunner 245 Music",
+    "activity_date": "2026-06-15T18:00:29.407Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Terje",
+      "lastname": "B."
+    },
+    "name": "Sykkeltur om morgenen",
+    "distance": 3012.3,
+    "moving_time": 499,
+    "elapsed_time": 689,
+    "total_elevation_gain": 2.2,
+    "type": "Ride",
+    "sport_type": "Ride",
+    "workout_type": null,
+    "device_name": "Garmin Forerunner 245 Music",
+    "activity_date": "2026-06-15T18:00:29.407Z"
   }
 ]

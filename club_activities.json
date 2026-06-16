@@ -20,6 +20,23 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
+      "firstname": "Håkon",
+      "lastname": "R."
+    },
+    "name": "Ettermiddag med sykkeltur",
+    "distance": 20418.1,
+    "moving_time": 3164,
+    "elapsed_time": 3191,
+    "total_elevation_gain": 248,
+    "type": "Ride",
+    "sport_type": "Ride",
+    "workout_type": null,
+    "device_name": "Garmin Edge 1030 Plus"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
       "firstname": "Kristin Sørli",
       "lastname": "O."
     },
@@ -792,6 +809,22 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
+      "firstname": "Kristin Sørli",
+      "lastname": "O."
+    },
+    "name": "Formiddagstur på el-sykkel",
+    "distance": 24789.8,
+    "moving_time": 4533,
+    "elapsed_time": 8491,
+    "total_elevation_gain": 204.7,
+    "type": "EBikeRide",
+    "sport_type": "EBikeRide",
+    "device_name": "Strava App"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
       "firstname": "Terje",
       "lastname": "B."
     },
@@ -804,22 +837,6 @@
     "sport_type": "Run",
     "workout_type": 0,
     "device_name": "Garmin Forerunner 245 Music"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Kristin Sørli",
-      "lastname": "O."
-    },
-    "name": "Formiddagstur på el-sykkel",
-    "distance": 24789.8,
-    "moving_time": 4533,
-    "elapsed_time": 8491,
-    "total_elevation_gain": 204.7,
-    "type": "EBikeRide",
-    "sport_type": "EBikeRide",
-    "device_name": "Strava App"
   },
   {
     "resource_state": 2,
@@ -3290,22 +3307,5 @@
     "sport_type": "Run",
     "workout_type": null,
     "device_name": "Garmin fēnix 5S Plus"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Erlend",
-      "lastname": "T."
-    },
-    "name": "Morning Run",
-    "distance": 5503.9,
-    "moving_time": 2427,
-    "elapsed_time": 2502,
-    "total_elevation_gain": 109,
-    "type": "Run",
-    "sport_type": "Run",
-    "workout_type": null,
-    "device_name": "Garmin Forerunner 255"
   }
 ]

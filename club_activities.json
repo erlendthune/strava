@@ -3,6 +3,23 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
+      "firstname": "Håkon",
+      "lastname": "R."
+    },
+    "name": "Sykkeltur om morgenen",
+    "distance": 17093,
+    "moving_time": 2280,
+    "elapsed_time": 2280,
+    "total_elevation_gain": 159,
+    "type": "Ride",
+    "sport_type": "Ride",
+    "workout_type": null,
+    "device_name": "Garmin Edge 1030 Plus"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
       "firstname": "Terje",
       "lastname": "B."
     },
@@ -1626,6 +1643,22 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
+      "firstname": "Andreas",
+      "lastname": "Z."
+    },
+    "name": "Morning Ride",
+    "distance": 7061.6,
+    "moving_time": 1295,
+    "elapsed_time": 1646,
+    "total_elevation_gain": 73,
+    "type": "EBikeRide",
+    "sport_type": "EBikeRide",
+    "device_name": "Garmin fēnix 5S Plus"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
       "firstname": "Terje",
       "lastname": "B."
     },
@@ -1638,22 +1671,6 @@
     "sport_type": "Ride",
     "workout_type": null,
     "device_name": "Garmin Forerunner 245 Music"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Andreas",
-      "lastname": "Z."
-    },
-    "name": "Morning Ride",
-    "distance": 7061.6,
-    "moving_time": 1295,
-    "elapsed_time": 1646,
-    "total_elevation_gain": 73,
-    "type": "EBikeRide",
-    "sport_type": "EBikeRide",
-    "device_name": "Garmin fēnix 5S Plus"
   },
   {
     "resource_state": 2,
@@ -3288,23 +3305,6 @@
     "moving_time": 771,
     "elapsed_time": 771,
     "total_elevation_gain": 100.8,
-    "type": "Ride",
-    "sport_type": "Ride",
-    "workout_type": 10,
-    "device_name": "Garmin Forerunner 245 Music"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Terje",
-      "lastname": "B."
-    },
-    "name": "Morning Ride",
-    "distance": 3139.6,
-    "moving_time": 551,
-    "elapsed_time": 852,
-    "total_elevation_gain": 5.3,
     "type": "Ride",
     "sport_type": "Ride",
     "workout_type": 10,

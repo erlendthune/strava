@@ -12252,5 +12252,149 @@
     "workout_type": null,
     "device_name": "Garmin Edge 1030 Plus",
     "activity_date": "2026-06-16T15:00:28.564Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Kjetil",
+      "lastname": "H."
+    },
+    "name": "Afternoon Run",
+    "distance": 8661.4,
+    "moving_time": 2893,
+    "elapsed_time": 3060,
+    "total_elevation_gain": 133,
+    "type": "Run",
+    "sport_type": "Run",
+    "workout_type": null,
+    "device_name": "Apple Watch Ultra 3",
+    "activity_date": "2026-06-17T13:00:21.117Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Kjetil",
+      "lastname": "H."
+    },
+    "name": "Afternoon Weight Training",
+    "distance": 0,
+    "moving_time": 4055,
+    "elapsed_time": 4055,
+    "total_elevation_gain": 0,
+    "type": "WeightTraining",
+    "sport_type": "WeightTraining",
+    "workout_type": 30,
+    "device_name": "Apple Watch Ultra 3",
+    "activity_date": "2026-06-17T13:00:21.117Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Kjetil",
+      "lastname": "H."
+    },
+    "name": "Evening Workout",
+    "distance": 0,
+    "moving_time": 6983,
+    "elapsed_time": 6983,
+    "total_elevation_gain": 0,
+    "type": "Workout",
+    "sport_type": "Workout",
+    "workout_type": null,
+    "device_name": "Apple Watch Ultra 3",
+    "activity_date": "2026-06-17T13:00:21.117Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Kjetil",
+      "lastname": "H."
+    },
+    "name": "Evening Workout",
+    "distance": 0,
+    "moving_time": 5856,
+    "elapsed_time": 5856,
+    "total_elevation_gain": 0,
+    "type": "Workout",
+    "sport_type": "Workout",
+    "workout_type": null,
+    "device_name": "Apple Watch Ultra 3",
+    "activity_date": "2026-06-17T13:00:21.117Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Kjetil",
+      "lastname": "H."
+    },
+    "name": "Evening Workout",
+    "distance": 0,
+    "moving_time": 2633,
+    "elapsed_time": 2633,
+    "total_elevation_gain": 0,
+    "type": "Workout",
+    "sport_type": "Workout",
+    "workout_type": null,
+    "device_name": "Apple Watch Ultra 3",
+    "activity_date": "2026-06-17T13:00:21.117Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Kjetil",
+      "lastname": "H."
+    },
+    "name": "Afternoon Workout",
+    "distance": 0,
+    "moving_time": 4212,
+    "elapsed_time": 4212,
+    "total_elevation_gain": 0,
+    "type": "Workout",
+    "sport_type": "Workout",
+    "workout_type": null,
+    "device_name": "Apple Watch Ultra 3",
+    "activity_date": "2026-06-17T13:00:21.117Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Kjetil",
+      "lastname": "H."
+    },
+    "name": "Afternoon Workout",
+    "distance": 0,
+    "moving_time": 3938,
+    "elapsed_time": 3938,
+    "total_elevation_gain": 0,
+    "type": "Workout",
+    "sport_type": "Workout",
+    "workout_type": null,
+    "device_name": "Apple Watch Ultra 3",
+    "activity_date": "2026-06-17T13:00:21.117Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Kjetil",
+      "lastname": "H."
+    },
+    "name": "Night Workout",
+    "distance": 0,
+    "moving_time": 2263,
+    "elapsed_time": 2263,
+    "total_elevation_gain": 0,
+    "type": "Workout",
+    "sport_type": "Workout",
+    "workout_type": null,
+    "device_name": "Apple Watch Ultra 3",
+    "activity_date": "2026-06-17T13:00:21.117Z"
   }
 ]

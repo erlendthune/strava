@@ -12465,5 +12465,40 @@
     "workout_type": null,
     "device_name": "Garmin Edge 1030 Plus",
     "activity_date": "2026-06-18T17:30:18.722Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Håkon",
+      "lastname": "R."
+    },
+    "name": "Sykkeltur på kvelden",
+    "distance": 16668.2,
+    "moving_time": 2483,
+    "elapsed_time": 2500,
+    "total_elevation_gain": 191,
+    "type": "Ride",
+    "sport_type": "Ride",
+    "workout_type": null,
+    "device_name": "Garmin Edge 1030 Plus",
+    "activity_date": "2026-06-18T18:30:20.524Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Kristin Sørli",
+      "lastname": "O."
+    },
+    "name": "Fottur på kvelden",
+    "distance": 3731.2,
+    "moving_time": 3591,
+    "elapsed_time": 3834,
+    "total_elevation_gain": 157.8,
+    "type": "Hike",
+    "sport_type": "Hike",
+    "device_name": "Strava App",
+    "activity_date": "2026-06-18T18:30:20.524Z"
   }
 ]

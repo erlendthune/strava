@@ -12569,5 +12569,23 @@
     "sport_type": "EBikeRide",
     "device_name": "Strava App",
     "activity_date": "2026-06-19T18:30:16.990Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Erlend",
+      "lastname": "T."
+    },
+    "name": "Afternoon Run",
+    "distance": 5030.9,
+    "moving_time": 1864,
+    "elapsed_time": 2275,
+    "total_elevation_gain": 125,
+    "type": "Run",
+    "sport_type": "Run",
+    "workout_type": null,
+    "device_name": "Garmin Instinct 3 Solar",
+    "activity_date": "2026-06-20T14:30:17.768Z"
   }
 ]

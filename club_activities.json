@@ -3,6 +3,23 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
+      "firstname": "Erlend",
+      "lastname": "T."
+    },
+    "name": "Afternoon Run",
+    "distance": 5030.9,
+    "moving_time": 1864,
+    "elapsed_time": 2275,
+    "total_elevation_gain": 125,
+    "type": "Run",
+    "sport_type": "Run",
+    "workout_type": null,
+    "device_name": "Garmin Instinct 3 Solar"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
       "firstname": "Kristin Sørli",
       "lastname": "O."
     },
@@ -3291,21 +3308,5 @@
     "type": "EBikeRide",
     "sport_type": "EBikeRide",
     "device_name": "Garmin fēnix 5S Plus"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Kristin Sørli",
-      "lastname": "O."
-    },
-    "name": "Morgentur på elsykkel",
-    "distance": 7121.1,
-    "moving_time": 1038,
-    "elapsed_time": 1144,
-    "total_elevation_gain": 85,
-    "type": "EBikeRide",
-    "sport_type": "EBikeRide",
-    "device_name": "Strava App"
   }
 ]

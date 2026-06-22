@@ -36,6 +36,23 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
+      "firstname": "Håkon",
+      "lastname": "R."
+    },
+    "name": "Sykkeltur om morgenen",
+    "distance": 17160,
+    "moving_time": 2259,
+    "elapsed_time": 2276,
+    "total_elevation_gain": 161,
+    "type": "Ride",
+    "sport_type": "Ride",
+    "workout_type": null,
+    "device_name": "Garmin Edge 1030 Plus"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
       "firstname": "Erlend",
       "lastname": "T."
     },
@@ -795,6 +812,22 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
+      "firstname": "Kristin Sørli",
+      "lastname": "O."
+    },
+    "name": "Morgentur på elsykkel",
+    "distance": 7123.5,
+    "moving_time": 1034,
+    "elapsed_time": 1155,
+    "total_elevation_gain": 85.1,
+    "type": "EBikeRide",
+    "sport_type": "EBikeRide",
+    "device_name": "Strava App"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
       "firstname": "Terje",
       "lastname": "B."
     },
@@ -807,22 +840,6 @@
     "sport_type": "Ride",
     "workout_type": null,
     "device_name": "Garmin Forerunner 245 Music"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Kristin Sørli",
-      "lastname": "O."
-    },
-    "name": "Morgentur på elsykkel",
-    "distance": 7123.5,
-    "moving_time": 1034,
-    "elapsed_time": 1155,
-    "total_elevation_gain": 85.1,
-    "type": "EBikeRide",
-    "sport_type": "EBikeRide",
-    "device_name": "Strava App"
   },
   {
     "resource_state": 2,
@@ -3290,21 +3307,5 @@
     "type": "EBikeRide",
     "sport_type": "EBikeRide",
     "device_name": "Garmin fēnix 5S Plus"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Kristin Sørli",
-      "lastname": "O."
-    },
-    "name": "Morgentur på elsykkel",
-    "distance": 7122.6,
-    "moving_time": 1039,
-    "elapsed_time": 1185,
-    "total_elevation_gain": 85,
-    "type": "EBikeRide",
-    "sport_type": "EBikeRide",
-    "device_name": "Strava App"
   }
 ]

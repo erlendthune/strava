@@ -3,6 +3,40 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
+      "firstname": "Erlend",
+      "lastname": "T."
+    },
+    "name": "Afternoon Ride",
+    "distance": 11187.3,
+    "moving_time": 2079,
+    "elapsed_time": 2393,
+    "total_elevation_gain": 262,
+    "type": "Ride",
+    "sport_type": "Ride",
+    "workout_type": null,
+    "device_name": "Garmin Instinct 3 Solar"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Håkon",
+      "lastname": "R."
+    },
+    "name": "Ettermiddag med sykkeltur",
+    "distance": 20191,
+    "moving_time": 3124,
+    "elapsed_time": 3163,
+    "total_elevation_gain": 251,
+    "type": "Ride",
+    "sport_type": "Ride",
+    "workout_type": null,
+    "device_name": "Garmin Edge 1030 Plus"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
       "firstname": "Kristin Sørli",
       "lastname": "O."
     },
@@ -3264,22 +3298,6 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Kristin Sørli",
-      "lastname": "O."
-    },
-    "name": "Ettermiddagstur på el-sykkel",
-    "distance": 7082.6,
-    "moving_time": 1050,
-    "elapsed_time": 1103,
-    "total_elevation_gain": 112.5,
-    "type": "EBikeRide",
-    "sport_type": "EBikeRide",
-    "device_name": "Strava App"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
       "firstname": "Andreas",
       "lastname": "Z."
     },
@@ -3291,21 +3309,5 @@
     "type": "EBikeRide",
     "sport_type": "EBikeRide",
     "device_name": "Garmin fēnix 5S Plus"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Terje",
-      "lastname": "B."
-    },
-    "name": "Morning Ride",
-    "distance": 2732.2,
-    "moving_time": 390,
-    "elapsed_time": 422,
-    "total_elevation_gain": 5.1,
-    "type": "EBikeRide",
-    "sport_type": "EBikeRide",
-    "device_name": "Garmin Forerunner 245 Music"
   }
 ]

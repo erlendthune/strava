@@ -12762,5 +12762,41 @@
     "sport_type": "EBikeRide",
     "device_name": "Strava App",
     "activity_date": "2026-06-22T15:00:22.372Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Erlend",
+      "lastname": "T."
+    },
+    "name": "Afternoon Ride",
+    "distance": 11187.3,
+    "moving_time": 2079,
+    "elapsed_time": 2393,
+    "total_elevation_gain": 262,
+    "type": "Ride",
+    "sport_type": "Ride",
+    "workout_type": null,
+    "device_name": "Garmin Instinct 3 Solar",
+    "activity_date": "2026-06-22T15:30:24.348Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Håkon",
+      "lastname": "R."
+    },
+    "name": "Ettermiddag med sykkeltur",
+    "distance": 20191,
+    "moving_time": 3124,
+    "elapsed_time": 3163,
+    "total_elevation_gain": 251,
+    "type": "Ride",
+    "sport_type": "Ride",
+    "workout_type": null,
+    "device_name": "Garmin Edge 1030 Plus",
+    "activity_date": "2026-06-22T15:30:24.348Z"
   }
 ]

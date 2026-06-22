@@ -64,7 +64,7 @@
             min-width: 210px;
             display: flex;
             flex-direction: column;
-            gap: 6px;
+            gap: 0;
         }
 
         .title {
@@ -79,13 +79,6 @@
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-        }
-
-        .next-slide {
-            color: var(--muted);
-            font-size: 12px;
-            text-align: right;
-            white-space: nowrap;
         }
 
         .progress-bar-wrapper {
@@ -148,10 +141,6 @@
                 width: 100%;
                 min-width: 0;
             }
-
-            .next-slide {
-                text-align: left;
-            }
         }
     </style>
 </head>
@@ -163,7 +152,6 @@
                 <div class="meta" id="meta">Loading slideshow configuration...</div>
             </div>
             <div class="header-right">
-                <div class="next-slide" id="nextSlide">Next slide in --.-s</div>
                 <div class="progress-bar-wrapper"><div class="progress-bar" id="slideProgress"></div></div>
             </div>
         </header>
@@ -179,7 +167,6 @@
         const DEFAULT_SECONDS = 10;
 
         const metaElement = document.getElementById('meta');
-        const nextSlideElement = document.getElementById('nextSlide');
         const progressElement = document.getElementById('slideProgress');
         const errorElement = document.getElementById('error');
         const frameElement = document.getElementById('slideFrame');
@@ -195,7 +182,6 @@
             errorElement.textContent = message;
             errorElement.style.display = 'flex';
             metaElement.textContent = 'Slideshow failed to start';
-            nextSlideElement.textContent = 'Next slide in --.-s';
             progressElement.style.width = '0%';
         }
 
@@ -229,10 +215,7 @@
             if (!slideDurationMs) return;
 
             const elapsedMs = Math.max(0, Date.now() - slideStartMs);
-            const remainingMs = Math.max(0, slideDurationMs - elapsedMs);
             const progressPct = Math.min(100, (elapsedMs / slideDurationMs) * 100);
-
-            nextSlideElement.textContent = `Next slide in ${(remainingMs / 1000).toFixed(1)}s`;
             progressElement.style.width = `${progressPct}%`;
         }
 
@@ -246,6 +229,16 @@
             clearTimeout(timerId);
             const seconds = slides[currentIndex].seconds;
             timerId = setTimeout(() => {
+                if (slides.length === 1) {
+                    // Keep the progress animation looping without reloading the single slide iframe.
+                    slideStartMs = Date.now();
+                    slideDurationMs = seconds * 1000;
+                    progressElement.style.width = '0%';
+                    startTimingTicker();
+                    scheduleNextSlide();
+                    return;
+                }
+
                 currentIndex = (currentIndex + 1) % slides.length;
                 showCurrentSlide();
             }, seconds * 1000);

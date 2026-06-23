@@ -6,6 +6,23 @@
       "firstname": "Erlend",
       "lastname": "T."
     },
+    "name": "Morning Ride",
+    "distance": 10832.4,
+    "moving_time": 1591,
+    "elapsed_time": 1647,
+    "total_elevation_gain": 131,
+    "type": "Ride",
+    "sport_type": "Ride",
+    "workout_type": null,
+    "device_name": "Garmin Instinct 3 Solar"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Erlend",
+      "lastname": "T."
+    },
     "name": "Afternoon Ride",
     "distance": 11187.3,
     "moving_time": 2079,
@@ -3293,21 +3310,5 @@
     "sport_type": "Ride",
     "workout_type": null,
     "device_name": "Garmin Forerunner 255"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Andreas",
-      "lastname": "Z."
-    },
-    "name": "Afternoon Ride",
-    "distance": 6669.4,
-    "moving_time": 1348,
-    "elapsed_time": 1719,
-    "total_elevation_gain": 122,
-    "type": "EBikeRide",
-    "sport_type": "EBikeRide",
-    "device_name": "Garmin fēnix 5S Plus"
   }
 ]

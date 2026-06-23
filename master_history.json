@@ -12798,5 +12798,23 @@
     "workout_type": null,
     "device_name": "Garmin Edge 1030 Plus",
     "activity_date": "2026-06-22T15:30:24.348Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Erlend",
+      "lastname": "T."
+    },
+    "name": "Morning Ride",
+    "distance": 10832.4,
+    "moving_time": 1591,
+    "elapsed_time": 1647,
+    "total_elevation_gain": 131,
+    "type": "Ride",
+    "sport_type": "Ride",
+    "workout_type": null,
+    "device_name": "Garmin Instinct 3 Solar",
+    "activity_date": "2026-06-23T06:00:21.713Z"
   }
 ]

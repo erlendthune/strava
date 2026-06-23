@@ -3,6 +3,22 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
+      "firstname": "Kristin Sørli",
+      "lastname": "O."
+    },
+    "name": "Morgentur på elsykkel",
+    "distance": 7156.8,
+    "moving_time": 1077,
+    "elapsed_time": 1183,
+    "total_elevation_gain": 85.1,
+    "type": "EBikeRide",
+    "sport_type": "EBikeRide",
+    "device_name": "Strava App"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
       "firstname": "Erlend",
       "lastname": "T."
     },
@@ -3293,22 +3309,5 @@
     "type": "EBikeRide",
     "sport_type": "EBikeRide",
     "device_name": "Garmin Forerunner 245 Music"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Erlend",
-      "lastname": "T."
-    },
-    "name": "Afternoon Ride",
-    "distance": 10872.2,
-    "moving_time": 1862,
-    "elapsed_time": 2485,
-    "total_elevation_gain": 219,
-    "type": "Ride",
-    "sport_type": "Ride",
-    "workout_type": null,
-    "device_name": "Garmin Forerunner 255"
   }
 ]

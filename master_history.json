@@ -12833,5 +12833,41 @@
     "sport_type": "EBikeRide",
     "device_name": "Strava App",
     "activity_date": "2026-06-23T06:30:20.140Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Terje",
+      "lastname": "B."
+    },
+    "name": "Ettermiddag med sykkeltur",
+    "distance": 2479.9,
+    "moving_time": 470,
+    "elapsed_time": 555,
+    "total_elevation_gain": 74.9,
+    "type": "Ride",
+    "sport_type": "Ride",
+    "workout_type": null,
+    "device_name": "Garmin Forerunner 245 Music",
+    "activity_date": "2026-06-23T13:30:25.690Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Terje",
+      "lastname": "B."
+    },
+    "name": "Ettermiddag med sykkeltur",
+    "distance": 2892.8,
+    "moving_time": 650,
+    "elapsed_time": 650,
+    "total_elevation_gain": 83.4,
+    "type": "Ride",
+    "sport_type": "Ride",
+    "workout_type": null,
+    "device_name": "Garmin Forerunner 245 Music",
+    "activity_date": "2026-06-23T13:30:25.690Z"
   }
 ]

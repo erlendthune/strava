@@ -12957,5 +12957,23 @@
     "workout_type": null,
     "device_name": "Garmin Edge 1030 Plus",
     "activity_date": "2026-06-24T07:30:17.296Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Håkon",
+      "lastname": "R."
+    },
+    "name": "Ettermiddag med sykkeltur",
+    "distance": 20473.3,
+    "moving_time": 3189,
+    "elapsed_time": 3235,
+    "total_elevation_gain": 248,
+    "type": "Ride",
+    "sport_type": "Ride",
+    "workout_type": null,
+    "device_name": "Garmin Edge 1030 Plus",
+    "activity_date": "2026-06-24T14:30:21.466Z"
   }
 ]

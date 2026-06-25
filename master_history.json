@@ -12992,5 +12992,22 @@
     "sport_type": "EBikeRide",
     "device_name": "Strava App",
     "activity_date": "2026-06-24T15:00:17.985Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Kristin Sørli",
+      "lastname": "O."
+    },
+    "name": "Morgentur på elsykkel",
+    "distance": 7155.1,
+    "moving_time": 1036,
+    "elapsed_time": 1146,
+    "total_elevation_gain": 85,
+    "type": "EBikeRide",
+    "sport_type": "EBikeRide",
+    "device_name": "Strava App",
+    "activity_date": "2026-06-25T06:00:20.901Z"
   }
 ]

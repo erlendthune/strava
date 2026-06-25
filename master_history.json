@@ -13027,5 +13027,22 @@
     "workout_type": null,
     "device_name": "Garmin Instinct 3 Solar",
     "activity_date": "2026-06-25T07:00:16.954Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Kristin Sørli",
+      "lastname": "O."
+    },
+    "name": "Ettermiddagstur på el-sykkel",
+    "distance": 7066.3,
+    "moving_time": 1063,
+    "elapsed_time": 1174,
+    "total_elevation_gain": 113.4,
+    "type": "EBikeRide",
+    "sport_type": "EBikeRide",
+    "device_name": "Strava App",
+    "activity_date": "2026-06-25T14:30:19.838Z"
   }
 ]

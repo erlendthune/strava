@@ -3,6 +3,23 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
+      "firstname": "Erlend",
+      "lastname": "T."
+    },
+    "name": "Afternoon Ride",
+    "distance": 10160.3,
+    "moving_time": 1593,
+    "elapsed_time": 2028,
+    "total_elevation_gain": 156,
+    "type": "Ride",
+    "sport_type": "Ride",
+    "workout_type": null,
+    "device_name": "Garmin Instinct 3 Solar"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
       "firstname": "Kristin Sørli",
       "lastname": "O."
     },
@@ -3293,22 +3310,5 @@
     "sport_type": "Run",
     "workout_type": 0,
     "device_name": "Garmin Forerunner 265"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Erlend",
-      "lastname": "T."
-    },
-    "name": "Afternoon Ride",
-    "distance": 10826.4,
-    "moving_time": 1836,
-    "elapsed_time": 1918,
-    "total_elevation_gain": 197,
-    "type": "Ride",
-    "sport_type": "Ride",
-    "workout_type": 10,
-    "device_name": "Garmin Forerunner 255"
   }
 ]

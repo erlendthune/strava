@@ -3,6 +3,22 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
+      "firstname": "Kristin Sørli",
+      "lastname": "O."
+    },
+    "name": "Morgentur på elsykkel",
+    "distance": 7159.5,
+    "moving_time": 1034,
+    "elapsed_time": 1162,
+    "total_elevation_gain": 85,
+    "type": "EBikeRide",
+    "sport_type": "EBikeRide",
+    "device_name": "Strava App"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
       "firstname": "Erlend",
       "lastname": "T."
     },
@@ -3292,23 +3308,6 @@
     "total_elevation_gain": 87,
     "type": "EBikeRide",
     "sport_type": "EBikeRide",
-    "device_name": "Garmin Forerunner 265"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Jørgen",
-      "lastname": "M."
-    },
-    "name": "Terrengkarusellen 7/21: Hvit løype",
-    "distance": 11898.7,
-    "moving_time": 4412,
-    "elapsed_time": 4412,
-    "total_elevation_gain": 371,
-    "type": "Run",
-    "sport_type": "Run",
-    "workout_type": 0,
     "device_name": "Garmin Forerunner 265"
   }
 ]

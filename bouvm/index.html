@@ -13,8 +13,17 @@
     const key = params.get('key') || 'xAbQwlPy8wg';
     history.replaceState(null, '', '/Screen/sor?key=' + key);
   </script>
-  <script type="module" crossorigin="" src="/bouvm/assets/index-BO8bQFTX.js"></script>
-  <link rel="stylesheet" crossorigin="" href="/bouvm/assets/index-Bink9EpP.css">
+  <script>
+    // Set <base> dynamically so asset paths are always relative to this file,
+    // regardless of whether served from root, a subdirectory, or GitHub Pages.
+    (function () {
+      var url = document.URL;
+      var base = url.endsWith('/') ? url : url.endsWith('index.html') ? url.replace('index.html', '') : url + '/';
+      document.write('<base href="' + base + '">');
+    })();
+  </script>
+  <script type="module" crossorigin="" src="assets/index-BO8bQFTX.js"></script>
+  <link rel="stylesheet" crossorigin="" href="assets/index-Bink9EpP.css">
   <meta name="robots" content="noindex, nofollow">
 
   <style>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="nb" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, interactive-widget=resizes-content">
+  <meta name="theme-color" content="#7a8c6e">
+  <meta name="description" content="Tippekonkurranse for Bouvet Sør under fotball-VM 2026">
+  <link rel="icon" type="image/svg+xml" href="https://bouvm.tech/icons/icon.svg">
+  <title>BouVM</title>
+  <script>
+    // Rewrite the path so the React Router renders the Screen view directly.
+    const params = new URLSearchParams(window.location.search);
+    const key = params.get('key') || 'xAbQwlPy8wg';
+    history.replaceState(null, '', '/Screen/sor?key=' + key);
+  </script>
+  <script type="module" crossorigin="" src="/bouvm/assets/index-BO8bQFTX.js"></script>
+  <link rel="stylesheet" crossorigin="" href="/bouvm/assets/index-Bink9EpP.css">
+  <meta name="robots" content="noindex, nofollow">
+
+  <style>
+    /* ── Red card overlay ── */
+    .redcard-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+      opacity: 0;
+    }
+    .redcard-overlay.show {
+      animation: rc-fade 4s ease forwards;
+    }
+    @keyframes rc-fade {
+      0%   { opacity: 0; }
+      15%  { opacity: 1; }
+      75%  { opacity: 1; }
+      100% { opacity: 0; }
+    }
+
+    .redcard-scene {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 32px;
+      background: rgba(0, 0, 0, 0.82);
+      padding: 48px 72px;
+      border-radius: 24px;
+      animation: rc-zoom 4s ease forwards;
+    }
+    @keyframes rc-zoom {
+      0%   { transform: scale(0.4) rotate(-20deg); }
+      20%  { transform: scale(1.1) rotate(4deg); }
+      30%  { transform: scale(1.0) rotate(0deg); }
+      80%  { transform: scale(1.0) rotate(0deg); }
+      100% { transform: scale(0.6) rotate(15deg); }
+    }
+
+    .redcard-card {
+      width: 120px;
+      height: 170px;
+      background: #e02020;
+      border-radius: 16px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.7), inset 0 2px 0 rgba(255,255,255,0.15);
+    }
+
+    .redcard-name {
+      font-family: "DM Serif Display", Georgia, serif;
+      font-size: 56px;
+      font-weight: 700;
+      color: #fff;
+      text-shadow: 0 2px 16px rgba(0,0,0,0.8);
+      white-space: nowrap;
+      text-align: center;
+    }
+
+    .redcard-label {
+      font-family: "Source Sans 3", system-ui, sans-serif;
+      font-size: 28px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.8);
+      text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+    }
+
+    /* Red card badge on the last-place row */
+    .screen-live__lb-row--redcarded .screen-live__lb-rank::after {
+      content: '🟥';
+      margin-left: 4px;
+      font-size: 0.75em;
+    }
+
+    /* Joker Nord badge on the top row */
+    .screen-live__lb-row--jokernord .screen-live__lb-rank::after {
+      content: '🃏';
+      margin-left: 4px;
+      font-size: 0.75em;
+    }
+
+    /* ── Joker Nord overlay ── */
+    .jokernord-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+      opacity: 0;
+    }
+    .jokernord-overlay.show {
+      animation: jn-fade 4s ease forwards;
+    }
+    @keyframes jn-fade {
+      0%   { opacity: 0; }
+      15%  { opacity: 1; }
+      75%  { opacity: 1; }
+      100% { opacity: 0; }
+    }
+    .jokernord-scene {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 32px;
+      background: rgba(0, 0, 0, 0.82);
+      padding: 48px 72px;
+      border-radius: 24px;
+      animation: jn-zoom 4s ease forwards;
+    }
+    @keyframes jn-zoom {
+      0%   { transform: scale(0.4) rotate(20deg); }
+      20%  { transform: scale(1.1) rotate(-4deg); }
+      30%  { transform: scale(1.0) rotate(0deg); }
+      80%  { transform: scale(1.0) rotate(0deg); }
+      100% { transform: scale(0.6) rotate(-15deg); }
+    }
+    .jokernord-icon {
+      font-size: 120px;
+      line-height: 1;
+      filter: drop-shadow(0 4px 16px rgba(255,220,0,0.6));
+    }
+    .jokernord-name {
+      font-family: "DM Serif Display", Georgia, serif;
+      font-size: 56px;
+      font-weight: 700;
+      color: #ffe033;
+      text-shadow: 0 2px 16px rgba(0,0,0,0.8);
+      white-space: nowrap;
+      text-align: center;
+    }
+    .jokernord-label {
+      font-family: "Source Sans 3", system-ui, sans-serif;
+      font-size: 28px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,220,0,0.9);
+      text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <!-- Red card overlay -->
+  <div class="redcard-overlay" id="redcard-overlay">
+    <div class="redcard-scene">
+      <div class="redcard-card"></div>
+      <div class="redcard-name" id="redcard-name"></div>
+      <div class="redcard-label">Rødt kort — sist i tabellen!</div>
+    </div>
+  </div>
+
+  <!-- Joker Nord overlay -->
+  <div class="jokernord-overlay" id="jokernord-overlay">
+    <div class="jokernord-scene">
+      <div class="jokernord-icon">🃏</div>
+      <div class="jokernord-name" id="jokernord-name"></div>
+      <div class="jokernord-label">Joker Nord — rett til toppen!</div>
+    </div>
+  </div>
+
+  <script>
+    // ── Leaderboard animations ─────────────────────────────────────────
+    const ANIM_INTERVAL_MS = 15000; // interval between animations
+    const ANIM_DISPLAY_MS  = 4000;  // matches animation duration
+    let animTurn = 0;               // 0 = red card, 1 = joker nord, alternates
+
+    function getLeaderboardRows() {
+      return Array.from(document.querySelectorAll('.screen-live__lb-list .screen-live__lb-row'));
+    }
+
+    function triggerRedCard() {
+      const rows = getLeaderboardRows();
+      if (rows.length < 2) return;
+
+      const list = rows[0].parentElement;
+      const playerName = rows[0].querySelector('.screen-live__lb-name')?.textContent ?? '';
+
+      const overlay = document.getElementById('redcard-overlay');
+      document.getElementById('redcard-name').textContent = playerName;
+      overlay.classList.remove('show');
+      void overlay.offsetWidth;
+      overlay.classList.add('show');
+
+      setTimeout(() => {
+        const updatedRows = getLeaderboardRows();
+        if (updatedRows.length < 2) return;
+        const target = updatedRows[0];
+
+        target.classList.remove('screen-live__lb-row--gold', 'screen-live__lb-row--jokernord');
+        document.querySelectorAll('.screen-live__lb-row--redcarded')
+          .forEach(r => r.classList.remove('screen-live__lb-row--redcarded'));
+        document.querySelectorAll('.screen-live__lb-row--jokernord')
+          .forEach(r => r.classList.remove('screen-live__lb-row--jokernord'));
+
+        list.appendChild(target);
+        target.classList.add('screen-live__lb-row--redcarded');
+
+        const allRows = getLeaderboardRows();
+        allRows[allRows.length - 1].querySelector('.screen-live__lb-rank').textContent = allRows.length;
+        allRows[0].classList.add('screen-live__lb-row--gold');
+        allRows[0].querySelector('.screen-live__lb-rank').textContent = '1';
+      }, ANIM_DISPLAY_MS * 0.55);
+    }
+
+    function triggerJokerNord() {
+      const rows = getLeaderboardRows();
+      if (rows.length < 2) return;
+
+      // Pick a random player that is not currently #1 and not red-carded
+      const candidates = rows.slice(1).filter(r => !r.classList.contains('screen-live__lb-row--redcarded'));
+      if (candidates.length === 0) return;
+      const target = candidates[Math.floor(Math.random() * candidates.length)];
+      const list = target.parentElement;
+      const playerName = target.querySelector('.screen-live__lb-name')?.textContent ?? '';
+
+      const overlay = document.getElementById('jokernord-overlay');
+      document.getElementById('jokernord-name').textContent = playerName;
+      overlay.classList.remove('show');
+      void overlay.offsetWidth;
+      overlay.classList.add('show');
+
+      setTimeout(() => {
+        const allBefore = getLeaderboardRows();
+        if (allBefore.length < 2) return;
+
+        // Remove joker badge from any previous holder
+        document.querySelectorAll('.screen-live__lb-row--jokernord')
+          .forEach(r => r.classList.remove('screen-live__lb-row--jokernord'));
+
+        // Demote current #1 from gold
+        allBefore[0].classList.remove('screen-live__lb-row--gold');
+
+        // Move target to top
+        list.insertBefore(target, list.firstChild);
+        target.classList.add('screen-live__lb-row--gold', 'screen-live__lb-row--jokernord');
+
+        // Re-number all ranks
+        getLeaderboardRows().forEach((r, i) => {
+          const rankEl = r.querySelector('.screen-live__lb-rank');
+          if (rankEl) rankEl.textContent = i + 1;
+        });
+      }, ANIM_DISPLAY_MS * 0.55);
+    }
+
+    function triggerNext() {
+      if (animTurn % 2 === 0) triggerRedCard();
+      else triggerJokerNord();
+      animTurn++;
+    }
+
+    // Wait until React has rendered the leaderboard
+    function waitForLeaderboard(cb, attempts = 0) {
+      if (attempts > 60) return;
+      if (getLeaderboardRows().length > 0) cb();
+      else setTimeout(() => waitForLeaderboard(cb, attempts + 1), 100);
+    }
+
+    waitForLeaderboard(() => {
+      setTimeout(() => {
+        triggerNext();
+        setInterval(triggerNext, ANIM_INTERVAL_MS);
+      }, 5000);
+    });
+  </script>
+</body>
+</html>

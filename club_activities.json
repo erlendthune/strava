@@ -3,6 +3,22 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
+      "firstname": "Erlend",
+      "lastname": "T."
+    },
+    "name": "Afternoon Windsurf",
+    "distance": 15697.2,
+    "moving_time": 4814,
+    "elapsed_time": 5283,
+    "total_elevation_gain": 0,
+    "type": "Windsurf",
+    "sport_type": "Windsurf",
+    "device_name": "Garmin Instinct 3 Solar"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
       "firstname": "Kristin Sørli",
       "lastname": "O."
     },
@@ -3279,22 +3295,6 @@
     "type": "EBikeRide",
     "sport_type": "EBikeRide",
     "device_name": "Garmin fēnix 5S Plus"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Terje",
-      "lastname": "B."
-    },
-    "name": "Lunch Walk",
-    "distance": 1212.8,
-    "moving_time": 947,
-    "elapsed_time": 1405,
-    "total_elevation_gain": 5.3,
-    "type": "Walk",
-    "sport_type": "Walk",
-    "device_name": "Garmin Forerunner 245 Music"
   },
   {
     "resource_state": 2,

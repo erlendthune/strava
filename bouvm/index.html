@@ -8,19 +8,21 @@
   <link rel="icon" type="image/svg+xml" href="https://bouvm.tech/icons/icon.svg">
   <title>BouVM</title>
   <script>
-    // 1. Capture base URL (strip query string first) and set <base> tag
-    (function () {
+    // 1. Compute assets base path from actual URL (before anything changes it)
+    var _base = (function () {
       var url = document.URL.split('?')[0];
-      var base = url.endsWith('/') ? url : url.endsWith('index.html') ? url.replace('index.html', '') : url + '/';
-      document.write('<base href="' + base + '">');
+      return url.endsWith('/') ? url : url.endsWith('index.html') ? url.replace('index.html', '') : url + '/';
     })();
-    // 2. Rewrite path so React Router renders the Screen view
+    // 2. Inject assets with correct absolute paths (beats the preload scanner)
+    document.write('<script type="module" crossorigin src="' + _base + 'assets/index-BO8bQFTX.js"><\/script>');
+    document.write('<link rel="stylesheet" crossorigin href="' + _base + 'assets/index-Bink9EpP.css">');
+    // 3. Rewrite path so React Router renders the Screen view
     (function () {
       var params = new URLSearchParams(window.location.search);
       var key = params.get('key') || 'xAbQwlPy8wg';
       history.replaceState(null, '', '/Screen/sor?key=' + key);
     })();
-    // 3. Intercept fetch — redirect ALL api.bouvm.tech calls through our Azure proxy
+    // 4. Intercept fetch — redirect ALL api.bouvm.tech calls through our Azure proxy
     (function () {
       var PROXY = 'https://bouvm-c0gge6bpbgdkacb7.norwayeast-01.azurewebsites.net/api/bouvm';
       var _fetch = window.fetch.bind(window);
@@ -34,8 +36,6 @@
       };
     })();
   </script>
-  <script type="module" crossorigin="" src="assets/index-BO8bQFTX.js"></script>
-  <link rel="stylesheet" crossorigin="" href="assets/index-Bink9EpP.css">
   <meta name="robots" content="noindex, nofollow">
 
   <style>

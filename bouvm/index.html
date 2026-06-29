@@ -16,13 +16,7 @@
     // 2. Inject assets with correct absolute paths (beats the preload scanner)
     document.write('<script type="module" crossorigin src="' + _base + 'assets/index-BO8bQFTX.js"><\/script>');
     document.write('<link rel="stylesheet" crossorigin href="' + _base + 'assets/index-Bink9EpP.css">');
-    // 3. Rewrite path so React Router renders the Screen view
-    (function () {
-      var params = new URLSearchParams(window.location.search);
-      var key = params.get('key') || 'xAbQwlPy8wg';
-      history.replaceState(null, '', '/Screen/sor?key=' + key);
-    })();
-    // 4. Intercept fetch — redirect ALL api.bouvm.tech calls through our Azure proxy
+    // 3. Intercept fetch — redirect ALL api.bouvm.tech calls through our Azure proxy
     (function () {
       var PROXY = 'https://bouvm-c0gge6bpbgdkacb7.norwayeast-01.azurewebsites.net/api/bouvm';
       var _fetch = window.fetch.bind(window);
@@ -35,6 +29,10 @@
         return _fetch(input, init);
       };
     })();
+    // 4. Rewrite path so React Router renders the Screen view
+    //    Done after asset tags are written so the path change doesn't affect them.
+    var _key = new URLSearchParams(window.location.search).get('key') || 'xAbQwlPy8wg';
+    history.replaceState(null, '', '/Screen/sor?key=' + _key);
   </script>
   <meta name="robots" content="noindex, nofollow">
 

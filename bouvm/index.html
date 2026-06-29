@@ -25,6 +25,8 @@
         if (url.includes('api.bouvm.tech')) {
           var key = new URL(url).searchParams.get('key') ?? '';
           input = PROXY + '?key=' + encodeURIComponent(key);
+          // Strip credentials — proxy doesn't need them and * CORS forbids credentials:include
+          init = Object.assign({}, init, { credentials: 'omit' });
         }
         return _fetch(input, init);
       };

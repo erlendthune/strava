@@ -8,42 +8,27 @@
   <link rel="icon" type="image/svg+xml" href="https://bouvm.tech/icons/icon.svg">
   <title>BouVM</title>
   <script>
-    // 1. Capture the real URL before anything changes it
+    // 1. Capture base URL (strip query string first) and set <base> tag
     (function () {
-      var url = document.URL;
+      var url = document.URL.split('?')[0];
       var base = url.endsWith('/') ? url : url.endsWith('index.html') ? url.replace('index.html', '') : url + '/';
       document.write('<base href="' + base + '">');
     })();
-    // 2. Spoof window.location so React Router sees /Screen/sor
-    //    without touching history or the address bar.
+    // 2. Rewrite path so React Router renders the Screen view
     (function () {
       var params = new URLSearchParams(window.location.search);
       var key = params.get('key') || 'xAbQwlPy8wg';
-      var real = window.location;
-      Object.defineProperty(window, 'location', {
-        configurable: true,
-        get: function () {
-          return new Proxy(real, {
-            get: function (t, p) {
-              if (p === 'pathname') return '/Screen/sor';
-              if (p === 'search')   return '?key=' + key;
-              if (p === 'href')     return 'https://bouvm.tech/Screen/sor?key=' + key;
-              var v = t[p];
-              return typeof v === 'function' ? v.bind(t) : v;
-            }
-          });
-        }
-      });
+      history.replaceState(null, '', '/Screen/sor?key=' + key);
     })();
-    // 3. Intercept fetch so the React bundle calls our proxy instead of api.bouvm.tech
+    // 3. Intercept fetch — redirect ALL api.bouvm.tech calls through our Azure proxy
     (function () {
       var PROXY = 'https://bouvm-c0gge6bpbgdkacb7.norwayeast-01.azurewebsites.net/api/bouvm';
       var _fetch = window.fetch.bind(window);
       window.fetch = function (input, init) {
         var url = typeof input === 'string' ? input : (input instanceof Request ? input.url : String(input));
         if (url.includes('api.bouvm.tech')) {
-          var key = new URL(url).searchParams.get('key') ?? '';
-          input = PROXY + '?key=' + key;
+          var parsed = new URL(url);
+          input = PROXY + '?_path=' + encodeURIComponent(parsed.pathname + parsed.search);
         }
         return _fetch(input, init);
       };

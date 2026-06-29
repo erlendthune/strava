@@ -29,8 +29,8 @@
       window.fetch = function (input, init) {
         var url = typeof input === 'string' ? input : (input instanceof Request ? input.url : String(input));
         if (url.includes('api.bouvm.tech')) {
-          var parsed = new URL(url);
-          input = PROXY + '?_path=' + encodeURIComponent(parsed.pathname + parsed.search);
+          var key = new URL(url).searchParams.get('key') ?? '';
+          input = PROXY + '?key=' + encodeURIComponent(key);
         }
         return _fetch(input, init);
       };

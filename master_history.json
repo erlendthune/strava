@@ -13150,5 +13150,22 @@
     "workout_type": null,
     "device_name": "Garmin Forerunner 245 Music",
     "activity_date": "2026-06-28T18:30:18.185Z"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Kristin Sørli",
+      "lastname": "O."
+    },
+    "name": "Ettermiddagstur på el-sykkel",
+    "distance": 8233.5,
+    "moving_time": 1256,
+    "elapsed_time": 1368,
+    "total_elevation_gain": 90.1,
+    "type": "EBikeRide",
+    "sport_type": "EBikeRide",
+    "device_name": "Strava App",
+    "activity_date": "2026-06-29T13:00:18.133Z"
   }
 ]

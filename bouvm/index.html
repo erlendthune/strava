@@ -8,19 +8,34 @@
   <link rel="icon" type="image/svg+xml" href="https://bouvm.tech/icons/icon.svg">
   <title>BouVM</title>
   <script>
-    // 1. Capture the real URL before replaceState changes it
-    (function () {
-      var url = document.URL;
-      var base = url.endsWith('/') ? url : url.endsWith('index.html') ? url.replace('index.html', '') : url + '/';
-      document.write('<base href="' + base + '">');
+    // 1. Compute assets base path from actual URL (before anything changes it)
+    var _base = (function () {
+      var url = document.URL.split('?')[0];
+      return url.endsWith('/') ? url : url.endsWith('index.html') ? url.replace('index.html', '') : url + '/';
     })();
-    // 2. Rewrite the path so React Router renders the Screen view directly
-    const params = new URLSearchParams(window.location.search);
-    const key = params.get('key') || 'xAbQwlPy8wg';
-    history.replaceState(null, '', '/Screen/sor?key=' + key);
+    // 2. Inject assets with correct absolute paths (beats the preload scanner)
+    document.write('<script type="module" crossorigin src="' + _base + 'assets/index-BO8bQFTX.js"><\/script>');
+    document.write('<link rel="stylesheet" crossorigin href="' + _base + 'assets/index-Bink9EpP.css">');
+    // 3. Intercept fetch — redirect ALL api.bouvm.tech calls through our Azure proxy
+    (function () {
+      var PROXY = 'https://bouvm-c0gge6bpbgdkacb7.norwayeast-01.azurewebsites.net/api/bouvm';
+      var _fetch = window.fetch.bind(window);
+      window.fetch = function (input, init) {
+        var url = typeof input === 'string' ? input : (input instanceof Request ? input.url : String(input));
+        if (url.includes('api.bouvm.tech')) {
+          var key = new URL(url).searchParams.get('key') ?? '';
+          input = PROXY + '?key=' + encodeURIComponent(key);
+          // Strip credentials — proxy doesn't need them and * CORS forbids credentials:include
+          init = Object.assign({}, init, { credentials: 'omit' });
+        }
+        return _fetch(input, init);
+      };
+    })();
+    // 4. Rewrite path so React Router renders the Screen view
+    //    Done after asset tags are written so the path change doesn't affect them.
+    var _key = new URLSearchParams(window.location.search).get('key') || 'xAbQwlPy8wg';
+    history.replaceState(null, '', '/Screen/sor?key=' + _key);
   </script>
-  <script type="module" crossorigin="" src="assets/index-BO8bQFTX.js"></script>
-  <link rel="stylesheet" crossorigin="" href="assets/index-Bink9EpP.css">
   <meta name="robots" content="noindex, nofollow">
 
   <style>

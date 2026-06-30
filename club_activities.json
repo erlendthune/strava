@@ -3,6 +3,23 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
+      "firstname": "Håkon",
+      "lastname": "R."
+    },
+    "name": "Ettermiddag med sykkeltur",
+    "distance": 17093.8,
+    "moving_time": 2670,
+    "elapsed_time": 2670,
+    "total_elevation_gain": 272,
+    "type": "Ride",
+    "sport_type": "Ride",
+    "workout_type": null,
+    "device_name": "Garmin Edge 1030 Plus"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
       "firstname": "Terje",
       "lastname": "B."
     },
@@ -814,23 +831,6 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Kjetil",
-      "lastname": "H."
-    },
-    "name": "Afternoon Weight Training",
-    "distance": 0,
-    "moving_time": 4055,
-    "elapsed_time": 4055,
-    "total_elevation_gain": 0,
-    "type": "WeightTraining",
-    "sport_type": "WeightTraining",
-    "workout_type": 30,
-    "device_name": "Apple Watch Ultra 3"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
       "firstname": "Terje",
       "lastname": "B."
     },
@@ -860,6 +860,23 @@
     "sport_type": "Ride",
     "workout_type": null,
     "device_name": "Garmin Edge 1030 Plus"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Kjetil",
+      "lastname": "H."
+    },
+    "name": "Afternoon Weight Training",
+    "distance": 0,
+    "moving_time": 4055,
+    "elapsed_time": 4055,
+    "total_elevation_gain": 0,
+    "type": "WeightTraining",
+    "sport_type": "WeightTraining",
+    "workout_type": 30,
+    "device_name": "Apple Watch Ultra 3"
   },
   {
     "resource_state": 2,
@@ -2458,23 +2475,6 @@
     "resource_state": 2,
     "athlete": {
       "resource_state": 2,
-      "firstname": "Terje",
-      "lastname": "B."
-    },
-    "name": "Langs strendene",
-    "distance": 5718,
-    "moving_time": 1615,
-    "elapsed_time": 1615,
-    "total_elevation_gain": 21.6,
-    "type": "Run",
-    "sport_type": "Run",
-    "workout_type": null,
-    "device_name": "Garmin Forerunner 245 Music"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
       "firstname": "Håkon",
       "lastname": "R."
     },
@@ -2487,6 +2487,23 @@
     "sport_type": "Ride",
     "workout_type": null,
     "device_name": "Garmin Edge 1030 Plus"
+  },
+  {
+    "resource_state": 2,
+    "athlete": {
+      "resource_state": 2,
+      "firstname": "Terje",
+      "lastname": "B."
+    },
+    "name": "Langs strendene",
+    "distance": 5718,
+    "moving_time": 1615,
+    "elapsed_time": 1615,
+    "total_elevation_gain": 21.6,
+    "type": "Run",
+    "sport_type": "Run",
+    "workout_type": null,
+    "device_name": "Garmin Forerunner 245 Music"
   },
   {
     "resource_state": 2,
@@ -3298,21 +3315,5 @@
     "sport_type": "Run",
     "workout_type": null,
     "device_name": "Garmin Forerunner 245 Music"
-  },
-  {
-    "resource_state": 2,
-    "athlete": {
-      "resource_state": 2,
-      "firstname": "Kristin Sørli",
-      "lastname": "O."
-    },
-    "name": "Ettermiddagstur på el-sykkel",
-    "distance": 7055.9,
-    "moving_time": 1108,
-    "elapsed_time": 1256,
-    "total_elevation_gain": 113.2,
-    "type": "EBikeRide",
-    "sport_type": "EBikeRide",
-    "device_name": "Strava App"
   }
 ]
